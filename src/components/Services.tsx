@@ -1,39 +1,40 @@
-import { Brain, BookOpen, Zap, Users } from 'lucide-react';
+import { Brain, BookOpen, Zap, Users, Presentation } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import aiImage from '@/assets/services-ai.jpg';
-import curriculumImage from '@/assets/services-curriculum.jpg';
-import developmentImage from '@/assets/services-development.jpg';
+import aiImage from '@/assets/services-digital-learning.jpg';
+import curriculumImage from '@/assets/services-curriculum-dev.jpg';
+import developmentImage from '@/assets/services-collaboration.jpg';
+import keynoteImage from '@/assets/services-keynote.jpg';
 
 const Services = () => {
   const services = [
     {
       title: 'AI Integration & Digital Tools',
-      description: 'Transform your educational approach with cutting-edge AI technologies and digital tools that enhance learning outcomes and streamline instruction.',
+      description: 'Empower adult educators with cutting-edge AI technologies and digital tools that enhance learning outcomes in professional development environments.',
       icon: Brain,
       image: aiImage,
-      features: ['AI-powered learning analytics', 'Automated content creation', 'Personalized learning paths', 'Smart assessment tools']
+      features: ['AI-powered learning platforms', 'Digital assessment tools', 'Virtual collaboration spaces', 'Adaptive learning technologies']
     },
     {
       title: 'Curriculum Development',
-      description: 'Build comprehensive, engaging curricula that meet modern educational standards and leverage digital innovation for maximum impact.',
+      description: 'Build comprehensive, engaging curricula tailored for adult learners and workforce development programs that meet industry standards.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['Standards-aligned content', 'Interactive digital materials', 'Assessment strategies', 'Learning outcome tracking']
+      features: ['Competency-based curricula', 'Industry-aligned content', 'Modular course design', 'Assessment frameworks']
     },
     {
-      title: 'Professional Development',
-      description: 'Empower educators with the skills and knowledge needed to excel in digital learning environments and modern teaching methodologies.',
+      title: 'Professional Development Workshops',
+      description: 'Collaborative learning experiences that build educator capacity and foster innovation in adult education and workforce development.',
       icon: Zap,
       image: developmentImage,
-      features: ['Hands-on workshops', 'Ongoing coaching support', 'Certification programs', 'Best practice sharing']
+      features: ['Facilitator training programs', 'Best practice workshops', 'Peer collaboration sessions', 'Continuous improvement coaching']
     },
     {
-      title: 'Resource Development',
-      description: 'Create custom educational resources and materials that support diverse learning styles and enhance student engagement.',
-      icon: Users,
-      image: curriculumImage,
-      features: ['Custom content creation', 'Multimedia resources', 'Accessibility compliance', 'Multi-format delivery']
+      title: 'Keynote Presentations',
+      description: 'Inspiring presentations on the future of adult education, workforce development, and educational innovation for conferences and events.',
+      icon: Presentation,
+      image: keynoteImage,
+      features: ['Conference keynotes', 'Educational leadership talks', 'Innovation showcases', 'Future of learning presentations']
     }
   ];
 
