@@ -19,20 +19,20 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="max-w-3xl">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-            <span>🚀 Transforming Adult Education</span>
+            <span>Adult Education & Workforce Development</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-hero bg-clip-text text-transparent">
-              Empowering Educators
+              Professional Development
             </span>
             <br />
-            <span className="text-foreground">with Digital Excellence</span>
+            <span className="text-foreground">for Adult Educators</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            Using cutting-edge digital tools and AI to make adult education more accessible, 
-            connected, and meaningful. Supporting adult learners in reaching their potential.
+            We help adult educators integrate technology into ESL, ABE, and HSE programs. 
+            Training, curriculum development, and keynote presentations for adult education professionals.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">

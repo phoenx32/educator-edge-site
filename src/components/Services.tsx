@@ -9,32 +9,32 @@ import keynoteImage from '@/assets/services-keynote.jpg';
 const Services = () => {
   const services = [
     {
-      title: 'AI Integration & Digital Tools',
-      description: 'Empower adult educators with cutting-edge AI technologies and digital tools that enhance learning outcomes in professional development environments.',
+      title: 'Technology Integration Training',
+      description: 'Help adult educators integrate digital tools and AI into ESL, ABE, and HSE classrooms. Hands-on training for practical classroom applications.',
       icon: Brain,
       image: aiImage,
-      features: ['AI-powered learning platforms', 'Digital assessment tools', 'Virtual collaboration spaces', 'Adaptive learning technologies']
+      features: ['Learning management systems', 'Digital assessment tools', 'Online classroom platforms', 'Educational apps and software']
     },
     {
       title: 'Curriculum Development',
-      description: 'Build comprehensive, engaging curricula tailored for adult learners and workforce development programs that meet industry standards.',
+      description: 'Develop curricula for adult education programs including ESL, Adult Basic Education, and High School Equivalency preparation.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['Competency-based curricula', 'Industry-aligned content', 'Modular course design', 'Assessment frameworks']
+      features: ['ESL curriculum design', 'ABE program materials', 'HSE test preparation', 'Workforce readiness modules']
     },
     {
-      title: 'Professional Development Workshops',
-      description: 'Collaborative learning experiences that build educator capacity and foster innovation in adult education and workforce development.',
+      title: 'Educator Training Workshops',
+      description: 'Professional development workshops for adult education instructors, administrators, and support staff in classroom and online formats.',
       icon: Zap,
       image: developmentImage,
-      features: ['Facilitator training programs', 'Best practice workshops', 'Peer collaboration sessions', 'Continuous improvement coaching']
+      features: ['Teaching methodology', 'Student engagement strategies', 'Assessment techniques', 'Program evaluation']
     },
     {
       title: 'Keynote Presentations',
-      description: 'Inspiring presentations on the future of adult education, workforce development, and educational innovation for conferences and events.',
+      description: 'Conference presentations and talks on adult education, workforce development, and technology integration for educational events.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['Conference keynotes', 'Educational leadership talks', 'Innovation showcases', 'Future of learning presentations']
+      features: ['Conference keynotes', 'Workshop presentations', 'Panel discussions', 'Educational leadership topics']
     }
   ];
 
@@ -43,13 +43,13 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-            ✨ Our Expertise
+            Our Services
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Comprehensive <span className="bg-gradient-primary bg-clip-text text-transparent">Education Solutions</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We provide end-to-end professional development services that bridge the gap between traditional education and digital innovation.
+            Training and support for adult educators teaching ESL, ABE, HSE, and workforce development programs.
           </p>
         </div>
 
