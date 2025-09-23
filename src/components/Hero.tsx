@@ -31,8 +31,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            We help adult educators integrate technology into ESL, ABE, and HSE programs. 
-            Training, curriculum development, and keynote presentations for adult education professionals.
+            Practical professional development for adult educators. We provide training, curriculum development, and consultation services for ESL, ABE, HSE, and workforce development programs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -48,16 +47,16 @@ const Hero = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-4">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-muted-foreground">Educators Trained</div>
+              <div className="text-3xl font-bold text-primary mb-2">100+</div>
+              <div className="text-muted-foreground text-sm">Adult Education Providers</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-bold text-secondary mb-2">50+</div>
-              <div className="text-muted-foreground">Courses Developed</div>
+              <div className="text-3xl font-bold text-secondary mb-2">3,000+</div>
+              <div className="text-muted-foreground text-sm">Educators Supported</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-bold text-accent mb-2">95%</div>
-              <div className="text-muted-foreground">Success Rate</div>
+              <div className="text-3xl font-bold text-accent mb-2">20,000+</div>
+              <div className="text-muted-foreground text-sm">Adult Learners Impacted</div>
             </div>
           </div>
         </div>

@@ -10,31 +10,31 @@ const Services = () => {
   const services = [
     {
       title: 'Technology Integration Training',
-      description: 'Help adult educators integrate digital tools and AI into ESL, ABE, and HSE classrooms. Hands-on training for practical classroom applications.',
+      description: 'Practical training to help adult educators use digital tools effectively in ESL, ABE, and HSE programs. Focus on tools that actually improve student outcomes.',
       icon: Brain,
       image: aiImage,
-      features: ['Learning management systems', 'Digital assessment tools', 'Online classroom platforms', 'Educational apps and software']
+      features: ['Canvas and Google Classroom setup', 'Digital assessment and progress tracking', 'Online tutoring and support tools', 'Mobile-friendly learning resources']
     },
     {
       title: 'Curriculum Development',
-      description: 'Develop curricula for adult education programs including ESL, Adult Basic Education, and High School Equivalency preparation.',
+      description: 'Create practical curricula that meet state standards and student needs. Aligned to WIOA requirements and college and career readiness standards.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['ESL curriculum design', 'ABE program materials', 'HSE test preparation', 'Workforce readiness modules']
+      features: ['WIOA-aligned curriculum design', 'College and career readiness pathways', 'Integrated education and training models', 'Contextualized learning approaches']
     },
     {
-      title: 'Educator Training Workshops',
-      description: 'Professional development workshops for adult education instructors, administrators, and support staff in classroom and online formats.',
+      title: 'Professional Development Workshops',
+      description: 'Evidence-based training for adult education instructors, career navigators, and program administrators. Available in-person and online.',
       icon: Zap,
       image: developmentImage,
-      features: ['Teaching methodology', 'Student engagement strategies', 'Assessment techniques', 'Program evaluation']
+      features: ['Student-centered teaching approaches', 'Career pathway counseling', 'Data-driven program improvement', 'Trauma-informed practices']
     },
     {
-      title: 'Keynote Presentations',
-      description: 'Conference presentations and talks on adult education, workforce development, and technology integration for educational events.',
+      title: 'Conference Presentations',
+      description: 'Engaging presentations for adult education conferences, state meetings, and professional development events. Research-based content with practical takeaways.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['Conference keynotes', 'Workshop presentations', 'Panel discussions', 'Educational leadership topics']
+      features: ['State and national conference keynotes', 'Workshop facilitation', 'Panel discussions on best practices', 'Program evaluation and improvement']
     }
   ];
 
@@ -49,7 +49,7 @@ const Services = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Training and support for adult educators teaching ESL, ABE, HSE, and workforce development programs.
+            Practical training and support for educators in adult basic education, ESL, HSE, and workforce development programs. Evidence-based approaches that work in real classrooms.
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { CheckCircle, Target, Lightbulb } from 'lucide-react';
+import { CheckCircle, Target, Lightbulb, Star } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -40,9 +40,7 @@ const About = () => {
               Transforming Education Through <span className="bg-gradient-primary bg-clip-text text-transparent">Digital Innovation</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Learning and teaching in the digital age is new for everyone. We provide customized professional 
-              development and group coaching to help educators effectively use digital tools to save time and 
-              create more meaningful learning opportunities.
+              We partner with adult education programs, community colleges, and workforce development organizations to provide practical professional development. Our training helps educators integrate technology effectively while focusing on student success and program outcomes.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -83,20 +81,24 @@ const About = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">10+</div>
-              <div className="text-white/80">Years Experience</div>
+              <div className="text-4xl font-bold mb-2">100+</div>
+              <div className="text-white/80 text-sm">Adult education providers, state agencies, and community organizations</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-white/80">Educators Trained</div>
+              <div className="text-4xl font-bold mb-2">3,000+</div>
+              <div className="text-white/80 text-sm">Adult education teachers, career navigators, and administrators</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-white/80">Courses Developed</div>
+              <div className="text-4xl font-bold mb-2">20,000+</div>
+              <div className="text-white/80 text-sm">Adult learners supported through our programs</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">95%</div>
-              <div className="text-white/80">Satisfaction Rate</div>
+              <div className="flex items-center justify-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-current text-yellow-400" />
+                ))}
+              </div>
+              <div className="text-white/80 text-sm">4.9/5 Course Evaluation Rate</div>
             </div>
           </div>
         </div>
