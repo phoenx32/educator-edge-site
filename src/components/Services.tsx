@@ -39,23 +39,23 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-subtle">
+    <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-6">
             Our Services
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Practical training and support for educators in adult basic education, ESL, HSE, and workforce development programs. Evidence-based approaches that work in real classrooms.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Evidence-based professional development designed specifically for adult education programs. We help educators implement practical strategies that improve student outcomes.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300 group">
+            <Card key={index} className="overflow-hidden border border-border/30 shadow-card bg-background hover:shadow-elegant transition-all duration-300 group">
               <div className="aspect-video overflow-hidden">
                 <img 
                   src={service.image} 
@@ -65,7 +65,7 @@ const Services = () => {
               </div>
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-3 bg-gradient-primary rounded-lg text-white">
+                  <div className="p-3 bg-primary/10 rounded-lg text-primary">
                     <service.icon className="w-6 h-6" />
                   </div>
                   <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
@@ -90,7 +90,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-elegant">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-elegant">
             Schedule a Consultation
           </Button>
         </div>

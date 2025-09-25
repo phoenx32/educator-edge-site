@@ -17,18 +17,18 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
 
-    /* Community Learning Partners brand colors */
-    --primary: 200 80% 50%;
+    /* Community Learning Partners brand colors - Subtle Professional */
+    --primary: 200 40% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 90% 60%;
+    --primary-glow: 200 50% 60%;
 
-    --secondary: 85 70% 45%;
+    --secondary: 85 35% 45%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 85 80% 55%;
+    --secondary-glow: 85 45% 55%;
 
-    --accent: 280 50% 60%;
+    --accent: 280 25% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 280 60% 70%;
+    --accent-glow: 280 35% 60%;
 
     --muted: 215 15% 96%;
     --muted-foreground: 215 20% 55%;
@@ -40,16 +40,16 @@ All colors MUST be HSL.
     --input: 215 15% 88%;
     --ring: 275 65% 65%;
 
-    /* Professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    /* Subtle Professional gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--secondary) / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--secondary) / 0.8) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.5) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted) / 0.3) 100%);
 
-    /* Professional shadows */
-    --shadow-elegant: 0 10px 40px -10px hsl(var(--primary) / 0.15);
-    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
-    --shadow-glow: 0 0 60px hsl(var(--primary-glow) / 0.3);
+    /* Subtle Professional shadows */
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--primary) / 0.08);
+    --shadow-card: 0 2px 10px -2px hsl(var(--primary) / 0.05);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.1);
 
     /* Professional animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
