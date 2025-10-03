@@ -9,32 +9,32 @@ import keynoteImage from '@/assets/services-keynote.jpg';
 const Services = () => {
   const services = [
     {
-      title: 'Professional Development Workshops',
-      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. We focus on practical strategies teachers can use immediately.',
+      title: 'Professional Development Cohorts',
+      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. We focus on practical strategies for digital learning, distance education, and online instruction.',
       icon: Zap,
       image: developmentImage,
-      features: ['Teaching strategies that increase student engagement', 'Supporting students through career transitions', 'Using program data to improve instruction', 'Creating supportive learning environments']
+      features: ['Effective digital and distance learning strategies', 'Building engaging online learning experiences', 'Supporting students through career transitions', 'Using program data to improve instruction']
     },
     {
-      title: 'Curriculum Development',
-      description: 'Build curricula that meet compliance requirements while giving students clear paths forward. We create materials your teachers will actually want to use.',
+      title: 'Project Management',
+      description: 'Keep your initiatives on track and your teams aligned. We help you manage complex projects from planning through implementation.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['Curricula that meet state and federal requirements', 'Clear skill progressions students can follow', 'Materials that connect learning to employment', 'Flexible resources that work across program types']
+      features: ['Strategic planning for program improvements', 'Managing grant-funded initiatives', 'Coordinating multi-stakeholder projects', 'Building systems that support sustainability']
     },
     {
-      title: 'Keynote Sessions',
+      title: 'Keynote Sessions and Conference Workshops',
       description: 'Bring fresh perspectives to your conferences and convenings. We share insights from the field that spark meaningful conversations about the future of adult education.',
       icon: Presentation,
       image: keynoteImage,
       features: ['Opening and closing keynotes for state conferences', 'Interactive sessions that energize attendees', 'Honest conversations about what works', 'Practical takeaways for program improvement']
     },
     {
-      title: 'Technology Integration Support',
-      description: 'Make digital learning manageable for your staff and accessible for your students. We help programs use technology without the overwhelm.',
+      title: 'Curriculum Development',
+      description: 'Build curricula that give students clear paths forward. We create materials your teachers will actually want to use.',
       icon: Brain,
       image: aiImage,
-      features: ['Set up learning platforms that staff can manage', 'Track student progress more effectively', 'Expand student access through online options', 'Choose tools that fit your program reality']
+      features: ['Curricula that meet your program needs', 'Clear skill progressions students can follow', 'Materials that connect learning to employment', 'Flexible resources that work across program types']
     }
   ];
 
@@ -73,7 +73,7 @@ const Services = () => {
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </CardHeader>
               <CardContent className="pt-0">
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
@@ -81,17 +81,14 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  Learn More
-                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-elegant">
-            Schedule a Consultation
+          <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-elegant" asChild>
+            <a href="#contact">Schedule a Consultation</a>
           </Button>
         </div>
       </div>
