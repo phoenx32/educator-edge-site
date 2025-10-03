@@ -25,16 +25,16 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-elegant" asChild>
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border" asChild>
                 <a href="#services">
                   Explore Our Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary/20 hover:bg-primary/5" asChild>
-                <a href="#contact">
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border" asChild>
+                <a href="https://calendar.app.google/SZwbrXx7TvHrrCZG8" target="_blank" rel="noopener noreferrer">
                   <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
+                  Schedule a Consultation
                 </a>
               </Button>
             </div>

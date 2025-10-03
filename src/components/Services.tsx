@@ -88,7 +88,9 @@ const Services = () => {
 
         <div className="text-center mt-16">
           <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-elegant" asChild>
-            <a href="#contact">Schedule a Consultation</a>
+            <a href="https://calendar.app.google/SZwbrXx7TvHrrCZG8" target="_blank" rel="noopener noreferrer">
+              Schedule a Consultation
+            </a>
           </Button>
         </div>
       </div>
