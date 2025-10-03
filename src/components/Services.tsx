@@ -9,11 +9,11 @@ import keynoteImage from '@/assets/services-keynote.jpg';
 const Services = () => {
   const services = [
     {
-      title: 'Technology Integration Training',
-      description: 'Practical training to help adult educators use digital tools effectively in ESL, ABE, and HSE programs. Focus on tools that actually improve student outcomes.',
-      icon: Brain,
-      image: aiImage,
-      features: ['Canvas and Google Classroom setup', 'Digital assessment and progress tracking', 'Online tutoring and support tools', 'Mobile-friendly learning resources']
+      title: 'Professional Development Workshops',
+      description: 'Evidence-based training for adult education instructors, career navigators, and program administrators. Available in-person and online.',
+      icon: Zap,
+      image: developmentImage,
+      features: ['Student-centered teaching approaches', 'Career pathway counseling', 'Data-driven program improvement', 'Trauma-informed practices']
     },
     {
       title: 'Curriculum Development',
@@ -23,18 +23,18 @@ const Services = () => {
       features: ['WIOA-aligned curriculum design', 'College and career readiness pathways', 'Integrated education and training models', 'Contextualized learning approaches']
     },
     {
-      title: 'Professional Development Workshops',
-      description: 'Evidence-based training for adult education instructors, career navigators, and program administrators. Available in-person and online.',
-      icon: Zap,
-      image: developmentImage,
-      features: ['Student-centered teaching approaches', 'Career pathway counseling', 'Data-driven program improvement', 'Trauma-informed practices']
-    },
-    {
       title: 'Conference Presentations',
       description: 'Engaging presentations for adult education conferences, state meetings, and professional development events. Research-based content with practical takeaways.',
       icon: Presentation,
       image: keynoteImage,
       features: ['State and national conference keynotes', 'Workshop facilitation', 'Panel discussions on best practices', 'Program evaluation and improvement']
+    },
+    {
+      title: 'Technology Integration Training',
+      description: 'Practical training to help adult educators use digital tools effectively in ESL, ABE, and HSE programs. Focus on tools that actually improve student outcomes.',
+      icon: Brain,
+      image: aiImage,
+      features: ['Canvas and Google Classroom setup', 'Digital assessment and progress tracking', 'Online tutoring and support tools', 'Mobile-friendly learning resources']
     }
   ];
 
