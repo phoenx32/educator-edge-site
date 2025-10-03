@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -11,10 +11,10 @@ const Contact = () => {
       action: 'mailto:hello@communitylearningpartners.com'
     },
     {
-      icon: MapPin,
-      title: 'Service Locations',
-      content: 'Remote & On-site Services Available Nationwide',
-      action: '#'
+      icon: Calendar,
+      title: 'Schedule a Free Consultation',
+      content: 'Book a 30-minute consultation to discuss your goals',
+      action: 'https://calendar.app.google/Ju1nX9Trzxur32JR6'
     }
   ];
 
@@ -37,7 +37,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold mb-8">Connect With Our Team</h3>
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300">
                   <CardContent className="p-6">
@@ -45,11 +45,13 @@ const Contact = () => {
                       <div className="p-3 bg-gradient-primary rounded-lg text-white">
                         <info.icon className="w-6 h-6" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="font-semibold mb-1">{info.title}</h4>
                         <a 
                           href={info.action}
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          target={info.action.startsWith('http') ? '_blank' : undefined}
+                          rel={info.action.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-muted-foreground hover:text-primary transition-colors text-sm"
                         >
                           {info.content}
                         </a>
@@ -59,20 +61,6 @@ const Contact = () => {
                 </Card>
               ))}
             </div>
-
-            <Card className="border-0 shadow-card bg-gradient-primary text-white">
-              <CardHeader>
-                <CardTitle className="text-xl">Schedule a Free Consultation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-white/90 mb-4">
-                  Ready to get started? Book a 30-minute consultation to discuss your specific needs and goals.
-                </p>
-                <Button variant="secondary" className="w-full">
-                  Book Now
-                </Button>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Newsletter Signup */}

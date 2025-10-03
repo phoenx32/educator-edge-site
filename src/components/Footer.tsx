@@ -12,6 +12,9 @@ const Footer = () => {
               Empowering educators with digital tools and professional development 
               to create more accessible, connected, and meaningful adult education.
             </p>
+            <p className="text-white/70 text-sm mb-4">
+              🌎 Remote & On-site Services Available Nationwide
+            </p>
             <div className="text-white/60 text-sm">
               © {currentYear} Community Learning Partners. All rights reserved.
             </div>
