@@ -14,15 +14,9 @@ const Contact = () => {
       action: 'mailto:hello@communitylearningpartners.com'
     },
     {
-      icon: Phone,
-      title: 'Call Us',
-      content: '+1 (555) 123-4567',
-      action: 'tel:+15551234567'
-    },
-    {
       icon: MapPin,
-      title: 'Visit Us',
-      content: 'Remote & On-site Services Available',
+      title: 'Service Locations',
+      content: 'Remote & On-site Services Available Nationwide',
       action: '#'
     }
   ];
