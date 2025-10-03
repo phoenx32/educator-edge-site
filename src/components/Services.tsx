@@ -10,31 +10,31 @@ const Services = () => {
   const services = [
     {
       title: 'Professional Development Workshops',
-      description: 'Evidence-based training for adult education instructors, career navigators, and program administrators. Available in-person and online.',
+      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. We focus on practical strategies teachers can use immediately.',
       icon: Zap,
       image: developmentImage,
-      features: ['Student-centered teaching approaches', 'Career pathway counseling', 'Data-driven program improvement', 'Trauma-informed practices']
+      features: ['Teaching strategies that increase student engagement', 'Supporting students through career transitions', 'Using program data to improve instruction', 'Creating supportive learning environments']
     },
     {
       title: 'Curriculum Development',
-      description: 'Create practical curricula that meet state standards and student needs. Aligned to WIOA requirements and college and career readiness standards.',
+      description: 'Build curricula that meet compliance requirements while giving students clear paths forward. We create materials your teachers will actually want to use.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['WIOA-aligned curriculum design', 'College and career readiness pathways', 'Integrated education and training models', 'Contextualized learning approaches']
+      features: ['Curricula that meet state and federal requirements', 'Clear skill progressions students can follow', 'Materials that connect learning to employment', 'Flexible resources that work across program types']
     },
     {
-      title: 'Conference Presentations',
-      description: 'Engaging presentations for adult education conferences, state meetings, and professional development events. Research-based content with practical takeaways.',
+      title: 'Keynote Sessions',
+      description: 'Bring fresh perspectives to your conferences and convenings. We share insights from the field that spark meaningful conversations about the future of adult education.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['State and national conference keynotes', 'Workshop facilitation', 'Panel discussions on best practices', 'Program evaluation and improvement']
+      features: ['Opening and closing keynotes for state conferences', 'Interactive sessions that energize attendees', 'Honest conversations about what works', 'Practical takeaways for program improvement']
     },
     {
-      title: 'Technology Integration Training',
-      description: 'Practical training to help adult educators use digital tools effectively in ESL, ABE, and HSE programs. Focus on tools that actually improve student outcomes.',
+      title: 'Technology Integration Support',
+      description: 'Make digital learning manageable for your staff and accessible for your students. We help programs use technology without the overwhelm.',
       icon: Brain,
       image: aiImage,
-      features: ['Canvas and Google Classroom setup', 'Digital assessment and progress tracking', 'Online tutoring and support tools', 'Mobile-friendly learning resources']
+      features: ['Set up learning platforms that staff can manage', 'Track student progress more effectively', 'Expand student access through online options', 'Choose tools that fit your program reality']
     }
   ];
 
@@ -49,7 +49,7 @@ const Services = () => {
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Evidence-based professional development designed specifically for adult education programs. We help educators implement practical strategies that improve student outcomes.
+            Professional development that strengthens your programs from the inside out. We help your teams gain confidence, improve instruction, and see real results with learners.
           </p>
         </div>
 
