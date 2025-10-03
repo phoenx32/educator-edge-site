@@ -4,27 +4,27 @@ const About = () => {
   const values = [
     {
       icon: Target,
-      title: 'Mission-Driven',
-      description: 'We believe everyone in the classroom is both a teacher and a student, fostering collaborative learning environments.'
+      title: 'Sustained & Context-Specific',
+      description: 'Professional development designed for implementation over time, not one-time events. We create space for educators to apply new practices, reflect, and refine with support.'
     },
     {
       icon: Lightbulb,
-      title: 'Innovation-Focused',
-      description: 'Leveraging cutting-edge technology and AI to create more meaningful and accessible learning experiences.'
+      title: 'Peer Learning & Coaching',
+      description: 'Learning happens through shared inquiry and collaboration. Participants engage with trusted colleagues in emotionally safe environments with non-evaluative feedback.'
     },
     {
       icon: CheckCircle,
-      title: 'Results-Oriented',
-      description: 'Proven track record of helping educators save time while creating more impactful learning opportunities.'
+      title: 'Flexible & Differentiated',
+      description: 'Non-linear pathways that meet educators where they are. Participants explore topics relevant to their role and setting, at a pace that allows for meaningful change.'
     }
   ];
 
   const achievements = [
-    'Customized professional development courses',
-    'Group coaching in educational technology',
-    'Digital curriculum design expertise',
-    'Project management for education initiatives',
-    'AI integration and digital tool training'
+    'Multi-week professional development cohorts',
+    'Coaching-based learning with peer collaboration',
+    'Flexible pathways tailored to educator roles',
+    'Project management for sustained initiatives',
+    'Technology integration through practice and reflection'
   ];
 
   return (
@@ -37,10 +37,10 @@ const About = () => {
               🎯 Our Approach
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Transforming Education Through <span className="bg-gradient-primary bg-clip-text text-transparent">Digital Innovation</span>
+              Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We partner with adult education programs, community colleges, and workforce development organizations to provide practical professional development. Our training helps educators integrate technology effectively while focusing on student success and program outcomes.
+              We design professional development that respects how adults learn. Our work is grounded in research showing that meaningful change happens when educators have time to apply new practices, reflect with peers, and receive non-evaluative support. We create sustained learning experiences—not one-off workshops—that allow for experimentation, feedback, and continuous growth.
             </p>
 
             <div className="space-y-4 mb-8">
