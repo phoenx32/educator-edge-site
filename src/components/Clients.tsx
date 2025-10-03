@@ -1,23 +1,26 @@
 import coabeLogo from '@/assets/logos/coabe-logo.png';
-import iaceaLogo from '@/assets/logos/iacea-logo.png';
 import isteLogo from '@/assets/logos/iste-logo.png';
 import googleEducationLogo from '@/assets/logos/google-education-logo.png';
+import goodwillLogo from '@/assets/logos/goodwill-logo.png';
+import otanLogo from '@/assets/logos/otan-logo.png';
+import tcallLogo from '@/assets/logos/tcall-logo.png';
+import tcsgLogo from '@/assets/logos/tcsg-logo.jpg';
+import kyaeLogo from '@/assets/logos/kyae-logo.png';
 
 const Clients = () => {
   const clients = [
+    { name: 'COABE', alt: 'Coalition on Adult Basic Education', logo: coabeLogo },
     { name: 'ISTE', alt: 'International Society for Technology in Education', logo: isteLogo },
     { name: 'Google for Education', alt: 'Google for Education', logo: googleEducationLogo },
-    { name: 'COABE', alt: 'Coalition on Adult Basic Education', logo: coabeLogo },
-    { name: 'Goodwill Industries International', alt: 'Goodwill Industries International', logo: null },
-    { name: 'OTAN', alt: 'Outreach and Technical Assistance Network', logo: null },
-    { name: 'TCALL', alt: 'Texas Center for the Advancement of Literacy and Learning', logo: null },
-    { name: 'Technical College System of Georgia', alt: 'Technical College System of Georgia', logo: null },
-    { name: 'Kentucky Office of Adult Education', alt: 'Kentucky Office of Adult Education', logo: null },
+    { name: 'Goodwill Industries International', alt: 'Goodwill Industries International', logo: goodwillLogo },
+    { name: 'OTAN', alt: 'Outreach and Technical Assistance Network', logo: otanLogo },
+    { name: 'TCALL', alt: 'Texas Center for the Advancement of Literacy and Learning', logo: tcallLogo },
+    { name: 'Technical College System of Georgia', alt: 'Technical College System of Georgia', logo: tcsgLogo },
+    { name: 'KYAE', alt: 'Kentucky Adult Education', logo: kyaeLogo },
     { name: 'NOLA Public Schools', alt: 'New Orleans Public Schools', logo: null },
     { name: 'Delgado Community College', alt: 'Delgado Community College', logo: null },
     { name: 'Bluegrass Community & Technical College', alt: 'Bluegrass Community and Technical College', logo: null },
     { name: 'Adult Numeracy Network', alt: 'Adult Numeracy Network', logo: null },
-    { name: 'IACEA', alt: 'Illinois Adult and Continuing Educators Association', logo: iaceaLogo },
     { name: 'ICCB', alt: 'Illinois Community College Board', logo: null },
     { name: 'Providence Public Library', alt: 'Providence Public Library', logo: null },
     { name: 'Arizona Department of Education', alt: 'Arizona Department of Education', logo: null },
