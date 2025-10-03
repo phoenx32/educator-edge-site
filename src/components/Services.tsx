@@ -10,10 +10,10 @@ const Services = () => {
   const services = [
     {
       title: 'Professional Development Cohorts',
-      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. Multi-week cohorts provide time for educators to apply strategies, reflect with peers, and receive coaching support.',
+      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. Multi-week cohorts give educators time to try new strategies, learn through shared inquiry with peers, and refine their practice.',
       icon: Zap,
       image: developmentImage,
-      features: ['Sustained learning with application and reflection time', 'Peer collaboration and non-evaluative feedback', 'Flexible pacing tailored to participant schedules', 'Coaching support for digital and distance learning']
+      features: ['Time to implement and reflect on new approaches', 'Learn through peer dialogue and collaboration', 'Flexible pacing that fits participant schedules', 'Focus on digital learning, distance education, and online instruction']
     },
     {
       title: 'Project Management',

@@ -10,7 +10,7 @@ const About = () => {
     {
       icon: Lightbulb,
       title: 'Peer Learning & Coaching',
-      description: 'Learning happens through shared inquiry and collaboration. Participants engage with trusted colleagues in emotionally safe environments with non-evaluative feedback.'
+      description: 'Learning happens through shared inquiry and peer dialogue. Participants try new approaches, learn from each other\'s experiences, and build confidence through collaboration.'
     },
     {
       icon: CheckCircle,
@@ -40,7 +40,7 @@ const About = () => {
               Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We design professional development that respects how adults learn. Our work is grounded in research showing that meaningful change happens when educators have time to apply new practices, reflect with peers, and receive non-evaluative support. We create sustained learning experiences—not one-off workshops—that allow for experimentation, feedback, and continuous growth.
+              We design professional development that respects how adults learn. Our work is grounded in research showing that meaningful change happens when educators have time to try new approaches, learn through peer dialogue, and refine their practice. We create sustained learning experiences—not one-off workshops—that allow for experimentation, reflection, and continuous growth.
             </p>
 
             <div className="space-y-4 mb-8">
