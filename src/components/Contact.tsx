@@ -1,9 +1,6 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 
 const Contact = () => {
   const contactInfo = [
@@ -29,11 +26,10 @@ const Contact = () => {
             💬 Get in Touch
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your <span className="bg-gradient-primary bg-clip-text text-transparent">Educational Impact?</span>
+            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect & Collaborate</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Let's discuss how we can help you integrate digital tools, develop curricula, 
-            and empower your educators with professional development that drives results.
+            Reach out to discuss your educational needs, or subscribe to our newsletter for expert insights on digital learning, curriculum development, and professional growth.
           </p>
         </div>
 
@@ -79,61 +75,26 @@ const Contact = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Newsletter Signup */}
           <Card className="border-0 shadow-elegant bg-gradient-card">
             <CardHeader>
-              <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl">Stay Connected</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="Your first name" />
-                </div>
-                <div>
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Your last name" />
-                </div>
-              </div>
-              
-              <div>
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" placeholder="your.email@example.com" />
-              </div>
-              
-              <div>
-                <Label htmlFor="organization">Organization</Label>
-                <Input id="organization" placeholder="Your organization or institution" />
-              </div>
-              
-              <div>
-                <Label htmlFor="service">Service of Interest</Label>
-                <select 
-                  id="service" 
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
-                >
-                  <option value="">Select a service</option>
-                  <option value="ai-integration">AI Integration & Digital Tools</option>
-                  <option value="curriculum">Curriculum Development</option>
-                  <option value="professional-dev">Professional Development</option>
-                  <option value="resources">Resource Development</option>
-                  <option value="consultation">General Consultation</option>
-                </select>
-              </div>
-              
-              <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Tell us about your goals and how we can help..."
-                  className="min-h-32"
+            <CardContent>
+              <p className="text-muted-foreground mb-6">
+                Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, AI integration, and professional development delivered directly to your inbox.
+              </p>
+              <div className="flex justify-center">
+                <iframe 
+                  src="https://joeylehrman.substack.com/embed" 
+                  width="480" 
+                  height="320" 
+                  style={{ border: '1px solid hsl(var(--border))', background: 'hsl(var(--card))', maxWidth: '100%' }}
+                  frameBorder="0" 
+                  scrolling="no"
+                  title="Newsletter Signup"
                 />
               </div>
-              
-              <Button className="w-full bg-gradient-primary hover:opacity-90 transition-opacity">
-                Send Message
-                <Send className="ml-2 w-4 h-4" />
-              </Button>
             </CardContent>
           </Card>
         </div>
