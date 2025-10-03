@@ -21,7 +21,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Practical professional development for adult educators. We provide training, curriculum development, and consultation services for ESL, ABE, HSE, and workforce development programs.
+              Practical professional development for adult educators. We provide training, curriculum development, and consultation services for adult learning, higher education, and workforce development programs.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
