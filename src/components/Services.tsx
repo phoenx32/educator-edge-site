@@ -49,7 +49,7 @@ const Services = () => {
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional development that strengthens your programs from the inside out. We help your teams gain confidence, improve instruction, and see real results with learners.
+            Professional development that builds your team's capacity and improves outcomes for students.
           </p>
         </div>
 
