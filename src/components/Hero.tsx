@@ -4,9 +4,9 @@ import heroImage from '@/assets/hero-adult-learning.jpg';
 
 const Hero = () => {
   return (
-    <section className="bg-background py-20 lg:py-32">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="bg-background py-12 md:py-20 lg:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           
           {/* Left Content */}
           <div className="max-w-2xl">
@@ -22,14 +22,14 @@ const Hero = () => {
               We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more effective and inclusive.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12">
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border w-full sm:w-auto" asChild>
                 <a href="#services">
                   Explore Our Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border" asChild>
+              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border w-full sm:w-auto" asChild>
                 <a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer">
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -54,15 +54,15 @@ const Hero = () => {
           </div>
 
           {/* Right Image/Card */}
-          <div className="relative">
-            <div className="relative bg-gradient-subtle rounded-2xl p-8 shadow-card">
+          <div className="relative mt-8 lg:mt-0">
+            <div className="relative bg-gradient-subtle rounded-2xl p-4 md:p-8 shadow-card">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-8 translate-x-8"></div>
               <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-4 -translate-x-4"></div>
               
               <img
                 src={heroImage}
                 alt="Adult educators in professional development session"
-                className="w-full h-[400px] object-cover rounded-xl shadow-card"
+                className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-xl shadow-card"
               />
               
               <div className="absolute -bottom-4 -right-4 bg-background border border-border rounded-lg p-4 shadow-elegant">

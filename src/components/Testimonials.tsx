@@ -49,8 +49,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
             What Educators Say

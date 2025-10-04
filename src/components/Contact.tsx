@@ -19,8 +19,8 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-12 md:py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
             💬 Get in Touch
@@ -69,12 +69,12 @@ const Contact = () => {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, and professional development.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center w-full">
               <iframe 
                 src="https://joeylehrman.substack.com/embed" 
-                width="480" 
+                width="100%" 
                 height="320" 
-                style={{ border: '1px solid hsl(var(--border))', background: 'transparent', maxWidth: '100%' }}
+                style={{ border: '1px solid hsl(var(--border))', background: 'transparent', maxWidth: '480px' }}
                 frameBorder="0" 
                 scrolling="no"
                 title="Newsletter Signup"
