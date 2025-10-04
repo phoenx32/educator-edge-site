@@ -43,7 +43,7 @@ const Services = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-4 md:mb-6">
-            Our Services
+            ✨ Our Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>

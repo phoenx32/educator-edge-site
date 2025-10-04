@@ -11,7 +11,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="max-w-2xl">
             <div className="inline-flex items-center px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-6">
-              <span>Adult Education & Workforce Development</span>
+              <span>🎓 Adult Education & Workforce Development</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
