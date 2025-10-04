@@ -49,7 +49,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional development and project management that builds your team's capacity and improves outcomes for students.
+            Professional development and project management that build your team's capacity and improve outcomes for students. We believe meaningful change comes from collaboration and thoughtful design. Our work blends research, technology, and practitioner insight to create solutions that are adaptable, inclusive, and built to sustain improvement over time.
           </p>
         </div>
 
