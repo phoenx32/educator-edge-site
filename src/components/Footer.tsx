@@ -29,7 +29,7 @@ const Footer = () => {
               <li><a href="#services" className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Project Management</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development and Instructional Design</a></li>
             </ul>
           </div>
 

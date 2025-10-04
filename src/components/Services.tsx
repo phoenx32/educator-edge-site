@@ -30,7 +30,7 @@ const Services = () => {
       features: ['Keynotes and panels on digital learning, AI, and workforce readiness', 'Interactive workshops that encourage dialogue across roles and regions', 'Case studies from statewide and community-based initiatives', 'Practical examples that support professional learning and system improvement']
     },
     {
-      title: 'Curriculum Development',
+      title: 'Curriculum Development and Instructional Design',
       description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations.',
       icon: Lightbulb,
       image: aiImage,
