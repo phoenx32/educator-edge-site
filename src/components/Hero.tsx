@@ -4,7 +4,7 @@ import heroImage from '@/assets/hero-adult-learning.jpg';
 
 const Hero = () => {
   return (
-    <section className="bg-background py-12 md:py-20 lg:py-32">
+    <section className="bg-background pt-24 pb-12 md:pt-28 md:pb-20 lg:pt-32 lg:pb-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
           
