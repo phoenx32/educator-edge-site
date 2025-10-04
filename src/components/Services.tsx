@@ -1,7 +1,7 @@
 import { Lightbulb, Workflow, Users, Presentation } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import aiImage from '@/assets/services-curriculum-dev.png';
+import aiImage from '@/assets/services-curriculum-dev-new.png';
 import curriculumImage from '@/assets/services-curriculum-dev.jpg';
 import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
