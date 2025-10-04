@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import aiImage from '@/assets/services-curriculum-dev.png';
 import curriculumImage from '@/assets/services-curriculum-dev.jpg';
 import developmentImage from '@/assets/services-professional-dev.png';
-import keynoteImage from '@/assets/services-keynote-presentation.jpg';
+import keynoteImage from '@/assets/services-keynote-presentation.png';
 
 const Services = () => {
   const services = [
