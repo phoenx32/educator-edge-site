@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-adult-learning.jpg';
 
@@ -15,13 +15,11 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-foreground">Professional Development for</span>
-              <br />
-              <span className="bg-gradient-hero bg-clip-text text-transparent">Adult Educators</span>
+              <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Practical professional development for adult educators. We provide training, curriculum development, and consultation services for adult learning, higher education, and workforce development programs.
+              We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more effective and inclusive.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -32,9 +30,9 @@ const Hero = () => {
                 </a>
               </Button>
               <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border" asChild>
-                <a href="https://calendar.app.google/SZwbrXx7TvHrrCZG8" target="_blank" rel="noopener noreferrer">
-                  <Play className="mr-2 h-5 w-5" />
+                <a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer">
                   Schedule a Consultation
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </div>
