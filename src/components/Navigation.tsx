@@ -33,8 +33,8 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="outline" size="sm">
-              Get Started
+            <Button variant="outline" size="sm" asChild>
+              <a href="#newsletter">Newsletter</a>
             </Button>
           </div>
 
@@ -62,8 +62,8 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="outline" size="sm" className="self-start">
-                Get Started
+              <Button variant="outline" size="sm" className="self-start" asChild>
+                <a href="#newsletter">Newsletter</a>
               </Button>
             </div>
           </div>

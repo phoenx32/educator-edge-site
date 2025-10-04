@@ -64,27 +64,23 @@ const Contact = () => {
           </div>
 
           {/* Newsletter Signup */}
-          <Card className="border-0 shadow-elegant bg-gradient-card">
-            <CardHeader>
-              <CardTitle className="text-2xl">Stay Connected</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6">
-                Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, AI integration, and professional development delivered directly to your inbox.
-              </p>
-              <div className="flex justify-center">
-                <iframe 
-                  src="https://joeylehrman.substack.com/embed" 
-                  width="480" 
-                  height="320" 
-                  style={{ border: '1px solid hsl(var(--border))', background: 'hsl(var(--card))', maxWidth: '100%' }}
-                  frameBorder="0" 
-                  scrolling="no"
-                  title="Newsletter Signup"
-                />
-              </div>
-            </CardContent>
-          </Card>
+          <div id="newsletter">
+            <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, and professional development.
+            </p>
+            <div className="flex justify-center">
+              <iframe 
+                src="https://joeylehrman.substack.com/embed" 
+                width="480" 
+                height="320" 
+                style={{ border: '1px solid hsl(var(--border))', background: 'transparent', maxWidth: '100%' }}
+                frameBorder="0" 
+                scrolling="no"
+                title="Newsletter Signup"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
