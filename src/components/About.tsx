@@ -1,29 +1,29 @@
-import { CheckCircle, Target, Lightbulb, Star } from 'lucide-react';
+import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star } from 'lucide-react';
 
 const About = () => {
   const values = [
     {
-      icon: Target,
-      title: 'Sustained & Context-Specific',
-      description: 'Professional development designed for implementation over time, not one-time events. We create space for educators to apply new practices, reflect, and refine with support.'
+      icon: ArrowLeftRight,
+      title: 'Shared Learning',
+      description: 'We are all teachers, and we are all students. Everyone brings experience and insight that strengthens the collective learning process.'
     },
     {
-      icon: Lightbulb,
-      title: 'Peer Learning & Coaching',
-      description: 'Learning happens through shared inquiry and peer dialogue. Participants try new approaches, learn from each other\'s experiences, and build confidence through collaboration.'
+      icon: Users,
+      title: 'Inclusive Growth',
+      description: 'Varied skill levels and backgrounds are an asset. We build learning environments that value every participant\'s perspective and create space for mutual growth.'
     },
     {
-      icon: CheckCircle,
-      title: 'Flexible & Differentiated',
-      description: 'Non-linear pathways that meet educators where they are. Participants explore topics relevant to their role and setting, at a pace that allows for meaningful change.'
+      icon: BookOpen,
+      title: 'Lifelong Learning',
+      description: 'We see learning as ongoing work. As new tools and practices emerge, we explore them together, applying what we learn to improve teaching and program design.'
     }
   ];
 
   const achievements = [
     'Multi-week professional development cohorts',
-    'Coaching-based learning with peer collaboration',
-    'Flexible pathways tailored to educator roles',
-    'Project management for sustained initiatives',
+    'Peer learning through shared inquiry and dialogue',
+    'Edtech coaching to support classroom practice and reflection',
+    'Flexible pathways tailored to educator roles and needs',
     'Technology integration through practice and reflection'
   ];
 
@@ -40,7 +40,7 @@ const About = () => {
               Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We design professional development that respects how adults learn. Our work is grounded in research showing that meaningful change happens when educators have time to try new approaches, learn through peer dialogue, and refine their practice. We create sustained learning experiences—not one-off workshops—that allow for experimentation, reflection, and continuous growth.
+              We design professional development aligned with how adults learn. Our work is grounded in research showing that lasting improvement happens when educators have time to try new strategies, learn through peer dialogue, and reflect on their practice. We create sustained learning experiences that allow for experimentation, collaboration, and continuous growth.
             </p>
 
             <div className="space-y-4 mb-8">
