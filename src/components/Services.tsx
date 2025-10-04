@@ -10,31 +10,31 @@ const Services = () => {
   const services = [
     {
       title: 'Professional Development Cohorts',
-      description: 'Help your instructors build confidence and skills that translate directly into better student outcomes. Multi-week cohorts give educators time to try new strategies, learn through shared inquiry with peers, and refine their practice.',
+      description: 'Our professional development cohorts help instructors build confidence and apply new tools and strategies that strengthen online and blended instruction. These multi-week experiences allow educators to learn collaboratively, test new approaches in their classrooms, and improve over time.',
       icon: Zap,
       image: developmentImage,
-      features: ['Time to implement and reflect on new approaches', 'Learn through peer dialogue and collaboration', 'Flexible pacing that fits participant schedules', 'Focus on digital learning, distance education, and online instruction']
+      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning']
     },
     {
       title: 'Project Management',
-      description: 'Keep your initiatives on track and your teams aligned. We help you manage complex projects from planning through implementation.',
+      description: 'We support education and workforce initiatives from planning through implementation. Our work brings structure and clarity to complex projects that involve multiple partners and moving parts.',
       icon: BookOpen,
       image: curriculumImage,
-      features: ['Strategic planning for program improvements', 'Managing grant-funded initiatives', 'Coordinating multi-stakeholder projects', 'Building systems that support sustainability']
+      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication', 'Conducting literature reviews, landscape scans, and needs assessments', 'Managing timelines, deliverables, and reporting for grant-funded projects']
     },
     {
       title: 'Keynote Sessions and Conference Workshops',
-      description: 'Bring fresh perspectives to your conferences and convenings. We share insights from the field that spark meaningful conversations about the future of adult education.',
+      description: 'We bring real-world perspectives from adult education, workforce development, and digital learning to state and national events. Our sessions connect current research with classroom and program practice, helping educators and leaders reflect, share, and plan for improvement.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['Opening and closing keynotes for state conferences', 'Interactive sessions that energize attendees', 'Honest conversations about what works', 'Practical takeaways for program improvement']
+      features: ['Keynotes and panels on digital learning, AI, and workforce readiness', 'Interactive workshops that encourage dialogue across roles and regions', 'Case studies from statewide and community-based initiatives', 'Practical examples that support professional learning and system improvement']
     },
     {
       title: 'Curriculum Development',
-      description: 'Build curricula that give students clear paths forward. We create materials your teachers will actually want to use.',
+      description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations.',
       icon: Brain,
       image: aiImage,
-      features: ['Curricula that meet your program needs', 'Clear skill progressions students can follow', 'Materials that connect learning to employment', 'Flexible resources that work across program types']
+      features: ['Designing curriculum aligned with workforce and digital skills goals', 'Integrating online learning and blended instruction', 'Supporting digitized intake, onboarding, and learner data systems', 'Developing adaptable materials that connect learning to employment pathways']
     }
   ];
 
