@@ -46,7 +46,7 @@ const Services = () => {
             Our Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
+            How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Professional development and project management that builds your team's capacity and improves outcomes for students.
