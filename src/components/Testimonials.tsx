@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { Star, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import avatarBlackWoman from '@/assets/avatars/avatar-black-woman.jpg';
@@ -52,8 +52,9 @@ const Testimonials = () => {
     <section className="py-12 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-            ⭐ What Educators Say
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
+            <Award size={16} />
+            What Educators Say
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Trusted by <span className="bg-gradient-primary bg-clip-text text-transparent">Adult Educators</span>

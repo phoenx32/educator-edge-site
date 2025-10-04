@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star } from 'lucide-react';
+import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star, Zap, Lightbulb } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -33,8 +33,9 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center px-4 py-2 bg-secondary/5 border border-secondary/10 rounded-full text-secondary text-sm font-medium mb-6">
-              💫 Our Approach
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/5 border border-secondary/10 rounded-full text-secondary text-sm font-medium mb-6">
+              <Zap size={16} />
+              Our Approach
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
@@ -55,8 +56,9 @@ const About = () => {
 
           {/* Values Grid */}
           <div className="space-y-6">
-            <div className="inline-flex items-center px-4 py-2 bg-accent/5 border border-accent/10 rounded-full text-accent text-sm font-medium mb-2">
-              💡 Our Values
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/5 border border-accent/10 rounded-full text-accent text-sm font-medium mb-2">
+              <Lightbulb size={16} />
+              Our Values
             </div>
             {values.map((value, index) => (
               <div key={index} className="p-6 bg-background rounded-xl border border-border/30 shadow-card hover:shadow-elegant transition-all duration-300">

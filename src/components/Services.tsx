@@ -1,4 +1,4 @@
-import { Lightbulb, Workflow, Users, Presentation } from 'lucide-react';
+import { Lightbulb, Workflow, Users, Presentation, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import aiImage from '@/assets/services-curriculum-dev-new.png';
@@ -42,8 +42,9 @@ const Services = () => {
     <section id="services" className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8 md:mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-4 md:mb-6">
-            ✨ Our Services
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-4 md:mb-6">
+            <Sparkles size={16} />
+            Our Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>

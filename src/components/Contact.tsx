@@ -1,4 +1,4 @@
-import { Mail, Calendar } from 'lucide-react';
+import { Mail, Calendar, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -22,8 +22,9 @@ const Contact = () => {
     <section id="contact" className="py-12 md:py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
-            💬 Get in Touch
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
+            <MessageCircle size={16} />
+            Get in Touch
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect & Collaborate</span>
