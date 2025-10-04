@@ -24,10 +24,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#services" className="hover:text-white transition-colors">AI Integration</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Project Management</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Professional Development</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Resource Development</a></li>
             </ul>
           </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
               <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
               <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Schedule Consultation</a></li>
+              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule Consultation</a></li>
             </ul>
           </div>
         </div>
