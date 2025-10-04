@@ -1,4 +1,4 @@
-import { Brain, BookOpen, Zap, Users, Presentation } from 'lucide-react';
+import { Lightbulb, Workflow, Users, Presentation } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import aiImage from '@/assets/services-curriculum-dev.png';
@@ -11,14 +11,14 @@ const Services = () => {
     {
       title: 'Professional Development Cohorts',
       description: 'Our professional development cohorts help instructors build confidence and apply new tools and strategies that strengthen online and blended instruction. These multi-week experiences allow educators to learn collaboratively, test new approaches in their classrooms, and improve over time.',
-      icon: Zap,
+      icon: Users,
       image: developmentImage,
       features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning']
     },
     {
       title: 'Project Management',
       description: 'We support education and workforce initiatives from planning through implementation. Our work brings structure and clarity to complex projects that involve multiple partners and moving parts.',
-      icon: BookOpen,
+      icon: Workflow,
       image: curriculumImage,
       features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication', 'Conducting literature reviews, landscape scans, and needs assessments', 'Managing timelines, deliverables, and reporting for grant-funded projects']
     },
@@ -32,7 +32,7 @@ const Services = () => {
     {
       title: 'Curriculum Development',
       description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations.',
-      icon: Brain,
+      icon: Lightbulb,
       image: aiImage,
       features: ['Designing curriculum aligned with workforce and digital skills goals', 'Integrating online learning and blended instruction', 'Supporting digitized intake, onboarding, and learner data systems', 'Developing adaptable materials that connect learning to employment pathways']
     }
@@ -46,10 +46,10 @@ const Services = () => {
             Our Services
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Professional Development</span> Services
+            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional development that builds your team's capacity and improves outcomes for students.
+            Professional development and project management that builds your team's capacity and improves outcomes for students.
           </p>
         </div>
 
