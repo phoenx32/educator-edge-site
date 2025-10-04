@@ -1,10 +1,10 @@
 import { Brain, BookOpen, Zap, Users, Presentation } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import aiImage from '@/assets/services-digital-learning.jpg';
+import aiImage from '@/assets/services-curriculum-dev.png';
 import curriculumImage from '@/assets/services-curriculum-dev.jpg';
-import developmentImage from '@/assets/services-collaboration.jpg';
-import keynoteImage from '@/assets/services-keynote.jpg';
+import developmentImage from '@/assets/services-professional-dev.png';
+import keynoteImage from '@/assets/services-keynote-presentation.jpg';
 
 const Services = () => {
   const services = [
