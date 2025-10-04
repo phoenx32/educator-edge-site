@@ -17,7 +17,32 @@ const Footer = () => {
             <p className="text-white/70 text-sm mb-4">
               🌎 Remote & On-site Services Available Nationwide
             </p>
-            <div className="flex gap-4 mb-4">
+            <div className="text-white/60 text-sm">
+              © {currentYear} Community Learning Partners. All rights reserved.
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-white/80">
+              <li><a href="#services" className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Project Management</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-semibold mb-4">Get Started</h4>
+            <ul className="space-y-2 text-white/80">
+              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
+              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule Consultation</a></li>
+            </ul>
+            <div className="flex gap-4 mt-6">
               <a 
                 href="https://www.linkedin.com/company/community-learning-partners" 
                 target="_blank" 
@@ -51,34 +76,24 @@ const Footer = () => {
                 className="text-white/70 hover:text-white transition-colors"
                 aria-label="Substack Newsletter"
               >
+                <svg 
+                  viewBox="0 0 24 24" 
+                  width="20" 
+                  height="20" 
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                </svg>
+              </a>
+              <a 
+                href="mailto:hello@communitylearningpartners.com"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="Email"
+              >
                 <Mail size={20} />
               </a>
             </div>
-            <div className="text-white/60 text-sm">
-              © {currentYear} Community Learning Partners. All rights reserved.
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-white/80">
-              <li><a href="#services" className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Project Management</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold mb-4">Get Started</h4>
-            <ul className="space-y-2 text-white/80">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-              <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
-              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule Consultation</a></li>
-            </ul>
           </div>
         </div>
 
