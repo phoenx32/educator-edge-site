@@ -7,9 +7,19 @@ import otanLogo from '@/assets/logos/otan-logo.png';
 import tcallLogo from '@/assets/logos/tcall-logo.png';
 import tcsgLogo from '@/assets/logos/tcsg-logo.jpg';
 import kyaeLogo from '@/assets/logos/kyae-logo.png';
+import btcLogo from '@/assets/logos/btc-logo.jpg';
+import iaceaLogo from '@/assets/logos/iacea-logo.jpg';
+import annLogo from '@/assets/logos/ann-logo.png';
+import arizonaLogo from '@/assets/logos/arizona-logo.png';
+import atlasLogo from '@/assets/logos/atlas-logo.png';
+import bluegrassLogo from '@/assets/logos/bluegrass-logo.png';
+import mississippiLogo from '@/assets/logos/mississippi-logo.png';
+import portlandLogo from '@/assets/logos/portland-logo.png';
+import delgadoLogo from '@/assets/logos/delgado-logo.webp';
+import moreheadLogo from '@/assets/logos/morehead-logo.webp';
 
 const Clients = () => {
-  const clients = [
+  const clientsRow1 = [
     { name: 'COABE', alt: 'Coalition on Adult Basic Education', logo: coabeLogo },
     { name: 'ISTE', alt: 'International Society for Technology in Education', logo: isteLogo },
     { name: 'Google for Education', alt: 'Google for Education', logo: googleEducationLogo },
@@ -18,17 +28,19 @@ const Clients = () => {
     { name: 'TCALL', alt: 'Texas Center for the Advancement of Literacy and Learning', logo: tcallLogo },
     { name: 'Technical College System of Georgia', alt: 'Technical College System of Georgia', logo: tcsgLogo },
     { name: 'KYAE', alt: 'Kentucky Adult Education', logo: kyaeLogo },
-    { name: 'NOLA Public Schools', alt: 'New Orleans Public Schools', logo: null },
-    { name: 'Delgado Community College', alt: 'Delgado Community College', logo: null },
-    { name: 'Bluegrass Community & Technical College', alt: 'Bluegrass Community and Technical College', logo: null },
-    { name: 'Adult Numeracy Network', alt: 'Adult Numeracy Network', logo: null },
-    { name: 'ICCB', alt: 'Illinois Community College Board', logo: null },
-    { name: 'Providence Public Library', alt: 'Providence Public Library', logo: null },
-    { name: 'Arizona Department of Education', alt: 'Arizona Department of Education', logo: null },
-    { name: 'Atlas/Hamline', alt: 'Atlas/Hamline University', logo: null },
-    { name: 'Morehead State University', alt: 'Morehead State University', logo: null },
-    { name: 'Portland Adult Education', alt: 'Portland Adult Education', logo: null },
-    { name: 'Rhode Island Department of Education', alt: 'Rhode Island Department of Education', logo: null }
+  ];
+
+  const clientsRow2 = [
+    { name: 'BTC', alt: 'BTC', logo: btcLogo },
+    { name: 'IACEA', alt: 'Illinois Adult and Continuing Educators Association', logo: iaceaLogo },
+    { name: 'Adult Numeracy Network', alt: 'Adult Numeracy Network', logo: annLogo },
+    { name: 'Arizona Department of Education', alt: 'Arizona Department of Education', logo: arizonaLogo },
+    { name: 'Atlas/Hamline', alt: 'Atlas/Hamline University', logo: atlasLogo },
+    { name: 'Bluegrass Community & Technical College', alt: 'Bluegrass Community and Technical College', logo: bluegrassLogo },
+    { name: 'Mississippi Community College Board', alt: 'Mississippi Community College Board', logo: mississippiLogo },
+    { name: 'Portland Adult Education', alt: 'Portland Adult Education', logo: portlandLogo },
+    { name: 'Delgado Community College', alt: 'Delgado Community College', logo: delgadoLogo },
+    { name: 'Morehead State University', alt: 'Morehead State University', logo: moreheadLogo },
   ];
 
   return (
@@ -47,39 +59,53 @@ const Clients = () => {
           </p>
         </div>
         
-        {/* Horizontal scrolling logos */}
-        <div className="relative overflow-hidden">
+        {/* First row - Horizontal scrolling logos */}
+        <div className="relative overflow-hidden mb-8">
           <div className="flex animate-scroll space-x-12 whitespace-nowrap">
             {/* First set of logos */}
-            {clients.map((client, index) => (
+            {clientsRow1.map((client, index) => (
               <div key={index} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                {client.logo ? (
-                  <img 
-                    src={client.logo} 
-                    alt={client.alt}
-                    className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
-                ) : (
-                  <div className="text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 font-medium text-sm text-center px-2">
-                    {client.name}
-                  </div>
-                )}
+                <img 
+                  src={client.logo} 
+                  alt={client.alt}
+                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
             ))}
             {/* Duplicate for seamless scrolling */}
-            {clients.map((client, index) => (
+            {clientsRow1.map((client, index) => (
               <div key={`duplicate-${index}`} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                {client.logo ? (
-                  <img 
-                    src={client.logo} 
-                    alt={client.alt}
-                    className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  />
-                ) : (
-                  <div className="text-muted-foreground/60 hover:text-muted-foreground transition-colors duration-300 font-medium text-sm text-center px-2">
-                    {client.name}
-                  </div>
-                )}
+                <img 
+                  src={client.logo} 
+                  alt={client.alt}
+                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Second row - Faster scrolling logos */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll-fast space-x-12 whitespace-nowrap">
+            {/* First set of logos */}
+            {clientsRow2.map((client, index) => (
+              <div key={index} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
+                <img 
+                  src={client.logo} 
+                  alt={client.alt}
+                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicate for seamless scrolling */}
+            {clientsRow2.map((client, index) => (
+              <div key={`duplicate-${index}`} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
+                <img 
+                  src={client.logo} 
+                  alt={client.alt}
+                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
             ))}
           </div>
