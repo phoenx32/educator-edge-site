@@ -79,12 +79,12 @@ const About = () => {
         {/* Statistics */}
         <div className="mt-20 p-8 bg-primary/5 border border-primary/10 rounded-2xl">
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Making a Real Impact</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Our Impact</h3>
             <p className="text-muted-foreground text-lg">
-              Our commitment to excellence drives measurable results for educators and learners alike.
+              Working together to support educators and learners across the country.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 text-center">
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2 text-primary">100+</div>
               <div className="text-muted-foreground text-sm">Adult education providers, state agencies, and community organizations</div>
@@ -96,6 +96,10 @@ const About = () => {
             <div>
               <div className="text-3xl md:text-4xl font-bold mb-2 text-accent">20,000+</div>
               <div className="text-muted-foreground text-sm">Adult learners supported through our programs</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold mb-2 text-primary">2+</div>
+              <div className="text-muted-foreground text-sm">Hours saved per week through skills learned in courses</div>
             </div>
             <div>
               <div className="flex items-center justify-center gap-1 mb-2">
