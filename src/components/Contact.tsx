@@ -1,8 +1,44 @@
 import { Mail, Calendar, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('https://joeylehrman.substack.com/api/v1/free', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          first_url: window.location.href
+        })
+      });
+
+      if (response.ok) {
+        setMessage('Thanks for subscribing! Check your email to confirm.');
+        setEmail('');
+      } else {
+        setMessage('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -70,17 +106,47 @@ const Contact = () => {
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, and professional development.
             </p>
-            <div className="flex justify-center w-full">
-              <iframe 
-                src="https://joeylehrman.substack.com/embed" 
-                width="100%" 
-                height="320" 
-                style={{ border: '1px solid hsl(var(--border))', background: 'transparent', maxWidth: '480px' }}
-                frameBorder="0" 
-                scrolling="no"
-                title="Newsletter Signup"
-              />
-            </div>
+            
+            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex-1 relative">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={isSubmitting}
+                    className="h-12 pr-12"
+                  />
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                    </svg>
+                  </div>
+                </div>
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="h-12 px-8"
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                </Button>
+              </div>
+              
+              {message && (
+                <p className={`text-sm ${message.includes('Thanks') ? 'text-green-600' : 'text-red-600'}`}>
+                  {message}
+                </p>
+              )}
+              
+              <p className="text-xs text-muted-foreground">
+                Powered by Substack. By subscribing you agree to their{' '}
+                <a href="https://substack.com/tos" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
+                  Terms of Use
+                </a>
+              </p>
+            </form>
           </div>
         </div>
       </div>
