@@ -1,43 +1,7 @@
 import { Mail, Calendar, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { useState } from 'react';
 
 const Contact = () => {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState('');
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setMessage('');
-
-    try {
-      const response = await fetch('https://joeylehrman.substack.com/api/v1/free', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email,
-          first_url: window.location.href
-        })
-      });
-
-      if (response.ok) {
-        setMessage('Thanks for subscribing! Check your email to confirm.');
-        setEmail('');
-      } else {
-        setMessage('Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const contactInfo = [
     {
@@ -120,39 +84,17 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Input
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  disabled={isSubmitting}
-                  className="h-12 flex-1"
-                />
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="h-12 px-8"
-                >
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-                </Button>
-              </div>
-              
-              {message && (
-                <p className={`text-sm ${message.includes('Thanks') ? 'text-green-600' : 'text-red-600'}`}>
-                  {message}
-                </p>
-              )}
-              
-              <p className="text-xs text-muted-foreground">
-                Powered by Substack. By subscribing you agree to their{' '}
-                <a href="https://substack.com/tos" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
-                  Terms of Use
-                </a>
-              </p>
-            </form>
+            <div className="substack-embed-container">
+              <iframe 
+                src="https://joeylehrman.substack.com/embed" 
+                width="100%" 
+                height="150" 
+                style={{ border: 'none', background: 'transparent' }} 
+                frameBorder="0" 
+                scrolling="no"
+                title="Newsletter Signup"
+              />
+            </div>
           </div>
         </div>
       </div>
