@@ -187,4 +187,15 @@ All colors MUST be HSL.
   .content-gap-sm {
     @apply mb-8 md:mb-10;
   }
+
+  /* Substack Embed Styling - Flat integration with page */
+  .substack-embed-container {
+    @apply relative overflow-hidden;
+    background: transparent;
+  }
+
+  .substack-embed-container iframe {
+    @apply w-full border-0 rounded-lg;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
 }
