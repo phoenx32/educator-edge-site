@@ -59,56 +59,30 @@ const Clients = () => {
           </p>
         </div>
         
-        {/* First row - Horizontal scrolling logos */}
-        <div className="relative overflow-hidden mb-8">
-          <div className="flex animate-scroll space-x-12 whitespace-nowrap">
-            {/* First set of logos */}
-            {clientsRow1.map((client, index) => (
-              <div key={index} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-            {/* Duplicate for seamless scrolling */}
-            {clientsRow1.map((client, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
+        {/* First row - Featured partners (larger, emphasized) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+          {clientsRow1.map((client, index) => (
+            <div key={index} className="flex items-center justify-center h-24 md:h-28 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300">
+              <img 
+                src={client.logo} 
+                alt={client.alt}
+                className="max-h-full max-w-full w-auto h-auto object-contain"
+              />
+            </div>
+          ))}
         </div>
 
-        {/* Second row - Faster scrolling logos */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-fast space-x-12 whitespace-nowrap">
-            {/* First set of logos */}
-            {clientsRow2.map((client, index) => (
-              <div key={index} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-            {/* Duplicate for seamless scrolling */}
-            {clientsRow2.map((client, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 h-20 w-40 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-16 max-w-32 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
+        {/* Second row - Additional partners (slightly smaller) */}
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-10">
+          {clientsRow2.map((client, index) => (
+            <div key={index} className="flex items-center justify-center h-16 md:h-20 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+              <img 
+                src={client.logo} 
+                alt={client.alt}
+                className="max-h-full max-w-full w-auto h-auto object-contain"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
