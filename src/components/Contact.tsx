@@ -101,30 +101,36 @@ const Contact = () => {
           </div>
 
           {/* Newsletter Signup */}
-          <div id="newsletter">
-            <h3 className="mb-4">Stay Connected</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, and professional development.
-            </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 relative">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    disabled={isSubmitting}
-                    className="h-12 pr-12"
-                  />
-                  <div className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <div id="newsletter" className="space-y-6">
+            <Card className="border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-gradient-primary rounded-lg text-white">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
                       <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
                     </svg>
                   </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold mb-1">Join Our Newsletter</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Get expert insights on digital learning and professional development
+                    </p>
+                  </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={isSubmitting}
+                  className="h-12 flex-1"
+                />
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
