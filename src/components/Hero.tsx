@@ -4,33 +4,33 @@ import heroImage from '@/assets/hero-adult-learning.jpg';
 
 const Hero = () => {
   return (
-    <section className="bg-background pt-24 pb-12 md:pt-28 md:pb-20 lg:pt-32 lg:pb-32">
+    <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Content */}
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+            <div className="section-badge-primary">
               <GraduationCap size={16} />
               <span>Adult Education & Workforce Development</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="mb-6 leading-tight">
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground content-gap-sm leading-relaxed">
               We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more effective and inclusive.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12">
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border w-full sm:w-auto" asChild>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 content-gap">
+              <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href="#services">
                   Explore Our Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button size="lg" className="bg-background text-foreground hover:bg-background/90 shadow-elegant border border-border w-full sm:w-auto" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
                 <a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer">
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />

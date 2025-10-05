@@ -55,14 +55,14 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-20 bg-gradient-subtle">
+    <section id="contact" className="section-spacing bg-gradient-subtle">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
+        <div className="text-center content-gap">
+          <div className="section-badge-accent">
             <MessageCircle size={16} />
             Get in Touch
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="mb-6">
             Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect & Collaborate</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -73,7 +73,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold mb-8">Connect With Our Team</h3>
+            <h3 className="mb-6 md:mb-8">Connect With Our Team</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300">
@@ -102,7 +102,7 @@ const Contact = () => {
 
           {/* Newsletter Signup */}
           <div id="newsletter">
-            <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
+            <h3 className="mb-4">Stay Connected</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Join our community of educators and professionals. Get the latest insights on digital learning strategies, curriculum innovation, and professional development.
             </p>

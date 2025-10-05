@@ -32,14 +32,14 @@ const Clients = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-muted/10">
+    <section className="section-spacing-sm bg-muted/10">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 border border-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+        <div className="text-center content-gap-sm">
+          <div className="section-badge-primary">
             <Handshake size={16} />
             Trusted Partners
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="mb-4">
             Trusted by Leading <span className="bg-gradient-primary bg-clip-text text-transparent">Educational Organizations</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">

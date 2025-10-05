@@ -133,4 +133,58 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Typography Scale - Consistent heading hierarchy */
+  h1 {
+    @apply scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Section Badge - Consistent styling for all section badges */
+  .section-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6;
+  }
+
+  .section-badge-primary {
+    @apply section-badge bg-primary/5 border border-primary/10 text-primary;
+  }
+
+  .section-badge-secondary {
+    @apply section-badge bg-secondary/5 border border-secondary/10 text-secondary;
+  }
+
+  .section-badge-accent {
+    @apply section-badge bg-accent/5 border border-accent/10 text-accent;
+  }
+
+  /* Section spacing - Consistent vertical rhythm */
+  .section-spacing {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+
+  .section-spacing-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Content spacing - Consistent gaps between elements */
+  .content-gap {
+    @apply mb-12 md:mb-16;
+  }
+
+  .content-gap-sm {
+    @apply mb-8 md:mb-10;
+  }
 }
