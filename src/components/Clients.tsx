@@ -59,27 +59,15 @@ const Clients = () => {
           </p>
         </div>
         
-        {/* First row - Featured partners (larger, emphasized) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
-          {clientsRow1.map((client, index) => (
-            <div key={index} className="flex items-center justify-center h-24 md:h-28 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300">
+        
+        {/* Compact unified grid - All partners */}
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {[...clientsRow1, ...clientsRow2].map((client, index) => (
+            <div key={index} className="flex items-center justify-center h-16 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
               <img 
                 src={client.logo} 
                 alt={client.alt}
-                className="max-h-full max-w-full w-auto h-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Second row - Additional partners (slightly smaller) */}
-        <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-10">
-          {clientsRow2.map((client, index) => (
-            <div key={index} className="flex items-center justify-center h-16 md:h-20 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
-              <img 
-                src={client.logo} 
-                alt={client.alt}
-                className="max-h-full max-w-full w-auto h-auto object-contain"
+                className="max-h-12 max-w-full w-auto h-auto object-contain px-2"
               />
             </div>
           ))}
