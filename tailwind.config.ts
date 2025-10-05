@@ -106,12 +106,20 @@ export default {
             transform: "translateX(-50%)",
           },
         },
+        "scroll-reverse": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll": "scroll 20s linear infinite",
-        "scroll-fast": "scroll 15s linear infinite",
+        "scroll-fast": "scroll-reverse 15s linear infinite",
       },
     },
   },
