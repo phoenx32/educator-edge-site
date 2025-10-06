@@ -23,7 +23,7 @@ const Hero = () => {
               We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more effective and inclusive.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 content-gap">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href="#services">
                   Explore Our Services
@@ -36,21 +36,6 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
-              <div>
-                <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">100+</div>
-                <div className="text-muted-foreground text-sm">Adult Education Providers</div>
-              </div>
-              <div>
-                <div className="text-2xl lg:text-3xl font-bold text-secondary mb-1">3,000+</div>
-                <div className="text-muted-foreground text-sm">Educators Supported</div>
-              </div>
-              <div>
-                <div className="text-2xl lg:text-3xl font-bold text-accent mb-1">20,000+</div>
-                <div className="text-muted-foreground text-sm">Adult Learners Impacted</div>
-              </div>
             </div>
           </div>
 
