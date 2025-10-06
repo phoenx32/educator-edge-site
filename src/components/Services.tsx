@@ -5,6 +5,7 @@ import aiImage from '@/assets/services-curriculum-dev-new.png';
 import curriculumImage from '@/assets/services-curriculum-dev.jpg';
 import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
+import projectManagementImage from '@/assets/services-project-management.jpg';
 
 const Services = () => {
   const services = [
@@ -19,7 +20,7 @@ const Services = () => {
       title: 'Project Management',
       description: 'We support education and workforce initiatives from planning through implementation. Our work brings structure and clarity to complex projects that involve multiple partners and moving parts.',
       icon: Workflow,
-      image: curriculumImage,
+      image: projectManagementImage,
       features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication', 'Conducting literature reviews, landscape scans, and needs assessments', 'Managing timelines, deliverables, and reporting for grant-funded projects']
     },
     {
