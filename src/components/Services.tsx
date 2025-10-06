@@ -11,31 +11,31 @@ const Services = () => {
   const services = [
     {
       title: 'Professional Development Cohorts',
-      description: 'Our professional development cohorts help instructors build confidence and apply new tools and strategies that strengthen online and blended instruction. These multi-week experiences allow educators to learn collaboratively, test new approaches in their classrooms, and improve over time.',
+      description: 'Our professional development cohorts help instructors build confidence and apply new tools and strategies that strengthen online and blended instruction. These multi-week experiences allow educators to learn collaboratively, test new approaches in their classrooms, and improve over time. We offer both established and customizable options based on local goals and program needs.',
       icon: Users,
       image: developmentImage,
-      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning']
+      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning', 'Custom Course Development: We also create customized professional development options based on local goals, staff needs, and program priorities']
     },
     {
       title: 'Project Management',
-      description: 'We support education and workforce initiatives from planning through implementation. Our work brings structure and clarity to complex projects that involve multiple partners and moving parts.',
+      description: 'We support education and workforce initiatives from planning through implementation. Our approach combines structured project management practices with a deep understanding of adult learning. We recognize that effective collaboration, reflection, and application are central to how adults learn—and we apply these same principles to how projects are managed.',
       icon: Workflow,
       image: projectManagementImage,
-      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication', 'Conducting literature reviews, landscape scans, and needs assessments', 'Managing timelines, deliverables, and reporting for grant-funded projects']
+      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication in ways that foster shared understanding and professional growth', 'Conducting literature reviews, landscape scans, and needs assessments that inform ongoing learning across teams', 'Managing timelines, deliverables, and reporting for grant-funded projects while building partner capacity for sustained success']
     },
     {
       title: 'Keynote Sessions and Conference Workshops',
-      description: 'We bring real-world perspectives from adult education, workforce development, and digital learning to state and national events. Our sessions connect current research with classroom and program practice, helping educators and leaders reflect, share, and plan for improvement.',
+      description: 'We bring practical perspectives from adult education, workforce development, and digital learning to state and national events. Our sessions connect current research with classroom and program practice, helping educators and leaders reflect, share, and plan for improvement.',
       icon: Presentation,
       image: keynoteImage,
       features: ['Keynotes and panels on digital learning, AI, and workforce readiness', 'Interactive workshops that encourage dialogue across roles and regions', 'Case studies from statewide and community-based initiatives', 'Practical examples that support professional learning and system improvement']
     },
     {
       title: 'Curriculum Development and Instructional Design',
-      description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations.',
+      description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations. This includes hands-on instructional design using tools such as Articulate Rise, as well as graphic design, video editing, and the use of AI-generated media for learning.',
       icon: Lightbulb,
       image: aiImage,
-      features: ['Designing curriculum aligned with workforce and digital skills goals', 'Integrating online learning and blended instruction', 'Supporting digitized intake, onboarding, and learner data systems', 'Developing adaptable materials that connect learning to employment pathways']
+      features: ['Designing curriculum aligned with workforce and digital skills goals', 'Developing courses and learning modules in Articulate Rise and similar platforms', 'Creating visuals, layouts, and media through graphic design and AI-based video and image generation', 'Integrating online learning and blended instruction', 'Supporting digitized intake, onboarding, and learner data systems', 'Developing adaptable materials that connect learning to employment pathways']
     }
   ];
 
@@ -51,7 +51,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional development and project management that build your team's capacity and improve outcomes for students. We believe meaningful change comes from collaboration and thoughtful design. Our work blends research, technology, and practitioner insight to create solutions that are adaptable, inclusive, and built to sustain improvement over time.
+            Professional development and project management that build your team's capacity and improve learning experiences for students. We believe meaningful change comes from collaboration and thoughtful design. Our work blends research, technology, and practitioner insight to create solutions that are adaptable, meaningful, and built to sustain over time.
           </p>
         </div>
 

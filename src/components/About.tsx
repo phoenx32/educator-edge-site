@@ -5,17 +5,17 @@ const About = () => {
     {
       icon: ArrowLeftRight,
       title: 'Shared Learning',
-      description: 'We are all teachers, and we are all students. Everyone brings experience and insight that strengthens the collective learning process.'
+      description: 'We are all teachers, and we are all students. We learn alongside one another through practice, reflection, and collaboration, creating shared understanding and continuous improvement in our work.'
     },
     {
       icon: Users,
-      title: 'Inclusive Growth',
-      description: 'Varied skill levels and backgrounds are an asset. We build learning environments that value every participant\'s perspective and create space for mutual growth.'
+      title: 'Collaborative Growth',
+      description: 'Varied skill levels and backgrounds are an asset. We build learning environments that value every participant\'s perspective and create space for shared growth and learning that strengthens both individual and collective capacity.'
     },
     {
       icon: BookOpen,
-      title: 'Lifelong Learning',
-      description: 'We see learning as ongoing work. As new tools and practices emerge, we explore them together, applying what we learn to improve teaching and program design.'
+      title: 'Continuous Improvement',
+      description: 'We see learning as ongoing, human-centered work. Our approach reflects an ongoing design cycle—trying new ideas, implementing them, learning together, making mistakes, and reflecting on the experience. We use what we learn from this process to continually improve teaching, program design, and long-term impact.'
     }
   ];
 
@@ -41,7 +41,7 @@ const About = () => {
               Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
             </h2>
             <p className="text-lg text-muted-foreground content-gap-sm leading-relaxed">
-              We design professional development aligned with how adults learn. Our work is grounded in research showing that lasting improvement happens when educators have time to try new strategies, learn through peer dialogue, and reflect on their practice. We create sustained learning experiences that allow for experimentation, collaboration, and continuous growth.
+              Our professional development is built on proven principles of adult learning, combining research, collaboration, and reflection to drive meaningful growth. We design learning experiences that give educators time and structure to experiment with new strategies, learn through peer dialogue, and reflect on their practice. We create sustained learning experiences that allow for experimentation, collaboration, and continuous growth.
             </p>
 
             <div className="space-y-3 content-gap-sm">

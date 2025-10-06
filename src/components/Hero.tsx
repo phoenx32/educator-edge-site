@@ -20,7 +20,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground content-gap-sm leading-relaxed">
-              We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more effective and inclusive.
+              We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
