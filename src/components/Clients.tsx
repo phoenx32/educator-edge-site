@@ -61,53 +61,57 @@ const Clients = () => {
         
         {/* First row - Horizontal scrolling logos */}
         <div className="relative overflow-hidden mb-4">
-          <div className="flex animate-scroll space-x-6 whitespace-nowrap">
-            {/* First set of logos */}
-            {clientsRow1.map((client, index) => (
-              <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-            {/* Duplicate for seamless scrolling */}
-            {clientsRow1.map((client, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
+          <div className="flex animate-scroll">
+            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around">
+              {clientsRow1.map((client, index) => (
+                <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around" aria-hidden="true">
+              {clientsRow1.map((client, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Second row - Faster scrolling logos */}
+        {/* Second row - Reverse direction scrolling logos */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-fast space-x-6 whitespace-nowrap">
-            {/* First set of logos */}
-            {clientsRow2.map((client, index) => (
-              <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-            {/* Duplicate for seamless scrolling */}
-            {clientsRow2.map((client, index) => (
-              <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
-                <img 
-                  src={client.logo} 
-                  alt={client.alt}
-                  className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
+          <div className="flex animate-scroll-fast">
+            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around">
+              {clientsRow2.map((client, index) => (
+                <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around" aria-hidden="true">
+              {clientsRow2.map((client, index) => (
+                <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={client.alt}
+                    className="max-h-12 max-w-28 w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
