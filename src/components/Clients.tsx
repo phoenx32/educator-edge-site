@@ -49,7 +49,7 @@ const Clients = () => {
         <div className="text-center content-gap-sm">
           <div className="section-badge-primary">
             <Handshake size={16} />
-            Trusted Partners
+            Our Partners
           </div>
           <h2 className="mb-4">
             Trusted by Leading <span className="bg-gradient-primary bg-clip-text text-transparent">Educational Organizations</span>
