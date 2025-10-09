@@ -96,10 +96,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-          <p>Built with passion for transforming adult education through digital innovation.</p>
-        </div>
       </div>
     </footer>
   );
