@@ -11,8 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Community Learning Partners</h3>
             <p className="text-white/80 mb-4 leading-relaxed">
-              Providing educators with digital tools and professional development 
-              to create more accessible, connected, and meaningful adult education.
+              Working and learning together to make digital learning more accessible and effective.
             </p>
             <p className="text-white/70 text-sm mb-4">
               🌎 Remote & On-site Services Available Nationwide
