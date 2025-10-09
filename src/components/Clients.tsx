@@ -61,8 +61,8 @@ const Clients = () => {
         
         {/* First row - Horizontal scrolling logos */}
         <div className="relative overflow-hidden mb-4">
-          <div className="flex animate-scroll">
-            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around">
+          <div className="flex w-max animate-scroll will-change-transform">
+            <div className="flex items-center gap-8 flex-none">
               {clientsRow1.map((client, index) => (
                 <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
                   <img
@@ -73,7 +73,7 @@ const Clients = () => {
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around" aria-hidden="true">
+            <div className="flex items-center gap-8 flex-none" aria-hidden="true">
               {clientsRow1.map((client, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
                   <img
@@ -89,8 +89,8 @@ const Clients = () => {
 
         {/* Second row - Reverse direction scrolling logos */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-fast">
-            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around">
+          <div className="flex w-max animate-scroll-fast will-change-transform">
+            <div className="flex items-center gap-8 flex-none">
               {clientsRow2.map((client, index) => (
                 <div key={index} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
                   <img
@@ -101,7 +101,7 @@ const Clients = () => {
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-6 shrink-0 min-w-full justify-around" aria-hidden="true">
+            <div className="flex items-center gap-8 flex-none" aria-hidden="true">
               {clientsRow2.map((client, index) => (
                 <div key={`duplicate-${index}`} className="flex-shrink-0 h-16 w-32 flex items-center justify-center">
                   <img
