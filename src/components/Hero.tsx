@@ -7,13 +7,22 @@ const Hero = () => {
   return (
     <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:gap-16 lg:items-center">
           
-          {/* Left Content */}
+          {/* Left Content - Mobile with floating badge */}
           <div className="max-w-2xl">
             <div className="section-badge-primary">
               <GraduationCap size={16} />
               <span>Adult Education & Workforce Development</span>
+            </div>
+            
+            {/* Floating badge for mobile */}
+            <div className="float-right ml-4 mb-4 mt-2 lg:hidden w-[180px] sm:w-[220px]">
+              <img
+                src={badgeImage}
+                alt="Adult Education Professional Development"
+                className="w-full h-auto object-contain drop-shadow-lg"
+              />
             </div>
             
             <h1 className="mb-6 leading-tight">
@@ -24,7 +33,7 @@ const Hero = () => {
               We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 clear-both">
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href="#services">
                   Explore Our Services
@@ -40,8 +49,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Image/Card */}
-          <div className="relative mt-8 lg:mt-0">
+          {/* Right Image/Card - Desktop only */}
+          <div className="relative mt-8 lg:mt-0 hidden lg:block">
             <div className="relative bg-gradient-subtle rounded-2xl p-4 md:p-8 shadow-card">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-8 translate-x-8"></div>
               <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-4 -translate-x-4"></div>
@@ -49,7 +58,7 @@ const Hero = () => {
               <img
                 src={badgeImage}
                 alt="Adult Education Professional Development"
-                className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-contain rounded-xl"
+                className="w-full h-[400px] object-contain rounded-xl"
               />
             </div>
           </div>
