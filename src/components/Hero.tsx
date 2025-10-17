@@ -1,6 +1,7 @@
 import { ArrowRight, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-adult-learning.jpg';
+import badgeImage from '@/assets/badge-professional-development.png';
 
 const Hero = () => {
   return (
@@ -51,15 +52,12 @@ const Hero = () => {
                 className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-xl shadow-card"
               />
               
-              <div className="absolute -bottom-4 -right-4 bg-background border border-border rounded-lg p-4 shadow-elegant">
-                <div className="text-sm text-muted-foreground mb-1">Course Rating</div>
-                <div className="flex items-center gap-2">
-                  <div className="flex text-yellow-500">
-                    {"★".repeat(5)}
-                  </div>
-                  <span className="text-sm font-medium">4.9/5</span>
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">Based on educator feedback</div>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 hidden sm:block">
+                <img
+                  src={badgeImage}
+                  alt="Adult Education Professional Development"
+                  className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
           </div>
