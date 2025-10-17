@@ -47,18 +47,10 @@ const Hero = () => {
               <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-4 -translate-x-4"></div>
               
               <img
-                src={heroImage}
-                alt="Adult educators in professional development session"
-                className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-xl shadow-card"
+                src={badgeImage}
+                alt="Adult Education Professional Development"
+                className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-contain rounded-xl"
               />
-              
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 hidden sm:block">
-                <img
-                  src={badgeImage}
-                  alt="Adult Education Professional Development"
-                  className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain drop-shadow-2xl"
-                />
-              </div>
             </div>
           </div>
         </div>
