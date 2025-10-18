@@ -7,10 +7,19 @@ const Hero = () => {
   return (
     <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:gap-16 lg:items-center">
+        <div className="relative max-w-5xl mx-auto">
           
-          {/* Left Content - Mobile with floating badge */}
-          <div className="max-w-2xl">
+          {/* Desktop badge - floating accent */}
+          <div className="hidden lg:block absolute right-0 top-0 w-48 xl:w-56 opacity-90">
+            <img
+              src={badgeImage}
+              alt="Adult Education Professional Development"
+              className="w-full h-auto object-contain drop-shadow-lg"
+            />
+          </div>
+
+          {/* Main Content */}
+          <div className="lg:pr-56 xl:pr-64">
             <div className="section-badge-primary">
               <GraduationCap size={16} />
               <span>Adult Education & Workforce Development</span>
@@ -46,20 +55,6 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-            </div>
-          </div>
-
-          {/* Right Image/Card - Desktop only */}
-          <div className="relative mt-8 lg:mt-0 hidden lg:block">
-            <div className="relative bg-gradient-subtle rounded-2xl p-4 md:p-8 shadow-card">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-8 translate-x-8"></div>
-              <div className="absolute bottom-0 left-0 w-20 h-20 bg-secondary/10 rounded-full translate-y-4 -translate-x-4"></div>
-              
-              <img
-                src={badgeImage}
-                alt="Adult Education Professional Development"
-                className="w-full h-[400px] object-contain rounded-xl"
-              />
             </div>
           </div>
         </div>
