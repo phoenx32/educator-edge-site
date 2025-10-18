@@ -63,17 +63,25 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Text and badge side by side on mobile - text left, badge right */}
-            <div className="flex gap-3 items-center mb-6">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed flex-[0_0_65%]">
-                We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
-              </p>
-
-              <div className="flex-1 flex items-center justify-center">
+            {/* Badge centered on mobile, side-by-side on tablet+ */}
+            <div className="flex flex-col sm:flex-row sm:gap-4 sm:items-center mb-6">
+              <div className="w-[200px] mx-auto mb-4 sm:hidden">
                 <img
                   src={badgeImage}
                   alt="Adult Education Professional Development"
-                  className="w-full h-auto object-contain max-w-[160px] sm:max-w-[200px]"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed sm:flex-[0_0_65%]">
+                We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+              </p>
+
+              <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center">
+                <img
+                  src={badgeImage}
+                  alt="Adult Education Professional Development"
+                  className="w-full h-auto object-contain max-w-[200px]"
                 />
               </div>
             </div>
