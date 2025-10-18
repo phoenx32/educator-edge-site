@@ -63,18 +63,20 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Badge - centered on mobile */}
-            <div className="w-[220px] mx-auto mb-6">
-              <img
-                src={badgeImage}
-                alt="Adult Education Professional Development"
-                className="w-full h-auto object-contain"
-              />
-            </div>
+            {/* Badge and text side by side on mobile */}
+            <div className="flex gap-4 items-start mb-6">
+              <div className="flex-shrink-0 w-[140px] sm:w-[180px]">
+                <img
+                  src={badgeImage}
+                  alt="Adult Education Professional Development"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground content-gap-sm leading-relaxed">
-              We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
-            </p>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="w-full sm:w-auto" asChild>
