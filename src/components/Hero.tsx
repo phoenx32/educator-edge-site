@@ -63,8 +63,8 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Badge - flat on mobile, positioned after heading */}
-            <div className="w-[200px] sm:w-[240px] mx-auto mb-6">
+            {/* Badge - floated right with text wrapping */}
+            <div className="float-right ml-4 mb-4 w-[180px] sm:w-[220px]">
               <img
                 src={badgeImage}
                 alt="Adult Education Professional Development"
@@ -76,7 +76,7 @@ const Hero = () => {
               We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 clear-both">
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href="#services">
                   Explore Our Services
