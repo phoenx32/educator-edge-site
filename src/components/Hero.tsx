@@ -7,19 +7,19 @@ const Hero = () => {
   return (
     <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           
-          {/* Desktop badge - floating accent */}
-          <div className="hidden lg:block absolute right-0 top-0 w-48 xl:w-56 opacity-90">
+          {/* Desktop badge - positioned to align with middle/bottom of content */}
+          <div className="hidden lg:block absolute right-0 bottom-0 w-72 xl:w-80 opacity-95 translate-y-8">
             <img
               src={badgeImage}
               alt="Adult Education Professional Development"
-              className="w-full h-auto object-contain drop-shadow-lg"
+              className="w-full h-auto object-contain drop-shadow-xl"
             />
           </div>
 
           {/* Main Content */}
-          <div className="lg:pr-56 xl:pr-64">
+          <div className="lg:max-w-3xl">
             <div className="section-badge-primary">
               <GraduationCap size={16} />
               <span>Adult Education & Workforce Development</span>
