@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="relative max-w-6xl mx-auto">
           
           {/* Desktop badge - positioned to align with middle/bottom of content */}
-          <div className="hidden lg:block absolute right-0 bottom-0 w-72 xl:w-80 opacity-95 translate-y-8">
+          <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-72 xl:w-80 opacity-95">
             <img
               src={badgeImage}
               alt="Adult Education Professional Development"
