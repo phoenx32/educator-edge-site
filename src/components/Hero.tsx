@@ -63,22 +63,24 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Mobile: thoughtful background watermark on small screens; side-by-side on tablet */}
+            {/* Mobile: clean, readable side-by-side on small screens; side-by-side on tablet */}
             <div className="mb-6">
-              {/* XS: watermark behind text */}
-              <div className="relative sm:hidden">
-                <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
-                  <img
-                    src={badgeImage}
-                    alt=""
-                    aria-hidden="true"
-                    className="w-[280px] max-w-[60%] h-auto object-contain opacity-45"
-                  />
+              {/* XS: text left ~65%, image right ~35% inside a subtle card to sit flat */}
+              <div className="sm:hidden">
+                <div className="flex items-center gap-3">
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed flex-[0_0_65%]">
+                    We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+                  </p>
+                  <div className="flex-[0_0_35%]">
+                    <div className="rounded-lg border border-border/60 bg-muted/30 p-2 flex items-center justify-center">
+                      <img
+                        src={badgeImage}
+                        alt="Adult Education Professional Development"
+                        className="w-full h-auto object-contain max-w-[120px]"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-background/10 via-background/50 to-background/95" />
-                <p className="relative z-10 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
-                </p>
               </div>
 
               {/* SM+: clean side-by-side, text left (65%), image right; no overlays */}
