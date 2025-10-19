@@ -63,19 +63,22 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Small mobile: badge as subtle background. Tablet: side by side */}
+            {/* Mobile: hero image peeking from the right with a gradient fade behind text. Tablet+: side by side */}
             <div className="relative mb-6">
               {/* Background badge on small mobile only */}
-              <div className="absolute inset-0 flex items-center justify-end sm:hidden pointer-events-none">
+              <div className="absolute inset-0 flex items-center justify-end sm:hidden pointer-events-none z-0">
                 <img
                   src={badgeImage}
                   alt=""
-                  className="w-[180px] h-auto object-contain opacity-15"
+                  className="w-[260px] h-auto object-contain opacity-30"
                 />
               </div>
 
+              {/* Gradient fade to keep text readable while allowing slight spill over the image */}
+              <div className="absolute inset-0 sm:hidden pointer-events-none z-10 bg-gradient-to-l from-background/0 via-background/60 to-background" />
+
               {/* Content wrapper for tablet layout */}
-              <div className="relative sm:flex sm:gap-4 sm:items-center">
+              <div className="relative z-20 sm:flex sm:gap-4 sm:items-center">
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed sm:flex-[0_0_65%]">
                   We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
                 </p>
