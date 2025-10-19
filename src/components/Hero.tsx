@@ -63,21 +63,36 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Mobile: clean side-by-side, text left (65%), image right with subtle divider. No overlays. */}
-            <div className="mb-6 flex items-center gap-3">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed flex-[0_0_65%]">
-                We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
-              </p>
+            {/* Mobile: thoughtful background watermark on small screens; side-by-side on tablet */}
+            <div className="mb-6">
+              {/* XS: watermark behind text */}
+              <div className="relative sm:hidden">
+                <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
+                  <img
+                    src={badgeImage}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-[280px] max-w-[60%] h-auto object-contain opacity-45"
+                  />
+                </div>
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-l from-background/10 via-background/50 to-background/95" />
+                <p className="relative z-10 text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+                </p>
+              </div>
 
-              {/* Subtle vertical separator to delineate text and image */}
-              <div className="h-24 w-px bg-border/70" aria-hidden />
-
-              <div className="flex-1 flex items-center justify-center">
-                <img
-                  src={badgeImage}
-                  alt="Adult Education Professional Development"
-                  className="w-full h-auto object-contain max-w-[140px] sm:max-w-[200px]"
-                />
+              {/* SM+: clean side-by-side, text left (65%), image right; no overlays */}
+              <div className="hidden sm:flex sm:items-center sm:gap-4">
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed sm:flex-[0_0_65%]">
+                  We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+                </p>
+                <div className="sm:flex-1 sm:flex sm:items-center sm:justify-center">
+                  <img
+                    src={badgeImage}
+                    alt="Adult Education Professional Development"
+                    className="w-full h-auto object-contain max-w-[200px]"
+                  />
+                </div>
               </div>
             </div>
 
