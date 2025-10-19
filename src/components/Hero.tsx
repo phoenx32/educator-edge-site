@@ -70,12 +70,12 @@ const Hero = () => {
                 <img
                   src={badgeImage}
                   alt=""
-                  className="w-[260px] h-auto object-contain opacity-30"
+                  className="w-[300px] h-auto object-contain opacity-60"
                 />
               </div>
 
               {/* Gradient fade to keep text readable while allowing slight spill over the image */}
-              <div className="absolute inset-0 sm:hidden pointer-events-none z-10 bg-gradient-to-l from-background/0 via-background/60 to-background" />
+              <div className="absolute inset-0 sm:hidden pointer-events-none z-10 bg-gradient-to-l from-background/10 via-background/40 to-background/90" />
 
               {/* Content wrapper for tablet layout */}
               <div className="relative z-20 sm:flex sm:gap-4 sm:items-center">
