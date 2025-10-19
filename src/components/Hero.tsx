@@ -63,34 +63,21 @@ const Hero = () => {
               <span className="bg-gradient-hero bg-clip-text text-transparent">Professional Development for Adult Educators</span>
             </h1>
 
-            {/* Mobile: hero image peeking from the right with a gradient fade behind text. Tablet+: side by side */}
-            <div className="relative mb-6">
-              {/* Background badge on small mobile only */}
-              <div className="absolute inset-0 flex items-center justify-end sm:hidden pointer-events-none z-0">
+            {/* Mobile: clean side-by-side, text left (65%), image right with subtle divider. No overlays. */}
+            <div className="mb-6 flex items-center gap-3">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed flex-[0_0_65%]">
+                We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
+              </p>
+
+              {/* Subtle vertical separator to delineate text and image */}
+              <div className="h-24 w-px bg-border/70" aria-hidden />
+
+              <div className="flex-1 flex items-center justify-center">
                 <img
                   src={badgeImage}
-                  alt=""
-                  className="w-[300px] h-auto object-contain opacity-60"
+                  alt="Adult Education Professional Development"
+                  className="w-full h-auto object-contain max-w-[140px] sm:max-w-[200px]"
                 />
-              </div>
-
-              {/* Gradient fade to keep text readable while allowing slight spill over the image */}
-              <div className="absolute inset-0 sm:hidden pointer-events-none z-10 bg-gradient-to-l from-background/10 via-background/40 to-background/90" />
-
-              {/* Content wrapper for tablet layout */}
-              <div className="relative z-20 sm:flex sm:gap-4 sm:items-center">
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed sm:flex-[0_0_65%]">
-                  We help educators use technology to expand access and improve learning outcomes. Our work connects research, classroom practice, and digital innovation to create meaningful professional development experiences. By focusing on how adults learn, we support instructors and program leaders in building skills that make online, blended, and technology-supported instruction more accessible and effective.
-                </p>
-
-                {/* Badge visible on tablet+ */}
-                <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center">
-                  <img
-                    src={badgeImage}
-                    alt="Adult Education Professional Development"
-                    className="w-full h-auto object-contain max-w-[200px]"
-                  />
-                </div>
               </div>
             </div>
 
