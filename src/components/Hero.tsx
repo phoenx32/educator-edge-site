@@ -12,7 +12,12 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground mb-10 leading-relaxed max-w-2xl">
-            Come build the <span className="relative inline-block font-semibold">future<span className="absolute bottom-0 left-0 w-full h-[3px] bg-primary"></span></span> of teaching and learning in the <span className="text-primary font-semibold">digital age</span>.
+            Come build the <span className="relative inline-block font-semibold">
+              future
+              <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,4 Q25,1 50,4 T100,4" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+              </svg>
+            </span> of teaching and learning in the <span className="text-primary font-semibold">digital age</span>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
