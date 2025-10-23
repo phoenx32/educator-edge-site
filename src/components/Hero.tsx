@@ -47,7 +47,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="hidden lg:block">
+            <div className="hidden lg:block -ml-8 mt-8">
               <img 
                 src={heroImage} 
                 alt="Digital learning and adult education technology illustration"
@@ -60,7 +60,7 @@ const Hero = () => {
             <img 
               src={heroImage} 
               alt="Digital learning and adult education technology illustration"
-              className="w-full max-w-[200px] mx-auto"
+              className="w-full max-w-sm mx-auto"
             />
           </div>
         </div>
