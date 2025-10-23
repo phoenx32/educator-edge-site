@@ -7,12 +7,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           
-          <h1 className="mb-8 leading-tight text-4xl md:text-5xl lg:text-6xl font-bold">
-            We are <span className="italic">all teachers</span>. We are <span className="italic">all students</span>.
+          <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-normal">
+            We are <span className="italic font-medium">all teachers</span>. We are <span className="italic font-medium">all students</span>.
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-3xl">
-            Come build the future of teaching and learning in the digital age.
+          <p className="text-lg md:text-xl text-foreground mb-10 leading-relaxed max-w-2xl">
+            Come build the <span className="relative inline-block font-semibold">future<span className="absolute bottom-0 left-0 w-full h-[3px] bg-primary"></span></span> of teaching and learning in the <span className="text-primary font-semibold">digital age</span>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
