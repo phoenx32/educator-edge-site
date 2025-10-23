@@ -55,14 +55,6 @@ const Hero = () => {
               />
             </div>
           </div>
-
-          <div className="lg:hidden mt-8">
-            <img 
-              src={heroImage} 
-              alt="Digital learning and adult education technology illustration"
-              className="w-full max-w-sm mx-auto"
-            />
-          </div>
         </div>
       </div>
     </section>
