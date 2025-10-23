@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -6,6 +6,10 @@ const Hero = () => {
     <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
+          <div className="section-badge-primary mb-8">
+            <GraduationCap size={16} />
+            Adult Education and Workforce Development
+          </div>
           
           <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-normal">
             We are <span className="italic font-medium">all teachers</span>. We are <span className="italic font-medium">all students</span>.
