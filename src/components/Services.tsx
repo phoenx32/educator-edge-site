@@ -51,7 +51,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Professional development and project management that build your team's capacity and improve learning experiences for students. We believe meaningful change comes from collaboration and thoughtful design. Our work blends research, technology, and practitioner insight to create solutions that are adaptable, meaningful, and built to sustain over time.
+            We help educators and organizations use technology to expand access and improve learning outcomes through professional development and project management that build capacity and strengthen instruction. Grounded in research, classroom practice, and thoughtful design, our work connects digital innovation with the realities of teaching and learning to create adaptable, sustainable solutions that make online, blended, and technology-supported instruction more effective.
           </p>
         </div>
 
