@@ -24,6 +24,10 @@ const Hero = () => {
             </span> of teaching and learning in the <span className="text-primary font-semibold">digital age</span>.
           </p>
 
+          <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl">
+            We design digital learning solutions that help educators, learners, and communities thrive. Our work bridges technology and teaching to make education more human, connected, and accessible for everyone.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="w-full sm:w-auto" asChild>
               <a href="#services">

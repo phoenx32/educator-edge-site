@@ -51,7 +51,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We help educators and organizations use technology to expand access and improve learning outcomes through professional development and project management that build capacity and strengthen instruction. Grounded in research, classroom practice, and thoughtful design, our work connects digital innovation with the realities of teaching and learning to create adaptable, sustainable solutions that make online, blended, and technology-supported instruction more effective.
+            We collaborate with educators and organizations to build digital skills, strengthen instructional capacity, and improve learning outcomes. Through professional development, research-informed design, and technology integration, we create solutions that align with how adults learn. Our work blends innovation and practice to help programs deliver flexible, sustainable, and learner-centered instruction.
           </p>
         </div>
 
