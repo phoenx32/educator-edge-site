@@ -14,8 +14,8 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-foreground mb-10 leading-relaxed max-w-2xl">
             Come build the <span className="relative inline-block font-semibold">
               future
-              <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,4 Q25,1 50,4 T100,4" stroke="hsl(var(--primary))" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+              <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 120 6" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,2 Q60,5 120,2" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" strokeLinecap="round"/>
               </svg>
             </span> of teaching and learning in the <span className="text-primary font-semibold">digital age</span>.
           </p>
