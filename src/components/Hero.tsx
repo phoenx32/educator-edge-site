@@ -4,7 +4,7 @@ import heroImage from '@/assets/hero-digital-learning.png';
 
 const Hero = () => {
   return (
-    <section className="bg-background pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28">
+    <section className="bg-background pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-28 lg:pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="section-badge-primary mb-8">
@@ -12,7 +12,7 @@ const Hero = () => {
             Adult Education and Workforce Development
           </div>
           
-          <div className="grid lg:grid-cols-[1fr,280px] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1fr,240px] gap-8 items-start">
             <div className="max-w-2xl">
               <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-normal">
                 We are <span className="italic font-medium">all teachers</span>. We are <span className="italic font-medium">all students</span>.
@@ -56,11 +56,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="lg:hidden mt-12">
+          <div className="lg:hidden mt-8">
             <img 
               src={heroImage} 
               alt="Digital learning and adult education technology illustration"
-              className="w-full max-w-sm mx-auto"
+              className="w-full max-w-[200px] mx-auto"
             />
           </div>
         </div>
