@@ -5,26 +5,26 @@ const About = () => {
     {
       icon: ArrowLeftRight,
       title: 'Shared Learning',
-      description: 'We are all teachers, and we are all students. We learn alongside one another through practice, reflection, and collaboration, creating shared understanding and continuous improvement in our work.'
+      description: 'We learn alongside our partners. Practice, reflection, and collaboration create shared understanding and drive ongoing improvement in our work.'
     },
     {
       icon: Users,
       title: 'Collaborative Growth',
-      description: 'Varied skill levels and backgrounds are an asset. We build learning environments that value every participant\'s perspective and create space for shared growth and learning that strengthens both individual and collective capacity.'
+      description: 'We value the diverse experiences of every participant. Our learning environments foster mutual growth, shared insight, and collective capacity-building.'
     },
     {
       icon: BookOpen,
       title: 'Continuous Improvement',
-      description: 'We see learning as ongoing, human-centered work. Our approach reflects an ongoing design cycle—trying new ideas, implementing them, learning together, making mistakes, and reflecting on the experience. We use what we learn from this process to continually improve teaching, program design, and long-term impact.'
+      description: 'Learning is never finished. Our approach is iterative, grounded in trying ideas, testing them in practice, and refining through reflection. We apply these same principles to teaching, program design, and systems change.'
     }
   ];
 
   const achievements = [
     'Multi-week professional development cohorts',
-    'Peer learning through shared inquiry and dialogue',
-    'Edtech coaching to support classroom practice and reflection',
-    'Flexible pathways tailored to educator roles and needs',
-    'Technology integration through practice and reflection'
+    'Peer learning through inquiry and dialogue',
+    'Edtech coaching focused on classroom application',
+    'Flexible pathways aligned to educator roles and needs',
+    'Technology integration through iterative practice'
   ];
 
   return (
@@ -38,10 +38,13 @@ const About = () => {
               Our Approach
             </div>
             <h2 className="mb-6">
-              Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Grounded in How Adults Learn</span>
+              Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Rooted in How Adults Learn</span>
             </h2>
             <p className="text-lg text-muted-foreground content-gap-sm leading-relaxed">
-              Our professional development is built on proven principles of adult learning, combining research, collaboration, and reflection to drive meaningful growth. We design learning experiences that give educators time and structure to experiment with new strategies, learn through peer dialogue, and reflect on their practice. We create sustained learning experiences that allow for experimentation, collaboration, and continuous growth.
+              Our learning experiences are designed around the core principles of adult learning: reflection, relevance, and collaboration. We provide structure for educators to explore new strategies, engage in peer dialogue, and apply what they learn in practice.
+            </p>
+            <p className="text-lg text-muted-foreground content-gap-sm leading-relaxed">
+              The result is not just training, but sustained development that supports real-world application and long-term growth.
             </p>
 
             <div className="space-y-3 content-gap-sm">
