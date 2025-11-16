@@ -18,7 +18,7 @@ const Services = () => {
     },
     {
       title: 'Project Management',
-      description: 'We support education and workforce initiatives from planning through implementation. Our approach combines structured project management practices with a deep understanding of adult learning. We recognize that effective collaboration, reflection, and application are central to how adults learn—and we apply these same principles to how projects are managed.',
+      description: 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.',
       icon: Workflow,
       image: projectManagementImage,
       features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication in ways that foster shared understanding and professional growth', 'Conducting literature reviews, landscape scans, and needs assessments that inform ongoing learning across teams', 'Managing timelines, deliverables, and reporting for grant-funded projects while building partner capacity for sustained success']
