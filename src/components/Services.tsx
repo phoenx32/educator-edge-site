@@ -11,7 +11,7 @@ const Services = () => {
   const services = [
     {
       title: 'Professional Development Cohorts',
-      description: 'Our professional development cohorts help instructors build confidence and apply new tools and strategies that strengthen online and blended instruction. These multi-week experiences allow educators to learn collaboratively, test new approaches in their classrooms, and improve over time. We offer both established and customizable options based on local goals and program needs.',
+      description: 'Multi-week learning experiences that support educators in applying new tools, testing strategies, and improving instruction. Cohorts are collaborative, practical, and customizable to local needs.',
       icon: Users,
       image: developmentImage,
       features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning', 'Custom Course Development: We also create customized professional development options based on local goals, staff needs, and program priorities']
