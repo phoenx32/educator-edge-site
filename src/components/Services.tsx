@@ -21,21 +21,21 @@ const Services = () => {
       description: 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.',
       icon: Workflow,
       image: projectManagementImage,
-      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication in ways that foster shared understanding and professional growth', 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.', 'Managing timelines, deliverables, and reporting for grant-funded projects while building partner capacity for sustained success']
+      features: ['Statewide guidance, toolkits, and training', 'Stakeholder engagement and communication', 'Literature reviews, scans, and needs assessments', 'Timeline, deliverables, and grant reporting support']
     },
     {
-      title: 'Keynote Sessions and Conference Workshops',
-      description: 'We bring practical perspectives from adult education, workforce development, and digital learning to state and national events. Our sessions connect current research with classroom and program practice, helping educators and leaders reflect, share, and plan for improvement.',
+      title: 'Keynotes and Conference Workshops',
+      description: 'We share insights from adult learning, workforce development, and edtech at state and national events. Sessions connect research to practice and create space for reflection and planning.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['Keynotes and panels on digital learning, AI, and workforce readiness', 'Interactive workshops that encourage dialogue across roles and regions', 'Case studies from statewide and community-based initiatives', 'Practical examples that support professional learning and system improvement']
+      features: ['Keynotes and panels on digital learning, AI, and readiness', 'Interactive workshops across roles and regions', 'Case studies from local and statewide efforts', 'Examples that support system-level improvement']
     },
     {
       title: 'Curriculum Development and Instructional Design',
-      description: 'We work with educators and program leaders to design and adapt curriculum that reflects the realities of adult education and the modern workplace. Our approach integrates technology, digital tools, and flexible delivery models into instruction and program operations. This includes hands-on instructional design using tools such as Articulate Rise, as well as graphic design, video editing, and the use of AI-generated media for learning.',
+      description: 'We collaborate with programs to design flexible, modern learning materials that align with workforce needs and digital delivery. Services range from content design to media production.',
       icon: Lightbulb,
       image: aiImage,
-      features: ['Designing curriculum aligned with workforce and digital skills goals', 'Developing courses and learning modules in Articulate Rise and similar platforms', 'Creating visuals, layouts, and media through graphic design and AI-based video and image generation', 'Integrating online learning and blended instruction', 'Supporting digitized intake, onboarding, and learner data systems', 'Developing adaptable materials that connect learning to employment pathways']
+      features: ['Curriculum aligned to workforce and digital skills', 'Modules in Articulate Rise and similar platforms', 'Graphic and AI-assisted media creation', 'Online/blended learning design', 'Materials linked to career pathways']
     }
   ];
 
