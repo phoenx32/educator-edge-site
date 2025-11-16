@@ -51,7 +51,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We collaborate with educators and organizations to build digital skills, strengthen instructional capacity, and improve learning outcomes. Through professional development, research-informed design, and technology integration, we create solutions that align with how adults learn. Our work blends innovation and practice to help programs deliver flexible, sustainable, and learner-centered instruction.
+            We help educators and institutions design, deliver, and sustain high-quality learning experiences for adults. Our services include curriculum development, professional learning, technology integration, and project management. By focusing on practical implementation and system alignment, we support programs in expanding access, improving instruction, and meeting the needs of adult learners in a rapidly changing environment.
           </p>
         </div>
 
