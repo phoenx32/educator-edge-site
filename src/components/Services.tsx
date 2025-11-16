@@ -21,7 +21,7 @@ const Services = () => {
       description: 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.',
       icon: Workflow,
       image: projectManagementImage,
-      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication in ways that foster shared understanding and professional growth', 'Conducting literature reviews, landscape scans, and needs assessments that inform ongoing learning across teams', 'Managing timelines, deliverables, and reporting for grant-funded projects while building partner capacity for sustained success']
+      features: ['Developing resources such as statewide guidance, training materials, and toolkits', 'Coordinating stakeholder engagement and communication in ways that foster shared understanding and professional growth', 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.', 'Managing timelines, deliverables, and reporting for grant-funded projects while building partner capacity for sustained success']
     },
     {
       title: 'Keynote Sessions and Conference Workshops',
