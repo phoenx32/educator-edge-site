@@ -14,7 +14,7 @@ const Services = () => {
       description: 'Multi-week learning experiences that support educators in applying new tools, testing strategies, and improving instruction. Cohorts are collaborative, practical, and customizable to local needs.',
       icon: Users,
       image: developmentImage,
-      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of Artificial Intelligence for Teaching and Learning', 'Custom Course Development: We also create customized professional development options based on local goals, staff needs, and program priorities']
+      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of AI for Teaching and Learning', 'Custom Course Development']
     },
     {
       title: 'Project Management',
