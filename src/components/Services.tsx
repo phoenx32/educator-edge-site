@@ -56,26 +56,30 @@ const Services = () => {
   ];
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
-    <div className="flex gap-6 h-full">
-      <div className="flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+    <div className="flex flex-col h-full">
+      {/* Title + Paragraph + Image row */}
+      <div className="flex gap-6">
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
+          <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+        </div>
         
-        <ul className="space-y-3 mt-auto">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-foreground/80">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <img 
+          src={service.image} 
+          alt={service.title}
+          className="w-36 object-cover rounded-lg shadow-md flex-shrink-0 self-stretch"
+        />
       </div>
       
-      <img 
-        src={service.image} 
-        alt={service.title}
-        className="w-28 h-28 object-cover rounded-lg shadow-md flex-shrink-0"
-      />
+      {/* Bullet list below */}
+      <ul className="space-y-3 mt-6">
+        {service.features.map((feature, idx) => (
+          <li key={idx} className="flex items-start text-foreground/80">
+            <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+            {feature}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 
