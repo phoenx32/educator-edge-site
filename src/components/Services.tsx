@@ -67,7 +67,7 @@ const Services = () => {
         <img 
           src={service.image} 
           alt={service.title}
-          className="w-36 object-cover rounded-lg shadow-md flex-shrink-0 self-stretch"
+          className="w-36 h-36 object-cover rounded-lg shadow-md flex-shrink-0"
         />
       </div>
       
