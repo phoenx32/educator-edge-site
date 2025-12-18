@@ -49,7 +49,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="section-spacing bg-muted/30">
+    <section className="section-spacing bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center content-gap">
           <div className="section-badge-primary">

@@ -80,7 +80,7 @@ const Services = () => {
   );
 
   return (
-    <section id="services" className="section-spacing bg-background">
+    <section id="services" className="section-spacing bg-muted/40">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center content-gap">
           <div className="section-badge-primary">
