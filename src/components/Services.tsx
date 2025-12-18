@@ -102,32 +102,36 @@ const Services = () => {
 
         {/* Desktop: Tabbed Interface */}
         {!isMobile ? (
-          <Tabs defaultValue="professional-development" className="flex gap-8">
-            <TabsList className="flex flex-col h-auto bg-transparent p-0 w-72 flex-shrink-0">
-              {services.map((service) => (
-                <TabsTrigger
-                  key={service.id}
-                  value={service.id}
-                  className="w-full justify-start gap-3 px-4 py-4 text-left rounded-lg border border-transparent data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=inactive]:bg-muted/50 data-[state=inactive]:hover:bg-muted transition-all duration-200"
-                >
-                  <service.icon className="w-5 h-5 flex-shrink-0" />
-                  <span className="font-medium">{service.shortTitle}</span>
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="professional-development" className="flex gap-8">
+              <TabsList className="flex flex-col h-auto bg-transparent p-0 w-64 flex-shrink-0 gap-3">
+                {services.map((service) => (
+                  <TabsTrigger
+                    key={service.id}
+                    value={service.id}
+                    className="w-full justify-start gap-3 px-4 py-4 text-left rounded-lg border transition-all duration-200
+                      data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:shadow-md
+                      data-[state=inactive]:bg-card data-[state=inactive]:border-border/50 data-[state=inactive]:shadow-sm data-[state=inactive]:hover:bg-muted/50"
+                  >
+                    <service.icon className="w-5 h-5 flex-shrink-0" />
+                    <span className="font-medium">{service.shortTitle}</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
 
-            <div className="flex-1">
-              {services.map((service) => (
-                <TabsContent
-                  key={service.id}
-                  value={service.id}
-                  className="mt-0 p-6 bg-card border border-border/30 rounded-xl shadow-card min-h-[320px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
-                >
-                  <ServiceContent service={service} />
-                </TabsContent>
-              ))}
-            </div>
-          </Tabs>
+              <div className="flex-1">
+                {services.map((service) => (
+                  <TabsContent
+                    key={service.id}
+                    value={service.id}
+                    className="mt-0 p-6 bg-card border border-border/30 rounded-xl shadow-card min-h-[320px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+                  >
+                    <ServiceContent service={service} />
+                  </TabsContent>
+                ))}
+              </div>
+            </Tabs>
+          </div>
         ) : (
           /* Mobile: Accordion Interface */
           <Accordion type="single" collapsible defaultValue="professional-development" className="space-y-3">
