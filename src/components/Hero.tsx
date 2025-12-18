@@ -13,8 +13,8 @@ const Hero = () => {
           </div>
           
           <div className="grid lg:grid-cols-[1fr,240px] gap-8 items-start">
-            <div className="max-w-2xl">
-              <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-normal">
+            <div className="max-w-2xl lg:max-w-none">
+              <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-normal lg:whitespace-nowrap">
                 We are <span className="italic font-medium">all teachers</span>. We are <span className="italic font-medium">all students</span>.
               </h1>
 
