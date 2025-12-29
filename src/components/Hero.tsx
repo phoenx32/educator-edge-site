@@ -1,4 +1,4 @@
-import { ArrowRight, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-digital-learning.png';
 
@@ -7,11 +7,6 @@ const Hero = () => {
     <section className="bg-background pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-28 lg:pb-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="section-badge-primary mb-8">
-            <GraduationCap size={16} />
-            Adult Education and Workforce Development
-          </div>
-          
           <div className="grid lg:grid-cols-[1fr,240px] gap-8 items-start">
             <div className="max-w-2xl lg:max-w-none">
               <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-semibold lg:whitespace-nowrap">
