@@ -33,8 +33,8 @@ const About = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
-          <div>
-            <div className="section-badge-secondary">
+          <div className="text-center lg:text-left">
+            <div className="section-badge-secondary inline-flex">
               <Zap size={16} />
               Our Approach
             </div>
@@ -59,8 +59,8 @@ const About = () => {
           </div>
 
           {/* Values Grid */}
-          <div className="space-y-5">
-            <div className="section-badge-accent mb-4">
+          <div className="space-y-5 text-center lg:text-left">
+            <div className="section-badge-accent mb-4 inline-flex">
               <Lightbulb size={16} />
               Our Values
             </div>
