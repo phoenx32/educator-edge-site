@@ -34,11 +34,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div>
-            <h3 className="mb-6 md:mb-8">Connect With Our Team</h3>
-            <div className="space-y-6">
+          <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300">
                   <CardContent className="p-6">
@@ -60,8 +58,7 @@ const Contact = () => {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+            ))}
           </div>
 
           {/* Newsletter Signup */}
