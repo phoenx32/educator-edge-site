@@ -1,4 +1,5 @@
 import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star, Zap, Lightbulb, TrendingUp } from 'lucide-react';
+import AnimatedStat from './AnimatedStat';
 
 const About = () => {
   const values = [
@@ -92,22 +93,30 @@ const About = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-primary">100+</div>
-              <div className="text-muted-foreground text-sm">Adult education providers, state agencies, and community organizations</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-secondary">3,000+</div>
-              <div className="text-muted-foreground text-sm">Adult education teachers, career navigators, and administrators</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-accent">20,000+</div>
-              <div className="text-muted-foreground text-sm">Adult learners supported through our programs</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-primary">2+</div>
-              <div className="text-muted-foreground text-sm">Hours saved per week through skills learned in courses</div>
-            </div>
+            <AnimatedStat 
+              value={100} 
+              suffix="+" 
+              label="Adult education providers, state agencies, and community organizations"
+              colorClass="text-primary"
+            />
+            <AnimatedStat 
+              value={3000} 
+              suffix="+" 
+              label="Adult education teachers, career navigators, and administrators"
+              colorClass="text-secondary"
+            />
+            <AnimatedStat 
+              value={20000} 
+              suffix="+" 
+              label="Adult learners supported through our programs"
+              colorClass="text-accent"
+            />
+            <AnimatedStat 
+              value={2} 
+              suffix="+" 
+              label="Hours saved per week through skills learned in courses"
+              colorClass="text-primary"
+            />
             <div>
               <div className="flex items-center justify-center gap-1 mb-2">
                 {[...Array(5)].map((_, i) => (
