@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star, Zap, Lightbulb } from 'lucide-react';
+import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star, Zap, Lightbulb, TrendingUp } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -82,7 +82,11 @@ const About = () => {
         {/* Statistics */}
         <div className="mt-16 lg:mt-20 p-6 md:p-8 lg:p-10 bg-primary/5 border border-primary/10 rounded-2xl">
           <div className="text-center content-gap-sm">
-            <h3 className="mb-4">Our Impact</h3>
+            <div className="section-badge-primary justify-center mx-auto">
+              <TrendingUp size={16} />
+              By the Numbers
+            </div>
+            <h2 className="mb-4">Our Impact</h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               Working together to support educators and learners across the country.
             </p>
