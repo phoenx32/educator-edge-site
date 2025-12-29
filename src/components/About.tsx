@@ -84,9 +84,9 @@ const About = () => {
           <div className="text-center content-gap-sm">
             <div className="section-badge-primary justify-center mx-auto">
               <TrendingUp size={16} />
-              By the Numbers
+              Our Impact
             </div>
-            <h2 className="mb-4">Our Impact</h2>
+            <h2 className="mb-4">By the Numbers</h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
               Working together to support educators and learners across the country.
             </p>
