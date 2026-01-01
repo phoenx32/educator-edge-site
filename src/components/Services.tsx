@@ -133,7 +133,7 @@ const Services = () => {
           </div>
         ) : (
           /* Mobile: Accordion Interface */
-          <Accordion type="single" collapsible defaultValue="professional-development" className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-3">
             {services.map((service) => (
               <AccordionItem
                 key={service.id}
