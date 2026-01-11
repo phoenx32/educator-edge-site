@@ -56,30 +56,30 @@ const Services = () => {
   ];
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
-    <div className="flex flex-col h-full">
-      {/* Title + Paragraph + Image row */}
-      <div className="flex gap-6">
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-          <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-        </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+      {/* Left: Title, Description, Features */}
+      <div className="flex flex-col">
+        <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
+        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
         
+        <ul className="space-y-3">
+          {service.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start text-foreground/80">
+              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      {/* Right: Image */}
+      <div className="flex items-center justify-center">
         <img 
           src={service.image} 
           alt={service.title}
-          className="w-36 h-36 object-cover rounded-lg shadow-md flex-shrink-0"
+          className="w-full max-w-xs h-auto object-cover rounded-xl shadow-lg"
         />
       </div>
-      
-      {/* Bullet list below */}
-      <ul className="space-y-3 mt-6">
-        {service.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start text-foreground/80">
-            <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
-            {feature}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 
@@ -99,36 +99,36 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Desktop: Tabbed Interface */}
+        {/* Desktop: Horizontal Tabbed Interface */}
         {!isMobile ? (
-          <div className="max-w-4xl mx-auto">
-            <Tabs defaultValue="professional-development" className="flex gap-8">
-              <TabsList className="flex flex-col h-auto bg-transparent p-0 w-64 flex-shrink-0 gap-3">
+          <div className="max-w-5xl mx-auto">
+            <Tabs defaultValue="professional-development" className="flex flex-col">
+              {/* Horizontal Tab Row */}
+              <TabsList className="flex flex-row h-auto bg-transparent p-0 justify-center gap-8 mb-8 border-b border-border/30 pb-4">
                 {services.map((service) => (
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="w-full justify-start gap-3 px-4 py-4 text-left rounded-lg border transition-all duration-200
-                      data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:shadow-md
-                      data-[state=inactive]:bg-card data-[state=inactive]:border-border/50 data-[state=inactive]:shadow-sm data-[state=inactive]:hover:bg-muted/50"
+                    className="flex flex-col items-center gap-2 px-4 py-3 rounded-none bg-transparent border-b-2 border-transparent transition-all duration-200
+                      data-[state=active]:border-b-primary data-[state=active]:text-primary
+                      data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:text-foreground"
                   >
-                    <service.icon className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium">{service.shortTitle}</span>
+                    <service.icon className="w-6 h-6" />
+                    <span className="font-medium text-sm whitespace-nowrap">{service.shortTitle}</span>
                   </TabsTrigger>
                 ))}
               </TabsList>
 
-              <div className="flex-1">
-                {services.map((service) => (
+              {/* Content Card */}
+              {services.map((service) => (
                 <TabsContent
-                    key={service.id}
-                    value={service.id}
-                    className="mt-0 p-6 bg-card border border-border/40 rounded-xl shadow-md min-h-[320px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
-                  >
-                    <ServiceContent service={service} />
-                  </TabsContent>
-                ))}
-              </div>
+                  key={service.id}
+                  value={service.id}
+                  className="mt-0 p-8 bg-card border border-border/40 rounded-2xl shadow-lg min-h-[400px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+                >
+                  <ServiceContent service={service} />
+                </TabsContent>
+              ))}
             </Tabs>
           </div>
         ) : (
