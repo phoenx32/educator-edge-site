@@ -73,11 +73,11 @@ const Services = () => {
       </div>
       
       {/* Right: Image */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-start justify-center">
         <img 
           src={service.image} 
           alt={service.title}
-          className="w-full max-w-xs h-auto object-cover rounded-xl shadow-lg"
+          className="w-72 h-56 object-cover rounded-xl shadow-lg"
         />
       </div>
     </div>
