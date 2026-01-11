@@ -56,29 +56,34 @@ const Services = () => {
   ];
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
-      {/* Left: Title, Description, Features */}
-      <div className="flex flex-col">
-        <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
-        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-        
-        <ul className="space-y-3">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-foreground/80">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="h-full">
+      {/* Title - Full Width */}
+      <h3 className="text-2xl font-bold text-foreground mb-6">{service.title}</h3>
       
-      {/* Right: Image */}
-      <div className="flex items-start justify-center">
-        <img 
-          src={service.image} 
-          alt={service.title}
-          className="w-72 h-56 object-cover rounded-xl shadow-lg"
-        />
+      {/* Two Column: Text Left, Image Right */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left: Description and Features */}
+        <div className="flex flex-col">
+          <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+          
+          <ul className="space-y-3">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="flex items-start text-foreground/80">
+                <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        {/* Right: Larger Image */}
+        <div className="flex items-start justify-center">
+          <img 
+            src={service.image} 
+            alt={service.title}
+            className="w-80 h-80 object-cover rounded-xl shadow-lg"
+          />
+        </div>
       </div>
     </div>
   );
