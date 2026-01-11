@@ -64,7 +64,7 @@ const Services = () => {
       </h3>
       
       {/* Two Column: Text Left, Image Right */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
         {/* Left: Description and Features */}
         <div className="flex flex-col">
           <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
@@ -79,12 +79,12 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Right: Image - Natural Aspect Ratio */}
-        <div className="flex items-start justify-end">
+        {/* Right: Image - Constrained to Column Height */}
+        <div className="flex items-center justify-end">
           <img 
             src={service.image} 
             alt={service.title}
-            className="max-w-full h-auto rounded-xl shadow-lg"
+            className="max-w-full max-h-72 w-auto h-auto object-contain rounded-xl shadow-lg"
           />
         </div>
       </div>
