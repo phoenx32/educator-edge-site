@@ -79,12 +79,12 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Right: Image - Constrained to Column Height */}
-        <div className="flex items-center justify-end">
+        {/* Right: Image - Fills Column */}
+        <div className="flex items-stretch">
           <img 
             src={service.image} 
             alt={service.title}
-            className="max-w-full max-h-72 w-auto h-auto object-contain rounded-xl shadow-lg"
+            className="w-full h-full object-cover rounded-xl shadow-lg"
           />
         </div>
       </div>
