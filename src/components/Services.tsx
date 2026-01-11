@@ -57,8 +57,11 @@ const Services = () => {
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
     <div className="h-full">
-      {/* Title - Full Width */}
-      <h3 className="text-2xl font-bold text-foreground mb-6">{service.title}</h3>
+      {/* Title - Full Width with Icon */}
+      <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+        <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+        {service.title}
+      </h3>
       
       {/* Two Column: Text Left, Image Right */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -76,12 +79,12 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Right: Larger Image */}
+        {/* Right: Widescreen Image */}
         <div className="flex items-start justify-center">
           <img 
             src={service.image} 
             alt={service.title}
-            className="w-80 h-80 object-cover rounded-xl shadow-lg"
+            className="w-full h-52 object-cover rounded-xl shadow-lg"
           />
         </div>
       </div>
