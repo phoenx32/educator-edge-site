@@ -79,12 +79,12 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Right: Widescreen Image */}
-        <div className="flex items-start justify-center">
+        {/* Right: Image - Natural Aspect Ratio */}
+        <div className="flex items-start justify-end">
           <img 
             src={service.image} 
             alt={service.title}
-            className="w-full h-52 object-cover rounded-xl shadow-lg"
+            className="max-w-full h-auto rounded-xl shadow-lg"
           />
         </div>
       </div>
