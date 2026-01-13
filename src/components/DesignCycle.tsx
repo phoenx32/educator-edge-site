@@ -1,13 +1,13 @@
-import { Hammer, FlaskConical, MessageCircle, Brain, RefreshCw, Target, Infinity } from 'lucide-react';
+import { Hammer, FlaskConical, MessageCircle, Lightbulb, RefreshCw, Repeat2, Infinity } from 'lucide-react';
 
 const DesignCycle = () => {
   const cycleSteps = [
     { icon: Hammer, label: 'Build', angle: 0 },
     { icon: FlaskConical, label: 'Test', angle: 60 },
     { icon: MessageCircle, label: 'Feedback', angle: 120 },
-    { icon: Brain, label: 'Reflect', angle: 180 },
+    { icon: Lightbulb, label: 'Reflect', angle: 180 },
     { icon: RefreshCw, label: 'Revise', angle: 240 },
-    { icon: Target, label: 'Goals', angle: 300 },
+    { icon: Repeat2, label: 'Iterate', angle: 300 },
   ];
 
   const size = 320;

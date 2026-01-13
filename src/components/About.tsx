@@ -1,4 +1,4 @@
-import { ArrowLeftRight, Users, BookOpen, Star, TrendingUp, Lightbulb } from 'lucide-react';
+import { ArrowLeftRight, Users, BookOpen, Star, TrendingUp, Lightbulb, Heart } from 'lucide-react';
 import AnimatedStat from './AnimatedStat';
 import DesignCycle from './DesignCycle';
 
@@ -39,6 +39,14 @@ const About = () => {
           
           {/* Design Cycle Animation */}
           <DesignCycle />
+        </div>
+
+        {/* Values Section */}
+        <div className="text-center mb-8">
+          <div className="section-badge-primary inline-flex">
+            <Heart size={16} />
+            Our Values
+          </div>
         </div>
 
         {/* Values Cards - Horizontal on Desktop */}
