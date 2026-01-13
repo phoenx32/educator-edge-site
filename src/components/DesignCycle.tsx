@@ -1,4 +1,4 @@
-import { Hammer, FlaskConical, MessageCircle, Lightbulb, RefreshCw, IterationCw, Infinity } from 'lucide-react';
+import { Hammer, FlaskConical, MessageCircle, Lightbulb, Pencil, RefreshCw, Infinity } from 'lucide-react';
 
 const DesignCycle = () => {
   const cycleSteps = [
@@ -6,8 +6,8 @@ const DesignCycle = () => {
     { icon: FlaskConical, label: 'Test', angle: 60 },
     { icon: MessageCircle, label: 'Feedback', angle: 120 },
     { icon: Lightbulb, label: 'Reflect', angle: 180 },
-    { icon: RefreshCw, label: 'Revise', angle: 240 },
-    { icon: IterationCw, label: 'Iterate', angle: 300 },
+    { icon: Pencil, label: 'Revise', angle: 240 },
+    { icon: RefreshCw, label: 'Iterate', angle: 300 },
   ];
 
   const size = 320;
@@ -109,8 +109,9 @@ const DesignCycle = () => {
         const pos = getPosition(step.angle, outerRadius);
         const Icon = step.icon;
         
-        // Calculate label position (further out than icon)
-        const labelPos = getPosition(step.angle, outerRadius + 42);
+        // Calculate label position (further out than icon, extra for Feedback)
+        const labelOffset = step.label === 'Feedback' ? 50 : 42;
+        const labelPos = getPosition(step.angle, outerRadius + labelOffset);
         
         return (
           <div key={step.label}>
