@@ -114,12 +114,30 @@ export default {
             transform: "translate3d(0,0,0)",
           },
         },
+        "rotate-slow": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        "rotate-slow-reverse": {
+          "0%": {
+            transform: "rotate(360deg)",
+          },
+          "100%": {
+            transform: "rotate(0deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll": "scroll 50s linear infinite",
         "scroll-fast": "scroll-reverse 45s linear infinite",
+        "rotate-slow": "rotate-slow 30s linear infinite",
+        "rotate-slow-reverse": "rotate-slow-reverse 45s linear infinite",
       },
     },
   },
