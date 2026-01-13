@@ -63,10 +63,10 @@ const Services = () => {
         {service.title}
       </h3>
       
-      {/* Two Column: Text Left, Image Right */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        {/* Left: Description and Features */}
-        <div className="flex flex-col">
+      {/* Two Column: Text Left (60%), Image Right (40%) */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+        {/* Left: Description and Features - 3 columns */}
+        <div className="flex flex-col md:col-span-3">
           <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
           
           <ul className="space-y-3">
@@ -79,8 +79,8 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Right: Square Image */}
-        <div className="flex items-start justify-end">
+        {/* Right: Square Image - 2 columns */}
+        <div className="flex items-start justify-end md:col-span-2">
           <img 
             src={service.image} 
             alt={service.title}
