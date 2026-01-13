@@ -63,30 +63,29 @@ const Services = () => {
         {service.title}
       </h3>
       
-      {/* Two Column: Text Left (60%), Image Right (40%) */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
-        {/* Left: Description and Features - 3 columns */}
-        <div className="flex flex-col md:col-span-3">
-          <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-          
-          <ul className="space-y-3">
-            {service.features.map((feature, idx) => (
-              <li key={idx} className="flex items-start text-foreground/80">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Float Layout: Image floats right, text wraps naturally */}
+      <div className="relative">
+        {/* Image - Floats right on desktop, full width on mobile */}
+        <img 
+          src={service.image} 
+          alt={service.title}
+          className="w-full md:w-72 md:h-72 h-48 object-cover rounded-xl shadow-lg mb-4 md:mb-0 md:ml-6 md:float-right"
+        />
         
-        {/* Right: Square Image - 2 columns */}
-        <div className="flex items-start justify-end md:col-span-2">
-          <img 
-            src={service.image} 
-            alt={service.title}
-            className="w-64 h-64 object-cover rounded-xl shadow-lg"
-          />
-        </div>
+        {/* Text content wraps around floated image */}
+        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+        
+        <ul className="space-y-3">
+          {service.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start text-foreground/80">
+              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+        
+        {/* Clear float */}
+        <div className="clear-both"></div>
       </div>
     </div>
   );
