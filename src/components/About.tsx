@@ -1,83 +1,57 @@
-import { CheckCircle, ArrowLeftRight, Users, BookOpen, Star, Zap, Lightbulb, TrendingUp } from 'lucide-react';
+import { ArrowLeftRight, Users, BookOpen, Star, TrendingUp, Lightbulb } from 'lucide-react';
 import AnimatedStat from './AnimatedStat';
+import DesignCycle from './DesignCycle';
 
 const About = () => {
   const values = [
     {
       icon: ArrowLeftRight,
       title: 'Shared Learning',
-      description: 'We learn alongside our partners. Practice, reflection, and collaboration create shared understanding and drive ongoing improvement in our work.'
+      description: 'We learn alongside our partners through practice, reflection, and collaboration.'
     },
     {
       icon: Users,
       title: 'Collaborative Growth',
-      description: 'We value the diverse experiences of every participant. Our learning environments foster mutual growth, shared insight, and collective capacity-building.'
+      description: 'Our learning environments foster mutual growth and collective capacity-building.'
     },
     {
       icon: BookOpen,
       title: 'Continuous Improvement',
-      description: 'Learning is never finished. Our approach is iterative, grounded in trying ideas, testing them in practice, and refining through reflection. We apply these same principles to teaching, program design, and systems change.'
+      description: 'We iterate, test ideas in practice, and refine through ongoing reflection.'
     }
-  ];
-
-  const achievements = [
-    'Multi-week professional development cohorts',
-    'Peer learning through inquiry and dialogue',
-    'Edtech coaching focused on classroom application',
-    'Flexible pathways aligned to educator roles and needs',
-    'Technology integration through iterative practice'
   ];
 
   return (
     <section id="about" className="section-spacing bg-muted/40">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left">
-            <div className="section-badge-secondary inline-flex">
-              <Zap size={16} />
-              Our Approach
-            </div>
-            <h2 className="mb-6">
-              Professional Development <span className="bg-gradient-primary bg-clip-text text-transparent">Rooted in How Adults Learn</span>
-            </h2>
-            <p className="text-lg text-muted-foreground content-gap-sm leading-relaxed">
-              Our learning experiences are designed around the core principles of adult learning: reflection, relevance, and collaboration. We provide structure for educators to explore new strategies, engage in peer dialogue, and apply what they learn in practice.
-            </p>
-            <p className="text-lg text-muted-foreground content-gap-sm leading-relaxed">
-              The result is not just training, but sustained development that supports real-world application and long-term growth.
-            </p>
-
-            <div className="space-y-3 content-gap-sm">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground">{achievement}</span>
-                </div>
-              ))}
-            </div>
+        {/* Design Cycle Section */}
+        <div className="text-center mb-12 lg:mb-16">
+          <div className="section-badge-secondary inline-flex mb-4">
+            <Lightbulb size={16} />
+            Our Approach
           </div>
+          <h2 className="mb-6">
+            The <span className="bg-gradient-primary bg-clip-text text-transparent">Continuous Improvement</span> Cycle
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
+            Learning is never finished. We build, test, gather feedback, reflect, revise, and set new goals—bringing lifelong learning and design thinking into the daily work of education.
+          </p>
+          
+          {/* Design Cycle Animation */}
+          <DesignCycle />
+        </div>
 
-          {/* Values Grid */}
-          <div className="space-y-5 text-center lg:text-left">
-            <div className="section-badge-accent mb-4 inline-flex">
-              <Lightbulb size={16} />
-              Our Values
-            </div>
-            {values.map((value, index) => (
-              <div key={index} className="p-5 md:p-6 bg-background rounded-xl border border-border/30 shadow-card hover:shadow-elegant transition-all duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg text-primary flex-shrink-0">
-                    <value.icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-                  </div>
-                </div>
+        {/* Values Cards - Horizontal on Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 lg:mb-20">
+          {values.map((value, index) => (
+            <div key={index} className="p-5 md:p-6 bg-background rounded-xl border border-border/30 shadow-card hover:shadow-elegant transition-all duration-300 text-center">
+              <div className="p-3 bg-primary/10 rounded-lg text-primary inline-flex mb-4">
+                <value.icon className="w-6 h-6" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* Statistics */}
