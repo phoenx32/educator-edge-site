@@ -1,12 +1,6 @@
 import { Lightbulb, Workflow, Users, Presentation, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { useIsMobile } from '@/hooks/use-mobile';
 import aiImage from '@/assets/services-curriculum-dev-new.png';
 import developmentImage from '@/assets/services-professional-dev.png';
@@ -61,11 +55,8 @@ const Services = () => {
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
     <div className="h-full">
-      {/* Two-column layout: Text left (including title), Image right aligned to top */}
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Text content - Title is now INSIDE this column */}
         <div className="flex-1">
-          {/* Title moved here so it aligns with image top */}
           <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
             <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
             {service.title}
@@ -83,15 +74,40 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Image - Now aligns with title at top */}
-        <div className="md:w-80 flex-shrink-0 self-start order-first md:order-last">
+        <div className="md:w-80 flex-shrink-0 self-start">
           <img 
             src={service.image} 
             alt={service.title}
-            className="w-full h-48 md:h-72 object-cover rounded-xl shadow-lg"
+            className="w-full h-72 object-cover rounded-xl"
           />
         </div>
       </div>
+    </div>
+  );
+
+  const MobileServiceContent = ({ service }: { service: typeof services[0] }) => (
+    <div>
+      <div className="flex items-center gap-3 mb-4">
+        <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+        <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+      </div>
+      
+      <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+      
+      <ul className="space-y-2 mb-6">
+        {service.features.map((feature, idx) => (
+          <li key={idx} className="flex items-start text-foreground/80 text-sm">
+            <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      
+      <img 
+        src={service.image} 
+        alt={service.title}
+        className="w-full h-48 object-cover rounded-xl"
+      />
     </div>
   );
 
@@ -150,29 +166,37 @@ const Services = () => {
             </Tabs>
           </div>
         ) : (
-          /* Mobile: Accordion Interface */
-          <Accordion type="single" collapsible className="space-y-3">
-            {services.map((service) => (
-              <AccordionItem
-                key={service.id}
-                value={service.id}
-                className="border border-border/30 rounded-xl bg-card shadow-card overflow-hidden"
-              >
-                <AccordionTrigger className="px-4 py-4 hover:no-underline hover:bg-muted/50 transition-colors [&[data-state=open]]:bg-primary [&[data-state=open]]:text-primary-foreground">
-                  <div className="flex flex-col items-start gap-1">
-                    <div className="flex items-center gap-3">
-                      <service.icon className="w-5 h-5 flex-shrink-0" />
-                      <span className="font-medium text-left">{service.shortTitle}</span>
-                    </div>
-                    <span className="text-xs opacity-70 ml-8">{service.tagline}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4 pt-2">
-                  <ServiceContent service={service} />
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          /* Mobile: Horizontal Tabs with Icon Only */
+          <div className="max-w-full mx-auto">
+            <Tabs defaultValue="professional-development" className="flex flex-col">
+              <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
+                {services.map((service) => (
+                  <TabsTrigger
+                    key={service.id}
+                    value={service.id}
+                    className="flex items-center justify-center p-4 rounded-none 
+                      bg-transparent border border-border/40 
+                      first:rounded-tl-xl last:rounded-tr-xl 
+                      transition-all duration-200
+                      hover:bg-card/50
+                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
+                  >
+                    <service.icon className="w-5 h-5" />
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {services.map((service) => (
+                <TabsContent
+                  key={service.id}
+                  value={service.id}
+                  className="-mt-px p-4 bg-card border border-border/40 border-t-border/40 rounded-b-2xl"
+                >
+                  <MobileServiceContent service={service} />
+                </TabsContent>
+              ))}
+            </Tabs>
+          </div>
         )}
 
         <div className="text-center mt-12 md:mt-16">
