@@ -1,142 +1,151 @@
 
 
-# Rebuild "Our Services" Section
+# Refine Services Section UI
 
 ## Overview
 
-Redesign the Services section to match the reference UI pattern with a modern, horizontal tab navigation that has inline descriptions, connected to a larger content card below.
+Three targeted improvements to the Services section based on the reference image:
 
-## Key Design Changes
-
-### 1. Tab Trigger Redesign
-
-**Current:** Icon stacked above short title, separated by a border-bottom accent
-
-**New Pattern (from reference):**
-- Icon and title on the SAME LINE (horizontal layout)
-- One-line description beneath each tab
-- Active tab has subtle visual highlight
-- Tabs are wider with better spacing
-- Border only on the content card, not separate from tabs
-
-### 2. Tab Descriptions
-
-Each tab will include a short, action-oriented description:
-
-| Tab | Description |
-|-----|-------------|
-| Professional Development | Support staff growth |
-| Project Management | Move initiatives from plans to practice |
-| Keynotes and Workshops | Turn complexity into action |
-| Curriculum and Design | Build effective digital learning |
-
-### 3. Layout Changes
-
-- **Section width:** Expand from `max-w-5xl` to `max-w-6xl` for more breathing room
-- **Tab row:** Horizontal grid layout with equal-width columns (4 columns)
-- **Content card:** Connected directly to tabs (no gap), rounded only at bottom
-- **Image placement:** Larger area due to wider section, better visual balance
-
-### 4. Visual Styling
-
-**Tab triggers:**
-- Light background on hover
-- Active state: subtle primary color border on bottom or left edge, or highlighted background
-- Muted text for descriptions, stronger weight for titles
-
-**Content card:**
-- Rounded bottom corners only (top connects to tab row)
-- Subtle border around entire card area
-- Same internal layout (float pattern for image/text)
+1. Align images to start at the top of the content card
+2. Add smooth hover effects to tab triggers
+3. Fix tab background styling - transparent for inactive, white for active (connected to content)
 
 ---
 
-## Technical Implementation
+## Changes
+
+### 1. Image Vertical Alignment
+
+**Current Issue:** Images use float positioning which can cause them to extend past the bullet list
+
+**Solution:** Switch from float layout to a flexbox/grid layout where the image is positioned at the top-right and the text content is in its own column. This ensures the image starts aligned with the title and doesn't extend past the content.
+
+**Implementation:**
+- Replace the float-based layout with a flex row layout on desktop
+- Image container uses `self-start` to align to top
+- Text content in left column, image in right column
+- On mobile, stack vertically with image above content
+
+### 2. Tab Hover Effects
+
+**Current Issue:** Minimal hover feedback (`hover:bg-muted/60`)
+
+**Solution:** Add more visible hover effects:
+- Subtle scale transform on hover
+- Smoother transition timing
+- Slight shadow lift effect
+
+**Implementation:**
+```
+hover:scale-[1.02] hover:shadow-md transition-all duration-200
+```
+
+### 3. Tab Background Styling (Key Visual Fix)
+
+**Current Issue:** 
+- All tabs have `bg-card` (white background)
+- Active tab uses `bg-primary` (teal fill)
+
+**Reference Image Shows:**
+- Inactive tabs are transparent (showing the section's muted background)
+- Active tab is white with bottom border removed, creating visual connection to content card
+
+**Solution:**
+- Inactive tabs: `bg-transparent` 
+- Active tabs: `bg-card` (white) with a border-bottom that matches the card to create seamless connection
+- Add left/top/right borders to all tabs, only bottom border on inactive
+- Active tab's bottom border becomes transparent or same color as card
+
+**Tab styling approach:**
+```tsx
+// Inactive state: transparent background, shows section bg-muted/40
+// Active state: white background (bg-card), border-bottom-color matches card
+className="bg-transparent border border-border/40 border-b-border/40
+  data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:relative data-[state=active]:z-10"
+```
+
+---
+
+## Technical Details
 
 ### File to Modify
-
 `src/components/Services.tsx`
 
-### Data Structure Update
+### ServiceContent Layout Change (lines 62-95)
 
-Add `tagline` field to each service object:
+Replace the float-based layout with a flex row:
 
 ```tsx
-const services = [
-  {
-    id: 'professional-development',
-    title: 'Professional Development Cohorts',
-    shortTitle: 'Professional Development',
-    tagline: 'Support staff growth',
-    // ... rest
-  },
-  {
-    id: 'project-management',
-    shortTitle: 'Project Management',
-    tagline: 'Move initiatives from plans to practice',
-    // ...
-  },
-  {
-    id: 'keynotes',
-    shortTitle: 'Keynotes and Workshops',
-    tagline: 'Turn complexity into action',
-    // ...
-  },
-  {
-    id: 'curriculum',
-    shortTitle: 'Curriculum and Design',
-    tagline: 'Build effective digital learning',
-    // ...
-  }
-];
+const ServiceContent = ({ service }: { service: typeof services[0] }) => (
+  <div className="h-full">
+    {/* Title - Full Width with Icon */}
+    <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+      <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+      {service.title}
+    </h3>
+    
+    {/* Two-column layout: Text left, Image right aligned to top */}
+    <div className="flex flex-col md:flex-row gap-6">
+      {/* Text content */}
+      <div className="flex-1">
+        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+        
+        <ul className="space-y-3">
+          {service.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start text-foreground/80">
+              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      {/* Image - Aligned to top */}
+      <div className="md:w-80 flex-shrink-0 self-start">
+        <img 
+          src={service.image} 
+          alt={service.title}
+          className="w-full h-48 md:h-80 object-cover rounded-xl shadow-lg"
+        />
+      </div>
+    </div>
+  </div>
+);
 ```
 
-### Desktop Tab Structure
+### TabsTrigger Styling Update (lines 120-133)
 
-```text
-+----------------+----------------+----------------+----------------+
-| [Icon] Title   | [Icon] Title   | [Icon] Title   | [Icon] Title   |
-| Description    | Description    | Description    | Description    |
-+----------------+----------------+----------------+----------------+
-|                                                                    |
-|                    Content Card (rounded bottom)                   |
-|                                                                    |
-+--------------------------------------------------------------------+
+```tsx
+<TabsTrigger
+  key={service.id}
+  value={service.id}
+  className="flex flex-col items-start gap-1 px-5 py-4 rounded-none 
+    bg-transparent border border-border/40 border-b-border/40 
+    first:rounded-tl-xl last:rounded-tr-xl 
+    transition-all duration-200
+    hover:bg-card/50 hover:shadow-sm
+    data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:shadow-md data-[state=active]:z-10 data-[state=active]:relative"
+>
 ```
 
-### CSS/Tailwind Approach
+### TabsContent Border Adjustment (lines 138-145)
 
-**TabsList wrapper:**
-- Use `grid grid-cols-4` for equal-width tabs
-- Remove bottom border (border moves to content card)
-- Remove gap/margin between tabs and content
+Ensure the content card's top border aligns with inactive tabs but appears seamlessly connected to the active tab:
 
-**TabsTrigger:**
-- `flex flex-col items-start` for vertical stacking of title line + description
-- First line: `flex items-center gap-2` for icon + title
-- Second line: small muted text for tagline
-- `border-b-2 border-transparent` with `data-[state=active]:border-primary` for active indicator
-- Padding adjustments for comfortable touch/click targets
+```tsx
+className="mt-0 p-8 bg-card border border-border/40 border-t-border/40 rounded-b-2xl shadow-lg min-h-[420px] -mt-px ..."
+```
 
-**TabsContent:**
-- Remove `mt-0` gap
-- `rounded-t-none rounded-b-2xl` to connect with tabs
-- Full border around content area
-
-### Mobile Accordion (unchanged approach)
-
-Keep the accordion pattern for mobile but update trigger to show the new tagline in a more compact format if space allows.
+The `-mt-px` ensures the content card's top border overlaps slightly to create a seamless connection with the active tab.
 
 ---
 
-## Summary of Changes
+## Summary
 
-1. Add `tagline` property to services data array
-2. Update tab triggers to horizontal icon+title layout with description below
-3. Change container from `max-w-5xl` to `max-w-6xl`
-4. Restructure tabs to use CSS grid with 4 equal columns
-5. Remove gap between tab row and content card
-6. Apply rounded corners only to bottom of content card
-7. Add subtle border styling to create connected appearance
-8. Update mobile accordion to include tagline
+| Change | Before | After |
+|--------|--------|-------|
+| Image alignment | Float right, can extend past content | Flex layout, aligned to top |
+| Tab hover | Minimal `bg-muted/60` | Scale + shadow lift effect |
+| Inactive tabs | White background | Transparent (shows section bg) |
+| Active tab | Teal fill | White, connected to content card |
 
