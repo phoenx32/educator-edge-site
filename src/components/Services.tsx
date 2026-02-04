@@ -21,6 +21,7 @@ const Services = () => {
       id: 'professional-development',
       title: 'Professional Development Cohorts',
       shortTitle: 'Professional Development',
+      tagline: 'Support staff growth',
       description: 'Multi-week learning experiences that support educators in applying new tools, testing strategies, and improving instruction. Cohorts are collaborative, practical, and customizable to local needs.',
       icon: Users,
       image: developmentImage,
@@ -30,6 +31,7 @@ const Services = () => {
       id: 'project-management',
       title: 'Project Management',
       shortTitle: 'Project Management',
+      tagline: 'Move initiatives from plans to practice',
       description: 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.',
       icon: Workflow,
       image: projectManagementImage,
@@ -39,6 +41,7 @@ const Services = () => {
       id: 'keynotes',
       title: 'Keynotes and Conference Workshops',
       shortTitle: 'Keynotes & Workshops',
+      tagline: 'Turn complexity into action',
       description: 'We share insights from adult learning, workforce development, and edtech at state and national events. Sessions connect research to practice and create space for reflection and planning.',
       icon: Presentation,
       image: keynoteImage,
@@ -48,6 +51,7 @@ const Services = () => {
       id: 'curriculum',
       title: 'Curriculum Development and Instructional Design',
       shortTitle: 'Curriculum & Design',
+      tagline: 'Build effective digital learning',
       description: 'We collaborate with programs to design flexible, modern learning materials that align with workforce needs and digital delivery. Services range from content design to media production.',
       icon: Lightbulb,
       image: aiImage,
@@ -69,7 +73,7 @@ const Services = () => {
         <img 
           src={service.image} 
           alt={service.title}
-          className="w-full md:w-72 md:h-72 h-48 object-cover rounded-xl shadow-lg mb-4 md:mb-0 md:ml-6 md:float-right"
+          className="w-full md:w-80 md:h-80 h-48 object-cover rounded-xl shadow-lg mb-4 md:mb-0 md:ml-6 md:float-right"
         />
         
         {/* Text content wraps around floated image */}
@@ -108,30 +112,33 @@ const Services = () => {
 
         {/* Desktop: Horizontal Tabbed Interface */}
         {!isMobile ? (
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="professional-development" className="flex flex-col">
-              {/* Horizontal Tab Row */}
-              <TabsList className="flex flex-row h-auto bg-transparent p-0 justify-center gap-8 mb-8 border-b border-border/30 pb-4">
+              {/* Tab Row - Grid Layout */}
+              <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
                 {services.map((service) => (
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="flex flex-col items-center gap-2 px-4 py-3 rounded-none bg-transparent border-b-2 border-transparent transition-all duration-200
-                      data-[state=active]:border-b-primary data-[state=active]:text-primary
-                      data-[state=inactive]:text-muted-foreground data-[state=inactive]:hover:text-foreground"
+                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none bg-card border border-border/40 border-b-0 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200
+                      data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary
+                      data-[state=inactive]:hover:bg-muted/60"
                   >
-                    <service.icon className="w-6 h-6" />
-                    <span className="font-medium text-sm whitespace-nowrap">{service.shortTitle}</span>
+                    <div className="flex items-center gap-2">
+                      <service.icon className="w-5 h-5" />
+                      <span className="font-semibold text-sm">{service.shortTitle}</span>
+                    </div>
+                    <span className="text-xs opacity-80 text-left">{service.tagline}</span>
                   </TabsTrigger>
                 ))}
               </TabsList>
 
-              {/* Content Card */}
+              {/* Content Card - Connected to tabs */}
               {services.map((service) => (
                 <TabsContent
                   key={service.id}
                   value={service.id}
-                  className="mt-0 p-8 bg-card border border-border/40 rounded-2xl shadow-lg min-h-[400px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+                  className="mt-0 p-8 bg-card border border-border/40 rounded-t-none rounded-b-2xl shadow-lg min-h-[420px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
                 >
                   <ServiceContent service={service} />
                 </TabsContent>
@@ -148,9 +155,12 @@ const Services = () => {
                 className="border border-border/30 rounded-xl bg-card shadow-card overflow-hidden"
               >
                 <AccordionTrigger className="px-4 py-4 hover:no-underline hover:bg-muted/50 transition-colors [&[data-state=open]]:bg-primary [&[data-state=open]]:text-primary-foreground">
-                  <div className="flex items-center gap-3">
-                    <service.icon className="w-5 h-5 flex-shrink-0" />
-                    <span className="font-medium text-left">{service.shortTitle}</span>
+                  <div className="flex flex-col items-start gap-1">
+                    <div className="flex items-center gap-3">
+                      <service.icon className="w-5 h-5 flex-shrink-0" />
+                      <span className="font-medium text-left">{service.shortTitle}</span>
+                    </div>
+                    <span className="text-xs opacity-70 ml-8">{service.tagline}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-4 pb-4 pt-2">
