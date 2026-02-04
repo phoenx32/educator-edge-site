@@ -61,16 +61,16 @@ const Services = () => {
 
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
     <div className="h-full">
-      {/* Title - Full Width with Icon */}
-      <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-        <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
-        {service.title}
-      </h3>
-      
-      {/* Two-column layout: Text left, Image right aligned to top */}
+      {/* Two-column layout: Text left (including title), Image right aligned to top */}
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Text content */}
+        {/* Text content - Title is now INSIDE this column */}
         <div className="flex-1">
+          {/* Title moved here so it aligns with image top */}
+          <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+            <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+            {service.title}
+          </h3>
+          
           <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
           
           <ul className="space-y-3">
@@ -83,7 +83,7 @@ const Services = () => {
           </ul>
         </div>
         
-        {/* Image - Aligned to top */}
+        {/* Image - Now aligns with title at top */}
         <div className="md:w-80 flex-shrink-0 self-start order-first md:order-last">
           <img 
             src={service.image} 
