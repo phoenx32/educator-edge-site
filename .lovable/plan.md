@@ -1,54 +1,53 @@
 
 
-# Fix Services Section Styling
+# Fix Mobile Services Layout
 
 ## Overview
 
-Three refinements to match the reference UI:
+Based on the reference image, convert the mobile layout from accordion to horizontal tabs matching the desktop pattern, with these key differences:
 
-1. Remove excess padding in content cards so they fit content naturally
-2. Fix selected tab scaling issue - remove hover scale effect from active tabs
-3. Remove shadow from overall section and content card for a flat design
+1. Replace accordion with horizontal tabs on mobile
+2. Use icon-only triggers in the tab bar (no text)
+3. Move image to bottom of content on mobile
+4. Remove teal background from selected state - use same styling as desktop
 
 ---
 
 ## Changes
 
-### 1. Remove Extra Padding/White Space
+### 1. Remove Accordion, Use Tabs for Both Desktop and Mobile
 
-**Current Issue:** `min-h-[420px]` forces a fixed minimum height, creating whitespace when content is shorter
+**Current Issue:** Mobile uses accordion with teal `bg-primary` on open state
 
-**Solution:** Remove minimum height - let content determine card size naturally
+**Solution:** Use the same Tabs component for mobile, just with different styling:
+- Icon-only triggers in a horizontal row
+- Same transparent/white background treatment as desktop
 
-**Change in TabsContent (line 145):**
-- Remove: `min-h-[420px]`
-- Keep padding reasonable: `p-6` instead of `p-8` for tighter fit
+### 2. Mobile Tab Triggers - Icon Only
 
-### 2. Fix Tab Scale/Spilling Issue
+The reference shows 4 icons in a row with subtle borders. Selected tab has white background.
 
-**Current Issue:** Active tabs have `hover:scale-[1.02]` and `shadow-md` which makes them appear larger and "spill" beyond the container
+**Mobile TabsTrigger:**
+```tsx
+className="flex items-center justify-center p-4 rounded-none 
+  bg-transparent border border-border/40 
+  first:rounded-tl-xl last:rounded-tr-xl 
+  transition-all duration-200
+  hover:bg-card/50
+  data-[state=active]:bg-card data-[state=active]:border-b-transparent"
+```
 
-**Solution:** 
-- Remove `hover:scale-[1.02]` from all tabs (or only apply to inactive)
-- Remove `shadow-md` from active state
-- Keep background color change as the visual signal
+### 3. Mobile Content Layout - Image at Bottom
 
-**Change in TabsTrigger (lines 124-129):**
-- Remove: `hover:scale-[1.02]`
-- Remove: `data-[state=active]:shadow-md`
-- Keep: `data-[state=active]:bg-card` and `data-[state=active]:border-b-transparent`
+Create a separate `MobileServiceContent` component that:
+- Shows icon + title at top
+- Description text
+- Bullet points
+- Image at the very bottom (full width)
 
-### 3. Remove Offset Shadow for Flat Design
+### 4. Unified Approach
 
-**Current Issue:** Content card has `shadow-lg` which creates a floating/lifted appearance
-
-**Solution:** Remove shadows from the content card, use only borders for definition
-
-**Change in TabsContent (line 145):**
-- Remove: `shadow-lg`
-- Keep: border styling for visual definition
-
-Also remove `hover:shadow-sm` from tab triggers for consistency.
+Since both mobile and desktop now use tabs, simplify by removing the `isMobile` conditional for the component type, and instead use responsive classes within the same Tabs structure.
 
 ---
 
@@ -57,38 +56,81 @@ Also remove `hover:shadow-sm` from tab triggers for consistency.
 ### File to Modify
 `src/components/Services.tsx`
 
-### TabsTrigger (lines 121-137)
+### Create MobileServiceContent Component (after ServiceContent)
+
 ```tsx
-<TabsTrigger
-  key={service.id}
-  value={service.id}
-  className="flex flex-col items-start gap-1 px-5 py-4 rounded-none 
-    bg-transparent border border-border/40 
-    first:rounded-tl-xl last:rounded-tr-xl 
-    transition-all duration-200
-    hover:bg-card/50
-    data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
->
+const MobileServiceContent = ({ service }: { service: typeof services[0] }) => (
+  <div>
+    {/* Icon + Title */}
+    <div className="flex items-center gap-3 mb-4">
+      <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
+      <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+    </div>
+    
+    {/* Description */}
+    <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+    
+    {/* Features */}
+    <ul className="space-y-2 mb-6">
+      {service.features.map((feature, idx) => (
+        <li key={idx} className="flex items-start text-foreground/80 text-sm">
+          <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
+    
+    {/* Image at bottom */}
+    <img 
+      src={service.image} 
+      alt={service.title}
+      className="w-full h-48 object-cover rounded-xl shadow-lg"
+    />
+  </div>
+);
 ```
 
-Removed:
-- `hover:shadow-sm`
-- `hover:scale-[1.02]`
-- `data-[state=active]:shadow-md`
+### Replace Mobile Accordion with Tabs (lines 152-176)
 
-### TabsContent (lines 142-149)
 ```tsx
-<TabsContent
-  key={service.id}
-  value={service.id}
-  className="-mt-px p-6 bg-card border border-border/40 border-t-border/40 rounded-b-2xl data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
->
+{/* Mobile: Horizontal Tabs with Icon Only */}
+<div className="max-w-full mx-auto">
+  <Tabs defaultValue="professional-development" className="flex flex-col">
+    {/* Tab Row - Icon Only */}
+    <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
+      {services.map((service) => (
+        <TabsTrigger
+          key={service.id}
+          value={service.id}
+          className="flex items-center justify-center p-4 rounded-none 
+            bg-transparent border border-border/40 
+            first:rounded-tl-xl last:rounded-tr-xl 
+            transition-all duration-200
+            hover:bg-card/50
+            data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
+        >
+          <service.icon className="w-5 h-5" />
+        </TabsTrigger>
+      ))}
+    </TabsList>
+
+    {/* Content Card */}
+    {services.map((service) => (
+      <TabsContent
+        key={service.id}
+        value={service.id}
+        className="-mt-px p-4 bg-card border border-border/40 border-t-border/40 rounded-b-2xl"
+      >
+        <MobileServiceContent service={service} />
+      </TabsContent>
+    ))}
+  </Tabs>
+</div>
 ```
 
-Removed:
-- `shadow-lg`
-- `min-h-[420px]`
-- Changed `p-8` to `p-6`
+### Remove Accordion Import
+
+Since we're no longer using accordion on mobile, we can remove the Accordion import (optional cleanup).
 
 ---
 
@@ -96,9 +138,9 @@ Removed:
 
 | Element | Before | After |
 |---------|--------|-------|
-| Content card height | `min-h-[420px]` | Auto (fits content) |
-| Content card padding | `p-8` | `p-6` |
-| Content card shadow | `shadow-lg` | None |
-| Tab hover | `scale-[1.02]` + shadow | Background color only |
-| Active tab | Shadow + scale | Background color only |
+| Mobile navigation | Accordion | Horizontal tabs |
+| Mobile tab content | Text labels | Icon only |
+| Selected state | Teal background | White background (matches desktop) |
+| Image position | Above content (awkward) | Bottom of content card |
+| Pattern consistency | Different on mobile/desktop | Same tabs pattern everywhere |
 
