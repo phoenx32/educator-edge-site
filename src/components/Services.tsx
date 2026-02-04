@@ -67,29 +67,30 @@ const Services = () => {
         {service.title}
       </h3>
       
-      {/* Float Layout: Image floats right, text wraps naturally */}
-      <div className="relative">
-        {/* Image - Floats right on desktop, full width on mobile */}
-        <img 
-          src={service.image} 
-          alt={service.title}
-          className="w-full md:w-80 md:h-80 h-48 object-cover rounded-xl shadow-lg mb-4 md:mb-0 md:ml-6 md:float-right"
-        />
+      {/* Two-column layout: Text left, Image right aligned to top */}
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* Text content */}
+        <div className="flex-1">
+          <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+          
+          <ul className="space-y-3">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="flex items-start text-foreground/80">
+                <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
         
-        {/* Text content wraps around floated image */}
-        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-        
-        <ul className="space-y-3">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-foreground/80">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-        
-        {/* Clear float */}
-        <div className="clear-both"></div>
+        {/* Image - Aligned to top */}
+        <div className="md:w-80 flex-shrink-0 self-start order-first md:order-last">
+          <img 
+            src={service.image} 
+            alt={service.title}
+            className="w-full h-48 md:h-72 object-cover rounded-xl shadow-lg"
+          />
+        </div>
       </div>
     </div>
   );
@@ -120,9 +121,12 @@ const Services = () => {
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none bg-card border border-border/40 border-b-0 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200
-                      data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary
-                      data-[state=inactive]:hover:bg-muted/60"
+                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none 
+                      bg-transparent border border-border/40 
+                      first:rounded-tl-xl last:rounded-tr-xl 
+                      transition-all duration-200
+                      hover:bg-card/50 hover:shadow-sm hover:scale-[1.02]
+                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:shadow-md data-[state=active]:z-10 data-[state=active]:relative"
                   >
                     <div className="flex items-center gap-2">
                       <service.icon className="w-5 h-5" />
@@ -138,7 +142,7 @@ const Services = () => {
                 <TabsContent
                   key={service.id}
                   value={service.id}
-                  className="mt-0 p-8 bg-card border border-border/40 rounded-t-none rounded-b-2xl shadow-lg min-h-[420px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+                  className="-mt-px p-8 bg-card border border-border/40 border-t-border/40 rounded-b-2xl shadow-lg min-h-[420px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
                 >
                   <ServiceContent service={service} />
                 </TabsContent>
