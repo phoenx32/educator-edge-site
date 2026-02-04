@@ -125,8 +125,8 @@ const Services = () => {
                       bg-transparent border border-border/40 
                       first:rounded-tl-xl last:rounded-tr-xl 
                       transition-all duration-200
-                      hover:bg-card/50 hover:shadow-sm hover:scale-[1.02]
-                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:shadow-md data-[state=active]:z-10 data-[state=active]:relative"
+                      hover:bg-card/50
+                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
                   >
                     <div className="flex items-center gap-2">
                       <service.icon className="w-5 h-5" />
@@ -142,7 +142,7 @@ const Services = () => {
                 <TabsContent
                   key={service.id}
                   value={service.id}
-                  className="-mt-px p-8 bg-card border border-border/40 border-t-border/40 rounded-b-2xl shadow-lg min-h-[420px] data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+                  className="-mt-px p-6 bg-card border border-border/40 border-t-border/40 rounded-b-2xl data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
                 >
                   <ServiceContent service={service} />
                 </TabsContent>
