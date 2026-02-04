@@ -1,78 +1,104 @@
 
 
-# Fix Image Vertical Alignment
+# Fix Services Section Styling
 
-## The Issue
+## Overview
 
-Looking at your reference image, the image's top edge should align with the title "Professional Development Cohorts". Currently, the layout is:
+Three refinements to match the reference UI:
 
-```
-[Title spans full width                    ]
-[Description text...    ] [Image           ]
-[• Bullet points        ] [                ]
-```
+1. Remove excess padding in content cards so they fit content naturally
+2. Fix selected tab scaling issue - remove hover scale effect from active tabs
+3. Remove shadow from overall section and content card for a flat design
 
-But it should be:
+---
 
-```
-[Title text...          ] [Image           ]
-[Description text...    ] [                ]
-[• Bullet points        ] [                ]
-```
+## Changes
 
-## Solution
+### 1. Remove Extra Padding/White Space
 
-Move the title inside the left text column so the entire left column (title + description + bullets) sits alongside the image. This way the top of the image aligns with the top of the title.
+**Current Issue:** `min-h-[420px]` forces a fixed minimum height, creating whitespace when content is shorter
 
-## Technical Changes
+**Solution:** Remove minimum height - let content determine card size naturally
 
-**File:** `src/components/Services.tsx` (lines 62-95)
+**Change in TabsContent (line 145):**
+- Remove: `min-h-[420px]`
+- Keep padding reasonable: `p-6` instead of `p-8` for tighter fit
 
-Update `ServiceContent` layout structure:
+### 2. Fix Tab Scale/Spilling Issue
 
+**Current Issue:** Active tabs have `hover:scale-[1.02]` and `shadow-md` which makes them appear larger and "spill" beyond the container
+
+**Solution:** 
+- Remove `hover:scale-[1.02]` from all tabs (or only apply to inactive)
+- Remove `shadow-md` from active state
+- Keep background color change as the visual signal
+
+**Change in TabsTrigger (lines 124-129):**
+- Remove: `hover:scale-[1.02]`
+- Remove: `data-[state=active]:shadow-md`
+- Keep: `data-[state=active]:bg-card` and `data-[state=active]:border-b-transparent`
+
+### 3. Remove Offset Shadow for Flat Design
+
+**Current Issue:** Content card has `shadow-lg` which creates a floating/lifted appearance
+
+**Solution:** Remove shadows from the content card, use only borders for definition
+
+**Change in TabsContent (line 145):**
+- Remove: `shadow-lg`
+- Keep: border styling for visual definition
+
+Also remove `hover:shadow-sm` from tab triggers for consistency.
+
+---
+
+## Technical Implementation
+
+### File to Modify
+`src/components/Services.tsx`
+
+### TabsTrigger (lines 121-137)
 ```tsx
-const ServiceContent = ({ service }: { service: typeof services[0] }) => (
-  <div className="h-full">
-    {/* Two-column layout: Text left (including title), Image right aligned to top */}
-    <div className="flex flex-col md:flex-row gap-6">
-      {/* Text content - Title is now INSIDE this column */}
-      <div className="flex-1">
-        {/* Title moved here */}
-        <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-          <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
-          {service.title}
-        </h3>
-        
-        <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-        
-        <ul className="space-y-3">
-          {service.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start text-foreground/80">
-              <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      {/* Image - Now aligns with title at top */}
-      <div className="md:w-80 flex-shrink-0 self-start order-first md:order-last">
-        <img 
-          src={service.image} 
-          alt={service.title}
-          className="w-full h-48 md:h-72 object-cover rounded-xl shadow-lg"
-        />
-      </div>
-    </div>
-  </div>
-);
+<TabsTrigger
+  key={service.id}
+  value={service.id}
+  className="flex flex-col items-start gap-1 px-5 py-4 rounded-none 
+    bg-transparent border border-border/40 
+    first:rounded-tl-xl last:rounded-tr-xl 
+    transition-all duration-200
+    hover:bg-card/50
+    data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
+>
 ```
 
-## Key Change
+Removed:
+- `hover:shadow-sm`
+- `hover:scale-[1.02]`
+- `data-[state=active]:shadow-md`
 
-The title `<h3>` element moves from outside the flex container to inside the left `<div className="flex-1">` column. This ensures:
+### TabsContent (lines 142-149)
+```tsx
+<TabsContent
+  key={service.id}
+  value={service.id}
+  className="-mt-px p-6 bg-card border border-border/40 border-t-border/40 rounded-b-2xl data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
+>
+```
 
-1. Title and image tops align on the same horizontal line
-2. Image height won't extend past the bullet list
-3. Layout matches the reference image exactly
+Removed:
+- `shadow-lg`
+- `min-h-[420px]`
+- Changed `p-8` to `p-6`
+
+---
+
+## Summary
+
+| Element | Before | After |
+|---------|--------|-------|
+| Content card height | `min-h-[420px]` | Auto (fits content) |
+| Content card padding | `p-8` | `p-6` |
+| Content card shadow | `shadow-lg` | None |
+| Tab hover | `scale-[1.02]` + shadow | Background color only |
+| Active tab | Shadow + scale | Background color only |
 
