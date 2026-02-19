@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { Lightbulb, Workflow, Users, Presentation, Sparkles, FolderOpen } from 'lucide-react';
+import { 
+  Lightbulb, Workflow, Users, Presentation, Sparkles, FolderOpen,
+  GraduationCap, Monitor, BookOpen, Target, BarChart3, FileText,
+  Podcast, Rocket, Laptop, Award, Layers, Wrench, Smartphone, ExternalLink,
+  type LucideIcon
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
@@ -9,86 +14,31 @@ import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
 import projectManagementImage from '@/assets/services-project-management.jpg';
 
-const portfolioItems: Record<string, { title: string; description: string }[]> = {
+const portfolioItems: Record<string, { title: string; description: string; icon: LucideIcon; link?: string }[]> = {
   'professional-development': [
-    {
-      title: 'CLP National Professional Learning Portfolio',
-      description: 'Designed and delivered professional learning to 3,000+ educators across 100+ organizations, earning 4.9/5 satisfaction ratings.'
-    },
-    {
-      title: 'Statewide Staff Digital Skills Training',
-      description: 'Built modular curricula and facilitator guides for a state agency, achieving 100% completion among participating staff.'
-    },
-    {
-      title: 'AI Professional Learning Series',
-      description: 'Designed national AI-focused professional learning translating emerging technologies into applied practice for adult educators and workforce systems.'
-    },
-    {
-      title: 'Digital Literacy Train-the-Trainer Toolkit',
-      description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.'
-    }
+    { title: 'National Professional Learning Portfolio', description: 'Designed and delivered professional learning to 3,000+ educators across 100+ organizations, earning 4.9/5 satisfaction ratings.', icon: GraduationCap },
+    { title: 'Statewide Staff Digital Skills Training', description: 'Built modular curricula and facilitator guides for a state agency, achieving 100% completion among participating staff.', icon: Monitor },
+    { title: 'AI Professional Learning Series', description: 'Designed national AI-focused professional learning translating emerging technologies into applied practice for adult educators and workforce systems.', icon: Sparkles },
+    { title: 'Digital Literacy Train-the-Trainer Toolkit', description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.', icon: BookOpen }
   ],
   'project-management': [
-    {
-      title: '$2M+ National Digital Skills Initiative (ISTE)',
-      description: 'Coordinated cross-functional teams producing national frameworks, curricula, and tools adopted by 40+ organizations. Improved course completion by ~40%.'
-    },
-    {
-      title: 'Data Infrastructure and Compliance Systems',
-      description: 'Managed 24+ monthly reporting workflows tied to $3.5M+ in WIOA funding. Built dashboards that reduced attrition 10-25%.'
-    },
-    {
-      title: 'OTAN Digital Learning Guidance Update',
-      description: 'Led revision of statewide Digital Learning Guidance, synthesizing field input, research, and policy into a practical framework.'
-    },
-    {
-      title: 'National TA Podcast and Content Operations',
-      description: 'Managed multi-stakeholder production of three podcast seasons and multi-format TA resources with structured editorial systems.'
-    },
-    {
-      title: "Louisiana's First Fully Remote Adult Education Program",
-      description: "Designed the state's first remote model, growing enrollment from ~30 to 5,000+ learners across 15 colleges. Earned COABE State Innovation of the Year."
-    },
-    {
-      title: 'Google Workspace Integration',
-      description: 'Led integration into SIS platforms serving 15,000+ students across 15+ programs, increasing digital access and instructional consistency.'
-    },
-    {
-      title: 'Micro-Credentialing and Digital Credential Systems',
-      description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.'
-    }
+    { title: '$2M+ National Digital Skills Initiative', description: 'Coordinated cross-functional teams producing national frameworks, curricula, and tools adopted by 40+ organizations. Improved course completion by ~40%.', icon: Target },
+    { title: 'Data Infrastructure and Compliance Systems', description: 'Managed 24+ monthly reporting workflows tied to $3.5M+ in WIOA funding. Built dashboards that reduced attrition 10-25%.', icon: BarChart3 },
+    { title: 'OTAN Digital Learning Guidance Update', description: 'Led revision of statewide Digital Learning Guidance, synthesizing field input, research, and policy into a practical framework.', icon: FileText, link: 'https://otan.us/Resources/DigitalLearningGuidance' },
+    { title: 'National TA Podcast and Content Operations', description: 'Managed multi-stakeholder production of three podcast seasons and multi-format TA resources with structured editorial systems.', icon: Podcast },
+    { title: "Louisiana's First Fully Remote Adult Education Program", description: "Designed the state's first remote model, growing enrollment from ~30 to 5,000+ learners across 15 colleges. Earned COABE State Innovation of the Year.", icon: Rocket },
+    { title: 'Google Workspace Integration', description: 'Led integration into SIS platforms serving 15,000+ students across 15+ programs, increasing digital access and instructional consistency.', icon: Laptop },
+    { title: 'Micro-Credentialing and Digital Credential Systems', description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.', icon: Award }
   ],
   'keynotes': [
-    {
-      title: 'Arizona Teachers N Technology Day',
-      description: 'Keynote presentation on digital learning and technology integration for adult educators.'
-    },
-    {
-      title: 'North Carolina CCR Professional Development Days',
-      description: 'Conference sessions connecting research to practice for college and career readiness.'
-    },
-    {
-      title: 'National and Regional Course Cohorts',
-      description: 'Delivered multi-week cohorts across states including California, Kentucky, Rhode Island, Texas, and Maine on topics from AI to digital literacy to math instruction.'
-    }
+    { title: 'Arizona Teachers N Technology Day', description: 'Keynote presentation on digital learning and technology integration for adult educators.', icon: Presentation },
+    { title: 'North Carolina CCR Professional Development Days', description: 'Conference sessions connecting research to practice for college and career readiness.', icon: Users }
   ],
   'curriculum': [
-    {
-      title: 'SkillRise Digital Skills Framework',
-      description: 'Designed a competency model translating workforce expectations into structured digital skills, adopted as a shared language across programs.'
-    },
-    {
-      title: 'SkillRise MLE Interactive Skills Story',
-      description: 'Led design and deployment of an interactive, mobile-friendly story for skill exploration and alignment to workforce pathways.'
-    },
-    {
-      title: 'Goodwill Industries International Toolkits',
-      description: 'Designed two national toolkits: a skills-based hiring course and a technical training development guide, scaled across a national network.'
-    },
-    {
-      title: 'Digital Literacy Curriculum',
-      description: 'Co-designed a digital literacy curriculum with campus libraries, serving 500+ learners and contributing to ~40% increases in persistence.'
-    }
+    { title: 'SkillRise Digital Skills Framework', description: 'Designed a competency model translating workforce expectations into structured digital skills, adopted as a shared language across programs.', icon: Layers, link: 'https://skillrise.org/digital-skills' },
+    { title: 'SkillRise MLE Interactive Skills Story', description: 'Led design and deployment of an interactive, mobile-friendly story for skill exploration and alignment to workforce pathways.', icon: Smartphone, link: 'https://mle.skillrise.org/skills' },
+    { title: 'Goodwill Industries International Toolkits', description: 'Designed two national toolkits: a skills-based hiring course and a technical training development guide, scaled across a national network.', icon: Wrench },
+    { title: 'Digital Literacy Curriculum', description: 'Co-designed a digital literacy curriculum with campus libraries, serving 500+ learners and contributing to ~40% increases in persistence.', icon: BookOpen }
   ]
 };
 
@@ -138,10 +88,13 @@ const Services = () => {
     }
   ];
 
-  const PortfolioDialog = ({ serviceId, serviceTitle }: { serviceId: string; serviceTitle: string }) => {
-    const items = portfolioItems[serviceId] || [];
+  const PortfolioDialog = ({ serviceId }: { serviceId: string; serviceTitle: string }) => {
+    const [activeTab, setActiveTab] = useState(serviceId);
+
+    const activeService = services.find(s => s.id === activeTab);
+
     return (
-      <Dialog>
+      <Dialog onOpenChange={(open) => { if (open) setActiveTab(serviceId); }}>
         <DialogTrigger asChild>
           <Button variant="outline" size="sm" className="gap-2">
             <FolderOpen className="w-4 h-4" />
@@ -150,17 +103,49 @@ const Services = () => {
         </DialogTrigger>
         <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-xl">{serviceTitle} Portfolio</DialogTitle>
+            <DialogTitle className="text-xl">{activeService?.shortTitle ?? 'Portfolio'}</DialogTitle>
             <DialogDescription>Selected projects and outcomes</DialogDescription>
           </DialogHeader>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            {items.map((item, idx) => (
-              <div key={idx} className="p-4 rounded-xl border border-border/60 bg-muted/30">
-                <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
+
+          <Tabs value={activeTab} onValueChange={setActiveTab}>
+            <TabsList className="grid grid-cols-4 w-full h-auto bg-muted/50 p-1">
+              {services.map(s => (
+                <TabsTrigger key={s.id} value={s.id} className="flex items-center gap-2 py-2 text-xs">
+                  <s.icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{s.shortTitle}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {Object.entries(portfolioItems).map(([key, items]) => (
+              <TabsContent key={key} value={key} className="mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {items.map((item, idx) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <div key={idx} className="p-4 rounded-xl border border-border/60 bg-muted/30">
+                        <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <ItemIcon className="w-4 h-4 text-primary flex-shrink-0" />
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                        {item.link && (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 mt-2 text-xs text-primary hover:text-primary/80 transition-colors"
+                          >
+                            View Resource <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </DialogContent>
       </Dialog>
     );
