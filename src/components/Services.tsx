@@ -103,10 +103,10 @@ const Services = () => {
             View Portfolio
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-xl">{activeService?.shortTitle ?? 'Portfolio'}</DialogTitle>
-            <DialogDescription>Selected projects and outcomes</DialogDescription>
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto top-[5vh] translate-y-0">
+          <DialogHeader className="text-center">
+            <DialogTitle className="text-xl text-center">{activeService?.shortTitle ?? 'Portfolio'}</DialogTitle>
+            <DialogDescription className="text-center">Selected projects and outcomes</DialogDescription>
           </DialogHeader>
 
           <Tabs value={activeTab} onValueChange={setActiveTab}>
