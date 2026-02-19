@@ -32,7 +32,9 @@ const portfolioItems: Record<string, { title: string; description: string; icon:
   ],
   'keynotes': [
     { title: 'Arizona Teachers N Technology Day', description: 'Keynote presentation on digital learning and technology integration for adult educators.', icon: Presentation },
-    { title: 'North Carolina CCR Professional Development Days', description: 'Conference sessions connecting research to practice for college and career readiness.', icon: Users }
+    { title: 'North Carolina CCR Professional Development Days', description: 'Conference sessions connecting research to practice for college and career readiness.', icon: Users },
+    { title: 'Applied Technology Workshops', description: 'Conference sessions on practical technology integration, including Desmos for teaching math, Google Sheets for data dashboards, and building digital intake systems to support adult education retention.', icon: Laptop },
+    { title: 'AI and Digital Resilience in Adult Learning', description: 'Sessions exploring emerging approaches, including getting started with AI for higher education and non-linear learning models that nurture digital resilience and lifelong learning.', icon: Sparkles }
   ],
   'curriculum': [
     { title: 'SkillRise Digital Skills Framework', description: 'Designed a competency model translating workforce expectations into structured digital skills, adopted as a shared language across programs.', icon: Layers, link: 'https://skillrise.org/digital-skills' },
@@ -119,7 +121,7 @@ const Services = () => {
 
             {Object.entries(portfolioItems).map(([key, items]) => (
               <TabsContent key={key} value={key} className="mt-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[400px]">
                   {items.map((item, idx) => {
                     const ItemIcon = item.icon;
                     return (
