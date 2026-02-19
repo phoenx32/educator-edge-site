@@ -1,158 +1,57 @@
 
-
-# Update Portfolio Dialog: Icons, Links, Content Edits, and Navigation Tabs
+# Fix Dialog Resize Jank and Add Keynote Items
 
 ## Overview
 
-Several updates to the portfolio dialog system: add icons to each portfolio card title, add links where available, fix content issues, remove an item, and add navigation tabs inside the dialog so users can browse across service categories without closing and reopening.
+Two changes: (1) fix the jarring resize when switching tabs in the portfolio dialog by setting a minimum height on the content area, and (2) add 5 new keynote/workshop items, grouped into 2 additional cards with thoughtful framing.
 
 ---
 
-## Content Changes
+## 1. Fix Tab Switch Resize
 
-| Category | Change |
-|----------|--------|
-| Professional Development | Rename "CLP National Professional Learning Portfolio" to "National Professional Learning Portfolio" |
-| Project Management | Remove "(ISTE)" from the digital skills initiative title |
-| Project Management | Add link to OTAN DLG: https://otan.us/Resources/DigitalLearningGuidance |
-| Curriculum | Add link to SkillRise Digital Skills Framework: https://skillrise.org/digital-skills |
-| Curriculum | Add link to SkillRise MLE: https://mle.skillrise.org/skills |
-| Keynotes | Remove "National and Regional Course Cohorts" item entirely (leaves 2 items) |
+The content area resizes dramatically between tabs because Project Management has 7 items while Keynotes has 2. 
 
-## Data Structure Update
+**Solution**: Set a `min-h-[400px]` on each `TabsContent` inner grid container. This prevents the dialog from collapsing too much on smaller tabs, while still allowing taller tabs to grow naturally. Combined with adding `transition-all duration-200` won't help since the dialog recalculates -- the min-height approach is the most reliable fix.
 
-Add an optional `link` field to the portfolio item type:
+**Change**: On line 121, update `TabsContent` class to include `min-h-[400px]` on the grid wrapper div (line 122).
 
-```ts
-Record<string, { title: string; description: string; link?: string }[]>
-```
+## 2. Add Keynote Items
 
-## Icons for Each Portfolio Card
+The 5 new topics group naturally into two cards:
 
-Add a relevant Lucide icon to each card title to give visual distinction. Suggested mapping:
+**Card 1: "Applied Technology Workshops"** (icon: `Wrench` or `Laptop`)
+- Description: "Conference sessions on practical technology integration, including Desmos for teaching math, Google Sheets for data dashboards, and building digital intake systems to support adult education retention."
 
-- **Professional Development**
-  - National Professional Learning Portfolio: `GraduationCap`
-  - Statewide Staff Digital Skills Training: `Monitor`
-  - AI Professional Learning Series: `Sparkles`
-  - Digital Literacy Train-the-Trainer Toolkit: `BookOpen`
+**Card 2: "AI and Digital Resilience in Adult Learning"** (icon: `Sparkles`)
+- Description: "Sessions exploring emerging approaches, including getting started with AI for higher education and non-linear learning models that nurture digital resilience and lifelong learning."
 
-- **Project Management**
-  - $2M+ National Digital Skills Initiative: `Target`
-  - Data Infrastructure and Compliance Systems: `BarChart3`
-  - OTAN Digital Learning Guidance Update: `FileText` (has link)
-  - National TA Podcast and Content Operations: `Podcast`
-  - Louisiana's First Fully Remote Adult Ed: `Rocket`
-  - Google Workspace Integration: `Laptop`
-  - Micro-Credentialing and Digital Credentials: `Award`
-
-- **Keynotes**
-  - Arizona Teachers N Technology Day: `Presentation`
-  - North Carolina CCR PD Days: `Users`
-
-- **Curriculum**
-  - SkillRise Digital Skills Framework: `Layers` (has link)
-  - SkillRise MLE Interactive Skills Story: `Smartphone` (has link)
-  - Goodwill Industries International Toolkits: `Wrench`
-  - Digital Literacy Curriculum: `BookOpen`
-
-## Link Styling
-
-For cards that have a link, render a subtle "View Resource" link below the description using the `ExternalLink` icon. Styled as a small text link (`text-primary text-xs`) so it doesn't compete with the card content but is clearly interactive. Cards without links simply don't show this element.
-
-## Navigation Tabs Inside Dialog
-
-Replace the current single-category dialog with a tabbed dialog. When a user clicks "View Portfolio" on any service card, the dialog opens with that service's tab pre-selected, but all four tabs are accessible via icon-only triggers at the top of the dialog.
-
-This means:
-- The `PortfolioDialog` component receives the initial `serviceId` as the default tab
-- Inside `DialogContent`, a `Tabs` component with a horizontal `TabsList` shows all 4 service icons
-- Switching tabs shows different category content without closing the dialog
-- Dialog title updates to match the selected tab
+This keeps the keynotes tab at 4 items (matching PD and Curriculum) and groups related topics logically.
 
 ---
 
-## Technical Implementation
+## Technical Changes
 
 ### File: `src/components/Services.tsx`
 
-### 1. Update imports
+### 1. Update keynotes data (lines 33-36)
 
-Add new Lucide icons: `GraduationCap`, `Monitor`, `BookOpen`, `Target`, `BarChart3`, `FileText`, `Podcast`, `Rocket`, `Laptop`, `Award`, `Layers`, `Wrench`, `Smartphone`, `ExternalLink`
-
-### 2. Update portfolio data type and content
+Add two new entries to the `keynotes` array:
 
 ```ts
-const portfolioItems: Record<string, { 
-  title: string; 
-  description: string; 
-  icon: LucideIcon;
-  link?: string 
-}[]> = { ... }
+'keynotes': [
+  { title: 'Arizona Teachers N Technology Day', description: 'Keynote presentation on digital learning and technology integration for adult educators.', icon: Presentation },
+  { title: 'North Carolina CCR Professional Development Days', description: 'Conference sessions connecting research to practice for college and career readiness.', icon: Users },
+  { title: 'Applied Technology Workshops', description: 'Conference sessions on practical technology integration, including Desmos for teaching math, Google Sheets for data dashboards, and building digital intake systems to support adult education retention.', icon: Laptop },
+  { title: 'AI and Digital Resilience in Adult Learning', description: 'Sessions exploring emerging approaches, including getting started with AI for higher education and non-linear learning models that nurture digital resilience and lifelong learning.', icon: Sparkles }
+],
 ```
 
-With all content edits applied (renamed titles, removed items, added links and icons).
+### 2. Fix resize jank (line 122)
 
-### 3. Rewrite PortfolioDialog component
+Add `min-h-[400px]` to the grid container inside each `TabsContent`:
 
 ```tsx
-const PortfolioDialog = ({ serviceId, serviceTitle }: { ... }) => {
-  const [activeTab, setActiveTab] = useState(serviceId);
-  
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <FolderOpen className="w-4 h-4" />
-          View Portfolio
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle>Portfolio</DialogTitle>
-          <DialogDescription>Selected projects and outcomes</DialogDescription>
-        </DialogHeader>
-        
-        {/* Navigation tabs inside dialog */}
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid grid-cols-4 ...">
-            {services.map(s => (
-              <TabsTrigger value={s.id}>
-                <s.icon /> <span className="hidden sm:inline">{s.shortTitle}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          
-          {Object.entries(portfolioItems).map(([key, items]) => (
-            <TabsContent value={key}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {items.map(item => (
-                  <div className="p-4 rounded-xl border ...">
-                    <h4 className="flex items-center gap-2">
-                      <item.icon className="w-4 h-4 text-primary" />
-                      {item.title}
-                    </h4>
-                    <p>{item.description}</p>
-                    {item.link && (
-                      <a href={item.link} target="_blank" className="text-xs text-primary ...">
-                        View Resource <ExternalLink />
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </DialogContent>
-    </Dialog>
-  );
-};
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[400px]">
 ```
 
-Note: Since `PortfolioDialog` is defined inside the `Services` component, it has access to the `services` array for rendering the tab triggers.
-
-### 4. Reset active tab on dialog open
-
-Use the `onOpenChange` callback on `Dialog` to reset `activeTab` back to the originating `serviceId` each time the dialog opens, so users always land on the relevant tab first.
-
+This anchors the dialog height so switching between a 7-item tab and a 4-item tab doesn't cause a dramatic jump.
