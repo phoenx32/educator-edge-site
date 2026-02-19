@@ -1,172 +1,158 @@
 
 
-# Update Portfolio Content
+# Update Portfolio Dialog: Icons, Links, Content Edits, and Navigation Tabs
 
 ## Overview
 
-Content-only updates to the portfolio data from the approved plan. No UI/UX changes needed -- just reorganizing and editing project entries across the four service categories.
+Several updates to the portfolio dialog system: add icons to each portfolio card title, add links where available, fix content issues, remove an item, and add navigation tabs inside the dialog so users can browse across service categories without closing and reopening.
 
 ---
 
-## Changes by Category
+## Content Changes
 
-### 1. Professional Development Cohorts
+| Category | Change |
+|----------|--------|
+| Professional Development | Rename "CLP National Professional Learning Portfolio" to "National Professional Learning Portfolio" |
+| Project Management | Remove "(ISTE)" from the digital skills initiative title |
+| Project Management | Add link to OTAN DLG: https://otan.us/Resources/DigitalLearningGuidance |
+| Curriculum | Add link to SkillRise Digital Skills Framework: https://skillrise.org/digital-skills |
+| Curriculum | Add link to SkillRise MLE: https://mle.skillrise.org/skills |
+| Keynotes | Remove "National and Regional Course Cohorts" item entirely (leaves 2 items) |
 
-| Action | Project | Detail |
-|--------|---------|--------|
-| Keep | CLP National Professional Learning Portfolio | No changes |
-| Remove | Google Applied Digital Skills National Trainer | Per request |
-| Keep | Statewide Staff Digital Skills Training | No changes |
-| Edit | Cohort-Based AI Professional Learning | Remove "Cohort-Based" from title, reword to avoid "cohorts" -- rename to "AI Professional Learning Series" |
-| Move OUT | Digital Literacy Curriculum | Move to Curriculum Development |
-| Keep | Digital Literacy Train-the-Trainer Toolkit | Remove "Texas" from title, keep rest |
+## Data Structure Update
 
-**Final list (4 items):**
-1. CLP National Professional Learning Portfolio
-2. Statewide Staff Digital Skills Training
-3. AI Professional Learning Series
-4. Digital Literacy Train-the-Trainer Toolkit
-
-### 2. Project Management
-
-| Action | Project | Detail |
-|--------|---------|--------|
-| Edit | ISTE National Digital Skills Initiative | Change "Directed" to "Coordinated" |
-| Keep | Data Infrastructure and Compliance Systems | No changes |
-| Keep | OTAN Digital Learning Guidance Update | No changes |
-| Keep | National TA Podcast and Content Operations | No changes |
-| Remove | Bayou Treme Incubator | Per request |
-| Move IN | Louisiana's First Fully Remote Adult Ed Program | From Curriculum |
-| Move IN | Google Workspace Integration | From Curriculum |
-| Move IN | Micro-Credentialing and Digital Credential Systems | From Curriculum |
-
-**Final list (7 items):**
-1. ISTE National Digital Skills Initiative (with "Coordinated")
-2. Data Infrastructure and Compliance Systems
-3. OTAN Digital Learning Guidance Update
-4. National TA Podcast and Content Operations
-5. Louisiana's First Fully Remote Adult Education Program
-6. Google Workspace Integration
-7. Micro-Credentialing and Digital Credential Systems
-
-### 3. Keynotes and Workshops
-
-| Action | Project | Detail |
-|--------|---------|--------|
-| Keep | Arizona Teachers N Technology Day | No changes |
-| Keep | North Carolina CCR Professional Development Days | No changes |
-| Edit | National and Regional Course Cohorts | Add California to state list |
-
-**Final list (3 items):** unchanged count, just add California to cohorts description.
-
-### 4. Curriculum Development and Instructional Design
-
-| Action | Project | Detail |
-|--------|---------|--------|
-| Move OUT | Louisiana Remote Program | To Project Management |
-| Move OUT | Google Workspace Integration | To Project Management |
-| Edit | SkillRise MLE Skills Platform | Change from "platform" to "interactive, mobile-friendly story" |
-| Move OUT | Micro-Credentialing | To Project Management |
-| Move IN | Digital Literacy Curriculum | From PD Cohorts |
-| Keep | SkillRise Digital Skills Framework | No changes |
-| Keep | Goodwill Industries International Toolkits | No changes |
-
-**Final list (4 items):**
-1. SkillRise Digital Skills Framework
-2. SkillRise MLE Interactive Skills Story (reworded)
-3. Goodwill Industries International Toolkits
-4. Digital Literacy Curriculum (moved from PD)
-
----
-
-## Technical Details
-
-All changes are to the `portfolioItems` data object in `src/components/Services.tsx`. The portfolio dialog UI, button placement, and animations remain exactly as previously approved.
-
-### Updated Portfolio Data
+Add an optional `link` field to the portfolio item type:
 
 ```ts
-const portfolioItems: Record<string, { title: string; description: string }[]> = {
-  'professional-development': [
-    {
-      title: 'CLP National Professional Learning Portfolio',
-      description: 'Designed and delivered professional learning to 3,000+ educators across 100+ organizations, earning 4.9/5 satisfaction ratings.'
-    },
-    {
-      title: 'Statewide Staff Digital Skills Training',
-      description: 'Built modular curricula and facilitator guides for a state agency, achieving 100% completion among participating staff.'
-    },
-    {
-      title: 'AI Professional Learning Series',
-      description: 'Designed national AI-focused professional learning translating emerging technologies into applied practice for adult educators and workforce systems.'
-    },
-    {
-      title: 'Digital Literacy Train-the-Trainer Toolkit',
-      description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.'
-    }
-  ],
-  'project-management': [
-    {
-      title: '$2M+ National Digital Skills Initiative (ISTE)',
-      description: 'Coordinated cross-functional teams producing national frameworks, curricula, and tools adopted by 40+ organizations. Improved course completion by ~40%.'
-    },
-    {
-      title: 'Data Infrastructure and Compliance Systems',
-      description: 'Managed 24+ monthly reporting workflows tied to $3.5M+ in WIOA funding. Built dashboards that reduced attrition 10-25%.'
-    },
-    {
-      title: 'OTAN Digital Learning Guidance Update',
-      description: 'Led revision of statewide Digital Learning Guidance, synthesizing field input, research, and policy into a practical framework.'
-    },
-    {
-      title: 'National TA Podcast and Content Operations',
-      description: 'Managed multi-stakeholder production of three podcast seasons and multi-format TA resources with structured editorial systems.'
-    },
-    {
-      title: "Louisiana's First Fully Remote Adult Education Program",
-      description: "Designed the state's first remote model, growing enrollment from ~30 to 5,000+ learners across 15 colleges. Earned COABE State Innovation of the Year."
-    },
-    {
-      title: 'Google Workspace Integration',
-      description: 'Led integration into SIS platforms serving 15,000+ students across 15+ programs, increasing digital access and instructional consistency.'
-    },
-    {
-      title: 'Micro-Credentialing and Digital Credential Systems',
-      description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.'
-    }
-  ],
-  'keynotes': [
-    {
-      title: 'Arizona Teachers N Technology Day',
-      description: 'Keynote presentation on digital learning and technology integration for adult educators.'
-    },
-    {
-      title: 'North Carolina CCR Professional Development Days',
-      description: 'Conference sessions connecting research to practice for college and career readiness.'
-    },
-    {
-      title: 'National and Regional Course Cohorts',
-      description: 'Delivered multi-week cohorts across states including California, Kentucky, Rhode Island, Texas, and Maine on topics from AI to digital literacy to math instruction.'
-    }
-  ],
-  'curriculum': [
-    {
-      title: 'SkillRise Digital Skills Framework',
-      description: 'Designed a competency model translating workforce expectations into structured digital skills, adopted as a shared language across programs.'
-    },
-    {
-      title: 'SkillRise MLE Interactive Skills Story',
-      description: 'Led design and deployment of an interactive, mobile-friendly story for skill exploration and alignment to workforce pathways.'
-    },
-    {
-      title: 'Goodwill Industries International Toolkits',
-      description: 'Designed two national toolkits: a skills-based hiring course and a technical training development guide, scaled across a national network.'
-    },
-    {
-      title: 'Digital Literacy Curriculum',
-      description: 'Co-designed a digital literacy curriculum with campus libraries, serving 500+ learners and contributing to ~40% increases in persistence.'
-    }
-  ]
+Record<string, { title: string; description: string; link?: string }[]>
+```
+
+## Icons for Each Portfolio Card
+
+Add a relevant Lucide icon to each card title to give visual distinction. Suggested mapping:
+
+- **Professional Development**
+  - National Professional Learning Portfolio: `GraduationCap`
+  - Statewide Staff Digital Skills Training: `Monitor`
+  - AI Professional Learning Series: `Sparkles`
+  - Digital Literacy Train-the-Trainer Toolkit: `BookOpen`
+
+- **Project Management**
+  - $2M+ National Digital Skills Initiative: `Target`
+  - Data Infrastructure and Compliance Systems: `BarChart3`
+  - OTAN Digital Learning Guidance Update: `FileText` (has link)
+  - National TA Podcast and Content Operations: `Podcast`
+  - Louisiana's First Fully Remote Adult Ed: `Rocket`
+  - Google Workspace Integration: `Laptop`
+  - Micro-Credentialing and Digital Credentials: `Award`
+
+- **Keynotes**
+  - Arizona Teachers N Technology Day: `Presentation`
+  - North Carolina CCR PD Days: `Users`
+
+- **Curriculum**
+  - SkillRise Digital Skills Framework: `Layers` (has link)
+  - SkillRise MLE Interactive Skills Story: `Smartphone` (has link)
+  - Goodwill Industries International Toolkits: `Wrench`
+  - Digital Literacy Curriculum: `BookOpen`
+
+## Link Styling
+
+For cards that have a link, render a subtle "View Resource" link below the description using the `ExternalLink` icon. Styled as a small text link (`text-primary text-xs`) so it doesn't compete with the card content but is clearly interactive. Cards without links simply don't show this element.
+
+## Navigation Tabs Inside Dialog
+
+Replace the current single-category dialog with a tabbed dialog. When a user clicks "View Portfolio" on any service card, the dialog opens with that service's tab pre-selected, but all four tabs are accessible via icon-only triggers at the top of the dialog.
+
+This means:
+- The `PortfolioDialog` component receives the initial `serviceId` as the default tab
+- Inside `DialogContent`, a `Tabs` component with a horizontal `TabsList` shows all 4 service icons
+- Switching tabs shows different category content without closing the dialog
+- Dialog title updates to match the selected tab
+
+---
+
+## Technical Implementation
+
+### File: `src/components/Services.tsx`
+
+### 1. Update imports
+
+Add new Lucide icons: `GraduationCap`, `Monitor`, `BookOpen`, `Target`, `BarChart3`, `FileText`, `Podcast`, `Rocket`, `Laptop`, `Award`, `Layers`, `Wrench`, `Smartphone`, `ExternalLink`
+
+### 2. Update portfolio data type and content
+
+```ts
+const portfolioItems: Record<string, { 
+  title: string; 
+  description: string; 
+  icon: LucideIcon;
+  link?: string 
+}[]> = { ... }
+```
+
+With all content edits applied (renamed titles, removed items, added links and icons).
+
+### 3. Rewrite PortfolioDialog component
+
+```tsx
+const PortfolioDialog = ({ serviceId, serviceTitle }: { ... }) => {
+  const [activeTab, setActiveTab] = useState(serviceId);
+  
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline" size="sm" className="gap-2">
+          <FolderOpen className="w-4 h-4" />
+          View Portfolio
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Portfolio</DialogTitle>
+          <DialogDescription>Selected projects and outcomes</DialogDescription>
+        </DialogHeader>
+        
+        {/* Navigation tabs inside dialog */}
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
+          <TabsList className="grid grid-cols-4 ...">
+            {services.map(s => (
+              <TabsTrigger value={s.id}>
+                <s.icon /> <span className="hidden sm:inline">{s.shortTitle}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          {Object.entries(portfolioItems).map(([key, items]) => (
+            <TabsContent value={key}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {items.map(item => (
+                  <div className="p-4 rounded-xl border ...">
+                    <h4 className="flex items-center gap-2">
+                      <item.icon className="w-4 h-4 text-primary" />
+                      {item.title}
+                    </h4>
+                    <p>{item.description}</p>
+                    {item.link && (
+                      <a href={item.link} target="_blank" className="text-xs text-primary ...">
+                        View Resource <ExternalLink />
+                      </a>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </DialogContent>
+    </Dialog>
+  );
 };
 ```
+
+Note: Since `PortfolioDialog` is defined inside the `Services` component, it has access to the `services` array for rendering the tab triggers.
+
+### 4. Reset active tab on dialog open
+
+Use the `onOpenChange` callback on `Dialog` to reset `activeTab` back to the originating `serviceId` each time the dialog opens, so users always land on the relevant tab first.
 
