@@ -1,31 +1,34 @@
 
-# Fix Dialog Resize Jank and Add Keynote Items
+
+# Fix Dialog Anchor and Polish Tab Headers
 
 ## Overview
 
-Two changes: (1) fix the jarring resize when switching tabs in the portfolio dialog by setting a minimum height on the content area, and (2) add 5 new keynote/workshop items, grouped into 2 additional cards with thoughtful framing.
+Two changes: (1) anchor the dialog to the top of the viewport so it expands downward when content grows, keeping the title and nav bar stable, and (2) add service icons to tab triggers and center the dialog header.
 
 ---
 
-## 1. Fix Tab Switch Resize
+## 1. Top-Anchored Dialog
 
-The content area resizes dramatically between tabs because Project Management has 7 items while Keynotes has 2. 
+Currently the dialog uses `top-[50%] translate-y-[-50%]` which centers it vertically. When switching from a 4-item tab to a 7-item tab, the entire dialog shifts up/down to stay centered -- this is what causes the jarring experience.
 
-**Solution**: Set a `min-h-[400px]` on each `TabsContent` inner grid container. This prevents the dialog from collapsing too much on smaller tabs, while still allowing taller tabs to grow naturally. Combined with adding `transition-all duration-200` won't help since the dialog recalculates -- the min-height approach is the most reliable fix.
+**Fix**: Override the dialog positioning so it anchors near the top of the viewport. The title, description, and tab bar stay pinned in place, and only the content below grows downward.
 
-**Change**: On line 121, update `TabsContent` class to include `min-h-[400px]` on the grid wrapper div (line 122).
+On the `DialogContent` in `Services.tsx`, add classes to override the default centering:
 
-## 2. Add Keynote Items
+```
+top-[5vh] translate-y-0
+```
 
-The 5 new topics group naturally into two cards:
+This places the dialog 5% from the top and removes the vertical centering transform, so it always starts from the same position and expands downward.
 
-**Card 1: "Applied Technology Workshops"** (icon: `Wrench` or `Laptop`)
-- Description: "Conference sessions on practical technology integration, including Desmos for teaching math, Google Sheets for data dashboards, and building digital intake systems to support adult education retention."
+## 2. Center Header Text
 
-**Card 2: "AI and Digital Resilience in Adult Learning"** (icon: `Sparkles`)
-- Description: "Sessions exploring emerging approaches, including getting started with AI for higher education and non-linear learning models that nurture digital resilience and lifelong learning."
+Add `text-center` to `DialogHeader`, `DialogTitle`, and `DialogDescription` so the title and subtitle are centered above the tabs.
 
-This keeps the keynotes tab at 4 items (matching PD and Curriculum) and groups related topics logically.
+## 3. Tab Trigger Icons
+
+The tab triggers already show each service's icon (`<s.icon>`). The `shortTitle` text is hidden on mobile (`hidden sm:inline`). No change needed here -- icons are already present. The current implementation matches the request.
 
 ---
 
@@ -33,25 +36,19 @@ This keeps the keynotes tab at 4 items (matching PD and Curriculum) and groups r
 
 ### File: `src/components/Services.tsx`
 
-### 1. Update keynotes data (lines 33-36)
-
-Add two new entries to the `keynotes` array:
-
-```ts
-'keynotes': [
-  { title: 'Arizona Teachers N Technology Day', description: 'Keynote presentation on digital learning and technology integration for adult educators.', icon: Presentation },
-  { title: 'North Carolina CCR Professional Development Days', description: 'Conference sessions connecting research to practice for college and career readiness.', icon: Users },
-  { title: 'Applied Technology Workshops', description: 'Conference sessions on practical technology integration, including Desmos for teaching math, Google Sheets for data dashboards, and building digital intake systems to support adult education retention.', icon: Laptop },
-  { title: 'AI and Digital Resilience in Adult Learning', description: 'Sessions exploring emerging approaches, including getting started with AI for higher education and non-linear learning models that nurture digital resilience and lifelong learning.', icon: Sparkles }
-],
-```
-
-### 2. Fix resize jank (line 122)
-
-Add `min-h-[400px]` to the grid container inside each `TabsContent`:
+**Line 106** -- Update `DialogContent` className to anchor from top:
 
 ```tsx
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[400px]">
+<DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto top-[5vh] translate-y-0">
 ```
 
-This anchors the dialog height so switching between a 7-item tab and a 4-item tab doesn't cause a dramatic jump.
+**Lines 107-110** -- Center the header:
+
+```tsx
+<DialogHeader className="text-center">
+  <DialogTitle className="text-xl text-center">{activeService?.shortTitle ?? 'Portfolio'}</DialogTitle>
+  <DialogDescription className="text-center">Selected projects and outcomes</DialogDescription>
+</DialogHeader>
+```
+
+These are the only two edits needed. The tab icons are already in place from the previous implementation.
