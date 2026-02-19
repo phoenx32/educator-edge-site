@@ -1,11 +1,96 @@
-import { Lightbulb, Workflow, Users, Presentation, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { Lightbulb, Workflow, Users, Presentation, Sparkles, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
 import { useIsMobile } from '@/hooks/use-mobile';
 import aiImage from '@/assets/services-curriculum-dev-new.png';
 import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
 import projectManagementImage from '@/assets/services-project-management.jpg';
+
+const portfolioItems: Record<string, { title: string; description: string }[]> = {
+  'professional-development': [
+    {
+      title: 'CLP National Professional Learning Portfolio',
+      description: 'Designed and delivered professional learning to 3,000+ educators across 100+ organizations, earning 4.9/5 satisfaction ratings.'
+    },
+    {
+      title: 'Statewide Staff Digital Skills Training',
+      description: 'Built modular curricula and facilitator guides for a state agency, achieving 100% completion among participating staff.'
+    },
+    {
+      title: 'AI Professional Learning Series',
+      description: 'Designed national AI-focused professional learning translating emerging technologies into applied practice for adult educators and workforce systems.'
+    },
+    {
+      title: 'Digital Literacy Train-the-Trainer Toolkit',
+      description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.'
+    }
+  ],
+  'project-management': [
+    {
+      title: '$2M+ National Digital Skills Initiative (ISTE)',
+      description: 'Coordinated cross-functional teams producing national frameworks, curricula, and tools adopted by 40+ organizations. Improved course completion by ~40%.'
+    },
+    {
+      title: 'Data Infrastructure and Compliance Systems',
+      description: 'Managed 24+ monthly reporting workflows tied to $3.5M+ in WIOA funding. Built dashboards that reduced attrition 10-25%.'
+    },
+    {
+      title: 'OTAN Digital Learning Guidance Update',
+      description: 'Led revision of statewide Digital Learning Guidance, synthesizing field input, research, and policy into a practical framework.'
+    },
+    {
+      title: 'National TA Podcast and Content Operations',
+      description: 'Managed multi-stakeholder production of three podcast seasons and multi-format TA resources with structured editorial systems.'
+    },
+    {
+      title: "Louisiana's First Fully Remote Adult Education Program",
+      description: "Designed the state's first remote model, growing enrollment from ~30 to 5,000+ learners across 15 colleges. Earned COABE State Innovation of the Year."
+    },
+    {
+      title: 'Google Workspace Integration',
+      description: 'Led integration into SIS platforms serving 15,000+ students across 15+ programs, increasing digital access and instructional consistency.'
+    },
+    {
+      title: 'Micro-Credentialing and Digital Credential Systems',
+      description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.'
+    }
+  ],
+  'keynotes': [
+    {
+      title: 'Arizona Teachers N Technology Day',
+      description: 'Keynote presentation on digital learning and technology integration for adult educators.'
+    },
+    {
+      title: 'North Carolina CCR Professional Development Days',
+      description: 'Conference sessions connecting research to practice for college and career readiness.'
+    },
+    {
+      title: 'National and Regional Course Cohorts',
+      description: 'Delivered multi-week cohorts across states including California, Kentucky, Rhode Island, Texas, and Maine on topics from AI to digital literacy to math instruction.'
+    }
+  ],
+  'curriculum': [
+    {
+      title: 'SkillRise Digital Skills Framework',
+      description: 'Designed a competency model translating workforce expectations into structured digital skills, adopted as a shared language across programs.'
+    },
+    {
+      title: 'SkillRise MLE Interactive Skills Story',
+      description: 'Led design and deployment of an interactive, mobile-friendly story for skill exploration and alignment to workforce pathways.'
+    },
+    {
+      title: 'Goodwill Industries International Toolkits',
+      description: 'Designed two national toolkits: a skills-based hiring course and a technical training development guide, scaled across a national network.'
+    },
+    {
+      title: 'Digital Literacy Curriculum',
+      description: 'Co-designed a digital literacy curriculum with campus libraries, serving 500+ learners and contributing to ~40% increases in persistence.'
+    }
+  ]
+};
 
 const Services = () => {
   const isMobile = useIsMobile();
@@ -53,6 +138,34 @@ const Services = () => {
     }
   ];
 
+  const PortfolioDialog = ({ serviceId, serviceTitle }: { serviceId: string; serviceTitle: string }) => {
+    const items = portfolioItems[serviceId] || [];
+    return (
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" size="sm" className="gap-2">
+            <FolderOpen className="w-4 h-4" />
+            View Portfolio
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl">{serviceTitle} Portfolio</DialogTitle>
+            <DialogDescription>Selected projects and outcomes</DialogDescription>
+          </DialogHeader>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            {items.map((item, idx) => (
+              <div key={idx} className="p-4 rounded-xl border border-border/60 bg-muted/30">
+                <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  };
+
   const ServiceContent = ({ service }: { service: typeof services[0] }) => (
     <div className="h-full">
       <div className="flex flex-col md:flex-row gap-6">
@@ -61,10 +174,8 @@ const Services = () => {
             <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
             {service.title}
           </h3>
-          
           <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-          
-          <ul className="space-y-3">
+          <ul className="space-y-3 mb-6">
             {service.features.map((feature, idx) => (
               <li key={idx} className="flex items-start text-foreground/80">
                 <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
@@ -72,14 +183,10 @@ const Services = () => {
               </li>
             ))}
           </ul>
+          <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
         </div>
-        
         <div className="md:w-80 flex-shrink-0 self-start">
-          <img 
-            src={service.image} 
-            alt={service.title}
-            className="w-full h-72 object-cover rounded-xl"
-          />
+          <img src={service.image} alt={service.title} className="w-full h-72 object-cover rounded-xl" />
         </div>
       </div>
     </div>
@@ -91,10 +198,8 @@ const Services = () => {
         <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
         <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
       </div>
-      
       <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
-      
-      <ul className="space-y-2 mb-6">
+      <ul className="space-y-2 mb-4">
         {service.features.map((feature, idx) => (
           <li key={idx} className="flex items-start text-foreground/80 text-sm">
             <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
@@ -102,12 +207,10 @@ const Services = () => {
           </li>
         ))}
       </ul>
-      
-      <img 
-        src={service.image} 
-        alt={service.title}
-        className="w-full h-48 object-cover rounded-xl"
-      />
+      <div className="mb-6">
+        <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
+      </div>
+      <img src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-xl" />
     </div>
   );
 
@@ -127,22 +230,15 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Desktop: Horizontal Tabbed Interface */}
         {!isMobile ? (
           <div className="max-w-6xl mx-auto">
             <Tabs defaultValue="professional-development" className="flex flex-col">
-              {/* Tab Row - Grid Layout */}
               <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
                 {services.map((service) => (
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none 
-                      bg-transparent border border-border/40 
-                      first:rounded-tl-xl last:rounded-tr-xl 
-                      transition-all duration-200
-                      hover:bg-card/50
-                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
+                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none bg-transparent border border-border/40 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200 hover:bg-card/50 data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
                   >
                     <div className="flex items-center gap-2">
                       <service.icon className="w-5 h-5" />
@@ -152,8 +248,6 @@ const Services = () => {
                   </TabsTrigger>
                 ))}
               </TabsList>
-
-              {/* Content Card - Connected to tabs */}
               {services.map((service) => (
                 <TabsContent
                   key={service.id}
@@ -166,7 +260,6 @@ const Services = () => {
             </Tabs>
           </div>
         ) : (
-          /* Mobile: Horizontal Tabs with Icon Only */
           <div className="max-w-full mx-auto">
             <Tabs defaultValue="professional-development" className="flex flex-col">
               <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
@@ -174,18 +267,12 @@ const Services = () => {
                   <TabsTrigger
                     key={service.id}
                     value={service.id}
-                    className="flex items-center justify-center p-4 rounded-none 
-                      bg-transparent border border-border/40 
-                      first:rounded-tl-xl last:rounded-tr-xl 
-                      transition-all duration-200
-                      hover:bg-card/50
-                      data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
+                    className="flex items-center justify-center p-4 rounded-none bg-transparent border border-border/40 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200 hover:bg-card/50 data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
                   >
                     <service.icon className="w-5 h-5" />
                   </TabsTrigger>
                 ))}
               </TabsList>
-
               {services.map((service) => (
                 <TabsContent
                   key={service.id}
