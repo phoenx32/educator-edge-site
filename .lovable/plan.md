@@ -1,31 +1,19 @@
 
 
-# Adjust Image Zoom and Update Description Text
+# Fix Image Zoom: Show Full Images for Project Management and Curriculum
 
-Two small changes in `src/components/Services.tsx`, no design changes.
+## Problem
+`object-cover` always crops to fill the container. Changing `object-position` just moves the crop window — it doesn't zoom out. The Project Management image now shows mostly the laptop, and the Curriculum image didn't visibly change.
 
-## 1. Zoom out on Project Management and Curriculum images
+## Solution
+Switch these two images from `object-cover` to `object-contain`. This scales the image down to fit entirely within the container without cropping. The card's white background will show on the sides or top/bottom if the aspect ratio doesn't match exactly, which is fine since the cards are already white.
 
-Currently both images use `object-cover` which crops aggressively. To "zoom out" and show more of each image, we use `object-contain` (or a scaled `object-fit` approach). However, since `object-contain` would leave gaps, the better approach is to reduce the image height slightly or use `object-[position]` adjustments. Actually, the most effective CSS-only way to "zoom out" while keeping `object-cover` is to use `object-scale-down` or increase the container size. But the simplest approach that preserves the current design: switch these two images from `object-cover` to `object-contain` with a background color match, or better yet, keep `object-cover` but use a custom `object-position` to show more of the image.
+## Changes in `src/components/Services.tsx`
 
-After reflection: the real fix is to keep `object-cover` but use `object-[50%_60%]` or similar positions to reveal more of the image content, OR increase the image height for just those cards. The cleanest approach: increase `h-44` to `h-52` would show more, but that changes all cards. Instead, the best minimal change is adjusting `imagePosition` values to show better focal areas:
+1. **Project Management** (line 65): change `imagePosition` from `'object-[50%_70%]'` to `'object-contain'`
+2. **Curriculum** (line 83): change `imagePosition` from `'object-[50%_30%]'` to `'object-contain'`
 
-- Project Management (line 65): change from `object-center` to `object-[50%_70%]` -- shifts the focal point down to show more of the full scene
-- Curriculum (line 83): change from `object-[50%_38%]` to `object-[50%_30%]` -- shifts up slightly more to reveal more of the graphic
+The `cn()` call on line 176 already merges `object-cover` with the `imagePosition` class — since `object-contain` comes after `object-cover` in the class list, Tailwind merge will resolve the conflict correctly and `object-contain` will win.
 
-If these positions still feel too cropped, an alternative is switching to `object-contain` for these two specifically -- but that may leave letterbox gaps. We will try position adjustments first.
-
-## 2. Update subtitle text
-
-Replace the paragraph at line 161-163 with the exact text provided:
-
-> We partner with state agencies, higher education institutions, and adult education programs to design and implement digital learning initiatives, professional development cohorts, instructional resources, and strategic projects that support effective teaching and help learners advance toward their academic and professional goals.
-
-## Changes
-
-**File: `src/components/Services.tsx`**
-
-- Line 65: `imagePosition: 'object-center'` to `imagePosition: 'object-[50%_70%]'` (project management -- show more of the scene)
-- Line 83: `imagePosition: 'object-[50%_38%]'` to `imagePosition: 'object-[50%_30%]'` (curriculum -- zoom out further)
-- Lines 161-163: Replace paragraph text with exact copy provided
+No other changes needed. The other two cards (Professional Development and Keynotes) keep `object-cover` with `object-center` as they look fine.
 
