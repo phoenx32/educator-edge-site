@@ -62,7 +62,7 @@ const Services = () => {
       description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
-      imagePosition: 'object-[50%_70%]',
+      imagePosition: 'object-contain',
     },
     {
       id: 'keynotes',
@@ -80,7 +80,7 @@ const Services = () => {
       description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
       image: aiImage,
-      imagePosition: 'object-[50%_30%]',
+      imagePosition: 'object-contain',
     }
   ];
 
