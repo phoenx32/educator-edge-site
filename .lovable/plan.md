@@ -1,72 +1,69 @@
 
 
-# Compact Service Cards with Nested Image Thumbnails
+# Refined Service Cards -- Emulate Reference Design
 
-## Overview
+## Problem
 
-Reduce the visual footprint of the service cards by replacing the full-width banner images with smaller, square thumbnails nested inside a subtle inner container. This matches the reference pattern (image-54) where images sit inside a rounded, lightly-shaded inner card at the top of each card.
+The current cards are too tall and the square images look awkward. The reference screenshot (image-56) shows a much more compact, polished pattern: a **wide rectangular image** sitting inside a lightly-shaded inner container, with compact text below. Everything feels tight and balanced.
 
-## Visual Change
+## Target Design (from reference)
 
-**Current**: Full-width rectangular image spanning the entire card top (`h-48 md:h-56 object-cover`) -- visually heavy, takes up most of the card.
+The reference cards have:
+- A **short, wide inner container** with subtle background (like `bg-muted/30`) and rounded corners
+- A **rectangular image** inside that container, centered, with rounded corners -- landscape orientation, not square
+- Compact spacing below: small icon, title, 2-3 line description, button
+- The inner container is NOT tall -- roughly 140-160px total height including padding
+- The overall card feels compact and airy, not towering
 
-**New**: A square image thumbnail (~120x120px) centered inside a rounded, lightly-shaded inner container at the top of the card. The inner container acts as a "stage" for the image, creating visual hierarchy without dominating the card.
+## Changes to `src/components/Services.tsx` (lines 161-187)
 
-```text
-+---------------------------+
-|  +---------------------+  |
-|  |                     |  |  <-- inner bg container (bg-muted/50, rounded-xl, padding)
-|  |    [ square img ]   |  |  <-- square image, centered, ~28-32 w/h
-|  |                     |  |
-|  +---------------------+  |
-|  [icon]                    |
-|  Title                     |
-|  Description text...       |
-|  [View Portfolio]          |
-+---------------------------+
-```
-
-## Technical Changes
-
-### File: `src/components/Services.tsx`
-
-**Lines 161-186** -- Update the card rendering. Replace the full-width `<img>` with a nested container + square image:
+Update the card rendering:
 
 ```tsx
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
   {services.map((service) => (
     <div
       key={service.id}
-      className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col p-6"
+      className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col p-5"
     >
-      {/* Nested image container */}
-      <div className="bg-muted/50 rounded-xl p-6 flex items-center justify-center mb-5">
+      {/* Compact inner stage with rectangular image */}
+      <div className="bg-muted/30 rounded-xl p-4 flex items-center justify-center mb-4">
         <img
           src={service.image}
           alt={service.title}
-          className="w-28 h-28 md:w-32 md:h-32 object-cover rounded-lg"
+          className="w-44 h-28 md:w-52 md:h-32 object-cover rounded-lg shadow-sm"
         />
       </div>
-      <service.icon className="w-6 h-6 text-primary mb-3" />
-      <h3 className="text-lg font-bold text-foreground mb-2">
-        {service.title}
-      </h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-        {service.description}
-      </p>
-      <div className="mt-auto">
-        <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
+      <div className="flex flex-col flex-1">
+        <service.icon className="w-5 h-5 text-primary mb-2" />
+        <h3 className="text-base font-bold text-foreground mb-1.5">
+          {service.title}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+          {service.description}
+        </p>
+        <div className="mt-auto">
+          <PortfolioDialog ... />
+        </div>
       </div>
     </div>
   ))}
 </div>
 ```
 
-Key differences from current:
-- Card gets `p-6` padding (image is no longer edge-to-edge)
-- New `div` wrapping the image with `bg-muted/50 rounded-xl p-6` creates the nested "stage"
-- Image is now `w-28 h-28 md:w-32 md:h-32 object-cover rounded-lg` (square, compact)
-- Everything below (icon, title, description, button) stays the same
+### Key differences from current:
 
-This cuts the card height roughly in half and creates better visual balance across the page.
+| Property | Current | New |
+|----------|---------|-----|
+| Card padding | `p-6` | `p-5` (tighter) |
+| Inner container bg | `bg-muted/50` | `bg-muted/30` (subtler) |
+| Inner container padding | `p-6` | `p-4` (shorter stage) |
+| Inner container margin | `mb-5` | `mb-4` |
+| Image size | `w-28 h-28 / w-32 h-32` (square) | `w-44 h-28 / w-52 h-32` (landscape rectangle) |
+| Image extras | none | `shadow-sm` for subtle depth |
+| Icon size | `w-6 h-6`, `mb-3` | `w-5 h-5`, `mb-2` |
+| Title size | `text-lg`, `mb-2` | `text-base`, `mb-1.5` |
+| Description margin | `mb-6` | `mb-4` |
+
+This produces cards that are noticeably shorter, with a refined landscape thumbnail that echoes the reference pattern. The inner stage is compact, the text is tighter, and nothing dominates the view.
 
