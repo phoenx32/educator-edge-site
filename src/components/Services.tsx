@@ -164,11 +164,11 @@ const Services = () => {
               key={service.id}
               className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
             >
-              <div className="bg-muted/30 px-6 pt-6 pb-4 flex items-center justify-center">
+              <div className="bg-muted/30 p-3 flex items-center justify-center">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full max-w-[280px] h-36 object-cover rounded-xl"
+                  className="w-full h-40 object-cover rounded-xl"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
