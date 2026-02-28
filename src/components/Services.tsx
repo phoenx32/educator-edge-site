@@ -8,7 +8,6 @@ import {
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
-import { useIsMobile } from '@/hooks/use-mobile';
 import aiImage from '@/assets/services-curriculum-dev-new.png';
 import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
@@ -45,48 +44,38 @@ const portfolioItems: Record<string, { title: string; description: string; icon:
 };
 
 const Services = () => {
-  const isMobile = useIsMobile();
-
   const services = [
     {
       id: 'professional-development',
       title: 'Professional Development Cohorts',
       shortTitle: 'Professional Development',
-      tagline: 'Support staff growth',
-      description: 'Multi-week learning experiences that support educators in applying new tools, testing strategies, and improving instruction. Cohorts are collaborative, practical, and customizable to local needs.',
+      description: 'Practical, multi-week cohorts that help educators build confidence with new tools and strategies. Topics include digital literacy, AI, online instruction, and math—customized to your team\'s needs.',
       icon: Users,
       image: developmentImage,
-      features: ['Getting Started with Online Learning', 'Integrating Digital Literacy', 'Math for Multi-Level Classrooms', 'Foundations of AI for Teaching and Learning', 'Custom Course Development']
     },
     {
       id: 'project-management',
       title: 'Project Management',
       shortTitle: 'Project Management',
-      tagline: 'Move initiatives from plans to practice',
-      description: 'We support initiatives from concept through implementation, applying adult learning principles to project management. Our work builds internal capacity while supporting collaboration, reflection, and shared ownership.',
+      description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
-      features: ['Statewide guidance, toolkits, and training', 'Stakeholder engagement and communication', 'Literature reviews, scans, and needs assessments', 'Timeline, deliverables, and grant reporting support']
     },
     {
       id: 'keynotes',
-      title: 'Keynotes and Conference Workshops',
+      title: 'Keynotes & Conference Workshops',
       shortTitle: 'Keynotes & Workshops',
-      tagline: 'Turn complexity into action',
-      description: 'We share insights from adult learning, workforce development, and edtech at state and national events. Sessions connect research to practice and create space for reflection and planning.',
+      description: 'Engaging presentations for state and national conferences on digital learning, AI, workforce readiness, and instructional innovation. Sessions connect research to practice and spark action.',
       icon: Presentation,
       image: keynoteImage,
-      features: ['Keynotes and panels on digital learning, AI, and readiness', 'Interactive workshops across roles and regions', 'Case studies from local and statewide efforts', 'Examples that support system-level improvement']
     },
     {
       id: 'curriculum',
-      title: 'Curriculum Development and Instructional Design',
+      title: 'Curriculum & Instructional Design',
       shortTitle: 'Curriculum & Design',
-      tagline: 'Build effective digital learning',
-      description: 'We collaborate with programs to design flexible, modern learning materials that align with workforce needs and digital delivery. Services range from content design to media production.',
+      description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
       image: aiImage,
-      features: ['Curriculum aligned to workforce and digital skills', 'Modules in Articulate Rise and similar platforms', 'Graphic and AI-assisted media creation', 'Online/blended learning design', 'Materials linked to career pathways']
     }
   ];
 
@@ -153,54 +142,6 @@ const Services = () => {
     );
   };
 
-  const ServiceContent = ({ service }: { service: typeof services[0] }) => (
-    <div className="h-full">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="flex-1">
-          <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-            <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
-            {service.title}
-          </h3>
-          <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-          <ul className="space-y-3 mb-6">
-            {service.features.map((feature, idx) => (
-              <li key={idx} className="flex items-start text-foreground/80">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
-        </div>
-        <div className="md:w-80 flex-shrink-0 self-start">
-          <img src={service.image} alt={service.title} className="w-full h-72 object-cover rounded-xl" />
-        </div>
-      </div>
-    </div>
-  );
-
-  const MobileServiceContent = ({ service }: { service: typeof services[0] }) => (
-    <div>
-      <div className="flex items-center gap-3 mb-4">
-        <service.icon className="w-6 h-6 text-primary flex-shrink-0" />
-        <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
-      </div>
-      <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
-      <ul className="space-y-2 mb-4">
-        {service.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start text-foreground/80 text-sm">
-            <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-      <div className="mb-6">
-        <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
-      </div>
-      <img src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-xl" />
-    </div>
-  );
-
   return (
     <section id="services" className="section-spacing bg-muted/40">
       <div className="container mx-auto px-4 md:px-6">
@@ -217,61 +158,32 @@ const Services = () => {
           </p>
         </div>
 
-        {!isMobile ? (
-          <div className="max-w-6xl mx-auto">
-            <Tabs defaultValue="professional-development" className="flex flex-col">
-              <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
-                {services.map((service) => (
-                  <TabsTrigger
-                    key={service.id}
-                    value={service.id}
-                    className="flex flex-col items-start gap-1 px-5 py-4 rounded-none bg-transparent border border-border/40 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200 hover:bg-card/50 data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
-                  >
-                    <div className="flex items-center gap-2">
-                      <service.icon className="w-5 h-5" />
-                      <span className="font-semibold text-sm">{service.shortTitle}</span>
-                    </div>
-                    <span className="text-xs opacity-80 text-left">{service.tagline}</span>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {services.map((service) => (
-                <TabsContent
-                  key={service.id}
-                  value={service.id}
-                  className="-mt-px p-6 bg-card border border-border/40 border-t-border/40 rounded-b-2xl data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=active]:duration-300"
-                >
-                  <ServiceContent service={service} />
-                </TabsContent>
-              ))}
-            </Tabs>
-          </div>
-        ) : (
-          <div className="max-w-full mx-auto">
-            <Tabs defaultValue="professional-development" className="flex flex-col">
-              <TabsList className="grid grid-cols-4 h-auto bg-transparent p-0 gap-0 rounded-none">
-                {services.map((service) => (
-                  <TabsTrigger
-                    key={service.id}
-                    value={service.id}
-                    className="flex items-center justify-center p-4 rounded-none bg-transparent border border-border/40 first:rounded-tl-xl last:rounded-tr-xl transition-all duration-200 hover:bg-card/50 data-[state=active]:bg-card data-[state=active]:border-b-transparent data-[state=active]:z-10 data-[state=active]:relative"
-                  >
-                    <service.icon className="w-5 h-5" />
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {services.map((service) => (
-                <TabsContent
-                  key={service.id}
-                  value={service.id}
-                  className="-mt-px p-4 bg-card border border-border/40 border-t-border/40 rounded-b-2xl"
-                >
-                  <MobileServiceContent service={service} />
-                </TabsContent>
-              ))}
-            </Tabs>
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
+            >
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-48 md:h-56 object-cover"
+              />
+              <div className="p-6 flex flex-col flex-1">
+                <service.icon className="w-6 h-6 text-primary mb-3" />
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <div className="mt-auto">
+                  <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <div className="text-center mt-12 md:mt-16">
           <Button size="lg" asChild>
