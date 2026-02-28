@@ -62,7 +62,7 @@ const Services = () => {
       description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
-      imagePosition: 'object-center',
+      imagePosition: 'object-[50%_70%]',
     },
     {
       id: 'keynotes',
@@ -80,7 +80,7 @@ const Services = () => {
       description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
       image: aiImage,
-      imagePosition: 'object-[50%_38%]',
+      imagePosition: 'object-[50%_30%]',
     }
   ];
 
@@ -159,7 +159,7 @@ const Services = () => {
             How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We help educators and institutions design, deliver, and sustain high-quality learning experiences for adults. Our services include curriculum development, professional learning, technology integration, and project management.
+            We partner with state agencies, higher education institutions, and adult education programs to design and implement digital learning initiatives, professional development cohorts, instructional resources, and strategic projects that support effective teaching and help learners advance toward their academic and professional goals.
           </p>
         </div>
 
