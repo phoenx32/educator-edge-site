@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { cn } from '@/lib/utils';
 import { 
   Lightbulb, Workflow, Users, Presentation, Sparkles, FolderOpen,
   GraduationCap, Monitor, BookOpen, Target, BarChart3, FileText,
@@ -52,6 +53,7 @@ const Services = () => {
       description: 'Practical, multi-week cohorts that help educators build confidence with new tools and strategies. Topics include digital literacy, AI, online instruction, and math—customized to your team\'s needs.',
       icon: Users,
       image: developmentImage,
+      imagePosition: 'object-center',
     },
     {
       id: 'project-management',
@@ -60,6 +62,7 @@ const Services = () => {
       description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
+      imagePosition: 'object-center',
     },
     {
       id: 'keynotes',
@@ -68,6 +71,7 @@ const Services = () => {
       description: 'Engaging presentations for state and national conferences on digital learning, AI, workforce readiness, and instructional innovation. Sessions connect research to practice and spark action.',
       icon: Presentation,
       image: keynoteImage,
+      imagePosition: 'object-center',
     },
     {
       id: 'curriculum',
@@ -76,6 +80,7 @@ const Services = () => {
       description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
       image: aiImage,
+      imagePosition: 'object-[50%_38%]',
     }
   ];
 
@@ -158,17 +163,17 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {services.map((service) => (
             <div
               key={service.id}
               className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
             >
-              <div className="bg-muted/30 p-3 flex items-center justify-center">
+              <div className="p-3 pt-4 flex items-center justify-center">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-40 object-cover rounded-xl"
+                  className={cn("w-full h-44 object-cover rounded-xl", service.imagePosition)}
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
