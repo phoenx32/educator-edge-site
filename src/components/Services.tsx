@@ -162,21 +162,21 @@ const Services = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col p-6"
+              className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col p-5"
             >
-              <div className="bg-muted/50 rounded-xl p-6 flex items-center justify-center mb-5">
+              <div className="bg-muted/30 rounded-xl p-4 flex items-center justify-center mb-4">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-28 h-28 md:w-32 md:h-32 object-cover rounded-lg"
+                  className="w-44 h-28 md:w-52 md:h-32 object-cover rounded-lg shadow-sm"
                 />
               </div>
               <div className="flex flex-col flex-1">
-                <service.icon className="w-6 h-6 text-primary mb-3" />
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <service.icon className="w-5 h-5 text-primary mb-2" />
+                <h3 className="text-base font-bold text-foreground mb-1.5">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                   {service.description}
                 </p>
                 <div className="mt-auto">
