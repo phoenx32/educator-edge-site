@@ -12,7 +12,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import aiImage from '@/assets/services-curriculum-dev-new.png';
 import developmentImage from '@/assets/services-professional-dev.png';
 import keynoteImage from '@/assets/services-keynote-presentation.png';
-import projectManagementImage from '@/assets/services-project-management.jpg';
+import projectManagementImage from '@/assets/services-project-management.png';
+import curriculumDesignImage from '@/assets/services-curriculum-design.png';
 
 const portfolioItems: Record<string, { title: string; description: string; icon: LucideIcon; link?: string }[]> = {
   'professional-development': [
@@ -62,7 +63,7 @@ const Services = () => {
       description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
-      imagePosition: 'object-contain',
+      imagePosition: 'object-center',
     },
     {
       id: 'keynotes',
@@ -79,8 +80,8 @@ const Services = () => {
       shortTitle: 'Curriculum & Design',
       description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
-      image: aiImage,
-      imagePosition: 'object-contain',
+      image: curriculumDesignImage,
+      imagePosition: 'object-center',
     }
   ];
 
