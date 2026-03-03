@@ -171,11 +171,11 @@ const Services = () => {
               className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
             >
               <div className="p-5 pb-3">
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-3 lg:min-h-[3rem]">
                   <service.icon className="w-5 h-5 text-primary flex-shrink-0" />
                   <h3 className="text-base font-bold text-foreground">{service.title}</h3>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed lg:min-h-[7.5rem]">
                   {service.description}
                 </p>
               </div>
