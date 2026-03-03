@@ -164,30 +164,30 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {services.map((service) => (
             <div
               key={service.id}
               className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
             >
-              <div className="p-3 pt-4 flex items-center justify-center">
+              <div className="p-5 pb-3">
+                <div className="flex items-center gap-2 mb-3">
+                  <service.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                  <h3 className="text-base font-bold text-foreground">{service.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+              <div className="mt-auto px-3 pb-3">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className={cn("w-full h-44 object-cover rounded-xl", service.imagePosition)}
+                  className={cn("w-full h-48 object-cover rounded-xl", service.imagePosition)}
                 />
               </div>
-              <div className="p-5 flex flex-col flex-1">
-                <service.icon className="w-5 h-5 text-primary mb-2" />
-                <h3 className="text-base font-bold text-foreground mb-1.5">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <div className="mt-auto">
-                  <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
-                </div>
+              <div className="px-5 pb-4 pt-2">
+                <PortfolioDialog serviceId={service.id} serviceTitle={service.title} />
               </div>
             </div>
           ))}
