@@ -46,7 +46,7 @@ const portfolioItems: Record<string, { title: string; description: string; icon:
 };
 
 const Services = () => {
-  const services = [
+    const services = [
     {
       id: 'professional-development',
       title: 'Professional Development Cohorts',
@@ -79,7 +79,7 @@ const Services = () => {
       title: 'Curriculum & Instructional Design',
       shortTitle: 'Curriculum & Design',
       description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
-      icon: Lightbulb,
+      icon: FileText,
       image: curriculumDesignImage,
       imagePosition: 'object-center',
     }
@@ -94,7 +94,7 @@ const Services = () => {
       <Dialog onOpenChange={(open) => { if (open) setActiveTab(serviceId); }}>
         <DialogTrigger asChild>
           <Button variant="outline" size="sm" className="gap-2">
-            <FolderOpen className="w-4 h-4" />
+            {(() => { const svc = services.find(s => s.id === serviceId); return svc ? <svc.icon className="w-4 h-4 text-foreground" /> : <FolderOpen className="w-4 h-4 text-foreground" />; })()}
             View Portfolio
           </Button>
         </DialogTrigger>
@@ -171,10 +171,7 @@ const Services = () => {
               className="bg-card rounded-2xl border border-border/40 overflow-hidden flex flex-col"
             >
               <div className="p-5 pb-3">
-                <div className="flex items-center gap-2 mb-3 lg:min-h-[3rem]">
-                  <service.icon className="w-5 h-5 text-primary flex-shrink-0" />
-                  <h3 className="text-base font-bold text-foreground">{service.title}</h3>
-                </div>
+                <h3 className="text-base font-bold text-foreground mb-3 lg:min-h-[3rem] flex items-center">{service.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed lg:min-h-[7.5rem]">
                   {service.description}
                 </p>
