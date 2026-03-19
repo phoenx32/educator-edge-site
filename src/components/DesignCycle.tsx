@@ -3,8 +3,8 @@ import { Hammer, FlaskConical, MessageCircle, Lightbulb, Pencil, RefreshCw, Infi
 const DesignCycle = () => {
   const cycleSteps = [
     { icon: Hammer, label: 'Build', angle: 0 },
-    { icon: FlaskConical, label: 'Test', angle: 60 },
-    { icon: MessageCircle, label: 'Feedback', angle: 120 },
+    { icon: FlaskConical, label: 'Try', angle: 60 },
+    { icon: MessageCircle, label: 'Observe', angle: 120 },
     { icon: Lightbulb, label: 'Reflect', angle: 180 },
     { icon: Pencil, label: 'Revise', angle: 240 },
     { icon: RefreshCw, label: 'Iterate', angle: 300 },
