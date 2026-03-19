@@ -1,24 +1,32 @@
 
 
-# Replace Project Management and Curriculum Images
+# Fix Uneven Label Spacing in Design Cycle
 
 ## Problem
-Using `object-contain` caused the images to shrink to a tiny size floating in white space — completely unacceptable. The root issue was always that the original images had wrong aspect ratios for the card containers.
+A uniform radial offset (44px) doesn't produce visually even spacing because labels at different angular positions have different visual relationships to their icons. Side-positioned labels (Observe at 120°, Iterate at 300°, Revise at 240°) appear closer to their icons than top/bottom ones (Build, Reflect) because the text box center doesn't account for the directional relationship.
 
 ## Solution
-Replace the source images entirely with the new uploads, and switch back to `object-cover` with `object-center` so they fill the card naturally like the other two cards.
+Use per-step label offsets tuned to each position, pushing side labels further out and keeping top/bottom labels closer. This matches the reference image where all labels appear equally distanced from their icons.
 
-## Steps
+## Changes in `src/components/DesignCycle.tsx`
 
-1. **Copy new images into the project**
-   - `user-uploads://Project_Management_with_Community_Learning_Partners.png` to `src/assets/services-project-management.png`
-   - `user-uploads://Curriculum_Instructional_Design_with_Community_Learning_Partners.png` to `src/assets/services-curriculum-design.png`
+Replace the uniform `labelOffset = 44` with per-step offsets in the `cycleSteps` data:
 
-2. **Update `src/components/Services.tsx`**
-   - Change the Project Management import from the old `.jpg` to the new `.png`
-   - Change the Curriculum import from the old image to the new one
-   - Set both `imagePosition` values back to `'object-center'` (standard `object-cover` behavior, matching the other two cards)
+```tsx
+const cycleSteps = [
+  { icon: Hammer, label: 'Build', angle: 0, labelOffset: 42 },       // top — fine
+  { icon: FlaskConical, label: 'Try', angle: 60, labelOffset: 48 },   // upper-right — good baseline
+  { icon: MessageCircle, label: 'Observe', angle: 120, labelOffset: 52 }, // lower-right — push out
+  { icon: Lightbulb, label: 'Reflect', angle: 180, labelOffset: 42 },  // bottom — fine
+  { icon: Pencil, label: 'Revise', angle: 240, labelOffset: 52 },      // lower-left — push out to match Try
+  { icon: RefreshCw, label: 'Iterate', angle: 300, labelOffset: 50 },  // upper-left — push out
+];
+```
 
-## Result
-All four cards will use `object-cover` with `object-center`, and the new landscape-format images will fill the card frames naturally without awkward shrinking or aggressive cropping.
+Then use `step.labelOffset` instead of the constant:
+```tsx
+const labelPos = getPosition(step.angle, outerRadius + step.labelOffset);
+```
+
+One data array change + one line update. Values may need minor tuning after visual review.
 
