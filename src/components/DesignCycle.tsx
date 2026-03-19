@@ -3,8 +3,8 @@ import { Hammer, FlaskConical, MessageCircle, Lightbulb, Pencil, RefreshCw, Infi
 const DesignCycle = () => {
   const cycleSteps = [
     { icon: Hammer, label: 'Build', angle: 0 },
-    { icon: FlaskConical, label: 'Test', angle: 60 },
-    { icon: MessageCircle, label: 'Feedback', angle: 120 },
+    { icon: FlaskConical, label: 'Try', angle: 60 },
+    { icon: MessageCircle, label: 'Observe', angle: 120 },
     { icon: Lightbulb, label: 'Reflect', angle: 180 },
     { icon: Pencil, label: 'Revise', angle: 240 },
     { icon: RefreshCw, label: 'Iterate', angle: 300 },
@@ -109,8 +109,8 @@ const DesignCycle = () => {
         const pos = getPosition(step.angle, outerRadius);
         const Icon = step.icon;
         
-        // Calculate label position (further out than icon, extra for Feedback)
-        const labelOffset = step.label === 'Feedback' ? 50 : 42;
+        // Calculate label position - consistent offset for all labels
+        const labelOffset = 44;
         const labelPos = getPosition(step.angle, outerRadius + labelOffset);
         
         return (
