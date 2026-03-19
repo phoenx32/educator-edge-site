@@ -109,8 +109,8 @@ const DesignCycle = () => {
         const pos = getPosition(step.angle, outerRadius);
         const Icon = step.icon;
         
-        // Calculate label position (further out than icon, extra for Feedback)
-        const labelOffset = step.label === 'Feedback' ? 50 : 42;
+        // Calculate label position - consistent offset for all labels
+        const labelOffset = 44;
         const labelPos = getPosition(step.angle, outerRadius + labelOffset);
         
         return (
