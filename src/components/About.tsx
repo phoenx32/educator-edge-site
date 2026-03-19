@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-spacing bg-muted/40">
+    <section id="about" className="section-spacing bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Design Cycle Section */}
         <div className="text-center mb-12 lg:mb-16">

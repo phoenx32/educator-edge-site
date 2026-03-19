@@ -1,40 +1,24 @@
 
 
-# Place Design Cycle on White Background
+# Replace Project Management and Curriculum Images
 
-## Current Background Pattern
-Hero (white) → Services (muted) → Clients (white) → **About (muted)** → Testimonials (white) → Contact (muted)
+## Problem
+Using `object-contain` caused the images to shrink to a tiny size floating in white space — completely unacceptable. The root issue was always that the original images had wrong aspect ratios for the card containers.
 
-## Approach
-Split the About section into two visual zones to keep the alternating rhythm:
+## Solution
+Replace the source images entirely with the new uploads, and switch back to `object-cover` with `object-center` so they fill the card naturally like the other two cards.
 
-1. **Design Cycle area** — standalone `<section>` with `bg-background` (white), containing the "Our Approach" heading, description, and the animation
-2. **Values + Stats area** — remains in `bg-muted/40` (grey), containing "Our Values" cards and "By the Numbers" stats
+## Steps
 
-This preserves the alternating rhythm: Clients (white) → Design Cycle (white is fine since Clients is small/different) → Values+Stats (muted) → Testimonials (white). Actually, to avoid two consecutive whites, we can make Clients `bg-muted/40` instead.
+1. **Copy new images into the project**
+   - `user-uploads://Project_Management_with_Community_Learning_Partners.png` to `src/assets/services-project-management.png`
+   - `user-uploads://Curriculum_Instructional_Design_with_Community_Learning_Partners.png` to `src/assets/services-curriculum-design.png`
 
-**Revised pattern**: Services (muted) → Clients (muted — subtle transition) → Design Cycle (white) → Values+Stats (muted) → Testimonials (white)
+2. **Update `src/components/Services.tsx`**
+   - Change the Project Management import from the old `.jpg` to the new `.png`
+   - Change the Curriculum import from the old image to the new one
+   - Set both `imagePosition` values back to `'object-center'` (standard `object-cover` behavior, matching the other two cards)
 
-Alternatively, the simplest cohesive approach: keep About as one section but change to `bg-background` (white), and swap Testimonials to `bg-muted/40` to maintain alternation.
-
-**Simplest clean pattern**: Services (muted) → Clients (white) → About (white) → Testimonials (muted) → Contact (white or muted)
-
-## Recommended Plan
-
-### File: `src/components/About.tsx`
-- Change section background from `bg-muted/40` to `bg-background` (white)
-
-### File: `src/components/Testimonials.tsx`
-- Change from `bg-background` to `bg-muted/40` to maintain alternation
-
-### File: `src/components/Contact.tsx`
-- Change from `bg-muted/40` to `bg-background` to continue alternation
-
-**Final pattern**: Hero (white) → Services (muted) → Clients (white) → About (white) → Testimonials (muted) → Contact (white) → Footer
-
-Two consecutive whites (Clients → About) is acceptable since Clients is a compact logo strip that reads differently from a full content section. If preferred, we can also give the Values+Stats sub-area a subtle `bg-muted/20` inner container to add visual separation within the About section.
-
-## Technical Details
-- Three single-line class changes across three files
-- No structural changes to any component
+## Result
+All four cards will use `object-cover` with `object-center`, and the new landscape-format images will fill the card frames naturally without awkward shrinking or aggressive cropping.
 
