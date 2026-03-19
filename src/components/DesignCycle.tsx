@@ -110,8 +110,7 @@ const DesignCycle = () => {
         const Icon = step.icon;
         
         // Calculate label position - consistent offset for all labels
-        const labelOffset = 44;
-        const labelPos = getPosition(step.angle, outerRadius + labelOffset);
+        const labelPos = getPosition(step.angle, outerRadius + step.labelOffset);
         
         return (
           <div key={step.label}>
