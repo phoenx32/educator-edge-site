@@ -2,12 +2,12 @@ import { Hammer, FlaskConical, MessageCircle, Lightbulb, Pencil, RefreshCw, Infi
 
 const DesignCycle = () => {
   const cycleSteps = [
-    { icon: Hammer, label: 'Build', angle: 0 },
-    { icon: FlaskConical, label: 'Try', angle: 60 },
-    { icon: MessageCircle, label: 'Observe', angle: 120 },
-    { icon: Lightbulb, label: 'Reflect', angle: 180 },
-    { icon: Pencil, label: 'Revise', angle: 240 },
-    { icon: RefreshCw, label: 'Iterate', angle: 300 },
+    { icon: Hammer, label: 'Build', angle: 0, labelOffset: 42 },
+    { icon: FlaskConical, label: 'Try', angle: 60, labelOffset: 48 },
+    { icon: MessageCircle, label: 'Observe', angle: 120, labelOffset: 52 },
+    { icon: Lightbulb, label: 'Reflect', angle: 180, labelOffset: 42 },
+    { icon: Pencil, label: 'Revise', angle: 240, labelOffset: 52 },
+    { icon: RefreshCw, label: 'Iterate', angle: 300, labelOffset: 50 },
   ];
 
   const size = 320;
