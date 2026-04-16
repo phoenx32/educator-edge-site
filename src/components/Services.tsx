@@ -29,7 +29,9 @@ const portfolioItems: Record<string, { title: string; description: string; icon:
     { title: 'National TA Podcast and Content Operations', description: 'Managed multi-stakeholder production of three podcast seasons and multi-format TA resources with structured editorial systems.', icon: Podcast },
     { title: "Louisiana's First Fully Remote Adult Education Program", description: "Designed the state's first remote model, growing enrollment from ~30 to 5,000+ learners across 15 colleges. Earned COABE State Innovation of the Year.", icon: Rocket },
     { title: 'Google Workspace Integration', description: 'Led integration into SIS platforms serving 15,000+ students across 15+ programs, increasing digital access and instructional consistency.', icon: Laptop },
-    { title: 'Micro-Credentialing and Digital Credential Systems', description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.', icon: Award }
+    { title: 'Micro-Credentialing and Digital Credential Systems', description: 'Designed badging systems with reflection workflows and dashboards, improving skill articulation and program transparency.', icon: Award },
+    { title: 'Michigan Statewide Reverse Transfer Deployment', description: "Managing deployment of the National Student Clearinghouse's Reverse Transfer Service across Michigan's 15 public universities, coordinating SIS integrations, stakeholder training, and grant administration to increase associate degree attainment statewide.", icon: GraduationCap },
+    { title: 'AI-Ready Graduate Initiative with Google', description: 'Project management for national events and operations supporting the Profile of an AI-Ready Graduate initiative in partnership with Google, coordinating cross-functional teams, event logistics, and certification amplification.', icon: Sparkles }
   ],
   'keynotes': [
     { title: 'Arizona Teachers N Technology Day', description: 'Keynote presentation on digital learning and technology integration for adult educators.', icon: Presentation },
