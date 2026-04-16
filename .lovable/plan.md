@@ -1,21 +1,22 @@
 
 
-# Revert About Section Background to Muted
+# Add Two New Portfolio Items
 
-The reference image shows the About section (Approach + Values) with the original muted/light grey background. We need to revert it and re-fix the alternating pattern.
+## New Items (both in `project-management` within `portfolioItems`)
 
-## Changes
+### 1. Michigan Statewide Reverse Transfer Deployment
+- **Icon:** `GraduationCap` (already imported)
+- **Title:** "Michigan Statewide Reverse Transfer Deployment"
+- **Description:** "Managing deployment of the National Student Clearinghouse's Reverse Transfer Service across Michigan's 15 public universities, coordinating SIS integrations, stakeholder training, and grant administration to increase associate degree attainment statewide."
 
-### `src/components/About.tsx` (line 25)
-- Change `bg-background` back to `bg-muted/40`
+### 2. AI-Ready Graduate Initiative with Google
+- **Icon:** `Sparkles` (already imported)
+- **Title:** "AI-Ready Graduate Initiative with Google"
+- **Description:** "Project management for national events and operations supporting the Profile of an AI-Ready Graduate initiative in partnership with Google, coordinating cross-functional teams, event logistics, and certification amplification."
 
-### `src/components/Testimonials.tsx` (line 62)
-- Change `bg-muted/40` back to `bg-background` to maintain alternation
+## File Change: `src/components/Services.tsx`
 
-### `src/components/Contact.tsx` (line 22)
-- Change `bg-background` back to `bg-muted/40` to maintain alternation
+Add both entries to the `'project-management'` array in `portfolioItems`. They'll appear alongside the existing 7 items in the Project Management portfolio tab.
 
-**Resulting pattern**: Hero (W) → Services (M) → Clients (W) → About (M) → Testimonials (W) → Contact (M)
-
-This is the original background pattern, just reverting the three swaps made earlier. The Design Cycle animation labels/spacing remain untouched.
+No new imports needed -- `GraduationCap` and `Sparkles` are already imported.
 
