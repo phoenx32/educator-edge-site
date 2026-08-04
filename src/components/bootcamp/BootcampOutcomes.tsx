@@ -1,38 +1,42 @@
-import { Underline } from './Underline';
-
 const outcomes = [
   {
-    headline: 'More learners walk through the door — and stay',
-    body: 'Clearer outreach, faster follow-up, and orientation materials that answer the questions people actually ask before they enroll.',
+    area: 'Enrollment and intake',
+    headline: 'Fewer people fall out between the first call and the first class',
+    body: 'Intake messages, orientation materials, and follow-up that answer the questions students ask before they commit.',
   },
   {
-    headline: 'Your staff get hours back each week',
-    body: 'The repetitive writing, summarizing, and formatting that eats a workday becomes something you can hand off and review.',
+    area: 'Retention',
+    headline: 'You notice a student is missing before the term is over',
+    body: 'A way to see attendance patterns early and reach out with something better than a generic reminder.',
   },
   {
-    headline: 'People get an answer the same day they ask',
-    body: 'Learners, instructors, and partners stop waiting on the one person who knows how to find the information.',
+    area: 'Staff time',
+    headline: 'The same document stops getting rewritten from scratch',
+    body: 'Reports, letters, job aids, and meeting summaries drafted in minutes, then reviewed by the person who knows the program.',
   },
   {
-    headline: 'You can see what your data is telling you',
-    body: 'Enrollment, attendance, and gains turned into something you can read at a glance and bring to a planning meeting.',
+    area: 'Data and reporting',
+    headline: 'Your NRS and funder numbers are readable before the deadline',
+    body: 'Enrollment, attendance, and measurable skill gains turned into something you can put in front of a board or a state monitor.',
   },
 ];
 
 const BootcampOutcomes = () => (
   <section id="outcomes" className="py-20 md:py-28 border-t border-border/60">
     <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-      <h2 className="text-2xl md:text-4xl font-bold tracking-tight max-w-2xl">
-        What changes for the people in <Underline>your program</Underline>
+      <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight max-w-2xl">
+        By December, one part of your program runs differently
       </h2>
+      <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
+        Administrators in this cohort work on the problems that show up in adult education programs every term. Here is
+        what participants are working toward.
+      </p>
 
       <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14 gap-y-10">
-        {outcomes.map(({ headline, body }, i) => (
-          <div key={headline}>
-            <span className="text-sm font-medium text-primary tabular-nums">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 className="mt-2 text-lg md:text-xl font-semibold leading-snug">{headline}</h3>
+        {outcomes.map(({ area, headline, body }) => (
+          <div key={area}>
+            <span className="text-xs font-medium uppercase tracking-[0.14em] text-primary">{area}</span>
+            <h3 className="mt-2.5 text-lg md:text-xl font-semibold leading-snug">{headline}</h3>
             <p className="mt-2 text-muted-foreground leading-relaxed">{body}</p>
           </div>
         ))}
