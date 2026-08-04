@@ -1,15 +1,19 @@
 import { useEffect } from 'react';
 import BootcampNav from '@/components/bootcamp/BootcampNav';
 import BootcampHero from '@/components/bootcamp/BootcampHero';
-import BootcampProgram from '@/components/bootcamp/BootcampProgram';
-import BootcampLogistics from '@/components/bootcamp/BootcampLogistics';
-import BootcampProof from '@/components/bootcamp/BootcampProof';
+import BootcampOutcomes from '@/components/bootcamp/BootcampOutcomes';
+import BootcampProject from '@/components/bootcamp/BootcampProject';
+import BootcampIncludes from '@/components/bootcamp/BootcampIncludes';
+import BootcampSchedule from '@/components/bootcamp/BootcampSchedule';
+import BootcampWebinar from '@/components/bootcamp/BootcampWebinar';
+import BootcampPricing from '@/components/bootcamp/BootcampPricing';
+import BootcampFacilitators from '@/components/bootcamp/BootcampFacilitators';
 import BootcampFaq from '@/components/bootcamp/BootcampFaq';
 import Footer from '@/components/Footer';
 
-const TITLE = 'AI for Adult Education Administrators Bootcamp | COABE & CLP';
+const TITLE = 'Artificial Intelligence for Adult Education Administrators | COABE & CLP';
 const DESCRIPTION =
-  'A ten-week, project-based online bootcamp for adult education administrators. Build a practical AI-supported resource for a priority in your program. $350.';
+  'A ten-week online course for adult education administrators. About an hour a week, individual coaching, and one project built around a priority in your program. $350.';
 
 const Bootcamp = () => {
   useEffect(() => {
@@ -36,9 +40,13 @@ const Bootcamp = () => {
       <BootcampNav />
       <main>
         <BootcampHero />
-        <BootcampProgram />
-        <BootcampLogistics />
-        <BootcampProof />
+        <BootcampOutcomes />
+        <BootcampProject />
+        <BootcampIncludes />
+        <BootcampSchedule />
+        <BootcampWebinar />
+        <BootcampPricing />
+        <BootcampFacilitators />
         <BootcampFaq />
       </main>
       <Footer />
