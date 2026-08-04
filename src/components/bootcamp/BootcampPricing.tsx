@@ -1,0 +1,46 @@
+import { Check } from 'lucide-react';
+import { RegisterButton, WebinarLink } from './RegisterButton';
+
+const includes = [
+  'Ten weeks of course access',
+  'Individual coaching on your project',
+  'Three optional live sessions, all recorded',
+  'Administrator spotlight talks',
+  'Templates, examples, and planning resources',
+  'Certificate of completion',
+];
+
+const BootcampPricing = () => (
+  <section id="cost" className="py-20 md:py-28 border-t border-border/60">
+    <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+      <div className="rounded-3xl border border-border bg-card p-8 md:p-12">
+        <div className="flex items-baseline gap-3">
+          <span className="text-5xl md:text-6xl font-bold tracking-tight">$350</span>
+          <span className="text-muted-foreground">per participant</span>
+        </div>
+
+        <ul className="mt-8 grid sm:grid-cols-2 gap-x-10 gap-y-3">
+          {includes.map((i) => (
+            <li key={i} className="flex items-start gap-3 text-sm">
+              <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2.25} />
+              {i}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+          <RegisterButton className="w-full sm:w-auto" />
+          <WebinarLink />
+        </div>
+
+        <p className="mt-8 pt-6 border-t border-border/60 text-xs text-muted-foreground leading-relaxed">
+          Pay by credit card or purchase order. Registrations are final &mdash; refunds, cancellations, and group
+          discounts are not available. Working with colleagues is encouraged; each person who wants coaching and a
+          certificate registers separately.
+        </p>
+      </div>
+    </div>
+  </section>
+);
+
+export default BootcampPricing;
