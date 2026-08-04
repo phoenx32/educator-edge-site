@@ -1,71 +1,52 @@
-import {
-  CalendarDays, Clock, Globe, Video, MessageSquareHeart, Award, DollarSign, Sparkles,
-} from 'lucide-react';
-import { RegisterButton } from './RegisterButton';
-import coabeLogo from '@/assets/logos/coabe-logo.png';
+import { RegisterButton, WebinarLink } from './RegisterButton';
+import { Underline } from './Underline';
+import clpLogo from '@/assets/logos/clp-logo.png.asset.json';
+import coabeLogo from '@/assets/logos/coabe-logo-full.jpg.asset.json';
 
-const glance = [
-  { icon: CalendarDays, text: 'October 5 through the week of November 30, 2026' },
-  { icon: Clock, text: 'Approximately one hour per week' },
-  { icon: Globe, text: 'Online and flexible' },
-  { icon: Video, text: 'Optional live cohort sessions' },
-  { icon: MessageSquareHeart, text: 'Personalized coaching and feedback' },
-  { icon: Award, text: 'Certificate of completion' },
-  { icon: DollarSign, text: '$350 per participant' },
+const meta = [
+  'Oct 5 – Nov 30, 2026',
+  '~1 hour per week',
+  'Online',
+  '$350',
 ];
 
 const BootcampHero = () => (
-  <section id="overview" className="pt-28 md:pt-36 pb-16 md:pb-24 bg-gradient-subtle">
+  <section id="top" className="pt-32 md:pt-44 pb-16 md:pb-24">
     <div className="container mx-auto px-4 md:px-6">
-      <div className="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
-        <div>
-          <div className="section-badge-primary">
-            <Sparkles size={16} />
-            Presented by COABE and Community Learning Partners
-          </div>
+      <div className="max-w-3xl mx-auto text-center">
+        <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-muted-foreground">
+          A ten-week online course
+        </p>
 
-          <h1 className="mt-4 text-3xl md:text-5xl font-bold leading-tight tracking-tight">
-            Use AI to Support Priorities in Your{' '}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Adult Education Program</span>
-          </h1>
+        <h1 className="mt-5 text-3xl md:text-[3.25rem] md:leading-[1.08] font-bold tracking-tight">
+          Artificial Intelligence for Adult Education Administrators
+        </h1>
 
-          <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-            Join adult education administrators from across the country for a ten-week, project-based bootcamp.
-            Choose a priority that matters in your local context and explore how AI can help you develop a
-            practical resource for your program.
-          </p>
-          <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-            Projects may support recruitment, learner retention, educational gains, staff communication, data use,
-            program planning, grant development, or another area selected by the participant.
-          </p>
+        <p className="mt-6 text-base md:text-xl text-muted-foreground leading-relaxed">
+          Spend an hour a week and leave with something your program actually uses &mdash; built around{' '}
+          <Underline>a priority you choose</Underline>.
+        </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
-            <RegisterButton />
-            <p className="text-sm text-muted-foreground max-w-xs">
-              No COABE membership, coding background, or previous AI experience is required.
-            </p>
-          </div>
+        <ul className="mt-8 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
+          {meta.map((m, i) => (
+            <li key={m} className="flex items-center gap-3">
+              {i > 0 && <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" />}
+              {m}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <RegisterButton />
+          <WebinarLink />
         </div>
 
-        <div className="rounded-2xl border border-border/60 bg-card shadow-[var(--shadow-elegant)] p-6 md:p-8">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-5">
-            At a glance
-          </h2>
-          <ul className="space-y-4">
-            {glance.map(({ icon: Icon, text }) => (
-              <li key={text} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <Icon className="h-4 w-4 text-primary" />
-                </span>
-                <span className="text-sm text-foreground leading-relaxed">{text}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 pt-6 border-t border-border/60 flex items-center gap-3">
-            <img src={coabeLogo} alt="COABE logo" className="h-8 w-auto object-contain" />
-            <span className="text-xs text-muted-foreground leading-snug">
-              In partnership with Community Learning Partners
-            </span>
+        <div className="mt-16 flex flex-col items-center gap-4">
+          <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Presented by</p>
+          <div className="flex items-center gap-8">
+            <img src={coabeLogo.url} alt="COABE, Coalition on Adult Basic Education" className="h-9 md:h-10 w-auto object-contain" />
+            <span className="h-8 w-px bg-border" aria-hidden="true" />
+            <img src={clpLogo.url} alt="Community Learning Partners" className="h-14 md:h-16 w-auto object-contain" />
           </div>
         </div>
       </div>
