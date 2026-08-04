@@ -9,11 +9,12 @@ import BootcampWebinar from '@/components/bootcamp/BootcampWebinar';
 import BootcampPricing from '@/components/bootcamp/BootcampPricing';
 import BootcampFacilitators from '@/components/bootcamp/BootcampFacilitators';
 import BootcampFaq from '@/components/bootcamp/BootcampFaq';
+import BootcampStickyCta from '@/components/bootcamp/BootcampStickyCta';
 import Footer from '@/components/Footer';
 
 const TITLE = 'Artificial Intelligence for Adult Education Administrators | COABE & CLP';
 const DESCRIPTION =
-  'A ten-week online course for adult education administrators. About an hour a week, individual coaching, and one project built around a priority in your program. $350.';
+  'An online course for adult education administrators. About an hour a week, individual coaching, and one project built around a priority in your program. $350.';
 
 const Bootcamp = () => {
   useEffect(() => {
@@ -29,16 +30,23 @@ const Bootcamp = () => {
     }
     meta.setAttribute('content', DESCRIPTION);
 
+    // Unlisted page: reachable by direct URL only, kept out of search results.
+    const robots = document.createElement('meta');
+    robots.setAttribute('name', 'robots');
+    robots.setAttribute('content', 'noindex, nofollow');
+    document.head.appendChild(robots);
+
     return () => {
       document.title = previousTitle;
       if (previousDescription !== null) meta?.setAttribute('content', previousDescription);
+      robots.remove();
     };
   }, []);
 
   return (
     <div className="min-h-screen scroll-smooth">
       <BootcampNav />
-      <main>
+      <main className="pb-20">
         <BootcampHero />
         <BootcampOutcomes />
         <BootcampProject />
@@ -50,6 +58,7 @@ const Bootcamp = () => {
         <BootcampFaq />
       </main>
       <Footer />
+      <BootcampStickyCta />
     </div>
   );
 };
