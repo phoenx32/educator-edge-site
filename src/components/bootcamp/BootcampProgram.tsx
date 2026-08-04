@@ -2,7 +2,7 @@ import {
   UserPlus, ClipboardList, HeartHandshake, LineChart, FolderKanban, Mail, PieChart,
   Briefcase, FileSignature, Megaphone, PlayCircle, BarChart3, Library, Workflow,
   Banknote, TrendingUp, Map, Search, Users, Lightbulb, Hammer, MessagesSquare, RefreshCw,
-  Sparkles, Mic, BookOpen, CheckCircle2, GraduationCap,
+  Sparkles, Mic, BookOpen, CheckCircle2, GraduationCap, Video,
 } from 'lucide-react';
 import { RegisterButton } from './RegisterButton';
 
