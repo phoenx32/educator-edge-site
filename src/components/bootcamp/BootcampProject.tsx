@@ -22,19 +22,20 @@ const BootcampProject = () => (
           One project, <Underline>chosen by you</Underline>, developed over ten weeks
         </h2>
         <p className="mt-5 text-muted-foreground leading-relaxed">
-          There is no common assignment. Each participant selects a priority that is relevant to their own program,
-          role, and local context, and coaching begins from whatever that priority is.
+          You choose the priority. Coaching starts from what you already know about your program, your role, and the
+          people you serve, and builds from there.
         </p>
         <p className="mt-4 text-muted-foreground leading-relaxed">
-          Projects in past cohorts have addressed{' '}
+          Priorities administrators might take on include{' '}
           <span className="text-foreground">{examples.slice(0, -1).join(', ')}</span>, and{' '}
-          <span className="text-foreground">{examples[examples.length - 1]}</span>. These are examples rather than
-          options; participants are welcome to bring a priority that is not listed here.
+          <span className="text-foreground">{examples[examples.length - 1]}</span>. These are ideas to start from, and
+          you are welcome to bring a priority that is not listed here.
         </p>
         <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
           Each week moves your project one turn around the same improvement cycle. Select a step to see what it
           involves in practice.
         </p>
+
 
         <div className="mt-8">
           <RegisterButton />
