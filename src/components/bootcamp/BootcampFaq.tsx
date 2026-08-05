@@ -1,6 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { RegisterButton, WebinarLink } from './RegisterButton';
 import { Underline } from './Underline';
+import SectionShell from './SectionShell';
 
 const groups = [
   {
@@ -35,8 +36,7 @@ const groups = [
 
 const BootcampFaq = () => (
   <>
-    <section id="faq" className="py-20 md:py-28 border-t border-border/60">
-      <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+    <SectionShell id="faq" index="07" label="Frequently asked questions" width="3xl">
         <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
           Frequently asked questions
         </h2>
@@ -82,8 +82,7 @@ const BootcampFaq = () => (
             <WebinarLink />
           </div>
         </div>
-      </div>
-    </section>
+    </SectionShell>
 
     <section id="register" className="py-20 md:py-28 border-t border-border/60 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6 max-w-2xl text-center">
