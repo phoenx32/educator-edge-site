@@ -1,3 +1,4 @@
+import { ChevronDown } from 'lucide-react';
 import { RegisterButton, WebinarLink } from './RegisterButton';
 import { Underline } from './Underline';
 import clpLogo from '@/assets/logos/clp-logo.png';
