@@ -23,7 +23,7 @@ const BootcampStickyCta = () => {
             Artificial Intelligence for Adult Education Administrators
           </p>
           <p className="text-xs text-muted-foreground">
-            Oct 5 &ndash; Nov 30, 2026 &middot; $350
+            Oct 12 &ndash; Dec 18, 2026 &middot; $350
           </p>
         </div>
         <RegisterButton label="Register" size="sm" className="flex-shrink-0" />
