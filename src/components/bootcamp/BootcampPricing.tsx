@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 import { RegisterButton, WebinarLink } from './RegisterButton';
+import SectionShell from './SectionShell';
 
 const includes = [
   'Ten weeks of course access',
@@ -12,8 +13,7 @@ const includes = [
 ];
 
 const BootcampPricing = () => (
-  <section id="cost" className="py-20 md:py-28 border-t border-border/60">
-    <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+  <SectionShell id="cost" index="05" label="Cost" width="3xl">
       <div className="rounded-3xl border border-border bg-card p-8 md:p-12">
         <div className="flex items-baseline gap-3">
           <span className="text-5xl md:text-6xl font-bold tracking-tight">$350</span>
@@ -40,8 +40,7 @@ const BootcampPricing = () => (
           certificate registers separately.
         </p>
       </div>
-    </div>
-  </section>
+  </SectionShell>
 );
 
 export default BootcampPricing;

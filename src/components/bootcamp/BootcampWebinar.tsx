@@ -1,23 +1,23 @@
-import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { WEBINAR_URL } from './RegisterButton';
+import SectionShell from './SectionShell';
 
 const BootcampWebinar = () => (
-  <section id="webinar-register" className="border-t border-border/60">
-    <div className="container mx-auto px-4 md:px-6 max-w-4xl py-10">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-        <div>
-          <p className="text-sm font-semibold">Free informational webinar &mdash; September 17, 2026</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            A one-hour overview of the course held before the cohort begins. Review the syllabus, meet the
-            facilitators, and ask questions about fit for your program.
-          </p>
-        </div>
-        <Button variant="outline" asChild className="flex-shrink-0">
-          <a href={WEBINAR_URL}>Register for the webinar</a>
-        </Button>
-      </div>
+  <SectionShell id="webinar-register" size="sm">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-x-4 gap-y-2 text-center sm:text-left border-y border-border/60 py-5">
+      <p className="text-sm">
+        <span className="font-semibold">Free informational webinar</span>
+        <span className="text-muted-foreground"> &mdash; September 17, 2026. A one-hour overview of the course before the cohort begins.</span>
+      </p>
+      <a
+        href={WEBINAR_URL}
+        className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-primary hover:underline flex-shrink-0"
+      >
+        Register for the webinar
+        <ArrowRight className="h-4 w-4" />
+      </a>
     </div>
-  </section>
+  </SectionShell>
 );
 
 export default BootcampWebinar;

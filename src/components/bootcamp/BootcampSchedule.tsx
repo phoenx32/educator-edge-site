@@ -1,5 +1,6 @@
 import { RegisterButton } from './RegisterButton';
 import { Underline } from './Underline';
+import SectionShell from './SectionShell';
 
 type Week = {
   date: string;
@@ -30,8 +31,7 @@ const dotClass = (tone: Week['tone']) =>
       : 'h-2 w-2 bg-border border-border';
 
 const BootcampSchedule = () => (
-  <section id="schedule" className="py-20 md:py-28 border-t border-border/60 bg-muted/30">
-    <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+  <SectionShell id="schedule" index="04" label="Schedule" tone="muted" width="5xl">
       <div className="max-w-2xl">
         <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
           Ten weeks, <Underline>about an hour a week</Underline>
@@ -120,8 +120,7 @@ const BootcampSchedule = () => (
       <div className="mt-8">
         <RegisterButton />
       </div>
-    </div>
-  </section>
+  </SectionShell>
 );
 
 export default BootcampSchedule;

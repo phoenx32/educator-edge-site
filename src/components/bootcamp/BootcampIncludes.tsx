@@ -1,4 +1,5 @@
 import { MessageSquareHeart, Video, Mic, Users2, Wrench, Users, Award } from 'lucide-react';
+import SectionShell from './SectionShell';
 
 const items = [
   { icon: MessageSquareHeart, label: 'Individual coaching', body: 'One-to-one time with a facilitator on your own project, scheduled when it works for you.' },
@@ -11,26 +12,24 @@ const items = [
 ];
 
 const BootcampIncludes = () => (
-  <section className="py-20 md:py-28 border-t border-border/60">
-    <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-      <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
-        What is included
-      </h2>
-      <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-        The course combines independent work with regular opportunities to learn alongside other administrators.
-      </p>
+  <SectionShell index="03" label="Course components">
+    <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
+      What is included
+    </h2>
+    <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
+      The course combines independent work with regular opportunities to learn alongside other administrators.
+    </p>
 
-      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-        {items.map(({ icon: Icon, label, body }) => (
-          <div key={label}>
-            <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
-            <h3 className="mt-3 text-base font-semibold">{label}</h3>
-            <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{body}</p>
-          </div>
-        ))}
-      </div>
+    <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-8">
+      {items.map(({ icon: Icon, label, body }) => (
+        <div key={label} className="border-t border-border/60 pt-4">
+          <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
+          <h3 className="mt-3 text-base font-semibold">{label}</h3>
+          <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{body}</p>
+        </div>
+      ))}
     </div>
-  </section>
+  </SectionShell>
 );
 
 export default BootcampIncludes;
