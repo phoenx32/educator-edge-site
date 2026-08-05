@@ -9,13 +9,15 @@ Strip the nav to two elements: the CLP + COABE logos on the left, Register butto
 Delete the "What the ten weeks change in your program" chevron link at the bottom of the hero. The presented-by logos become the hero's closing element.
 
 ## 3. Outcomes section rewrite
-- New headline: "Where administrators are choosing to focus" (plain, no promise of change).
+The section is a menu of possibilities, not a report on what anyone is doing. Nothing has happened yet; every direction is the administrator's to choose.
+- New headline: "Areas you might explore" — no claim about where people are focusing, no promise of change.
 - Move to a standard stacked layout: headline, then a short subheading beneath it, then the two-column grid below — no side-by-side heading/intro.
-- Remove the invented claim "These are the areas administrators in this cohort are most often addressing." Replace with an invitation: this list is a starting point, and participants are encouraged to pursue directions that fit their own program.
+- Remove the invented claim "These are the areas administrators in this cohort are most often addressing." Replace with an invitation: these are common areas of adult education work where administrators could try something; the list is a starting point, and participants are welcome to take a direction that is not listed.
 - Add two more entries to the grid alongside the existing four (enrollment/intake, retention, staff time, data and reporting):
   - Student communication and support (multilingual messaging, plain-language materials)
   - Instructional support for staff (helping teachers plan and adapt materials)
-- Reframe each card headline away from guaranteed results toward what participants explore.
+- Rewrite each card so the headline names a question or an area to try, not a result the course delivers.
+
 
 ## 4. Your project section
 - Remove "There is no common assignment."
