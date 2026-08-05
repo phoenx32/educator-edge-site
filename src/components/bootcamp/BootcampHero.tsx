@@ -24,8 +24,8 @@ const BootcampHero = () => (
         </h1>
 
         <p className="mt-6 text-base md:text-xl text-muted-foreground leading-relaxed">
-          About an hour a week, with a facilitator alongside you, building one thing your program needs &mdash;{' '}
-          <Underline>a priority you choose</Underline>.
+          A ten-week professional development course for adult education administrators. About an hour a week, with
+          facilitator support, developing <Underline>one project for your own program</Underline>.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4">

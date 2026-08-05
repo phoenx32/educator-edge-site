@@ -5,32 +5,32 @@ const steps = [
   {
     icon: Target,
     label: 'Choose',
-    caption: 'Name one priority that is already on your desk this fall.',
+    caption: 'Identify one program priority to work on during the course.',
   },
   {
     icon: PenLine,
     label: 'Draft',
-    caption: 'Build a first version with a facilitator working alongside you.',
+    caption: 'Develop a first version with facilitator support.',
   },
   {
     icon: Play,
     label: 'Try it',
-    caption: 'Put the draft in front of two or three staff or students.',
+    caption: 'Pilot the draft with a small number of staff or students.',
   },
   {
     icon: Ear,
     label: 'Listen',
-    caption: 'Note where people hesitated, and what they asked you next.',
+    caption: 'Gather feedback and note where the draft caused confusion.',
   },
   {
     icon: RefreshCw,
     label: 'Revise',
-    caption: 'Change what did not work. Bring the questions to the cohort.',
+    caption: 'Adjust the work and bring open questions to the cohort.',
   },
   {
     icon: CheckCircle2,
-    label: 'Keep it',
-    caption: 'Decide who owns it, and how it stays in use after the course.',
+    label: 'Implement',
+    caption: 'Determine ownership and how the work continues after the course.',
   },
 ];
 

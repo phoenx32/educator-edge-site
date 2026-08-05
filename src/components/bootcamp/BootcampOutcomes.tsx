@@ -25,11 +25,11 @@ const BootcampOutcomes = () => (
   <section id="outcomes" className="py-20 md:py-28 border-t border-border/60">
     <div className="container mx-auto px-4 md:px-6 max-w-4xl">
       <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight max-w-2xl">
-        By December, one part of your program runs differently
+        Applied to the work adult education programs are already doing
       </h2>
       <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-        Administrators in this cohort work on the problems that show up in adult education programs every term. Here is
-        what participants are working toward.
+        Participants work on the operational problems that recur in adult education every term. These are the areas
+        administrators in this cohort are most often addressing.
       </p>
 
       <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14 gap-y-10">

@@ -1,20 +1,24 @@
-import { MessageSquareHeart, Video, Mic, Wrench, Users, Award } from 'lucide-react';
+import { MessageSquareHeart, Video, Mic, Users2, Wrench, Users, Award } from 'lucide-react';
 
 const items = [
-  { icon: MessageSquareHeart, label: 'Individual coaching', body: 'One-to-one time with a facilitator on your own project.' },
-  { icon: Video, label: 'Three live sessions', body: 'Optional, scheduled with the cohort, always recorded.' },
-  { icon: Mic, label: 'Spotlight talks', body: 'Administrators describing what they tried and what happened.' },
-  { icon: Wrench, label: 'Tool walkthroughs', body: 'Free tools, shown against real program tasks.' },
-  { icon: Users, label: 'A cohort of peers', body: 'Other administrators working on the same kinds of problems.' },
-  { icon: Award, label: 'Certificate', body: 'Issued by COABE and Community Learning Partners on completion.' },
+  { icon: MessageSquareHeart, label: 'Individual coaching', body: 'One-to-one time with a facilitator on your own project, scheduled when it works for you.' },
+  { icon: Video, label: 'Five live sessions', body: 'Opening, midpoint, and closing sessions plus two spotlight sessions. All optional, all recorded.' },
+  { icon: Mic, label: 'Administrator spotlight talks', body: 'Colleagues from other programs describing what they tried, what worked, and what did not.' },
+  { icon: Users2, label: 'Open working sessions', body: 'A half hour after each spotlight talk to bring a question, work on your project, or think through a problem with peers and facilitators.' },
+  { icon: Wrench, label: 'Tool walkthroughs', body: 'Free tools demonstrated against everyday program tasks.' },
+  { icon: Users, label: 'A cohort of colleagues', body: 'Administrators from other programs working on comparable priorities.' },
+  { icon: Award, label: 'Certificate of completion', body: 'Issued by COABE and Community Learning Partners.' },
 ];
 
 const BootcampIncludes = () => (
   <section className="py-20 md:py-28 border-t border-border/60">
     <div className="container mx-auto px-4 md:px-6 max-w-4xl">
       <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
-        What your registration covers
+        What is included
       </h2>
+      <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
+        The course combines independent work with regular opportunities to learn alongside other administrators.
+      </p>
 
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
         {items.map(({ icon: Icon, label, body }) => (

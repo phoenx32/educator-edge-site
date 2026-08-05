@@ -24,6 +24,6 @@ export const WebinarLink = ({ className = '' }: { className?: string }) => (
     href={WEBINAR_URL}
     className={`text-sm text-muted-foreground underline underline-offset-4 decoration-border hover:text-primary hover:decoration-primary transition-colors ${className}`}
   >
-    or join the free info webinar
+    Or attend the free informational webinar
   </a>
 );
