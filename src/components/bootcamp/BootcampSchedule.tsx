@@ -1,4 +1,3 @@
-import { Clock } from 'lucide-react';
 import { RegisterButton } from './RegisterButton';
 import { Underline } from './Underline';
 import SectionShell from './SectionShell';
@@ -43,6 +42,7 @@ const weeks: Week[] = [
   { n: 7, month: 'Nov', day: '23', kind: 'spotlight', title: 'Spotlight talk and open working session', detail: 'A second administrator spotlight, followed by open working time with facilitators and peers.' },
   { n: 8, month: 'Nov', day: '30', kind: 'work', title: 'Project work, on your own schedule' },
   { n: 9, month: 'Dec', day: '7', kind: 'meetup', title: 'Closing meetup', detail: 'Participants share where their projects landed and what comes next in their programs.' },
+  { n: 10, month: 'Dec', day: '14', kind: 'work', title: 'Wrap-up week', detail: 'Time to finish your project, gather feedback from colleagues, and schedule any last coaching before the course closes.' },
 ];
 
 const months: { name: Month; label: string; weeks: Week[] }[] = [
@@ -73,8 +73,8 @@ const BootcampSchedule = () => (
         </span>
       ))}
       <span className="flex items-center gap-2">
-        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-        Day and time set with the cohort
+        <span className="text-primary" aria-hidden="true">*</span>
+        Day and time not yet set
       </span>
     </div>
 
@@ -116,13 +116,15 @@ const BootcampSchedule = () => (
                   <div className="min-w-0">
                     <p className={`text-sm font-medium leading-snug ${w.kind === 'work' ? 'text-muted-foreground' : ''}`}>
                       {w.title}
+                      {live && (
+                        <span
+                          className={`ml-1 align-super text-xs ${w.kind === 'meetup' ? 'text-primary' : 'text-accent'}`}
+                          aria-label="Day and time not yet set"
+                        >
+                          *
+                        </span>
+                      )}
                     </p>
-                    {live && (
-                      <span className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-dashed border-muted-foreground/40 px-2 py-0.5 text-[11px] text-muted-foreground">
-                        <Clock className="h-3 w-3" aria-hidden="true" />
-                        Day and time to be set
-                      </span>
-                    )}
                     {w.detail && (
                       <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{w.detail}</p>
                     )}
@@ -135,11 +137,15 @@ const BootcampSchedule = () => (
       ))}
     </div>
 
-    <p className="mt-10 text-sm text-muted-foreground max-w-xl leading-relaxed">
-      Live sessions are held during the week listed. The specific day and time are not set yet: after registration we
-      send a Doodle poll and choose times with the cohort so they land when most participants can attend. Every live
-      session is recorded and shared the same day.
+    <p className="mt-6 flex max-w-2xl gap-2 text-sm text-muted-foreground leading-relaxed">
+      <span className="text-primary" aria-hidden="true">*</span>
+      <span>
+        These sessions are held during the week listed, but the day and time are not set yet. They will be scheduled in
+        collaboration with all participants through a Doodle poll after registration, so sessions fall when most people
+        can attend. Every live session is recorded and shared the same day.
+      </span>
     </p>
+
 
     <div className="mt-8">
       <RegisterButton />
