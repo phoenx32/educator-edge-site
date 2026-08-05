@@ -41,9 +41,8 @@ const BootcampFaq = () => (
           Frequently asked questions
         </h2>
         <p className="mt-5 text-muted-foreground leading-relaxed">
-          What administrators usually want to know before they register: who the course is
-          built for, what the ten weeks ask of your schedule, and how tools, privacy, and
-          payment are handled.
+          Common questions about who the course is designed for, what the ten weeks ask of your
+          schedule, and how tools, privacy, and payment are handled.
         </p>
 
         <div className="mt-12 space-y-12">
@@ -67,10 +66,10 @@ const BootcampFaq = () => (
         </div>
 
         <div className="mt-14 rounded-lg border border-border/60 bg-muted/30 px-6 py-6">
-          <h3 className="text-base font-semibold">Still deciding?</h3>
+          <h3 className="text-base font-semibold">Questions about your program or registration?</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Email a question about your program and we will answer it directly, or come to the
-            informational webinar and ask it live before you commit.
+            Email us with a question specific to your program and we will respond directly, or attend the
+            informational webinar and ask it there.
           </p>
           <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-4">
             <a
