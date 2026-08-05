@@ -16,7 +16,8 @@ const groups = [
     label: 'Time and support',
     faqs: [
       { q: 'How much time should I plan each week?', a: 'About one hour. Some participants spend more if they choose a larger project or involve a broader team.' },
-      { q: 'Are the live sessions required?', a: 'No. The opening, midpoint, and closing sessions are optional and all are recorded. Times are chosen with the cohort by poll after registration.' },
+      { q: 'Are the live sessions required?', a: 'No. All five sessions \u2014 the opening, midpoint, and closing sessions and the two spotlight sessions \u2014 are optional and recorded. Times are set with the cohort by poll after registration.' },
+      { q: 'What happens in an open working session?', a: 'Each spotlight session runs for an hour. The first half hour is a talk from an adult education administrator describing how they are using AI in their own program. The second half hour is unstructured working time: bring a question, work on your project, troubleshoot with colleagues, or talk through an idea with a facilitator. The spotlight talk is recorded; the working half is conversational and not recorded, and you are welcome to attend either half.' },
       { q: 'How does coaching work?', a: 'Every participant has access to individual coaching from a course facilitator. Coaching can focus on choosing a project, planning, selecting tools, reviewing work in progress, or planning local implementation.' },
       { q: 'Can I work with colleagues?', a: 'Yes, and it is encouraged. Each person who wants full access, coaching, and a certificate registers separately.' },
     ],

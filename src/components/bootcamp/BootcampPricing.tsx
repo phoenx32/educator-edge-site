@@ -4,8 +4,9 @@ import { RegisterButton, WebinarLink } from './RegisterButton';
 const includes = [
   'Ten weeks of course access',
   'Individual coaching on your project',
-  'Three optional live sessions, all recorded',
+  'Five optional live sessions, all recorded',
   'Administrator spotlight talks',
+  'Open working sessions with peers and facilitators',
   'Templates, examples, and planning resources',
   'Certificate of completion',
 ];
