@@ -7,7 +7,7 @@ import coabeLogo from '@/assets/logos/coabe-logo-full.jpg';
 const facts = [
   { label: 'Dates', value: 'Oct 5 – Nov 30, 2026' },
   { label: 'Weekly time', value: 'About 1 hour' },
-  { label: 'Format', value: 'Online, mostly on your own schedule' },
+  { label: 'Format', value: 'Online, synchronous and asynchronous' },
   { label: 'Prerequisites', value: 'None' },
   { label: 'Cost', value: '$350' },
 ];
@@ -17,7 +17,7 @@ const BootcampHero = () => (
     <div className="container mx-auto px-4 md:px-6">
       <div className="max-w-3xl mx-auto text-center">
         <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-muted-foreground">
-          An online course for adult education administrators
+          A professional development course for adult education administrators
         </p>
 
         <h1 className="mt-5 text-3xl md:text-[3.25rem] md:leading-[1.08] font-bold tracking-tight">
