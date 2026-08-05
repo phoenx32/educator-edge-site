@@ -36,7 +36,7 @@ const groups = [
 
 const BootcampFaq = () => (
   <>
-    <SectionShell id="faq" index="07" label="Frequently asked questions" width="3xl">
+    <SectionShell id="faq" index="07" label="Questions" width="3xl">
         <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
           Frequently asked questions
         </h2>

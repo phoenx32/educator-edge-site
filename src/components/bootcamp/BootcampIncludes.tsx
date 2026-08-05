@@ -12,7 +12,7 @@ const items = [
 ];
 
 const BootcampIncludes = () => (
-  <SectionShell index="03" label="What is included">
+  <SectionShell index="03" label="Course components">
     <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
       What is included
     </h2>
