@@ -66,10 +66,9 @@ const BootcampFaq = () => (
         </div>
 
         <div className="mt-14 rounded-lg border border-border/60 bg-muted/30 px-6 py-6">
-          <h3 className="text-base font-semibold">Questions about your program or registration?</h3>
+          <h3 className="text-base font-semibold">Questions about the cohort?</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Email us with a question specific to your program and we will respond directly, or attend the
-            informational webinar and ask it there.
+            Email us and we will respond directly, or bring your question to the free informational webinar.
           </p>
           <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-4">
             <a
