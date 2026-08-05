@@ -43,6 +43,7 @@ const weeks: Week[] = [
   { n: 7, month: 'Nov', day: '23', kind: 'spotlight', title: 'Spotlight talk and open working session', detail: 'A second administrator spotlight, followed by open working time with facilitators and peers.' },
   { n: 8, month: 'Nov', day: '30', kind: 'work', title: 'Project work, on your own schedule' },
   { n: 9, month: 'Dec', day: '7', kind: 'meetup', title: 'Closing meetup', detail: 'Participants share where their projects landed and what comes next in their programs.' },
+  { n: 10, month: 'Dec', day: '14', kind: 'work', title: 'Wrap-up week', detail: 'Time to finish your project, gather feedback from colleagues, and schedule any last coaching before the course closes.' },
 ];
 
 const months: { name: Month; label: string; weeks: Week[] }[] = [
@@ -73,8 +74,8 @@ const BootcampSchedule = () => (
         </span>
       ))}
       <span className="flex items-center gap-2">
-        <Clock className="h-3.5 w-3.5" aria-hidden="true" />
-        Day and time set with the cohort
+        <span className="text-primary" aria-hidden="true">*</span>
+        Day and time not yet set
       </span>
     </div>
 
