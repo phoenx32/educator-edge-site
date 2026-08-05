@@ -1,5 +1,5 @@
 import { RegisterButton, WebinarLink } from './RegisterButton';
-import { RegisterButton, WebinarLink } from './RegisterButton';
+
 import { Underline } from './Underline';
 import clpLogo from '@/assets/logos/clp-logo.png';
 import coabeLogo from '@/assets/logos/coabe-logo-full.jpg';
