@@ -5,7 +5,7 @@ import SectionShell from './SectionShell';
 const includes = [
   'Ten weeks of course access',
   'Individual coaching on your project',
-  'Five optional live sessions, all recorded',
+  'Three live cohort meetups plus two spotlight sessions, all optional and recorded',
   'Administrator spotlight talks',
   'Open working sessions with peers and facilitators',
   'Templates, examples, and planning resources',

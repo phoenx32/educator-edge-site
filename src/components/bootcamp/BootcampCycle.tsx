@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Target, PenLine, Play, Ear, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Target, PenLine, Play, Lightbulb, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 const steps = [
   {
@@ -18,9 +18,9 @@ const steps = [
     caption: 'Pilot the draft with a small number of staff or students.',
   },
   {
-    icon: Ear,
-    label: 'Listen',
-    caption: 'Gather feedback and note where the draft caused confusion.',
+    icon: Lightbulb,
+    label: 'Reflect',
+    caption: 'Gather feedback and reflect on what the draft surfaced.',
   },
   {
     icon: RefreshCw,
