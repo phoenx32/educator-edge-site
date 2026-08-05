@@ -118,7 +118,7 @@ const BootcampSchedule = () => (
                       {w.title}
                     </p>
                     {live && (
-                      <span className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-dashed border-current/40 px-2 py-0.5 text-[11px] text-muted-foreground">
+                      <span className="mt-1.5 inline-flex items-center gap-1.5 rounded-full border border-dashed border-muted-foreground/40 px-2 py-0.5 text-[11px] text-muted-foreground">
                         <Clock className="h-3 w-3" aria-hidden="true" />
                         Day and time to be set
                       </span>
