@@ -52,17 +52,8 @@ const BootcampHero = () => (
           <img src={clpLogo} alt="Community Learning Partners" className="h-20 md:h-24 w-auto object-contain" />
         </div>
       </div>
-
-      <div className="mt-14 md:mt-20 flex flex-col items-center gap-3">
-        <a
-          href="#outcomes"
-          className="group inline-flex flex-col items-center gap-3 text-xs uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground transition-colors"
-        >
-          What the ten weeks change in your program
-          <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-        </a>
-      </div>
     </div>
+
   </section>
 );
 
