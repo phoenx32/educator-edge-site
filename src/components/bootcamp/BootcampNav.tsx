@@ -9,7 +9,7 @@ const BootcampNav = () => (
         <a href="#top" className="flex items-center gap-3 min-w-0">
           <img src={clpLogo} alt="Community Learning Partners" className="h-10 w-10 object-contain" />
           <span className="hidden sm:block h-6 w-px bg-border" aria-hidden="true" />
-          <img src={coabeLogo} alt="COABE" className="hidden sm:block h-5 w-auto object-contain" />
+          <img src={coabeLogo} alt="COABE" className="hidden sm:block h-6 w-auto object-contain" />
         </a>
 
         <RegisterButton label="Register" size="sm" />

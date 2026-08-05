@@ -25,7 +25,7 @@ const facilitators = [
     bio: 'Sharon leads COABE, the national organization advancing adult education and family literacy, and brings a nationwide view of the priorities and pressures facing programs today.',
     logo: coabeLogo,
     logoAlt: 'COABE',
-    logoClass: 'h-6',
+    logoClass: 'h-7',
   },
 ];
 
