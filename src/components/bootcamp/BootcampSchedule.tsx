@@ -1,4 +1,3 @@
-import { Clock } from 'lucide-react';
 import { RegisterButton } from './RegisterButton';
 import { Underline } from './Underline';
 import SectionShell from './SectionShell';
