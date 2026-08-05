@@ -1,6 +1,6 @@
 import SectionShell from './SectionShell';
 import clpLogo from '@/assets/logos/clp-logo.png';
-import coabeLogo from '@/assets/logos/coabe-logo-full.jpg';
+import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facilitators = [
   {

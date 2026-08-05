@@ -1,6 +1,6 @@
 import { RegisterButton } from './RegisterButton';
 import clpLogo from '@/assets/logos/clp-logo.png';
-import coabeLogo from '@/assets/logos/coabe-logo-full.jpg';
+import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const BootcampNav = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60">

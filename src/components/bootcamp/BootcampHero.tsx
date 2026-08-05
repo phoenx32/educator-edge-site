@@ -2,7 +2,7 @@ import { RegisterButton, WebinarLink } from './RegisterButton';
 
 import { Underline } from './Underline';
 import clpLogo from '@/assets/logos/clp-logo.png';
-import coabeLogo from '@/assets/logos/coabe-logo-full.jpg';
+import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facts = [
   { label: 'Dates', value: 'Oct 5 – Nov 30, 2026' },
