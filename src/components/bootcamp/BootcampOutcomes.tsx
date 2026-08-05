@@ -1,3 +1,5 @@
+import SectionShell from './SectionShell';
+
 const outcomes = [
   {
     area: 'Enrollment and intake',
