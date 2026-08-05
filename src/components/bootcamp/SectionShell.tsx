@@ -62,19 +62,21 @@ export const SectionShell = ({
       </div>
     </div>
 
-    <div className={cn('container mx-auto px-4 md:px-6', widths[width])}>
-      {label && (
-        <div className="mb-5 flex items-center gap-3">
-          <span className="lg:hidden h-px w-10 bg-primary" aria-hidden="true" />
-          <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-            {index && <span className="tabular-nums text-primary">{index}</span>}
-            {index && <span className="mx-2 text-border">/</span>}
-            {label}
-          </span>
-        </div>
-      )}
+    <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+      <div className={cn('lg:pl-14', widths[width])}>
+        {label && (
+          <div className="mb-5 flex items-center gap-3">
+            <span className="lg:hidden h-px w-10 bg-primary" aria-hidden="true" />
+            <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+              {index && <span className="tabular-nums text-primary">{index}</span>}
+              {index && <span className="mx-2 text-border">/</span>}
+              {label}
+            </span>
+          </div>
+        )}
 
-      {children}
+        {children}
+      </div>
     </div>
   </section>
 );
