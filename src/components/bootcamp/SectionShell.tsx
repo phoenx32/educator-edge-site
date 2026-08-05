@@ -25,8 +25,8 @@ const widths = {
 
 /**
  * Shared wrapper for the bootcamp page sections.
- * Draws a continuous vertical spine down the left of the content column
- * (desktop only) with a marker at each section start, plus a numbered eyebrow.
+ * Draws a continuous vertical spine down the left of the page (desktop only)
+ * with a marker at each section start, plus a numbered eyebrow.
  */
 export const SectionShell = ({
   id,
@@ -47,36 +47,34 @@ export const SectionShell = ({
       className,
     )}
   >
-    <div className={cn('container mx-auto px-4 md:px-6', widths[width])}>
-      <div className="relative">
-        {/* Continuous spine, joins section to section */}
-        <span
-          aria-hidden="true"
-          className={cn(
-            'hidden lg:block absolute -left-10 w-px bg-border/60',
-            size === 'lg' ? '-top-20 -bottom-28' : '-top-10 -bottom-14',
-          )}
-        />
+    {/* Spine: fixed to a single measure so it stays continuous across sections */}
+    <div className="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden="true">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl h-full relative">
+        <span className="absolute left-0 top-0 bottom-0 w-px bg-border/60" />
         {label && (
           <span
-            aria-hidden="true"
-            className="hidden lg:block absolute -left-10 top-[0.55rem] -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-primary/70"
+            className={cn(
+              'absolute left-0 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-primary/70',
+              size === 'lg' ? 'top-[7.55rem]' : 'top-[3.9rem]',
+            )}
           />
         )}
-
-        {label && (
-          <div className="mb-5 flex items-center gap-3">
-            <span className="lg:hidden h-px w-10 bg-primary" aria-hidden="true" />
-            <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-              {index && <span className="tabular-nums text-primary">{index}</span>}
-              {index && <span className="mx-2 text-border">/</span>}
-              {label}
-            </span>
-          </div>
-        )}
-
-        {children}
       </div>
+    </div>
+
+    <div className={cn('container mx-auto px-4 md:px-6', widths[width])}>
+      {label && (
+        <div className="mb-5 flex items-center gap-3">
+          <span className="lg:hidden h-px w-10 bg-primary" aria-hidden="true" />
+          <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+            {index && <span className="tabular-nums text-primary">{index}</span>}
+            {index && <span className="mx-2 text-border">/</span>}
+            {label}
+          </span>
+        </div>
+      )}
+
+      {children}
     </div>
   </section>
 );
