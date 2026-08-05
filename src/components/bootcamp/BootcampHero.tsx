@@ -5,7 +5,7 @@ import clpLogo from '@/assets/logos/clp-logo.png';
 import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facts = [
-  { label: 'Dates', value: 'Oct 5 – Nov 30, 2026' },
+  { label: 'Dates', value: 'Oct 12 – Dec 18, 2026' },
   { label: 'Weekly time', value: 'About 1 hour' },
   { label: 'Format', value: 'Online, synchronous and asynchronous' },
   { label: 'Prerequisites', value: 'None' },

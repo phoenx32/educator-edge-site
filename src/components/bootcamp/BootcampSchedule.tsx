@@ -59,7 +59,7 @@ const BootcampSchedule = () => (
       </h2>
       <p className="mt-5 text-muted-foreground leading-relaxed">
         Coursework is asynchronous and done on your own schedule. Three live meetups and two spotlight and working
-        sessions are held across the ten weeks. All are optional and recorded, and individual coaching is available
+        sessions are held across the ten weeks. All are optional and recorded for on-demand viewing, and coaching is available
         throughout at times you arrange with a facilitator.
       </p>
     </div>
@@ -140,9 +140,9 @@ const BootcampSchedule = () => (
     <p className="mt-6 flex max-w-2xl gap-2 text-sm text-muted-foreground leading-relaxed">
       <span className="text-primary" aria-hidden="true">*</span>
       <span>
-        These sessions are held during the week listed, but the day and time are not set yet. They will be scheduled in
-        collaboration with all participants through a Doodle poll after registration, so sessions fall when most people
-        can attend. Every live session is recorded and shared the same day.
+        These sessions are held during the week listed, but the day and time are not set yet. They are scheduled in
+        collaboration with all participants through a Doodle poll after registration, so we can hopefully find a time
+        that works for most people. Every live session is recorded and made available for on-demand viewing.
       </span>
     </p>
 
