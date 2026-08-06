@@ -12,8 +12,8 @@ const Contact = () => {
     },
     {
       icon: Calendar,
-      title: 'Schedule a Free Consultation',
-      content: 'Book a 30-minute consultation to discuss your goals',
+      title: 'Book a Call',
+      content: 'Thirty minutes to talk through what you have in mind',
       action: 'https://calendar.app.google/Ju1nX9Trzxur32JR6'
     }
   ];
@@ -74,7 +74,7 @@ const Contact = () => {
                   <div className="flex-1">
                     <h4 className="font-semibold mb-1">Join Our Newsletter</h4>
                     <p className="text-muted-foreground text-sm">
-                      Get expert insights on digital learning and professional development
+                      Notes on what we're trying with technology in adult education, including what didn't work
                     </p>
                   </div>
                 </div>
