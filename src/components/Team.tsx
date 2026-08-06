@@ -1,21 +1,22 @@
 import { Users } from 'lucide-react';
-import joeyAsset from '@/assets/team/joey-lehrman.png.asset.json';
-import christinAsset from '@/assets/team/christin-smith.png.asset.json';
+import joeyPhoto from '@/assets/team/joey-lehrman.jpg';
+import christinPhoto from '@/assets/team/christin-smith.jpg';
 
 const team = [
   {
     name: 'Joey Lehrman',
-    role: 'Co-Founder, Community Learning Partners',
-    photo: joeyAsset.url,
+    role: 'Managing Director',
+    photo: joeyPhoto,
     bio: 'Joey Lehrman is an award-winning adult educator, speaker, and project manager with nearly 20 years of experience in adult education and workforce development. He helped build Louisiana\u2019s first statewide online adult education program, expanding it from 30 learners to more than 5,000 across 15 community colleges, and now leads large-scale education projects and AI training for educators in collaboration with ISTE, Google, COABE, OTAN, TCALL, and Goodwill Industries International.',
   },
   {
     name: 'Christin Smith',
-    role: 'Co-Founder, Community Learning Partners',
-    photo: christinAsset.url,
+    role: 'Director of Curriculum and Professional Learning',
+    photo: christinPhoto,
     bio: 'Christin Smith is an award-winning educator and curriculum designer with nearly 20 years of experience teaching and designing learning for adults. She developed an online mathematics program that served more than 1,000 adult learners each year and has created curriculum and professional learning for adult education programs across the country. Christin brings deep classroom knowledge to curriculum design, especially in mathematics and teaching with technology.',
   },
 ];
+
 
 const Team = () => (
   <section id="team" className="section-spacing bg-background">
