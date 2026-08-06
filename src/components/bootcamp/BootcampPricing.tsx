@@ -5,12 +5,14 @@ import SectionShell from './SectionShell';
 const includes = [
   'Ten weeks of course access',
   'Individual coaching on your project',
-  'Three live cohort meetups plus two spotlight sessions, all optional and recorded for on-demand viewing',
+  'Three live cohort meetups, optional and recorded for on-demand viewing',
+  'Two spotlight sessions, optional and recorded for on-demand viewing',
   'Administrator spotlight talks',
   'Open working sessions with peers and facilitators',
   'Templates, examples, and planning resources',
   'Certificate of completion',
 ];
+
 
 const BootcampPricing = () => (
   <SectionShell id="cost" index="05" label="Cost" width="3xl">
