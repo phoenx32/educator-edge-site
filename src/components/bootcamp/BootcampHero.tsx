@@ -6,7 +6,7 @@ import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facts = [
   { label: 'Dates', value: 'Oct 12 – Dec 18, 2026' },
-  { label: 'Weekly time', value: 'About 1 hour' },
+  { label: 'Weekly time', value: '~1 hour' },
   { label: 'Format', value: 'Online, synchronous and asynchronous' },
   { label: 'Prerequisites', value: 'None' },
   { label: 'Cost', value: '$350' },
@@ -25,8 +25,8 @@ const BootcampHero = () => (
         </h1>
 
         <p className="mt-6 text-base md:text-xl text-muted-foreground leading-relaxed">
-          A ten-week professional development course for adult education administrators. About an hour a week, with
-          facilitator support, developing <Underline>one project for your own program</Underline>.
+          A ten-week professional development course on using <Underline>AI to support teaching, learning, and staff</Underline>{' '}
+          across an adult education program.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4">
