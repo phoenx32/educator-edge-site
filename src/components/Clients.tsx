@@ -52,10 +52,10 @@ const Clients = () => {
             Our Partners
           </div>
           <h2 className="mb-4">
-            Who We <span className="bg-gradient-primary bg-clip-text text-transparent">Work With</span>
+            Trusted by Leading <span className="bg-gradient-primary bg-clip-text text-transparent">Educational Organizations</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Adult education programs, community colleges, state agencies, and workforce organizations around the country.
+            We partner with adult education programs, community colleges, and workforce development organizations nationwide.
           </p>
         </div>
         
