@@ -43,7 +43,7 @@ const BootcampOutcomes = () => (
   <SectionShell id="outcomes" index="01" label="Areas of focus">
     <div className="max-w-2xl">
       <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
-        One project, <Underline>chosen by you</Underline>, developed through iteration
+        One project, <Underline>chosen by you</Underline>, grounded in your program
       </h2>
       <p className="mt-5 text-muted-foreground leading-relaxed">
         Administrators choose a project and develop it with support from peer administrators and AI subject matter
