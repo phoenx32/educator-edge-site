@@ -6,9 +6,10 @@ const includes = [
   'Ten weeks of course access',
   'Individual coaching on your project',
   'Three live cohort meetups, optional and recorded for on-demand viewing',
-  'Two spotlight sessions, optional and recorded for on-demand viewing',
-  'Administrator spotlight talks',
+  'Two administrator spotlight sessions with working AI examples from the field',
+  'Peer feedback and conversation with other adult education administrators',
   'Open working sessions with peers and facilitators',
+
   'Templates, examples, and planning resources',
   'Certificate of completion',
 ];
