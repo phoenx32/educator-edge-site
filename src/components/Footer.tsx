@@ -11,10 +11,10 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Community Learning Partners</h3>
             <p className="text-white/80 mb-4 leading-relaxed">
-              Two people who work alongside adult education teams on teaching, technology, and the projects in between.
+              Working and learning together to make digital learning more accessible and effective.
             </p>
             <p className="text-white/70 text-sm mb-4">
-              Remote, and on-site when it helps
+              🌎 Remote & On-site Services Available Nationwide
             </p>
             <div className="text-white/60 text-sm">
               © {currentYear} Community Learning Partners. All rights reserved.
@@ -34,12 +34,12 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Get in Touch</h4>
+            <h4 className="font-semibold mb-4">Get Started</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#about" className="hover:text-white transition-colors">Our Approach</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
               <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
-              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book a Call</a></li>
+              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule Consultation</a></li>
             </ul>
             <div className="flex gap-4 mt-6">
               <a 

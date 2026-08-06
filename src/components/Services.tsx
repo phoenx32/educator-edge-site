@@ -53,7 +53,7 @@ const Services = () => {
       id: 'professional-development',
       title: 'Professional Development Cohorts',
       shortTitle: 'Professional Development',
-      description: 'Multi-week cohorts where your staff try tools with each other before trying them with learners. Digital literacy, AI, online instruction, math. We shape it around what your team is actually facing.',
+      description: 'Practical, multi-week cohorts that help educators build confidence with new tools and strategies. Topics include digital literacy, AI, online instruction, and math—customized to your team\'s needs.',
       icon: Users,
       image: developmentImage,
       imagePosition: 'object-center',
@@ -62,7 +62,7 @@ const Services = () => {
       id: 'project-management',
       title: 'Project Management',
       shortTitle: 'Project Management',
-      description: 'Grant deliverables, statewide rollouts, reporting deadlines. We take on timelines, paperwork, and stakeholder wrangling so the people doing the work can keep doing it.',
+      description: 'From grant deliverables to statewide rollouts, we keep complex initiatives on track. We handle timelines, reporting, stakeholder coordination, and capacity building so your team can focus on impact.',
       icon: Workflow,
       image: projectManagementImage,
       imagePosition: 'object-center',
@@ -71,7 +71,7 @@ const Services = () => {
       id: 'keynotes',
       title: 'Keynotes & Conference Workshops',
       shortTitle: 'Keynotes & Workshops',
-      description: 'Sessions for state and national conferences on digital learning, AI, and workforce readiness. Honest about what is still uncertain, and specific about what people can try on Monday.',
+      description: 'Engaging presentations for state and national conferences on digital learning, AI, workforce readiness, and instructional innovation. Sessions connect research to practice and spark action.',
       icon: Presentation,
       image: keynoteImage,
       imagePosition: 'object-center',
@@ -80,7 +80,7 @@ const Services = () => {
       id: 'curriculum',
       title: 'Curriculum & Instructional Design',
       shortTitle: 'Curriculum & Design',
-      description: 'Courses, modules, and media built for your learners and your delivery model. You tell us the constraints; we build something your instructors can actually teach.',
+      description: 'We design flexible, workforce-aligned learning materials for digital delivery. From interactive modules to media production, we build content that meets learners where they are.',
       icon: Lightbulb,
       image: curriculumDesignImage,
       imagePosition: 'object-center',
@@ -159,10 +159,10 @@ const Services = () => {
             Our Services
           </div>
           <h2 className="mb-6">
-            How We Work With <span className="bg-gradient-primary bg-clip-text text-transparent">Programs</span>
+            How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We work with state agencies, colleges, and adult education programs. Four kinds of work: professional development with your staff, project management when something big needs running, keynotes and conference sessions, and curriculum built for your learners. You know your program. We bring time, structure, and a second set of hands.
+            We partner with state agencies, higher education institutions, and adult education programs to design and implement digital learning initiatives, professional development cohorts, instructional resources, and strategic projects that support effective teaching and help learners advance toward their academic and professional goals.
           </p>
         </div>
 
