@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-digital-learning.png';
+import clpMark from '@/assets/logos/clp-mark.png';
 
 const Hero = () => {
   return (
