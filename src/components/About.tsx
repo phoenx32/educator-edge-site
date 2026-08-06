@@ -6,18 +6,18 @@ const About = () => {
   const values = [
     {
       icon: ArrowLeftRight,
-      title: 'Shared Learning',
-      description: 'We learn alongside our partners through practice, reflection, and collaboration.'
+      title: 'We Learn Too',
+      description: 'We are not the only experts in the room. Most of what we know came from teachers who tried something and told us how it went.'
     },
     {
       icon: Users,
-      title: 'Collaborative Growth',
-      description: 'Our learning environments foster mutual growth and collective capacity-building.'
+      title: 'Your Call',
+      description: 'We bring options and tradeoffs, not mandates. You know your learners, your staff, and your constraints better than we do.'
     },
     {
       icon: BookOpen,
-      title: 'Continuous Improvement',
-      description: 'We iterate, test ideas in practice, and refine through ongoing reflection.'
+      title: 'Start Small, Adjust',
+      description: 'We test ideas in real classrooms and real offices, keep what works, and drop what does not. Some of it will not work. That is fine.'
     }
   ];
 
