@@ -64,10 +64,10 @@ const Testimonials = () => {
         <div className="text-center content-gap">
           <div className="section-badge-primary">
             <Award size={16} />
-            What Educators Say
+            In Their Words
           </div>
           <h2 className="mb-6">
-            Trusted by <span className="bg-gradient-primary bg-clip-text text-transparent">Adult Educators</span>
+            What People Have <span className="bg-gradient-primary bg-clip-text text-transparent">Said</span>
           </h2>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="flex">

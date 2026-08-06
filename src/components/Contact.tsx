@@ -27,10 +27,10 @@ const Contact = () => {
             Get in Touch
           </div>
           <h2 className="mb-6">
-            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect & Collaborate</span>
+            Start a <span className="bg-gradient-primary bg-clip-text text-transparent">Conversation</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Reach out to discuss your educational needs, or subscribe to our newsletter for expert insights on digital learning, curriculum development, and professional growth.
+            Tell us what you're working on, or what isn't working yet. No pitch, no obligation. If we're not the right fit, we'll say so.
           </p>
         </div>
 
