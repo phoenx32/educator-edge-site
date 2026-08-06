@@ -34,7 +34,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button variant="outline" size="sm" asChild>
-              <a href="#newsletter">Newsletter</a>
+              <a href="#contact">Get in touch</a>
             </Button>
           </div>
 
@@ -63,7 +63,7 @@ const Navigation = () => {
                 </a>
               ))}
               <Button variant="outline" size="sm" className="self-start" asChild>
-                <a href="#newsletter">Newsletter</a>
+                <a href="#contact">Get in touch</a>
               </Button>
             </div>
           </div>
