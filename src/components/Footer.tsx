@@ -11,10 +11,10 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Community Learning Partners</h3>
             <p className="text-white/80 mb-4 leading-relaxed">
-              Working and learning together to make digital learning more accessible and effective.
+              Two people who work alongside adult education teams on teaching, technology, and the projects in between.
             </p>
             <p className="text-white/70 text-sm mb-4">
-              🌎 Remote & On-site Services Available Nationwide
+              Remote, and on-site when it helps
             </p>
             <div className="text-white/60 text-sm">
               © {currentYear} Community Learning Partners. All rights reserved.

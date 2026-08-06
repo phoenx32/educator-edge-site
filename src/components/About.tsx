@@ -34,7 +34,7 @@ const About = () => {
             The <span className="bg-gradient-primary bg-clip-text text-transparent">Continuous Improvement</span> Cycle
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-            Learning is never finished. We build, test, gather feedback, reflect, revise, and set new goals—bringing lifelong learning and design thinking into the daily work of education.
+            This is how we work with a team: build something small, put it in front of real people, listen to what they say, change it, and go again. It is the same cycle we ask teachers to use with their own practice.
           </p>
           
           {/* Design Cycle Animation */}
@@ -71,7 +71,7 @@ const About = () => {
             </div>
             <h2 className="mb-4">By the Numbers</h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              Working together to support educators and learners across the country.
+              A count of the work so far.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 text-center">
