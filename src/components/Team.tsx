@@ -26,7 +26,7 @@ const Team = () => (
           <Users size={16} />
           Our Team
         </div>
-        <h2>Co-Founders</h2>
+        <h2>Co-<span className="bg-gradient-primary bg-clip-text text-transparent">Founders</span></h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mt-10">

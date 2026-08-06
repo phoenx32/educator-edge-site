@@ -12,8 +12,8 @@ const Contact = () => {
     },
     {
       icon: Calendar,
-      title: 'Schedule a Free Consultation',
-      content: 'Book a 30-minute consultation to discuss your goals',
+      title: 'Book a Call',
+      content: 'Thirty minutes to talk through what you have in mind',
       action: 'https://calendar.app.google/Ju1nX9Trzxur32JR6'
     }
   ];
@@ -27,10 +27,10 @@ const Contact = () => {
             Get in Touch
           </div>
           <h2 className="mb-6">
-            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect & Collaborate</span>
+            Start a <span className="bg-gradient-primary bg-clip-text text-transparent">Conversation</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Reach out to discuss your educational needs, or subscribe to our newsletter for expert insights on digital learning, curriculum development, and professional growth.
+            Tell us what you're working on, or what isn't working yet. No pitch, no obligation. If we're not the right fit, we'll say so.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                   <div className="flex-1">
                     <h4 className="font-semibold mb-1">Join Our Newsletter</h4>
                     <p className="text-muted-foreground text-sm">
-                      Get expert insights on digital learning and professional development
+                      Notes on what we're trying with technology in adult education, including what didn't work
                     </p>
                   </div>
                 </div>

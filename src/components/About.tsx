@@ -6,18 +6,18 @@ const About = () => {
   const values = [
     {
       icon: ArrowLeftRight,
-      title: 'Shared Learning',
-      description: 'We learn alongside our partners through practice, reflection, and collaboration.'
+      title: 'We Learn Too',
+      description: 'We are not the only experts in the room. Most of what we know came from teachers who tried something and told us how it went.'
     },
     {
       icon: Users,
-      title: 'Collaborative Growth',
-      description: 'Our learning environments foster mutual growth and collective capacity-building.'
+      title: 'Your Call',
+      description: 'We bring options and tradeoffs, not mandates. You know your learners, your staff, and your constraints better than we do.'
     },
     {
       icon: BookOpen,
-      title: 'Continuous Improvement',
-      description: 'We iterate, test ideas in practice, and refine through ongoing reflection.'
+      title: 'Start Small, Adjust',
+      description: 'We test ideas in real classrooms and real offices, keep what works, and drop what does not. Some of it will not work. That is fine.'
     }
   ];
 
@@ -34,7 +34,7 @@ const About = () => {
             The <span className="bg-gradient-primary bg-clip-text text-transparent">Continuous Improvement</span> Cycle
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-            Learning is never finished. We build, test, gather feedback, reflect, revise, and set new goals—bringing lifelong learning and design thinking into the daily work of education.
+            This is how we work with a team: build something small, put it in front of real people, listen to what they say, change it, and go again. It is the same cycle we ask teachers to use with their own practice.
           </p>
           
           {/* Design Cycle Animation */}
@@ -71,7 +71,7 @@ const About = () => {
             </div>
             <h2 className="mb-4">By the Numbers</h2>
             <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              Working together to support educators and learners across the country.
+              A count of the work so far.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 text-center">

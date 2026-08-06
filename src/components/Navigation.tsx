@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import clpMark from '@/assets/logos/clp-mark.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,11 +17,17 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="text-lg md:text-xl font-semibold bg-gradient-primary bg-clip-text text-transparent">
-              Community Learning Partners
-            </div>
-          </div>
+          <a
+            href="#top"
+            className="flex items-center"
+            aria-label="Community Learning Partners — back to top"
+          >
+            <img
+              src={clpMark}
+              alt="Community Learning Partners"
+              className="h-9 md:h-10 w-auto"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -34,7 +41,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button variant="outline" size="sm" asChild>
-              <a href="#contact">Get in touch</a>
+              <a href="#contact">Contact</a>
             </Button>
           </div>
 
@@ -63,7 +70,7 @@ const Navigation = () => {
                 </a>
               ))}
               <Button variant="outline" size="sm" className="self-start" asChild>
-                <a href="#contact">Get in touch</a>
+                <a href="#contact">Contact</a>
               </Button>
             </div>
           </div>
