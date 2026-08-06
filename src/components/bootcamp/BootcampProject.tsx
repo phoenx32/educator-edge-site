@@ -4,19 +4,21 @@ import BootcampCycle from './BootcampCycle';
 import SectionShell from './SectionShell';
 
 const BootcampProject = () => (
-  <SectionShell id="project" index="02" label="How the work moves" tone="muted" width="5xl">
+  <SectionShell id="project" index="02" label="Learning through practice" tone="muted" width="5xl">
     <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center">
       <div className="max-w-xl">
         <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
-          Small steps, <Underline>tried and revised</Underline>
+          Try something, <Underline>learn from it</Underline>, keep going
         </h2>
         <p className="mt-5 text-muted-foreground leading-relaxed">
-          Projects tend to take the same shape: something small gets drafted, tried with a few people, and revised
-          with what that surfaced. Most weeks cover one turn of that cycle.
+          Across the ten weeks, participants return to the same work: trying something, seeing what happens, and
+          adjusting with what they learn. Coaching and peer conversation run alongside it.
         </p>
-        <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-          Each step is described below.
+        <p className="mt-4 text-muted-foreground leading-relaxed">
+          The habit outlasts the project. It is a way of learning that administrators can keep using with whatever
+          comes next.
         </p>
+
 
         <div className="mt-8">
           <RegisterButton />
