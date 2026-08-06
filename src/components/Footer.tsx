@@ -34,12 +34,12 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Get Started</h4>
+            <h4 className="font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">Our Approach</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
               <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
-              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule Consultation</a></li>
+              <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book a Call</a></li>
             </ul>
             <div className="flex gap-4 mt-6">
               <a 
