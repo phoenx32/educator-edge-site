@@ -16,11 +16,17 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="text-lg md:text-xl font-semibold bg-gradient-primary bg-clip-text text-transparent">
-              Community Learning Partners
-            </div>
-          </div>
+          <a
+            href="#top"
+            className="flex items-center"
+            aria-label="Community Learning Partners — back to top"
+          >
+            <img
+              src={clpMark}
+              alt="Community Learning Partners"
+              className="h-9 md:h-10 w-auto"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
