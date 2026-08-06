@@ -31,7 +31,7 @@ const Hero = () => {
               </p>
 
               <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-                We work with adult education programs on the practical side of teaching with technology: courses to build, staff to train, projects to run. We don't arrive with a fixed answer. We try things with your team, keep what holds up, and change what doesn't.
+                We design digital learning solutions that help educators, learners, and communities thrive. Our work bridges technology and teaching to make education more human, connected, and accessible for everyone.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
