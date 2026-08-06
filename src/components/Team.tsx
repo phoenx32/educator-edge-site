@@ -26,13 +26,7 @@ const Team = () => (
           <Users size={16} />
           Our Team
         </div>
-        <h2 className="mb-4">
-          The People Behind the{' '}
-          <span className="bg-gradient-primary bg-clip-text text-transparent">Work</span>
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Two people leading every project, workshop, and partnership.
-        </p>
+        <h2>Co-Founders</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mt-10">
