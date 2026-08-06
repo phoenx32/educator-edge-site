@@ -58,9 +58,9 @@ const BootcampSchedule = () => (
         Ten weeks, <Underline>about an hour a week</Underline>
       </h2>
       <p className="mt-5 text-muted-foreground leading-relaxed">
-        Coursework is asynchronous and done on your own schedule. Three live meetups and two spotlight and working
-        sessions are held across the ten weeks. All are optional and recorded for on-demand viewing, and coaching is available
-        throughout at times you arrange with a facilitator.
+        The course is both synchronous and asynchronous. Coursework is done on your own schedule, and three live
+        meetups and two spotlight and working sessions are held across the ten weeks. Live sessions are optional and
+        recorded for on-demand viewing, and coaching is available throughout at times you arrange with a facilitator.
       </p>
     </div>
 
