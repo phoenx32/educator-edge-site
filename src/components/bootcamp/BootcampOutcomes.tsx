@@ -1,20 +1,26 @@
 import SectionShell from './SectionShell';
+import { Underline } from './Underline';
 
 const areas = [
   {
-    area: 'Enrollment and intake',
-    headline: 'What people need to know before they commit',
-    body: 'Intake messages, orientation materials, and follow-up that answer the questions prospective students actually ask.',
+    area: 'Student outreach and intake',
+    headline: 'Arriving prepared for a good first experience',
+    body: 'Outreach, intake messages, and orientation materials that answer what prospective students ask, so people know what to expect before day one.',
   },
   {
     area: 'Retention',
     headline: 'Noticing sooner when a student stops coming',
-    body: 'Ways to read attendance patterns earlier and reach out with something more useful than a generic reminder.',
+    body: 'Reading attendance patterns earlier and reaching out with support.',
   },
   {
-    area: 'Staff time',
-    headline: 'The documents that get rewritten every term',
-    body: 'Reports, letters, job aids, and meeting summaries drafted quickly, then reviewed by the person who knows the program.',
+    area: 'Automation',
+    headline: 'Recurring work that runs in the background',
+    body: 'Regular scans for open grant opportunities, deadline reminders, and other routine checks that otherwise depend on someone remembering.',
+  },
+  {
+    area: 'Agents',
+    headline: 'More staff time with students',
+    body: 'Assistants that take on routine tasks so staff have more time to build relationships with the students they serve.',
   },
   {
     area: 'Data and reporting',
@@ -37,14 +43,15 @@ const BootcampOutcomes = () => (
   <SectionShell id="outcomes" index="01" label="Areas of focus">
     <div className="max-w-2xl">
       <h2 className="text-2xl md:text-[2.5rem] md:leading-tight font-bold tracking-tight">
-        Areas you might explore
+        One project, <Underline>chosen by you</Underline>, developed through iteration
       </h2>
       <p className="mt-5 text-muted-foreground leading-relaxed">
-        Adult education programs share a lot of the same everyday work. The areas below are a starting point for
-        thinking about where you could try something during the course. You are welcome to take a direction that is
-        not listed here.
+        Administrators choose a project and develop it with support from peer administrators and AI subject matter
+        experts. The areas below are possible starting points. Participants choose based on local needs, goals, and
+        context.
       </p>
     </div>
+
 
     <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14 gap-y-10">
       {areas.map(({ area, headline, body }) => (
