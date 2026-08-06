@@ -159,10 +159,10 @@ const Services = () => {
             Our Services
           </div>
           <h2 className="mb-6">
-            How We Support <span className="bg-gradient-primary bg-clip-text text-transparent">Educators</span>
+            How We Work With <span className="bg-gradient-primary bg-clip-text text-transparent">Programs</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We partner with state agencies, higher education institutions, and adult education programs to design and implement digital learning initiatives, professional development cohorts, instructional resources, and strategic projects that support effective teaching and help learners advance toward their academic and professional goals.
+            We work with state agencies, colleges, and adult education programs. Four kinds of work: professional development with your staff, project management when something big needs running, keynotes and conference sessions, and curriculum built for your learners. You know your program. We bring time, structure, and a second set of hands.
           </p>
         </div>
 
