@@ -43,7 +43,7 @@ const Hero = () => {
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
                   <a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer">
-                    Schedule a Consultation
+                    Schedule a Call
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>

@@ -198,7 +198,7 @@ const Services = () => {
         <div className="text-center mt-12 md:mt-16">
           <Button size="lg" asChild>
             <a href="https://calendar.app.google/SZwbrXx7TvHrrCZG8" target="_blank" rel="noopener noreferrer">
-              Schedule a Consultation
+              Schedule a Call
             </a>
           </Button>
         </div>
