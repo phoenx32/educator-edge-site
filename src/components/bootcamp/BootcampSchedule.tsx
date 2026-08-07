@@ -89,10 +89,7 @@ const BootcampSchedule = () => (
                     </span>
                   </div>
 
-                  <span
-                    className={`mt-[7px] hidden h-2.5 w-2.5 shrink-0 rounded-full sm:block ${k.dot}`}
-                    aria-hidden="true"
-                  />
+
 
                   <div className="min-w-0 flex-1">
                     <p className={`text-sm font-medium leading-snug ${w.kind === 'work' ? 'text-muted-foreground' : ''}`}>
