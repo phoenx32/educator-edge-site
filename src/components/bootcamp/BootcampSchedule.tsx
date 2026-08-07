@@ -14,22 +14,10 @@ type Week = {
   detail?: string;
 };
 
-const kinds: Record<Kind, { label: string; dot: string; row: string }> = {
-  work: {
-    label: 'Independent project work',
-    dot: 'bg-border',
-    row: 'border-border/50',
-  },
-  meetup: {
-    label: 'Live cohort meetup',
-    dot: 'border-2 border-primary',
-    row: 'border-dashed border-primary/50 bg-primary/[0.04]',
-  },
-  spotlight: {
-    label: 'Spotlight talk and open working session',
-    dot: 'border-2 border-accent',
-    row: 'border-dashed border-accent/50 bg-accent/[0.04]',
-  },
+const kinds: Record<Kind, { row: string }> = {
+  work: { row: 'border-border/50' },
+  meetup: { row: 'border-dashed border-primary/50 bg-primary/[0.04]' },
+  spotlight: { row: 'border-dashed border-accent/50 bg-accent/[0.04]' },
 };
 
 const weeks: Week[] = [
