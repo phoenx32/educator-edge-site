@@ -6,7 +6,7 @@ Same eight items, same order. Rewritten in plain practitioner language — no ma
 
 | Area | Headline | Body |
 | --- | --- | --- |
-| Student orientation | Orientation materials and a view of who is enrolling | Orientation handouts, intake packets, and a simple dashboard of new enrollments, so staff can see who is starting and when. |
+| Student orientation | Orientation materials and a view of who is enrolling | Short orientation videos in the languages students speak, a chatbot that answers scheduling and program questions between sessions, and a dashboard of who is starting and when. |
 | Student outreach | Recruitment materials and follow-up | Flyers, social posts, landing pages, and follow-up messages for people who inquire but have not yet enrolled. |
 | Retention | Attendance data you can act on | Attendance and progress pulled together in one place, so outreach to a student who has missed a few sessions takes less digging. |
 | Automation | Routine tasks that run on their own | Scans for open grant opportunities, deadline reminders, and other recurring checks that currently depend on someone remembering. |
