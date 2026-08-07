@@ -64,19 +64,12 @@ const BootcampSchedule = () => (
       </p>
     </div>
 
-    {/* Legend */}
-    <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-xs text-muted-foreground">
-      {(Object.keys(kinds) as Kind[]).map((k) => (
-        <span key={k} className="flex items-center gap-2">
-          <span className={`h-2.5 w-2.5 rounded-full ${kinds[k].dot}`} aria-hidden="true" />
-          {kinds[k].label}
-        </span>
-      ))}
-      <span className="flex items-center gap-2">
-        <span className="text-primary" aria-hidden="true">*</span>
-        Day and time not yet set
-      </span>
+    {/* Pending-schedule note */}
+    <div className="mt-10 flex items-center gap-2 text-xs text-muted-foreground">
+      <span className="text-primary" aria-hidden="true">*</span>
+      Day and time not yet set
     </div>
+
 
     {/* Pre-course marker */}
     <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">

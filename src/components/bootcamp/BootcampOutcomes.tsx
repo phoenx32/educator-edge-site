@@ -4,43 +4,43 @@ import { Underline } from './Underline';
 const areas = [
   {
     area: 'Student orientation',
-    headline: 'Arriving prepared for a good first experience',
-    body: 'Orientation materials that answer what new students actually ask, alongside a simple dashboard view of who is starting, so no one falls through in their first weeks.',
+    headline: 'Orientation materials and a view of who is enrolling',
+    body: 'Short orientation videos in the languages students speak, a chatbot that answers scheduling and program questions between sessions, and a dashboard of who is starting and when.',
   },
   {
     area: 'Student outreach',
-    headline: 'Reaching people who have not found you yet',
-    body: 'Design tools, outreach campaigns, simple landing pages, and follow-up messages that keep interested people connected between first contact and enrollment.',
+    headline: 'Recruitment materials and follow-up',
+    body: 'Flyers, social posts, landing pages, and follow-up messages for people who inquire but have not yet enrolled.',
   },
   {
     area: 'Retention',
-    headline: 'Noticing sooner when a student stops coming',
-    body: 'Reading attendance patterns earlier and reaching out with support.',
+    headline: 'Attendance data you can act on',
+    body: 'Attendance and progress pulled together in one place, so outreach to a student who has missed a few sessions takes less digging.',
   },
   {
     area: 'Automation',
-    headline: 'Recurring work that runs in the background',
-    body: 'Regular scans for open grant opportunities, deadline reminders, and other routine checks that otherwise depend on someone remembering.',
+    headline: 'Routine tasks that run on their own',
+    body: 'Scans for open grant opportunities, deadline reminders, and other recurring checks that currently depend on someone remembering.',
   },
   {
     area: 'Agents',
-    headline: 'More staff time with students',
-    body: 'Assistants that take on routine tasks so staff have more time to build relationships with the students they serve.',
+    headline: 'More time with students',
+    body: 'Assistants that handle routine tasks, leaving more time for staff to spend with the students they serve.',
   },
   {
     area: 'Data and reporting',
-    headline: 'Telling your program story with your own numbers',
-    body: 'Visualizations of enrollment, attendance, and measurable skill gains, plus the cleaning and custom exports that bridge systems that do not talk to each other, so WIOA and funder reporting becomes something a board can read.',
+    headline: "Your program's numbers, in a form people can use",
+    body: 'Visualizations of enrollment, attendance, and measurable skill gains, plus the cleaning and custom exports that bridge systems that do not talk to each other.',
   },
   {
     area: 'Student communication',
     headline: 'Plain language, in the languages your students use',
-    body: 'Reminders, handbooks, and support materials rewritten at a readable level and translated for the families you serve.',
+    body: 'Reminders, handbooks, and support materials written at a readable level and translated for the families you serve.',
   },
   {
     area: 'Instructional support',
     headline: 'Helping teachers plan and adapt materials',
-    body: 'Lesson supports, leveled reading, and differentiation ideas that teachers can review, adjust, and use in class.',
+    body: 'Lesson supports, leveled reading, and differentiation ideas teachers can review, adjust, and use in class.',
   },
 ];
 
