@@ -24,7 +24,7 @@ const BootcampHero = () => (
           AI Leadership Academy
         </h1>
 
-        <p className="mt-5 text-lg md:text-2xl font-medium">
+        <p className="mt-5 text-[0.95rem] sm:text-lg md:text-2xl font-medium">
           <Underline>Practical AI Implementation for Adult Education Leaders</Underline>
         </p>
 
