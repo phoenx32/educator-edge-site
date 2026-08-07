@@ -3,9 +3,14 @@ import { Underline } from './Underline';
 
 const areas = [
   {
-    area: 'Student outreach and intake',
+    area: 'Student orientation',
     headline: 'Arriving prepared for a good first experience',
-    body: 'Outreach, intake messages, and orientation materials that answer what prospective students ask, so people know what to expect before day one.',
+    body: 'Orientation materials that answer what new students actually ask, alongside a simple dashboard view of who is starting, so no one falls through in their first weeks.',
+  },
+  {
+    area: 'Student outreach',
+    headline: 'Reaching people who have not found you yet',
+    body: 'Design tools, outreach campaigns, simple landing pages, and follow-up messages that keep interested people connected between first contact and enrollment.',
   },
   {
     area: 'Retention',
@@ -24,8 +29,8 @@ const areas = [
   },
   {
     area: 'Data and reporting',
-    headline: 'Making NRS and funder numbers readable',
-    body: 'Enrollment, attendance, and measurable skill gains turned into something you can put in front of a board or a state monitor.',
+    headline: 'Telling your program story with your own numbers',
+    body: 'Visualizations of enrollment, attendance, and measurable skill gains, plus the cleaning and custom exports that bridge systems that do not talk to each other, so WIOA and funder reporting becomes something a board can read.',
   },
   {
     area: 'Student communication',
@@ -38,6 +43,7 @@ const areas = [
     body: 'Lesson supports, leveled reading, and differentiation ideas that teachers can review, adjust, and use in class.',
   },
 ];
+
 
 const BootcampOutcomes = () => (
   <SectionShell id="outcomes" index="01" label="Areas of focus">

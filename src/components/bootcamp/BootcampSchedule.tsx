@@ -86,7 +86,7 @@ const BootcampSchedule = () => (
     </div>
 
     {/* Month-grouped week rows */}
-    <div className="mt-8 space-y-8">
+    <div className="mt-8 space-y-7">
       {months.map((m) => (
         <div key={m.name}>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{m.label}</p>
@@ -97,23 +97,23 @@ const BootcampSchedule = () => (
               return (
                 <li
                   key={w.n}
-                  className={`flex gap-4 rounded-lg border px-4 py-3.5 sm:px-5 ${k.row}`}
+                  className={`flex flex-wrap items-start gap-x-4 gap-y-2 rounded-lg border px-4 py-3.5 sm:flex-nowrap sm:px-5 ${k.row}`}
                 >
-                  <div className="flex w-20 shrink-0 flex-col items-start">
+                  <div className="flex w-[5.5rem] shrink-0 flex-col items-start">
                     <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                      Week {w.n}
+                      Week of
                     </span>
-                    <span className="mt-0.5 text-sm font-semibold tabular-nums">
-                      Week of {w.month} {w.day}
+                    <span className="mt-0.5 text-base font-semibold tabular-nums leading-tight">
+                      {w.month} {w.day}
                     </span>
                   </div>
 
                   <span
-                    className={`mt-[7px] h-2.5 w-2.5 shrink-0 rounded-full ${k.dot}`}
+                    className={`mt-[7px] hidden h-2.5 w-2.5 shrink-0 rounded-full sm:block ${k.dot}`}
                     aria-hidden="true"
                   />
 
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <p className={`text-sm font-medium leading-snug ${w.kind === 'work' ? 'text-muted-foreground' : ''}`}>
                       {w.title}
                       {live && (
@@ -129,6 +129,16 @@ const BootcampSchedule = () => (
                       <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{w.detail}</p>
                     )}
                   </div>
+
+                  <span
+                    className={`mt-0.5 shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] ${
+                      live
+                        ? 'border-primary/40 bg-primary/10 text-primary shadow-[0_0_0_3px_hsl(var(--primary)/0.07)]'
+                        : 'border-border bg-muted/60 text-muted-foreground'
+                    }`}
+                  >
+                    {live ? 'Synchronous' : 'Asynchronous'}
+                  </span>
                 </li>
               );
             })}
@@ -136,6 +146,7 @@ const BootcampSchedule = () => (
         </div>
       ))}
     </div>
+
 
     <p className="mt-6 flex max-w-2xl gap-2 text-sm text-muted-foreground leading-relaxed">
       <span className="text-primary" aria-hidden="true">*</span>
