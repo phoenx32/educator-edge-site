@@ -52,11 +52,6 @@ const BootcampSchedule = () => (
       </p>
     </div>
 
-    {/* Pending-schedule note */}
-    <div className="mt-10 flex items-center gap-2 text-xs text-muted-foreground">
-      <span className="text-primary" aria-hidden="true">*</span>
-      Day and time not yet set
-    </div>
 
 
     {/* Pre-course marker */}
@@ -129,9 +124,10 @@ const BootcampSchedule = () => (
     <p className="mt-6 flex max-w-2xl gap-2 text-sm text-muted-foreground leading-relaxed">
       <span className="text-primary" aria-hidden="true">*</span>
       <span>
-        These sessions are held during the week listed, but the day and time are not set yet. They are scheduled in
-        collaboration with all participants through a Doodle poll after registration, so we can hopefully find a time
-        that works for most people. Every live session is recorded and made available for on-demand viewing.
+        These sessions will be held during the week listed, but the day and time are not set yet. They will be
+        scheduled in collaboration with all participants through a Doodle poll after registration so we can hopefully
+        find a time that works for most people. Every live session will be recorded and made available for on-demand
+        viewing.
       </span>
     </p>
 
