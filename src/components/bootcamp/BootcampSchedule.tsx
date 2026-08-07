@@ -14,22 +14,10 @@ type Week = {
   detail?: string;
 };
 
-const kinds: Record<Kind, { label: string; dot: string; row: string }> = {
-  work: {
-    label: 'Independent project work',
-    dot: 'bg-border',
-    row: 'border-border/50',
-  },
-  meetup: {
-    label: 'Live cohort meetup',
-    dot: 'border-2 border-primary',
-    row: 'border-dashed border-primary/50 bg-primary/[0.04]',
-  },
-  spotlight: {
-    label: 'Spotlight talk and open working session',
-    dot: 'border-2 border-accent',
-    row: 'border-dashed border-accent/50 bg-accent/[0.04]',
-  },
+const kinds: Record<Kind, { row: string }> = {
+  work: { row: 'border-border/50' },
+  meetup: { row: 'border-dashed border-primary/50 bg-primary/[0.04]' },
+  spotlight: { row: 'border-dashed border-accent/50 bg-accent/[0.04]' },
 };
 
 const weeks: Week[] = [
@@ -64,19 +52,12 @@ const BootcampSchedule = () => (
       </p>
     </div>
 
-    {/* Legend */}
-    <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-xs text-muted-foreground">
-      {(Object.keys(kinds) as Kind[]).map((k) => (
-        <span key={k} className="flex items-center gap-2">
-          <span className={`h-2.5 w-2.5 rounded-full ${kinds[k].dot}`} aria-hidden="true" />
-          {kinds[k].label}
-        </span>
-      ))}
-      <span className="flex items-center gap-2">
-        <span className="text-primary" aria-hidden="true">*</span>
-        Day and time not yet set
-      </span>
+    {/* Pending-schedule note */}
+    <div className="mt-10 flex items-center gap-2 text-xs text-muted-foreground">
+      <span className="text-primary" aria-hidden="true">*</span>
+      Day and time not yet set
     </div>
+
 
     {/* Pre-course marker */}
     <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
@@ -108,10 +89,7 @@ const BootcampSchedule = () => (
                     </span>
                   </div>
 
-                  <span
-                    className={`mt-[7px] hidden h-2.5 w-2.5 shrink-0 rounded-full sm:block ${k.dot}`}
-                    aria-hidden="true"
-                  />
+
 
                   <div className="min-w-0 flex-1">
                     <p className={`text-sm font-medium leading-snug ${w.kind === 'work' ? 'text-muted-foreground' : ''}`}>
