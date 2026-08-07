@@ -25,8 +25,9 @@ const BootcampHero = () => (
         </h1>
 
         <p className="mt-5 text-[0.95rem] sm:text-lg md:text-2xl font-medium">
-          <Underline>Practical AI Implementation for Adult Education Leaders</Underline>
+          <Underline>Practical AI Implementation</Underline> for Adult Education Leaders
         </p>
+
 
         <p className="mt-6 text-base md:text-xl text-muted-foreground leading-relaxed">
           A ten-week professional development course on using AI to support teaching, learning, and staff
