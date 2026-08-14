@@ -9,7 +9,7 @@ const facilitators = [
     bio: 'Joey has led statewide and national adult education initiatives, from remote program design to large-scale professional learning, and focuses on applied AI that solves real operational problems for program leaders.',
     logo: clpLogo,
     logoAlt: 'Community Learning Partners',
-    logoClass: 'h-14',
+    logoClass: 'h-10',
   },
   {
     name: 'Christin Smith',
@@ -17,7 +17,7 @@ const facilitators = [
     bio: 'Christin designs curriculum and professional learning for adult education and workforce programs, coaching teams as they translate emerging technology into everyday practice.',
     logo: clpLogo,
     logoAlt: 'Community Learning Partners',
-    logoClass: 'h-14',
+    logoClass: 'h-10',
   },
   {
     name: 'Sharon Bonney',

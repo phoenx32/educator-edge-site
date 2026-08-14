@@ -56,7 +56,7 @@ const BootcampHero = () => (
         <div className="flex items-center gap-8">
           <img src={coabeLogo} alt="COABE, Coalition on Adult Basic Education" className="h-12 md:h-14 w-auto object-contain" />
           <span className="h-8 w-px bg-border" aria-hidden="true" />
-          <img src={clpLogo} alt="Community Learning Partners" className="h-14 md:h-16 w-auto object-contain" />
+          <img src={clpLogo} alt="Community Learning Partners" className="h-12 md:h-14 w-auto object-contain" />
         </div>
       </div>
     </div>
