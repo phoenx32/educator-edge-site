@@ -1,7 +1,7 @@
 import { RegisterButton, WebinarLink, WEBINAR_DATE, WEBINAR_TIME } from './RegisterButton';
 
 import { Underline } from './Underline';
-import clpLogo from '@/assets/logos/clp-logo.png';
+import clpLogo from '@/assets/logos/clp-logo.png.asset.json';
 import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facts = [
@@ -56,7 +56,7 @@ const BootcampHero = () => (
         <div className="flex items-center gap-8">
           <img src={coabeLogo} alt="COABE, Coalition on Adult Basic Education" className="h-12 md:h-14 w-auto object-contain" />
           <span className="h-8 w-px bg-border" aria-hidden="true" />
-          <img src={clpLogo} alt="Community Learning Partners" className="h-20 md:h-24 w-auto object-contain" />
+          <img src={clpLogo.url} alt="Community Learning Partners" className="h-14 md:h-16 w-auto object-contain" />
         </div>
       </div>
     </div>

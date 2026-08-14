@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import clpMark from '@/assets/logos/clp-mark.png';
+import clpLogo from '@/assets/logos/clp-logo.png.asset.json';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,9 +23,9 @@ const Navigation = () => {
             aria-label="Community Learning Partners — back to top"
           >
             <img
-              src={clpMark}
+              src={clpLogo.url}
               alt="Community Learning Partners"
-              className="h-9 md:h-10 w-auto"
+              className="h-8 md:h-9 w-auto"
             />
           </a>
 

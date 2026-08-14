@@ -1,5 +1,5 @@
 import SectionShell from './SectionShell';
-import clpLogo from '@/assets/logos/clp-logo.png';
+import clpLogo from '@/assets/logos/clp-logo.png.asset.json';
 import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const facilitators = [
@@ -7,7 +7,7 @@ const facilitators = [
     name: 'Joey Lehrman',
     role: 'Co-Founder, Community Learning Partners',
     bio: 'Joey has led statewide and national adult education initiatives, from remote program design to large-scale professional learning, and focuses on applied AI that solves real operational problems for program leaders.',
-    logo: clpLogo,
+    logo: clpLogo.url,
     logoAlt: 'Community Learning Partners',
     logoClass: 'h-14',
   },
@@ -15,7 +15,7 @@ const facilitators = [
     name: 'Christin Smith',
     role: 'Co-Founder, Community Learning Partners',
     bio: 'Christin designs curriculum and professional learning for adult education and workforce programs, coaching teams as they translate emerging technology into everyday practice.',
-    logo: clpLogo,
+    logo: clpLogo.url,
     logoAlt: 'Community Learning Partners',
     logoClass: 'h-14',
   },
