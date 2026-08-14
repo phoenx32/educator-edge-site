@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
 
 export const REGISTRATION_URL = '#register';
-export const WEBINAR_URL = '#webinar-register';
+export const WEBINAR_URL = 'https://coabe-org.zoom.us/webinar/register/WN_L6sN_uECRA2BOc90t2sWDw#/registration';
+export const WEBINAR_DATE = 'Sep 2, 2026';
+export const WEBINAR_TIME = '3:00 PM ET / 12:00 PM PT';
 
 export const RegisterButton = ({
   label = 'Register for the course',
