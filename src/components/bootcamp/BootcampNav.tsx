@@ -1,5 +1,5 @@
 import { RegisterButton } from './RegisterButton';
-import clpLogo from '@/assets/logos/clp-logo.png';
+import clpLogo from '@/assets/logos/clp-logo.png.asset.json';
 import coabeLogo from '@/assets/logos/coabe-logo-full.png';
 
 const BootcampNav = () => (
@@ -7,7 +7,7 @@ const BootcampNav = () => (
     <div className="container mx-auto px-4 md:px-6 py-3">
       <div className="flex items-center justify-between gap-6">
         <a href="#top" className="flex items-center gap-3 min-w-0">
-          <img src={clpLogo} alt="Community Learning Partners" className="h-10 w-10 object-contain" />
+          <img src={clpLogo.url} alt="Community Learning Partners" className="h-9 w-auto object-contain" />
           <span className="hidden sm:block h-6 w-px bg-border" aria-hidden="true" />
           <img src={coabeLogo} alt="COABE" className="hidden sm:block h-6 w-auto object-contain" />
         </a>

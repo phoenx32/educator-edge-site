@@ -1,7 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-digital-learning.png';
-import clpMark from '@/assets/logos/clp-mark.png';
 
 const Hero = () => {
   return (
@@ -10,13 +9,6 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[1fr,240px] gap-8 items-start">
             <div className="max-w-2xl lg:max-w-none">
-              <div className="flex items-center gap-3 mb-5">
-                <img src={clpMark} alt="" aria-hidden="true" className="h-6 w-auto" />
-                <span className="text-xs md:text-sm uppercase tracking-[0.18em] text-muted-foreground">
-                  Community Learning Partners
-                </span>
-              </div>
-
               <h1 className="mb-6 leading-tight text-3xl md:text-4xl lg:text-5xl font-semibold lg:whitespace-nowrap">
                 We are <span className="italic">all teachers</span>. We are <span className="italic">all students</span>.
               </h1>
