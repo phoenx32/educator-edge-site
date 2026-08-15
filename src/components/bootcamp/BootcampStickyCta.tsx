@@ -20,7 +20,7 @@ const BootcampStickyCta = () => {
       <div className="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between gap-4">
         <div className="min-w-0">
           <p className="truncate text-sm font-medium">
-            Artificial Intelligence for Adult Education Administrators
+            AI Leadership Academy
           </p>
           <p className="text-xs text-muted-foreground">
             Oct 12 &ndash; Dec 18, 2026 &middot; $350
