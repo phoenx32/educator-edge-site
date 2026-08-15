@@ -89,10 +89,10 @@ const BootcampFaq = () => (
     <section id="register" className="py-20 md:py-28 border-t border-border/60 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6 max-w-2xl text-center">
         <h2 className="text-2xl md:text-4xl font-bold tracking-tight">
-          Artificial Intelligence for <Underline>Adult Education Administrators</Underline>
+          AI Leadership Academy
         </h2>
         <p className="mt-6 text-muted-foreground leading-relaxed">
-          October 5 through the week of November 30, 2026. About an hour a week, online, $350.
+          Oct 12 &ndash; Dec 18, 2026. About an hour a week, online, $350.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4">
           <RegisterButton />
