@@ -17,13 +17,17 @@ export const RegisterButton = ({
   variant?: 'default' | 'outline' | 'secondary' | 'ghost';
 }) => (
   <Button size={size} variant={variant} className={className} asChild>
-    <a href={REGISTRATION_URL}>{label}</a>
+    <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
   </Button>
 );
 
 export const WebinarLink = ({ className = '' }: { className?: string }) => (
   <a
     href={WEBINAR_URL}
+    target="_blank"
+    rel="noopener noreferrer"
     className={`text-sm text-muted-foreground underline underline-offset-4 decoration-border hover:text-primary hover:decoration-primary transition-colors ${className}`}
   >
     Or attend the free informational webinar
