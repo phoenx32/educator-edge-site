@@ -11,6 +11,8 @@ const BootcampWebinar = () => (
       </p>
       <a
         href={WEBINAR_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-primary hover:underline flex-shrink-0"
       >
         Register for the webinar
