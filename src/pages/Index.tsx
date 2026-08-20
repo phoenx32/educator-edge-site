@@ -22,10 +22,6 @@ const Index = () => {
         >
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
-              <span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
-                New
-              </span>
-              <Sparkles className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
               <span className="font-medium">Introducing the AI Leadership Academy for Adult Education Administrators</span>
               <span className="text-muted-foreground hidden sm:inline">| Starting October 12, 2026 |</span>
               <span className="font-medium text-primary group-hover:underline">Learn more and Register!</span>
