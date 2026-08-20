@@ -23,7 +23,7 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
             <Sparkles className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
-            <span className="font-medium">Introduce the AI Leadership Academy for Adult Education Administrators</span>
+            <span className="font-medium">Introducing the AI Leadership Academy for Adult Education Administrators</span>
             <span className="text-muted-foreground">| Starting October 12, 2026 |</span>
             <span className="font-medium text-primary">Learn more and Register!</span>
             <ArrowRight className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
