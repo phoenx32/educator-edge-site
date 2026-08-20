@@ -81,7 +81,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border">
+          <div className="md:hidden mt-4 pb-4 border-t border-border max-h-[60vh] overflow-y-auto overscroll-contain">
             <div className="flex flex-col space-y-4 mt-4">
               {navItems.map((item) =>
                 item.isRoute ? (
