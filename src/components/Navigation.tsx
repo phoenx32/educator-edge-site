@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,14 @@ import clpLogo from '@/assets/logos/clp-logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const navItems = [
     { label: 'Services', href: '#services' },
@@ -15,7 +23,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-background border-b border-border">
+    <nav
+      className={`bg-background border-b transition-shadow duration-200 ${
+        isScrolled ? 'border-foreground/15 shadow-md' : 'border-border shadow-none'
+      }`}
+    >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
