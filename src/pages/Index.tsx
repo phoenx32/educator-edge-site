@@ -18,7 +18,7 @@ const Index = () => {
         {/* AI Leadership Academy announcement banner */}
         <Link
           to="/bootcamp"
-          className="group block w-full bg-primary/10 border-b border-border py-2.5 md:py-3 hover:bg-primary/15 transition-colors duration-300"
+          className="group block w-full bg-muted border-b border-border py-2.5 md:py-3"
         >
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
