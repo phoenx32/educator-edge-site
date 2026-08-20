@@ -18,7 +18,7 @@ const Index = () => {
       {/* AI Leadership Academy announcement banner */}
       <Link
         to="/bootcamp"
-        className="block w-full bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 border-b border-border/50 py-2.5 md:py-3 hover:from-primary/10 hover:via-secondary/10 hover:to-accent/10 transition-colors duration-300"
+        className="block w-full mt-16 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 border-b border-border/50 py-2.5 md:py-3 hover:from-primary/10 hover:via-secondary/10 hover:to-accent/10 transition-colors duration-300"
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
