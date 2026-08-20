@@ -11,6 +11,7 @@ const Navigation = () => {
     { label: 'Services', href: '#services' },
     { label: 'Approach', href: '#about' },
     { label: 'Team', href: '#team' },
+    { label: 'AI Leadership Academy', href: '/bootcamp', isRoute: true },
   ];
 
   return (
