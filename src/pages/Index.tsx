@@ -13,23 +13,29 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
-
-      {/* AI Leadership Academy announcement banner */}
-      <Link
-        to="/bootcamp"
-        className="block w-full mt-16 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 border-b border-border/50 py-2.5 md:py-3 hover:from-primary/10 hover:via-secondary/10 hover:to-accent/10 transition-colors duration-300"
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
-            <Sparkles className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
-            <span className="font-medium">Introducing the AI Leadership Academy for Adult Education Administrators</span>
-            <span className="text-muted-foreground">| Starting October 12, 2026 |</span>
-            <span className="font-medium text-primary">Learn more and Register!</span>
-            <ArrowRight className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
+      {/* Sticky header: announcement banner + navigation */}
+      <header className="sticky top-0 z-50">
+        {/* AI Leadership Academy announcement banner */}
+        <Link
+          to="/bootcamp"
+          className="group block w-full bg-primary/10 border-b border-border py-2.5 md:py-3 hover:bg-primary/15 transition-colors duration-300"
+        >
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm md:text-base text-foreground">
+              <span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-primary-foreground">
+                New
+              </span>
+              <Sparkles className="h-4 w-4 text-primary flex-shrink-0" aria-hidden="true" />
+              <span className="font-medium">Introducing the AI Leadership Academy for Adult Education Administrators</span>
+              <span className="text-muted-foreground hidden sm:inline">| Starting October 12, 2026 |</span>
+              <span className="font-medium text-primary group-hover:underline">Learn more and Register!</span>
+              <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+
+        <Navigation />
+      </header>
 
       <Hero />
       <Services />
