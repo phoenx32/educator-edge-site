@@ -105,7 +105,7 @@
         "lead": "Use Deep Research to identify growing industries, entry-level occupations, required credentials, training provider options, and availalbe student support resources. ",
         "title": "Research the local labor market",
         "action": {
-          "url": "/__l5e/assets-v1/6195e01d-a485-4b85-91d2-0c98eb8b478c/st-louis-career-pathway-report.pdf",
+          "url": "/st-louis-career-pathway-report.pdf",
           "kind": "pdf",
           "label": "Open research report",
           "title": "St. Louis Metro Adult Education Career Pathway Analysis"
@@ -130,7 +130,7 @@
         "lead": "Use the findings to identify 3 to 5 strong local career pathways and determine and to adapt the research into a student-friendly infographic, reducing the need for students to read a 25+ page PDF. ",
         "title": "Translate the research into program decisions",
         "action": {
-          "url": "/__l5e/assets-v1/999972bd-8599-4a31-9800-00dad1046ceb/st-louis-career-pathway-guide.png",
+          "url": "/st-louis-career-pathway-guide.webp",
           "kind": "image",
           "label": "Open pathway infographic",
           "title": "Navigating Career Pathways in the St. Louis Bi-State Region"
