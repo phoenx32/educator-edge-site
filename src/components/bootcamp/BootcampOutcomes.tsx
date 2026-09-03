@@ -1,5 +1,7 @@
+import { ArrowUpRight } from 'lucide-react';
 import SectionShell from './SectionShell';
 import { Underline } from './Underline';
+
 
 const areas = [
   {
@@ -57,6 +59,23 @@ const BootcampOutcomes = () => (
         context.
       </p>
     </div>
+
+    <a
+      href="/bootcamp/use-cases"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-border bg-muted/30 px-5 py-4 transition-colors hover:border-primary"
+    >
+      <p className="text-sm text-muted-foreground leading-relaxed">
+        Four worked examples from adult education programs, with the tools, prompts, and results.
+      </p>
+      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary flex-shrink-0">
+        See sample projects
+        <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+      </span>
+    </a>
+
+
 
 
     <div className="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14 gap-y-10">
