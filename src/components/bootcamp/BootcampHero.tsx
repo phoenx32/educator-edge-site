@@ -1,4 +1,4 @@
-import { RegisterButton, WebinarLink, WEBINAR_DATE, WEBINAR_TIME } from './RegisterButton';
+import { RegisterButton } from './RegisterButton';
 
 import { Underline } from './Underline';
 import clpLogo from '@/assets/logos/clp-logo.png';
@@ -37,8 +37,6 @@ const BootcampHero = () => (
 
         <div className="mt-10 flex flex-col items-center gap-4">
           <RegisterButton />
-          <WebinarLink />
-          <p className="text-xs text-muted-foreground">{WEBINAR_DATE} &middot; {WEBINAR_TIME}</p>
         </div>
       </div>
 

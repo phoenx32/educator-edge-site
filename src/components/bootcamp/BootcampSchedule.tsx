@@ -54,13 +54,6 @@ const BootcampSchedule = () => (
 
 
 
-    {/* Pre-course marker */}
-    <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-      <span className="h-2.5 w-2.5 rounded-full border border-dashed border-primary" aria-hidden="true" />
-      <span className="font-medium tabular-nums">Sep 17</span>
-      <span className="text-muted-foreground">Free informational webinar, held before registration closes</span>
-    </div>
-
     {/* Month-grouped week rows */}
     <div className="mt-8 space-y-7">
       {months.map((m) => (

@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-import { RegisterButton, WebinarLink, WEBINAR_DATE, WEBINAR_TIME } from './RegisterButton';
+import { RegisterButton } from './RegisterButton';
 import SectionShell from './SectionShell';
 
 const includes = [
@@ -32,12 +32,8 @@ const BootcampPricing = () => (
           ))}
         </ul>
 
-        <div className="mt-10 flex flex-col sm:flex-row sm:items-start gap-4">
+        <div className="mt-10">
           <RegisterButton className="w-full sm:w-auto" />
-          <div className="flex flex-col gap-1">
-            <WebinarLink />
-            <p className="text-xs text-muted-foreground">{WEBINAR_DATE} &middot; {WEBINAR_TIME}</p>
-          </div>
         </div>
 
         <p className="mt-8 pt-6 border-t border-border/60 text-xs text-muted-foreground leading-relaxed">

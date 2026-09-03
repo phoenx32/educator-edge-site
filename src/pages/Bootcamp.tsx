@@ -5,7 +5,6 @@ import BootcampOutcomes from '@/components/bootcamp/BootcampOutcomes';
 import BootcampProject from '@/components/bootcamp/BootcampProject';
 import BootcampIncludes from '@/components/bootcamp/BootcampIncludes';
 import BootcampSchedule from '@/components/bootcamp/BootcampSchedule';
-import BootcampWebinar from '@/components/bootcamp/BootcampWebinar';
 import BootcampPricing from '@/components/bootcamp/BootcampPricing';
 import BootcampFacilitators from '@/components/bootcamp/BootcampFacilitators';
 import BootcampFaq from '@/components/bootcamp/BootcampFaq';
@@ -52,7 +51,6 @@ const Bootcamp = () => {
         <BootcampProject />
         <BootcampIncludes />
         <BootcampSchedule />
-        <BootcampWebinar />
         <BootcampPricing />
         <BootcampFacilitators />
         <BootcampFaq />
