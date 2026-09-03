@@ -74,7 +74,7 @@ const SUMMARY_TAB = "Mid-Term Summary";
 const QUESTIONS_TAB = "Questions";
 const CHUNK = 120;
 
-const SERIES_COLORS = ["var(--primary)", "var(--highlight)", "#0f766e", "#b45309", "#6d28d9"];
+const SERIES_COLORS = ["hsl(var(--primary))", "hsl(var(--highlight))", "#0f766e", "#b45309", "#6d28d9"];
 
 async function loadSource(key: WorkbookKey): Promise<Source> {
   const mod =
@@ -194,7 +194,7 @@ function SummaryReport({ summary }: { summary: Summary }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {summary.org}
           </p>
-          <h2 className="mt-1 font-serif text-2xl font-semibold">{summary.title}</h2>
+          <h2 className="mt-1 text-2xl font-semibold">{summary.title}</h2>
           <p className="mt-2 text-sm text-muted-foreground">{summary.note}</p>
         </header>
 
@@ -204,7 +204,7 @@ function SummaryReport({ summary }: { summary: Summary }) {
               <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                 {s.label}
               </p>
-              <p className="mt-1 font-serif text-2xl font-semibold tabular-nums">{s.value}</p>
+              <p className="mt-1 text-2xl font-semibold tabular-nums">{s.value}</p>
             </div>
           ))}
         </div>
@@ -272,7 +272,7 @@ function InstrumentView({ instrument }: { instrument: Instrument }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {instrument.org}
           </p>
-          <h2 className="mt-1 font-serif text-2xl font-semibold">{instrument.title}</h2>
+          <h2 className="mt-1 text-2xl font-semibold">{instrument.title}</h2>
           <p className="mt-2 text-sm text-muted-foreground">{instrument.note}</p>
         </header>
 
@@ -464,7 +464,7 @@ export function WorkbookViewer({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="flex h-[92vh] max-w-6xl flex-col gap-0 overflow-hidden p-0">
         <DialogHeader className="border-b border-border p-4 pr-12 text-left sm:p-5">
-          <DialogTitle className="font-serif text-lg">
+          <DialogTitle className="text-lg">
             Fall 2026 attendance and survey data
           </DialogTitle>
           <DialogDescription className="sr-only">

@@ -72,6 +72,18 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Use case surfaces and category tints */
+    --surface: 215 20% 97%;
+    --highlight: 85 35% 45%;
+    --uc-en: 200 55% 94%;
+    --uc-en-foreground: 200 45% 32%;
+    --uc-cp: 85 40% 92%;
+    --uc-cp-foreground: 85 40% 26%;
+    --uc-da: 280 35% 94%;
+    --uc-da-foreground: 280 30% 38%;
+    --uc-in: 28 60% 93%;
+    --uc-in-foreground: 25 50% 32%;
   }
 
   .dark {
@@ -122,6 +134,17 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --surface: 215 25% 12%;
+    --highlight: 85 80% 55%;
+    --uc-en: 200 45% 18%;
+    --uc-en-foreground: 200 70% 78%;
+    --uc-cp: 85 35% 16%;
+    --uc-cp-foreground: 85 60% 72%;
+    --uc-da: 280 30% 18%;
+    --uc-da-foreground: 280 55% 80%;
+    --uc-in: 28 40% 16%;
+    --uc-in-foreground: 28 70% 74%;
   }
 }
 
