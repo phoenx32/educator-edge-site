@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { RegisterButton, WebinarLink, WEBINAR_DATE, WEBINAR_TIME } from './RegisterButton';
+import { RegisterButton } from './RegisterButton';
 import { Underline } from './Underline';
 import SectionShell from './SectionShell';
 
@@ -68,20 +68,15 @@ const BootcampFaq = () => (
         <div className="mt-14 rounded-lg border border-border/60 bg-muted/30 px-6 py-6">
           <h3 className="text-base font-semibold">Questions about the cohort?</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Email us and we will respond directly, or bring your question to the free informational webinar.
+            Email us and we will respond directly.
           </p>
-          <div className="mt-5 flex flex-col sm:flex-row sm:items-start gap-4">
+          <div className="mt-5">
             <a
               href="mailto:hello@communitylearningpartners.com"
               className="text-sm text-primary underline underline-offset-4"
             >
               hello@communitylearningpartners.com
             </a>
-            <span className="hidden sm:block h-4 w-px bg-border" aria-hidden="true" />
-            <div className="flex flex-col gap-1">
-              <WebinarLink />
-              <p className="text-xs text-muted-foreground">{WEBINAR_DATE} &middot; {WEBINAR_TIME}</p>
-            </div>
           </div>
         </div>
     </SectionShell>
@@ -96,8 +91,6 @@ const BootcampFaq = () => (
         </p>
         <div className="mt-10 flex flex-col items-center gap-4">
           <RegisterButton />
-          <WebinarLink />
-          <p className="text-xs text-muted-foreground">{WEBINAR_DATE} &middot; {WEBINAR_TIME}</p>
         </div>
       </div>
     </section>

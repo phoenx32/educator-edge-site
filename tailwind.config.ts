@@ -50,6 +50,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        surface: "hsl(var(--surface))",
+        highlight: "hsl(var(--highlight))",
+        "uc-en": { DEFAULT: "hsl(var(--uc-en))", foreground: "hsl(var(--uc-en-foreground))" },
+        "uc-cp": { DEFAULT: "hsl(var(--uc-cp))", foreground: "hsl(var(--uc-cp-foreground))" },
+        "uc-da": { DEFAULT: "hsl(var(--uc-da))", foreground: "hsl(var(--uc-da-foreground))" },
+        "uc-in": { DEFAULT: "hsl(var(--uc-in))", foreground: "hsl(var(--uc-in-foreground))" },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
