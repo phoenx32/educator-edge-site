@@ -1,0 +1,294 @@
+[
+  {
+    "id": "a6ad94b6-e24d-42cf-b788-bba6eab5f6a2",
+    "slug": "recruitment-intake",
+    "title": "Recruitment, Intake, and Student Onboarding",
+    "subtitle": "Turning a scattered intake process into one clear system for students and staff.",
+    "category": "Enrollment",
+    "situation": "",
+    "challenge": "A mid-sized adult education program recruits through several channels, but prospective students receive inconsistent information and staff manage intake across emails, paper forms, and spreadsheets.\n\nThe program wanted to give students one clear starting point, reduce repetitive staff communication, and organize intake information in one place.",
+    "what_they_built": "",
+    "how_ai_helped": "AI was used to:\n\n- Draft and translate public-facing webiste\n- Build and publish the website and form\n- Write Apps Script to create the visual dashboard that lives on top of Google Sheets\n- Structure the dashboard to support data tracking and automatic emailing\n- Create staff views and communication workflows",
+    "what_changed": "Prospective students see the same clear next steps no matter how they found the program. Staff stop retyping the same answers. Intake information lands in one place automatically, and the coordinator opens one dashboard each morning instead of reconstructing status from memory.",
+    "what_they_learned": "The first version of the form asked for far too much. Cutting it to the minimum roughly doubled completions. Translation still needs a human review pass from someone who knows the community. And the dashboard only stayed useful because one person owned it \u2014 the tooling did not remove the need for a clear process owner.",
+    "reflection_questions": [],
+    "reaction_options": [
+      "Could use this now",
+      "Already doing something similar",
+      "Want to learn how",
+      "Not relevant right now"
+    ],
+    "ai_concepts": [
+      "Vibe coding",
+      "Voice-to-text prompting",
+      "Apps Script",
+      "Translation",
+      "Dashboard design",
+      "Workflow design"
+    ],
+    "display_order": 1,
+    "created_at": "2026-08-26T22:12:14.244256+00:00",
+    "updated_at": "2026-08-30T17:02:53.169453+00:00",
+    "ai_apps": [
+      "Google Forms",
+      "Google Sheets",
+      "Google Apps Script",
+      "Claude Code",
+      "Claude Design"
+    ],
+    "solution_links": [
+      {
+        "url": "https://madionadultschool.lovable.app/",
+        "label": "Open recruitment site",
+        "title": "Public recruitment site",
+        "notice": [
+          "\\n",
+          "\\n",
+          "\\n"
+        ],
+        "description": "See what a prospective student experiences before enrolling."
+      },
+      {
+        "url": "https://script.google.com/a/macros/communitylearningpartners.com/s/AKfycbz8mZcLRUU3zVi98tqjjWx5ivhW_KlYvf55aABqIVGFdlR0VLPQpYWpEsN1bbWIUSY/exec?view=public",
+        "label": "Open intake dashboard",
+        "title": "Internal intake dashboard",
+        "notice": [
+          "\\n",
+          "\\n",
+          "\\n"
+        ],
+        "description": "See what staff experience after a student submits the form.",
+        "note": "Note: The dashboard will take a few seconds to load 🐢"
+      }
+    ]
+  },
+  {
+    "id": "ef041575-6d79-4cb4-81dd-b2608d34d003",
+    "slug": "career-pathways",
+    "title": "Career Pathway Planning and Navigation",
+    "subtitle": "Using AI to connect local labor market research, curriculum planning, credential alignment, and student career preparation.",
+    "category": "Career Pathways",
+    "situation": "",
+    "challenge": "Adult education programs need current information about local employment demand before deciding which industries, occupations, credentials, and training pathways to prioritize.\n\nThat means understanding:\n\n- Which industries and occupations are growing locally\n- Which entry-level roles are realistic for adult learners\n- What credentials, licenses, skills, and background requirements employers expect\n- Which local training providers offer those credentials\n- What learner supports are available\n- Which pathways offer realistic opportunities for advancement\n\nPrograms can then use that information to make decisions about which career pathways to develop, which credentials to align instruction with, and where adult education can contribute through contextualized instruction, IET, bridge programming, digital skills, credential preparation, co-enrollment, or referral partnerships.",
+    "what_they_built": "",
+    "how_ai_helped": "AI was used to:\n\n- Conduct local labor market research\n- Compare occupations, credentials, wages, and training options\n- Identify promising career pathways for program planning\n- Connect labor market findings to curriculum and credential decisions\n- Turn a long research report into a visual resource for staff and students\n- Support student skills identification and career exploration\n- Draft job application materials\n- Practice interview skills in a low-stakes environment using voice mode",
+    "what_changed": "A conversation that used to rely on intuition now starts from evidence. Two credentials with weak local demand were paused; one new pathway was proposed. Career navigators use the same research when advising students rather than starting from scratch.",
+    "what_they_learned": "The research is a starting point, not an answer \u2014 every claim that mattered got verified against a primary source before it went in front of the board. AI was fastest at the gathering and synthesis; the judgment about what the program should actually do stayed firmly with the people who know the community.",
+    "reflection_questions": [],
+    "reaction_options": [
+      "Could use this now",
+      "Already doing something similar",
+      "Want to learn how",
+      "Not relevant right now"
+    ],
+    "ai_concepts": [
+      "Deep Research",
+      "Source evaluation",
+      "Labor market analysis",
+      "Data synthesis",
+      "Career pathway planning",
+      "Curriculum alignment",
+      "Visualization",
+      "Voice interaction"
+    ],
+    "display_order": 2,
+    "created_at": "2026-08-26T22:12:14.244256+00:00",
+    "updated_at": "2026-08-30T17:08:39.904274+00:00",
+    "ai_apps": [
+      "ChatGPT",
+      "Gemini / NotebookLM",
+      "Career Dreamer",
+      "Voice Mode"
+    ],
+    "solution_links": [
+      {
+        "lead": "Use Deep Research to identify growing industries, entry-level occupations, required credentials, training provider options, and availalbe student support resources. ",
+        "title": "Research the local labor market",
+        "action": {
+          "url": "/__l5e/assets-v1/7b739728-97e9-41dd-97a8-27f837e6f9e9/st-louis-career-pathway-report.pdf",
+          "kind": "pdf",
+          "label": "Open research report",
+          "title": "St. Louis Metro Adult Education Career Pathway Analysis"
+        },
+        "bullets": [
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n"
+        ],
+        "disclosure": {
+          "body": "I lead an adult education program serving GED/HSE and ESL learners in the St. Louis metro area who are seeking entry-level employment and career advancement.\n\nPlease provide a current, local career pathway analysis in this order:\n\n1. Growing industries in the St. Louis metro area and surrounding counties over the next 3 to 5 years.\n\n2. Common entry-level roles within those industries that are realistic on-ramps for adult learners.\n\n3. For each role, identify the required or preferred credentials, licenses, background checks, baseline skills, English proficiency expectations, digital skill needs, and other common hiring requirements.\n\n4. For each credential and/or job requirement, identify local training options that prepare adults for it, including community colleges, workforce boards, nonprofits, apprenticeship programs, employer programs, and other relevant providers in the St. Louis region and nearby counties.\n\n5. For each program, list cost, duration, start cadence, modality, schedule options, location, admission requirements, and prerequisites.\n\n6. Identify available learner supports, including WIOA funding, Pell or other financial aid, SNAP E&T, childcare, transportation, tutoring, and language supports.\n\n7. Provide typical starting wages and advancement paths for each role, when available.\n\nUse recent, credible sources and note the date of the data. Prioritize Missouri and Illinois state labor market sources, regional workforce boards, and local education and training providers. Include direct links to relevant programs, credentials, and source data.\n\nAfter completing the analysis, identify 3 to 5 career pathways that appear strongest for local adult education program development. Consider employer demand, wages, accessibility for GED/HSE and ESL learners, training time and cost, credential barriers, English and digital skill requirements, availability of local partners, learner supports, and opportunities for advancement.\n\nFor each recommended pathway, briefly identify the most promising role for the adult education provider, such as contextualized instruction, IET, bridge programming, digital skills instruction, credential preparation, co-enrollment, or referral partnerships.",
+          "label": "the research prompt"
+        }
+      },
+      {
+        "lead": "Use the findings to identify 3 to 5 strong local career pathways and determine and to adapt the research into a student-friendly infographic, reducing the need for students to read a 25+ page PDF. ",
+        "title": "Translate the research into program decisions",
+        "action": {
+          "url": "/__l5e/assets-v1/fa46f640-c13f-4024-84b5-4415263e0711/st-louis-career-pathway-guide.png",
+          "kind": "image",
+          "label": "Open pathway infographic",
+          "title": "Navigating Career Pathways in the St. Louis Bi-State Region"
+        },
+        "bullets": [
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n"
+        ]
+      },
+      {
+        "lead": "Career navigators and teachers can help students use Career Dreamer to understand how their experiences translate into skills, and which of those skills align with growing career pathways in the region.",
+        "title": "Support student career exploration",
+        "action": {
+          "url": "https://grow.google/career-dreamer/home/",
+          "kind": "external",
+          "label": "Explore Career Dreamer"
+        },
+        "bullets": [
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n"
+        ]
+      },
+      {
+        "lead": "Career navigators or instructors work with students to use AI to draft and revise a resume that incorporates the skills identified in step #3, and to use Voice Mode to practice and improve interview skills.",
+        "title": "Support job preparation",
+        "bullets": [
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n",
+          "\n"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a6605c69-345b-483a-9146-038bc4a0653c",
+    "slug": "data-analysis",
+    "title": "Data Analysis and Student Persistence",
+    "subtitle": "Using AI to turn attendance data and survey responses into clearer questions about student persistence and support.",
+    "category": "Data Analysis",
+    "situation": "",
+    "challenge": "Adult education programs collect attendance and survey data, but it can be difficult to quickly see where students are dropping off, which classes are experiencing persistence challenges, or where additional support may be useful.\n\nBefore using AI, personally identifying information should be removed or replaced with anonymous student IDs.\n\nThe goal is not to evaluate or penalize instructors. It is to identify patterns, ask better questions, and decide where administrators may need to talk with teachers and students to better understand what support could help.",
+    "what_they_built": "",
+    "how_ai_helped": "AI was used to:\n\n- Clean and combine attendance data so it was easier to review and use\n- Compare attendance and persistence across classes to surface patterns and possible areas for outreach\n- Analyze student survey data on its own and alongside attendance data to add context to the findings\n- Flag possible data issues and questions for discussion with staff or students\n- Create charts and plain-language summaries, then save the process as a repeatable workflow for future terms",
+    "what_changed": "",
+    "what_they_learned": "",
+    "reflection_questions": [],
+    "reaction_options": [
+      "Could use this now",
+      "Already doing something similar",
+      "Want to learn how",
+      "Not relevant right now"
+    ],
+    "ai_concepts": [
+      "Spreadsheet analysis",
+      "Data cleaning",
+      "De-identification",
+      "Formula generation",
+      "Data visualization",
+      "Dashboard creation",
+      "Pattern identification",
+      "Data quality review",
+      "Plain-language synthesis",
+      "Repeatable AI workflows",
+      "Standard operating procedures",
+      "Data-informed staff dialogue",
+      "Data-informed decision making"
+    ],
+    "display_order": 3,
+    "created_at": "2026-08-26T22:12:14.244256+00:00",
+    "updated_at": "2026-08-30T21:21:46.693527+00:00",
+    "ai_apps": [
+      "Claude",
+      "Claude Skills"
+    ],
+    "solution_links": [
+      {
+        "kind": "workbook",
+        "lead": "Open the data viewer to move between the original attendance workbook, the analysis Claude returned, and the mid-term student survey.",
+        "note": "Before analysis, student names and other personally identifying information were removed.",
+        "title": "Original workbook and AI analysis",
+        "bridge": "Eight weeks into a sixteen-week term, the workbook and a 70-response student survey gave a clearer picture of who was still coming, who had stopped, and why.",
+        "disclosure": {
+          "body": "I run an adult education program. Attached is our attendance for the first half of the term and a survey we gave students last week to understand their experience. We're at the halfway point and I have a staff meeting on Thursday.\n\nHelp me prepare for that meeting. Analyze the attendance and the survey together and put a one-page summary in the attendance file as a new tab.\n\nInclude a few charts so the room can see what's happening at a glance, what trends you're finding in the attendance and in what students wrote, which specific classes we should spend our time talking about and why, a few things we could try in the second half, and the right questions to ask my teachers to help us make data-driven decisions about interventions and supports for our students.",
+          "label": "the prompt used for the analysis"
+        }
+      }
+    ]
+  },
+  {
+    "id": "2afda788-ec34-4c85-bb4e-7140916c0782",
+    "slug": "instructional-support",
+    "title": "Instructional Infrastructure",
+    "subtitle": "Using AI to create a simple class home students can open without a login.",
+    "category": "Instruction",
+    "situation": "",
+    "challenge": "Adult learners may struggle to remember passwords or navigate multiple digital systems. If students have to log in to Canvas, Moodle, Blackboard, Google Classroom, or another LMS just to find the Zoom link, class schedule, assignment, or resource they need, that can become a real obstacle.\n\nA class home gives students one consistent place to start and end class, while still linking to the LMS when they need to submit work, check grades, or use other course tools.\n\nIt also gives educators a chance to make the main class entry point more accessible and mobile-friendly for students with different needs.",
+    "what_they_built": "",
+    "how_ai_helped": "AI was used to:\n\n- Turn a description of the class and student needs into a working website\n- Organize course information into clear sections and navigation\n- Build the site without traditional web development\n- Revise the design by describing what should change\n- Add new pages, resources, links, and features over time\n- Use screenshots and plain-language feedback to refine the site\n- Make the site mobile-friendly\n- Identify and fix accessibility issues, such as contrast, heading structure, alt text, keyboard navigation, and other WCAG-related considerations",
+    "what_changed": "Students get the same reliable place to look regardless of instructor. Faculty spend their time on content rather than layout. The program supports instruction at scale without buying or administering another system.",
+    "what_they_learned": "The interesting part was never that a teacher can build a website. It was that a program-level template plus a little support turned a one-person experiment into shared infrastructure. Instructors needed permission and a starting point more than they needed a tool.",
+    "reflection_questions": [],
+    "reaction_options": [
+      "Could use this now",
+      "Already doing something similar",
+      "Want to learn how",
+      "Not relevant right now"
+    ],
+    "ai_concepts": [
+      "Vibe coding",
+      "Voice-to-text prompting",
+      "Prompting from screenshots",
+      "Iterative design",
+      "Information architecture",
+      "User-centered design",
+      "Mobile-friendly design",
+      "Accessibility and usability",
+      "ADA/WCAG-informed design"
+    ],
+    "display_order": 4,
+    "created_at": "2026-08-26T22:12:14.244256+00:00",
+    "updated_at": "2026-08-29T13:44:54.911541+00:00",
+    "ai_apps": [
+      "Lovable",
+      "ChatGPT",
+      "Claude Design"
+    ],
+    "solution_links": [
+      {
+        "lead": "The class home can include things like:",
+        "title": "Open the class home",
+        "action": {
+          "url": "https://sampleclass.lovable.app/",
+          "kind": "external",
+          "label": "Open class home"
+        },
+        "bullets": [
+          "Zoom links",
+          "Class schedule",
+          "Instructor contact information",
+          "Weekly tasks",
+          "Slide decks",
+          "Assignments",
+          "Course resources",
+          "Helpful websites",
+          "Links to Canvas, Moodle, Blackboard, Google Classroom, or other systems"
+        ]
+      }
+    ]
+  }
+]
