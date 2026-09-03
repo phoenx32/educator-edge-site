@@ -15,8 +15,7 @@ const UseCases = () => (
     <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Sample projects</p>
     <h1 className="mt-3 text-3xl md:text-[2.75rem] md:leading-tight font-bold tracking-tight">Use cases</h1>
     <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
-      Each one follows the same shape, so you can move quickly. Pick the scenario closest to your own work &mdash;
-      you can read the others later.
+      Explore the types of projects you could develop through the AI Academy
     </p>
 
     <div className="mt-10 grid gap-4 sm:grid-cols-2">
