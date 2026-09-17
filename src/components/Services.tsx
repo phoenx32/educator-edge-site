@@ -17,11 +17,11 @@ import curriculumDesignImage from '@/assets/services-curriculum-design.png';
 
 const portfolioItems: Record<string, { title: string; description: string; icon: LucideIcon; link?: string }[]> = {
   'professional-development': [
+    { title: 'Google × ISTE+ASCD National AI Training Initiative', description: "Supported ISTE+ASCD's partnership with Google for Education to provide free Gemini and NotebookLM AI literacy training to all 6 million U.S. K-12 and higher education faculty, with micro-credentials aligned to the Profile of an AI-Ready Graduate.", icon: Award },
     { title: 'National Professional Learning Portfolio', description: 'Designed and delivered professional learning to 3,000+ educators across 100+ organizations, earning 4.9/5 satisfaction ratings.', icon: GraduationCap },
     { title: 'Statewide Staff Digital Skills Training', description: 'Built modular curricula and facilitator guides for a state agency, achieving 100% completion among participating staff.', icon: Monitor },
     { title: 'AI Professional Learning Series', description: 'Designed national AI-focused professional learning translating emerging technologies into applied practice for adult educators and workforce systems.', icon: Sparkles },
-    { title: 'Digital Literacy Train-the-Trainer Toolkit', description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.', icon: BookOpen },
-    { title: 'Google × ISTE+ASCD National AI Training Initiative', description: "Lead project manager for ISTE+ASCD's landmark partnership with Google for Education — the largest initiative of its kind, providing free Gemini and NotebookLM AI literacy training to all 6 million U.S. K-12 and higher education faculty, with micro-credentials aligned to the Profile of an AI-Ready Graduate.", icon: Award }
+    { title: 'Digital Literacy Train-the-Trainer Toolkit', description: 'Built a comprehensive toolkit enabling statewide implementation across six content subareas with pacing guides, slide decks, and facilitator scripts.', icon: BookOpen }
   ],
   'project-management': [
     { title: '$2M+ National Digital Skills Initiative', description: 'Coordinated cross-functional teams producing national frameworks, curricula, and tools adopted by 40+ organizations. Improved course completion by ~40%.', icon: Target },
