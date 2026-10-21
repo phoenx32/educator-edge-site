@@ -1,7 +1,9 @@
 import { Linkedin, Mail } from 'lucide-react';
 
-const Footer = () => {
+/** `page`: on a page other than the home page (an article), the section links go to the home page. */
+const Footer = ({ page = false }: { page?: boolean }) => {
   const currentYear = new Date().getFullYear();
+  const home = page ? '/' : '';
 
   return (
     <footer className="bg-gradient-to-r from-primary via-secondary to-accent text-white py-8 md:py-10">
@@ -25,10 +27,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#services" className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Project Management</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Curriculum Development and Instructional Design</a></li>
+              <li><a href={`${home}#services`} className="hover:text-white transition-colors">Professional Development Cohorts</a></li>
+              <li><a href={`${home}#services`} className="hover:text-white transition-colors">Project Management</a></li>
+              <li><a href={`${home}#services`} className="hover:text-white transition-colors">Keynote Sessions & Conference Workshops</a></li>
+              <li><a href={`${home}#services`} className="hover:text-white transition-colors">Curriculum Development and Instructional Design</a></li>
             </ul>
           </div>
 
@@ -36,8 +38,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Get Started</h4>
             <ul className="space-y-2 text-white/80">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href={`${home}#about`} className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href={`${home}#contact`} className="hover:text-white transition-colors">Contact</a></li>
               <li><a href="mailto:hello@communitylearningpartners.com" className="hover:text-white transition-colors">Email Us</a></li>
               <li><a href="https://calendar.app.google/WF7LJ74vmmK92THEA" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Schedule a Call</a></li>
             </ul>

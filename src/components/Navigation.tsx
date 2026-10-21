@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import clpLogo from '@/assets/logos/clp-logo.png';
 
-const Navigation = () => {
+/** `page`: on a page other than the home page (an article), the links go to the home page's sections, and the Academy link is left out. */
+const Navigation = ({ page = false }: { page?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -15,11 +16,12 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const home = page ? '/' : '';
   const navItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Approach', href: '#about' },
-    { label: 'Team', href: '#team' },
-    { label: 'AI Leadership Academy', href: '/bootcamp', isRoute: true },
+    { label: 'Services', href: `${home}#services` },
+    { label: 'Approach', href: `${home}#about` },
+    { label: 'Team', href: `${home}#team` },
+    ...(page ? [] : [{ label: 'AI Leadership Academy', href: '/bootcamp', isRoute: true }]),
   ];
 
   return (
@@ -32,9 +34,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#top"
+            href={page ? '/' : '#top'}
             className="flex items-center"
-            aria-label="Community Learning Partners — back to top"
+            aria-label={page ? 'Community Learning Partners — home' : 'Community Learning Partners — back to top'}
           >
             <img
               src={clpLogo}
@@ -65,7 +67,7 @@ const Navigation = () => {
               )
             )}
             <Button variant="outline" size="sm" asChild>
-              <a href="#contact">Contact</a>
+              <a href={`${home}#contact`}>Contact</a>
             </Button>
           </div>
 
@@ -105,7 +107,7 @@ const Navigation = () => {
                 )
               )}
               <Button variant="outline" size="sm" className="self-start" asChild>
-                <a href="#contact">Contact</a>
+                <a href={`${home}#contact`}>Contact</a>
               </Button>
             </div>
           </div>

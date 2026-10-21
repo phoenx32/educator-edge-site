@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The same records, as a sheet and as a dashboard</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  body { font-family: Arial, Helvetica, sans-serif; }
+  svg { display: block; width: 100%; height: auto; }
+  [data-act] { cursor: pointer; }
+  [data-act]:focus { outline: none; }
+  [data-act]:focus-visible rect { stroke: #245b79; stroke-width: 2.5; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// The first picture of "Building a Dashboard With AI, Without Giving AI Your Data", as the mini demo
+// it is in the document: Sheet / Dashboard switches the view, and the Site buttons filter both.
+(function () {
+  var rows = [
+    { id: "1042", site: "Site A", hours: 12, last: "2026-09-29" },
+    { id: "1066", site: "Site A", hours: 18, last: "2026-10-13" },
+    { id: "1101", site: "Site A", hours: 22, last: "2026-10-14" },
+    { id: "1187", site: "Site C", hours: 4, last: "2026-09-30" },
+    { id: "1203", site: "Site B", hours: 15, last: "2026-10-12" },
+    { id: "1219", site: "Site B", hours: 20, last: "2026-10-14" },
+    { id: "1250", site: "Site B", hours: 0, last: "2026-09-24" },
+    { id: "1288", site: "Site C", hours: 16, last: "2026-10-09" },
+    { id: "1301", site: "Site A", hours: 9, last: "2026-10-08" },
+    { id: "1324", site: "Site C", hours: 11, last: "2026-10-13" }
+  ];
+  var ink = "#1f1e1d", quiet = "#6b6a65", edge = "#c3c0b6", grid = "#ebe8df", green = "#2F5D3A";
+  var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var day = function (d) { return months[Number(d.slice(5, 7)) - 1] + " " + Number(d.slice(8)); };
+  var cutoff = Date.parse("2026-10-01");
+  var sites = ["Site A", "Site B", "Site C"];
+  var view = "sheet", off = [];
+  var root = document.getElementById("root");
+  var esc = function (t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+
+  function tab(x, w, on) {
+    return '<rect x="' + x + '" y="48" width="' + w + '" height="30" rx="6" fill="' + (on ? green : "none") + '" fill-opacity="' + (on ? 0.14 : 1) + '" stroke="' + (on ? green : edge) + '" stroke-width="' + (on ? 1.75 : 1) + '"/>';
+  }
+  function tile(x) {
+    return '<rect x="' + x + '" y="100" width="224" height="68" rx="8" fill="none" stroke="' + edge + '" stroke-width="1"/>';
+  }
+  function text(x, y, t, a) {
+    return '<text x="' + x + '" y="' + y + '"' + (a || "") + '>' + esc(t) + '</text>';
+  }
+
+  function render() {
+    var shown = rows.filter(function (r) { return off.indexOf(r.site) < 0; });
+    var missed = shown.filter(function (r) { return Date.parse(r.last) <= cutoff; });
+    var avg = shown.length ? shown.reduce(function (s, r) { return s + r.hours; }, 0) / shown.length : 0;
+    var on = sites.filter(function (s) { return off.indexOf(s) < 0; });
+    var count = function (s) { return shown.filter(function (r) { return r.site === s; }).length; };
+    var most = Math.max.apply(null, [1].concat(on.map(count)));
+    var isSheet = view === "sheet";
+    var h = [];
+    h.push('<svg viewBox="0 0 760 408" role="img" aria-label="The same records, as a sheet and as a dashboard" font-size="13" font-family="Arial, Helvetica, sans-serif">');
+    h.push(text(24, 30, "The same records, as a sheet and as a dashboard", ' font-size="15" font-weight="600" fill="' + ink + '"'));
+    h.push('<g data-act="sheet" role="button" tabindex="0" aria-pressed="' + isSheet + '">' + tab(24, 100, isSheet) + text(74, 68, "Sheet", ' text-anchor="middle" font-weight="' + (isSheet ? 600 : 400) + '" fill="' + ink + '"') + '</g>');
+    h.push('<g data-act="dashboard" role="button" tabindex="0" aria-pressed="' + !isSheet + '">' + tab(132, 112, !isSheet) + text(188, 68, "Dashboard", ' text-anchor="middle" font-weight="' + (isSheet ? 400 : 600) + '" fill="' + ink + '"') + '</g>');
+    h.push(text(736, 30, "Sample data", ' text-anchor="end" font-size="11.5" fill="' + quiet + '"'));
+    h.push(text(452, 68, "Sites", ' font-size="11.5" fill="' + quiet + '"'));
+    sites.forEach(function (s, i) {
+      var isOff = off.indexOf(s) >= 0;
+      h.push('<g data-act="site" data-site="' + s + '" role="button" tabindex="0" aria-pressed="' + !isOff + '">' +
+        '<rect x="' + (488 + 84 * i) + '" y="48" width="76" height="30" rx="15" fill="' + (isOff ? "none" : green) + '" fill-opacity="' + (isOff ? 1 : 0.14) + '" stroke="' + (isOff ? edge : green) + '" stroke-width="' + (isOff ? 1 : 1.5) + '"/>' +
+        text(526 + 84 * i, 68, s, ' text-anchor="middle" font-size="11.5" font-weight="' + (isOff ? 400 : 600) + '" fill="' + ink + '"') + '</g>');
+    });
+    if (isSheet) {
+      h.push('<g><rect x="24" y="100" width="712" height="288" fill="none" stroke="' + edge + '" stroke-width="1"/>');
+      h.push('<rect x="24" y="100" width="712" height="28" fill="' + green + '" fill-opacity="0.12" stroke="' + green + '" stroke-width="1.5"/>');
+      h.push(text(40, 119, "Learner ID", ' font-weight="600" fill="' + ink + '"'));
+      h.push(text(200, 119, "Site", ' font-weight="600" fill="' + ink + '"'));
+      h.push(text(360, 119, "Hours this month", ' font-weight="600" fill="' + ink + '"'));
+      h.push(text(540, 119, "Last attended", ' font-weight="600" fill="' + ink + '"'));
+      shown.forEach(function (r, i) {
+        h.push('<line x1="24" x2="736" y1="' + (154 + 26 * i) + '" y2="' + (154 + 26 * i) + '" stroke="' + grid + '"/>');
+        h.push(text(40, 145 + 26 * i, r.id, ' fill="' + ink + '"'));
+        h.push(text(200, 145 + 26 * i, r.site, ' fill="' + ink + '"'));
+        h.push(text(360, 145 + 26 * i, r.hours, ' fill="' + ink + '"'));
+        h.push(text(540, 145 + 26 * i, day(r.last), ' fill="' + ink + '"'));
+      });
+      h.push('</g>');
+    } else {
+      h.push('<g>' + tile(24) + text(40, 124, "Active learners", ' font-size="11.5" fill="' + quiet + '"') + text(40, 154, shown.length, ' font-size="24" font-weight="600" fill="' + ink + '"') + '</g>');
+      h.push('<g>' + tile(268) + text(284, 124, "Average hours this month", ' font-size="11.5" fill="' + quiet + '"') + text(284, 154, avg.toFixed(1), ' font-size="24" font-weight="600" fill="' + ink + '"') + '</g>');
+      h.push('<g>' + tile(512) + text(528, 124, "Missed two or more weeks", ' font-size="11.5" fill="' + quiet + '"') + text(528, 154, missed.length, ' font-size="24" font-weight="600" fill="' + ink + '"') + '</g>');
+      h.push('<g><rect x="24" y="184" width="348" height="204" rx="8" fill="none" stroke="' + edge + '" stroke-width="1"/>');
+      h.push(text(40, 210, "Learners by site", ' font-weight="600" fill="' + ink + '"'));
+      on.forEach(function (s, i) {
+        var w = count(s) / most * 200;
+        h.push(text(40, 246 + 36 * i, s, ' font-size="11.5" fill="' + quiet + '"'));
+        h.push('<rect x="104" y="' + (235 + 36 * i) + '" width="' + w + '" height="14" rx="4" fill="' + green + '" fill-opacity="0.18" stroke="' + green + '" stroke-width="1.25"/>');
+        h.push(text(112 + w, 246 + 36 * i, count(s), ' font-size="11.5" fill="' + ink + '"'));
+      });
+      h.push('</g>');
+      h.push('<g><rect x="388" y="184" width="348" height="204" rx="8" fill="none" stroke="' + edge + '" stroke-width="1"/>');
+      h.push(text(404, 210, "Learners to contact", ' font-weight="600" fill="' + ink + '"'));
+      missed.forEach(function (r, i) {
+        h.push(text(404, 246 + 30 * i, "Learner " + r.id + " · " + r.site + " · last attended " + day(r.last), ' font-size="11.5" fill="' + ink + '"'));
+        h.push('<line x1="404" x2="720" y1="' + (256 + 30 * i) + '" y2="' + (256 + 30 * i) + '" stroke="' + grid + '"/>');
+      });
+      h.push('</g>');
+    }
+    h.push('</svg>');
+    var focused = document.activeElement && document.activeElement.getAttribute && (document.activeElement.getAttribute("data-act") + "|" + (document.activeElement.getAttribute("data-site") || ""));
+    root.innerHTML = h.join("");
+    // Keep the keyboard where it was after the picture redraws.
+    if (focused && focused !== "null|") {
+      var parts = focused.split("|");
+      var again = root.querySelector('[data-act="' + parts[0] + '"]' + (parts[1] ? '[data-site="' + parts[1] + '"]' : ""));
+      if (again) again.focus();
+    }
+  }
+
+  function act(el) {
+    var a = el.getAttribute("data-act");
+    if (a === "sheet" || a === "dashboard") view = a;
+    if (a === "site") {
+      var s = el.getAttribute("data-site");
+      off = off.indexOf(s) >= 0 ? off.filter(function (x) { return x !== s; }) : off.concat([s]);
+    }
+    render();
+  }
+  root.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("[data-act]");
+    if (el) act(el);
+  });
+  root.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var el = e.target.closest && e.target.closest("[data-act]");
+    if (el) { e.preventDefault(); act(el); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
