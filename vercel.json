@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!assets/|feeds/|lovable-uploads/|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
+      "source": "/((?!assets/|feeds/|lovable-uploads/|media/|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ]
