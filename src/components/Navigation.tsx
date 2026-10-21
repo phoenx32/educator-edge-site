@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import clpLogo from '@/assets/logos/clp-logo.png';
 
-/** `page`: on a page other than the home page (an article), the links go to the home page's sections, and the Academy link is left out. */
-const Navigation = ({ page = false }: { page?: boolean }) => {
+/**
+ * The site menu: Services, Approach, Team, Articles, AI Leadership Academy (Joey, 2026-10-21).
+ * `page`: on a page other than the home page, the section links go to the home page.
+ * `hideAcademy`: no Academy link (a single article, Joey 2026-10-21).
+ * `current`: the page this is, marked in the menu.
+ */
+const Navigation = ({ page = false, hideAcademy = false, current }: { page?: boolean; hideAcademy?: boolean; current?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -21,8 +26,10 @@ const Navigation = ({ page = false }: { page?: boolean }) => {
     { label: 'Services', href: `${home}#services` },
     { label: 'Approach', href: `${home}#about` },
     { label: 'Team', href: `${home}#team` },
-    ...(page ? [] : [{ label: 'AI Leadership Academy', href: '/bootcamp', isRoute: true }]),
+    { label: 'Articles', href: '/articles', isRoute: true },
+    ...(hideAcademy ? [] : [{ label: 'AI Leadership Academy', href: '/bootcamp', isRoute: true }]),
   ];
+  const isCurrent = (href: string) => !!current && href === current;
 
   return (
     <nav
@@ -52,7 +59,8 @@ const Navigation = ({ page = false }: { page?: boolean }) => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200"
+                  aria-current={isCurrent(item.href) ? 'page' : undefined}
+                  className={`${isCurrent(item.href) ? 'text-primary font-medium' : 'text-foreground'} hover:text-primary transition-colors duration-200`}
                 >
                   {item.label}
                 </Link>
@@ -90,7 +98,8 @@ const Navigation = ({ page = false }: { page?: boolean }) => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="text-foreground hover:text-primary transition-colors duration-200 py-2"
+                    aria-current={isCurrent(item.href) ? 'page' : undefined}
+                    className={`${isCurrent(item.href) ? 'text-primary font-medium' : 'text-foreground'} hover:text-primary transition-colors duration-200 py-2`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

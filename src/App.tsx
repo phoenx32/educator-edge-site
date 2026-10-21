@@ -9,6 +9,7 @@ import UseCases from "./pages/UseCases";
 import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 import Article from "./pages/Article";
+import Articles from "./pages/Articles";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/bootcamp" element={<Bootcamp />} />
           <Route path="/bootcamp/use-cases" element={<UseCases />} />
           <Route path="/bootcamp/use-cases/:slug" element={<UseCaseDetail />} />
+          <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<Article />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
