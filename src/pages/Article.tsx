@@ -35,7 +35,7 @@ const Article = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-50">
-        <Navigation page />
+        <Navigation page hideAcademy />
       </header>
 
       <main className="flex-1 py-12 md:py-16">
