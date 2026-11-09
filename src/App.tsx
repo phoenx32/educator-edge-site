@@ -10,6 +10,7 @@ import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 import Article from "./pages/Article";
 import Articles from "./pages/Articles";
+import Canonical from "./components/Canonical";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Canonical />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/bootcamp" element={<Bootcamp />} />
