@@ -1,7 +1,10 @@
 {
   "rewrites": [
+    { "source": "/elearning-samples", "destination": "/elearning-samples/index.html" },
+    { "source": "/elearning-samples/career-navigation", "destination": "/elearning-samples/career-navigation/index.html" },
+    { "source": "/elearning-samples/clp-academy", "destination": "/elearning-samples/clp-academy/index.html" },
     {
-      "source": "/((?!assets/|feeds/|lovable-uploads/|media/|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
+      "source": "/((?!assets/|feeds/|lovable-uploads/|media/|elearning-samples/|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ]
