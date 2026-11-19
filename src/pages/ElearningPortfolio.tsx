@@ -57,8 +57,8 @@ const projects: Project[] = [
     href: '/elearning-samples/career-navigation/',
     cta: 'Open the course module',
     tone: 'blue',
-    shots: [{ src: '/media/elearning-samples/career-navigation.webp', alt: 'Lesson 1 of the Career Navigation module, with the lesson list on the left and an interactive diagram on the right' }],
-    thumb: '/media/elearning-samples/career-navigation.webp',
+    shots: [{ src: '/media/elearning-samples/career-navigation.webp', alt: 'Lesson 3 of the Career Navigation module: an interactive LinkedIn profile with numbered parts and notes on each' }],
+    thumb: '/media/elearning-samples/career-navigation-thumb.webp',
   },
   {
     id: 'peer-learning',
@@ -119,7 +119,7 @@ const external = (href: string) => href.startsWith('http');
 
 /** A screenshot in a plain browser window. */
 const BrowserShot = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="overflow-hidden rounded-xl border border-foreground/10 bg-white shadow-[0_24px_48px_-24px_hsl(215_30%_20%/0.35)]">
+  <div className="overflow-hidden rounded-t-xl border border-b-0 border-foreground/10 bg-white shadow-[0_-8px_40px_-16px_hsl(215_30%_20%/0.35)]">
     <div className="flex items-center gap-1.5 border-b border-border bg-surface px-3.5 py-2.5" aria-hidden="true">
       <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
       <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
@@ -131,38 +131,21 @@ const BrowserShot = ({ src, alt }: { src: string; alt: string }) => (
 
 /** A screenshot in a phone outline. */
 const PhoneShot = ({ src, alt, className = '' }: { src: string; alt: string; className?: string }) => (
-  <div className={`w-[46%] max-w-[230px] rounded-[30px] border-[7px] border-foreground bg-foreground shadow-[0_24px_48px_-20px_hsl(215_30%_20%/0.45)] ${className}`}>
+  <div className={`w-[46%] max-w-[230px] rounded-[30px] border-[7px] border-foreground bg-foreground shadow-[0_-8px_40px_-16px_hsl(215_30%_20%/0.45)] ${className}`}>
     <img src={src} alt={alt} width={384} height={844} loading="lazy" className="block aspect-[384/844] w-full rounded-[23px] object-cover" />
   </div>
 );
 
 const ProjectSection = ({ p, n }: { p: Project; n: number }) => {
   const t = TONES[p.tone];
-  const flip = n % 2 === 0;
   const linkProps = { href: p.href, target: '_blank', rel: 'noopener noreferrer' };
 
   return (
     <section id={p.id} aria-labelledby={`${p.id}-title`} className="scroll-mt-24 border-t border-border py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
-          {/* Picture */}
-          <a
-            {...linkProps}
-            aria-label={`${p.cta}: ${p.title} (opens in a new tab)`}
-            className={`group block rounded-2xl ${t.tint} p-5 transition-transform duration-200 hover:-translate-y-1 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:p-8 lg:col-span-7 ${flip ? 'lg:order-2' : ''}`}
-          >
-            {p.phone ? (
-              <div className="flex items-end justify-center gap-5 sm:gap-8 py-2">
-                <PhoneShot src={p.shots[0].src} alt={p.shots[0].alt} className="translate-y-6" />
-                <PhoneShot src={p.shots[1].src} alt={p.shots[1].alt} />
-              </div>
-            ) : (
-              <BrowserShot src={p.shots[0].src} alt={p.shots[0].alt} />
-            )}
-          </a>
-
-          {/* Words */}
-          <div className={`lg:col-span-5 ${flip ? 'lg:order-1' : ''}`}>
+          {/* Words, always on the left */}
+          <div className="lg:col-span-5">
             <p className={`flex items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.12em] ${t.ink}`}>
               <span className="tabular-nums">{String(n).padStart(2, '0')}</span>
               <span className="h-px w-6 bg-current opacity-40" aria-hidden="true" />
@@ -191,6 +174,24 @@ const ProjectSection = ({ p, n }: { p: Project; n: number }) => {
               <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
+
+          {/* Picture, always on the right: the screen rises out of a tinted panel and runs off its bottom edge */}
+          <a
+            {...linkProps}
+            aria-label={`${p.cta}: ${p.title} (opens in a new tab)`}
+            className={`group relative block aspect-[3/2] overflow-hidden rounded-2xl ${t.tint} px-6 pt-8 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-10 sm:pt-10 lg:col-span-7`}
+          >
+            <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
+              {p.phone ? (
+                <div className="flex justify-center gap-5 sm:gap-8">
+                  <PhoneShot src={p.shots[0].src} alt={p.shots[0].alt} className="mt-8" />
+                  <PhoneShot src={p.shots[1].src} alt={p.shots[1].alt} />
+                </div>
+              ) : (
+                <BrowserShot src={p.shots[0].src} alt={p.shots[0].alt} />
+              )}
+            </div>
+          </a>
         </div>
 
         {/* Design features */}
