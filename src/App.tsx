@@ -10,6 +10,7 @@ import UseCaseDetail from "./pages/UseCaseDetail";
 import NotFound from "./pages/NotFound";
 import Article from "./pages/Article";
 import Articles from "./pages/Articles";
+import ElearningPortfolio from "./pages/ElearningPortfolio";
 import Canonical from "./components/Canonical";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/bootcamp/use-cases/:slug" element={<UseCaseDetail />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<Article />} />
+          <Route path="/elearning-samples" element={<ElearningPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
