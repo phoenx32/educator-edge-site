@@ -54,7 +54,7 @@ const AiForum = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-uc-en-foreground">Proposal companion site</p>
             <h1 className="mt-3 text-[36px] font-bold leading-tight tracking-tight text-foreground md:text-[48px]">AI Virtual Academy</h1>
             <p className="mt-4 max-w-[680px] text-lg leading-relaxed text-muted-foreground md:text-xl">
-              This page has a sample of our proposed website for the AI Virtual Academy and a recording of one of our AI training sessions.
+              This page has a sample of our proposed platform for the AI Virtual Academy and a recording of one of our AI training sessions.
             </p>
           </div>
         </section>
@@ -64,7 +64,7 @@ const AiForum = () => {
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-5">
-                <Kicker n={1} label="Sample website" ink="text-uc-en-foreground" />
+                <Kicker n={1} label="Sample platform" ink="text-uc-en-foreground" />
                 <h2 id="academy-website-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
                   Virtual Academy Platform
                 </h2>
