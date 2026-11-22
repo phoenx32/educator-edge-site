@@ -54,7 +54,7 @@ const AiForum = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-uc-en-foreground">Proposal companion site</p>
             <h1 className="mt-3 text-[36px] font-bold leading-tight tracking-tight text-foreground md:text-[48px]">AI Virtual Academy</h1>
             <p className="mt-4 max-w-[680px] text-lg leading-relaxed text-muted-foreground md:text-xl">
-              This page has a sample of our proposed platform for the AI Virtual Academy and a facilitation sample from one of our AI training sessions.
+              Explore our proposed platform for the AI Virtual Academy and watch a facilitation sample from one of our AI training sessions.
             </p>
           </div>
         </section>
@@ -69,10 +69,10 @@ const AiForum = () => {
                   Virtual Academy Platform
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  A proposed platform to support engagement and connection before, during and after each live session of the AI Virtual Academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
+                  The platform will support engagement and connection before, during and after each live session of the AI Virtual Academy. It will include session resources and tutorials, a chat for discussion and a people directory for finding peers in similar roles.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  We’d be happy to keep the platform open free of charge after the academy ends, so participants can keep learning, come back to resources and stay connected with each other.
+                  We’d be happy to keep the platform open free of charge after the academy ends, so participants can continue learning, return to resources and stay connected with each other.
                 </p>
                 <Cta href={DEMO_HREF} label="Tour the platform" />
               </div>
@@ -93,7 +93,7 @@ const AiForum = () => {
                     </div>
                     <img
                       src="/media/aiforum/academy-website.webp"
-                      alt="Home page of the proposed academy platform"
+                      alt="Home page of the proposed platform"
                       width={1600}
                       height={1000}
                       loading="lazy"

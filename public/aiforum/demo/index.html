@@ -1098,7 +1098,7 @@ const S3 = {
     title: "Write a follow-up text to a job seeker who missed an appointment",
     steps: [
       { t: "Open your AI tool", d: "Use the tool your organization has approved. If there isn't one yet, check with your supervisor before you start.", screen: [["Start a new chat", 0, 1]] },
-      { t: "Paste the prompt", d: "Copy the follow-up prompt from Take it with you. It asks for a short, friendly text with two new times.", screen: [["Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Under 60 words.", 1, 1]] },
+      { t: "Paste the prompt", d: "Copy the follow-up prompt from the Take it with you section. It asks for a short, friendly text with two new times.", screen: [["Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Under 60 words.", 1, 1]] },
       { t: "Add only what the text needs", d: "First name, the day they missed and two times you can meet. Leave out case details, ID numbers and any guess about why they missed.", screen: [["Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Under 60 words.", 1, 0], ["First name: Andre. Missed: Tuesday. Times: Thursday 10:00 or Friday 2:00.", 1, 1]] },
       { t: "Ask for two versions", d: "One shorter, one a little warmer. Picking between two drafts is faster than fixing one.", screen: [["Give me two versions. Make one shorter.", 1, 1], ["1. Hi Andre, we missed you Tuesday. I have Thursday at 10 or Friday at 2. Which works for you?\n2. Hi Andre, sorry we missed each other. Could you do Thursday at 10 or Friday at 3?", 0, 0]] },
       { t: "Check it before you send", d: "Version 2 moved Friday to 3:00. Small changes like this are easy to miss. Check names, days and times against what you typed, then send from your usual texting system.", screen: [["2. Hi Andre, sorry we missed each other. Could you do Thursday at 10 or Friday at 3?", 0, 2], ["Friday was 2:00, not 3:00. Use version 1 or fix the time.", 1, 0]] },
@@ -1131,7 +1131,7 @@ const S3 = {
   ],
   resources: [
     { icon: "file", title: "Case note summary checklist", type: "Checklist", preview: "Before you save an AI-assisted summary:\n1. Every date matches the original note.\n2. Nothing was added that isn't in the note.\n3. No names, ID numbers or addresses went into the tool.\n4. Unclear items are listed as questions, not guesses.\n5. A person read it before it went in the file." },
-    { icon: "shield", title: "De-identification guide for case notes", type: "Guide", preview: "Remove before pasting: full names, dates of birth, Social Security or state ID numbers, addresses, phone numbers, employer names tied to a person, and details about health, legal status or family that the task doesn't need.\n\nReplace with roles: \"the participant,\" \"their employer,\" \"the training provider.\"" },
+    { icon: "shield", title: "De-identification guide for case notes", type: "Guide", preview: "Remove before pasting: full names, dates of birth, Social Security or state ID numbers, addresses, phone numbers, employer names tied to a person and details about health, legal status or family that the task doesn't need.\n\nReplace with roles: \"the participant,\" \"their employer,\" \"the training provider.\"" },
     { icon: "sparkles", title: "Follow-up message prompts", type: "Prompt", copy: "Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Keep it under 60 words and at a sixth-grade reading level. Give me two versions." },
     { icon: "rec", title: "Session recording and slides", type: "Recording", preview: "The recording, transcript and slides post here within a day of the live session on February 23." },
   ],
@@ -1152,13 +1152,13 @@ const LEADS = [
 const S6 = {
   demo: {
     title: "Worked example: filter a weekly job leads list",
-    prompt: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED.\n\nColumns: employer, job title, pay, schedule, and the exact words from the listing that show the requirement.\n\nIf a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess.\n\n[paste the list here]",
+    prompt: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED.\n\nColumns: employer, job title, pay, schedule and the exact words from the listing that show the requirement.\n\nIf a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess.\n\n[paste the list here]",
   },
   walk: {
     title: "From task to tested prompt",
     steps: [
       { t: "Pick one recurring task", d: "Something you do every week that takes longer than it should. Write it in one sentence.", screen: [["Every Monday I go through the job leads list and pull out jobs that don't need a diploma.", 1, 1]] },
-      { t: "Describe a good result", d: "What would you hand to a job seeker or a coworker? List the columns, the length and the format.", screen: [["A table: employer, title, pay, schedule, and the listing's own words as proof.", 1, 1]] },
+      { t: "Describe a good result", d: "What would you hand to a job seeker or a coworker? List the columns, the length and the format.", screen: [["A table: employer, title, pay, schedule and the listing's own words as proof.", 1, 1]] },
       { t: "Write a first prompt", d: "Say what the input is, what to return and what to do when the input is unclear.", screen: [["...If a listing doesn't say, put it in a separate list. Don't guess.", 1, 1]] },
       { t: "Test it on real examples", d: "Use last week's list or a sample. Remove anything that identifies a person.", screen: [["3 jobs found. 2 to check with the employer.", 0, 1]] },
       { t: "Compare with a hand check", d: "Do the same list by hand. Where you and the tool disagree, change the prompt or decide this task stays with a person.", screen: [["Tool missed: \"We welcome applicants without a diploma.\"", 0, 2], ["Add to the prompt: count wording like \"welcome applicants without a diploma\" as no requirement.", 1, 1]] },
@@ -1168,7 +1168,7 @@ const S6 = {
     { who: "rosa", task: "Turning intake notes into plain-language summaries", worked: "Summaries were faster to review than to write from scratch.", didnt: "It wrote dates in two formats. Added a line to the prompt asking for one.", r: { heart: 8, bulb: 4 } },
     { who: "marcus", task: "First emails to employers we haven't worked with", worked: "Usable drafts once I gave it the employer's industry and the services we offer.", didnt: "Too formal and too long. Asked for something a person would actually send.", r: { thumbs: 6 } },
     { who: "luis", task: "Career pathway guide for adult learners", worked: "It sorted programs by length and cost clearly.", didnt: "Two program details were out of date. Checked every one against the college website.", r: { heart: 5, bulb: 6 } },
-    { who: "kim", task: "Monthly labor market brief for the board", worked: "A readable summary of a dense state report.", didnt: "It rounded wage figures in ways the source didn't. Now I paste the table and tell it not to change numbers.", r: { bulb: 9 } },
+    { who: "kim", task: "Monthly labor market brief for the board", worked: "A readable summary of a dense state report.", didnt: "The AI tool rounded wage figures in my labor market brief. Now I paste the table and tell it not to change numbers.", r: { bulb: 9 } },
   ],
   article: {
     title: "Getting AI help with program data without sharing the data", by: "christin", mins: 3,
@@ -1185,10 +1185,10 @@ const S6 = {
   resources: [
     { icon: "steps", title: "Task breakdown worksheet", type: "Worksheet", preview: "Task in one sentence:\nHow often:\nWhat a good result looks like:\nWhat must never go into the tool:\nFirst prompt:\nTested on (3 examples):\nWhat the tool got wrong:\nKeep, change or drop?" },
     { icon: "wrench", title: "Comparing AI tools: cost and what each keeps", type: "Comparison", preview: "Columns, with one row per tool:\n\nCost per staff member\nWhat the tool keeps from your chats, and for how long\nWhether you can turn off training on your data\nWhether your organization has approved it\nWho at your organization can answer questions about it\n\nFacilitators fill in rows for common tools the week of the academy, because prices and data policies change often. Add rows for any other tool your organization is considering." },
-    { icon: "sparkles", title: "Job leads filter prompt", type: "Prompt", copy: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED. Columns: employer, job title, pay, schedule, and the exact words from the listing that show the requirement. If a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess." },
+    { icon: "sparkles", title: "Job leads filter prompt", type: "Prompt", copy: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED. Columns: employer, job title, pay, schedule and the exact words from the listing that show the requirement. If a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess." },
     { icon: "rec", title: "Session recording and slides", type: "Recording", preview: "The recording, transcript and slides post here within a day of the live session." },
   ],
-  checks: ["Run the tool's output against a small sample you did by hand", "Read the quoted words for every job in the table", "Look for wording the prompt doesn't cover", "Decide: keep the prompt, change it, or keep this task with a person"],
+  checks: ["Run the tool's output against a small sample you did by hand", "Read the quoted words for every job in the table", "Look for wording the prompt doesn't cover", "Decide: keep the prompt, change it or keep this task with a person"],
 };
 
 // ---------- peer notes on highlighted passages ----------
@@ -1239,11 +1239,11 @@ const FMT = { Article: "file", Walkthrough: "pointer", Demo: "play" };
 S6.article = {
   title: "Building a dashboard with AI, without giving AI your data", by: "joey", mins: 6,
   body: [
-    "Most programs keep participant records in a spreadsheet, and most of us want a clearer view of them: who enrolled this month, who hasn't been contacted in two weeks, which office is behind. Pasting those records into an AI tool is the risk to avoid. Instead, [[h3|have AI write the code that builds the view]], so the records never leave the sheet.",
-    "In Google Sheets this works through Apps Script, which comes with Sheets. You give the AI tool only the column headings, such as Name, Program, Intake date, Status and Office, and describe the dashboard you want. It writes two files. You paste them into Apps Script and publish a web page that reads the sheet where it is.",
+    "Most programs keep participant records in a spreadsheet, and many of us want a clearer view of them: who enrolled this month, who hasn't been contacted in two weeks, which office is behind. Pasting those records into an AI tool is the risk to avoid. Instead, [[h3|have AI write the code that builds the view]], so the records never leave the sheet.",
+    "In Google Sheets this works through Apps Script, which comes with Sheets. You give the AI tool only the column headings, such as Name, Program, Intake date, Status and Office, and describe the dashboard you want. It writes two files. You paste them into Apps Script and publish a web page that reads the sheet directly.",
     "You decide who can open the page. Sample data can be open to anyone with the link. Real records should be limited to people in your organization, and the page can show each staff member only their own caseload when they sign in.",
-    "[[h8|Start with 40 rows of made-up participants]] and show the page to one coordinator. Fix what confuses them before real data goes anywhere near it. Keep the script in a shared drive so it stays when someone leaves.",
-    "A few things to expect. Google may show an \"unverified app\" warning the first time, because the script is yours and not a published app. Your organization's Google license decides how widely you can share. If your team works in Microsoft 365, Power BI is the closer match.",
+    "[[h8|Start with 40 rows of made-up participants]] and show the page to one coordinator. Fix what confuses them before you connect real data. Keep the script in a shared drive so it stays when someone leaves.",
+    "Expect a few things. Google may show an \"unverified app\" warning the first time, because the script is yours and not a published app. Your organization's Google license decides how widely you can share. If your team works in Microsoft 365, Power BI does the same job there.",
   ],
 };
 
@@ -1251,8 +1251,8 @@ const ARTICLES = {
   "career-data": {
     title: "Check the local data before you choose a pathway", by: "joey", mins: 4,
     body: [
-      "A good career pathway conversation starts with local facts: which jobs are hiring nearby, what they pay and how long the training takes. AI research tools can pull those facts together in minutes. They can also hand you figures from three years ago in a confident table.",
-      "Write the questions before you open any tool. Which jobs within 30 miles pay at least $20 an hour and need less than a year of training? What are the first two jobs on each path? Questions like these keep the research on what this job seeker needs.",
+      "A good career pathway conversation starts with local facts: which employers are hiring nearby, what they pay and how long the training takes. AI research tools can pull those facts together in minutes. They can also hand you figures from three years ago in a confident table.",
+      "Write the questions before you open any tool. Which jobs within 30 miles pay at least $20 an hour and need less than a year of training? What are the first two jobs on each path? Questions like these keep the research on what the job seeker in front of you needs.",
       "Then run a deep research request in Gemini or ChatGPT and read the report the way you would read a vendor's brochure. [[h4|Check the year on every wage and openings figure]], and compare each one with your state's labor market site.",
       "Turn what holds up into three to five pathways, each with an entry job, the training, the next job and the source for every number. A simple table works. [[h5|An infographic can help a job seeker see the steps]], as long as every name and number on it matches the table.",
       "The pathways start a conversation. The job seeker decides which ones are worth a closer look.",
@@ -1261,9 +1261,9 @@ const ARTICLES = {
   "career-skills": {
     title: "Helping job seekers see where their skills lead", by: "christin", mins: 4,
     body: [
-      "Many job seekers describe their experience by job title: cashier, warehouse associate, home health aide. The title hides most of what they can do. Naming the skills underneath often opens jobs they hadn't considered.",
+      "Many job seekers describe their experience by job title: cashier, warehouse associate, home health aide. The title hides most of what they can do. Naming the skills underneath often points to jobs they hadn't considered.",
       "Google's Career Dreamer is one free way to do this. A job seeker enters a current or past role, picks the tasks they did and the skills they used, and the tool suggests related jobs. [[h6|The sweet spots view lists jobs that use the most skills they already have]]. It draws on national data, so treat the results as ideas to check locally.",
-      "The value is in the conversation around it. Ask which suggestions surprised them and which they would never want. [[h7|Let the job seeker type and choose]], even when it's slower. People trust a list they built themselves.",
+      "The value is in the conversation around the results. Ask which suggestions surprised them and which they would never want. [[h7|Let the job seeker type and choose]], even when it's slower. People trust a list they built themselves.",
       "The next steps are concrete: a resume that names those skills in the words employers use, and practice answering questions about them out loud. The job search demo shows both.",
     ],
   },
@@ -1278,10 +1278,10 @@ const ARTICLES = {
     ],
   },
   slides: {
-    title: "Why I'll never use Google Slides or PowerPoint again", by: "joey", mins: 4,
+    title: "Why I stopped starting decks in Google Slides or PowerPoint", by: "joey", mins: 4,
     body: [
       "For the last few months I've built every presentation with Claude instead of Google Slides or PowerPoint. I describe the goal and the audience, often by voice, and get a full first draft. Then I revise one slide at a time with a short request, such as \"make this a three-step build\" or \"add a chart from this table.\"",
-      "Two things changed how I work. I ask for accessibility at the start, with alt text, a sensible heading order and enough color contrast, instead of fixing it at the end. And I can build a slide that walks through a process step by step, like a job search site, which used to take an afternoon.",
+      "Two things changed how I work. I ask for accessibility at the start, with alt text, a sensible heading order and enough color contrast, instead of fixing it at the end. And I can build a slide that walks through a process step by step, such as searching a job site. That used to take me an afternoon.",
       "[[h10|There are tradeoffs]]. Animations don't survive an export to PowerPoint. Colleagues need an account to edit. Heavy use needs a paid plan.",
       "If you want to try it, start with one slide you already need, not a whole deck.",
     ],
@@ -1290,7 +1290,7 @@ const ARTICLES = {
 Object.assign(NOTES, {
   h4: [{ who: "kim", text: "Deep research gave me 2023 wages for two of our occupations. The state site had 2025 figures that were almost two dollars higher." }],
   h5: [{ who: "luis", text: "We print the infographic for orientation. One version misspelled a certificate, so someone proofs each one now." }],
-  h6: [{ who: "dana", text: "A former cashier found inventory control as a sweet spot. She had never thought of her register counts as inventory work." }],
+  h6: [{ who: "dana", text: "Career Dreamer showed a former cashier that inventory control was a sweet spot. She had never thought of her register counts as inventory work." }],
   h7: [{ who: "tom", text: "When I typed for people, they nodded along. When they typed, they argued with the results, which is what I wanted." }],
   h8: [{ who: "rosa", text: "Our coordinator asked for one change: sort by days since last contact. We'd never have guessed that." }],
   h9: [{ who: "nia", text: "Our youth program tried a teacher tool for flyers. Everything came back sounding like a fourth-grade worksheet." }],
@@ -1299,13 +1299,13 @@ Object.assign(NOTES, {
 const LIB_COMMENTS = {
   "career-data": [{ id: "lc1", who: "kim", when: "Mon 2:15 PM", text: "Our state posts wages by region. That table is now the first thing I open.", r: { bulb: 5 } }],
   "career-walk": [{ id: "lc2", who: "luis", when: "Mon 4:40 PM", text: "Step 4 worked well in pairs. People compared sweet spots and found two they both wanted to explore.", r: { heart: 4, bulb: 2 } }],
-  "job-demo": [{ id: "lc3", who: "dana", when: "Tue 7:40 AM", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, the postings said inventory.", r: { heart: 7 } }, { id: "lc4", who: "tom", when: "Tue 9:05 AM", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", r: { thumbs: 4 } }],
+  "job-demo": [{ id: "lc3", who: "dana", when: "Tue 7:40 AM", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, and the postings said inventory.", r: { heart: 7 } }, { id: "lc4", who: "tom", when: "Tue 9:05 AM", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", r: { thumbs: 4 } }],
 };
 
 // ---------- library ----------
 const LIB = [
   { id: "career-walk", type: "Walkthrough", title: "Plan a career pathway with a job seeker", blurb: "Research local jobs, build three to five pathways, explore skills with Career Dreamer, then practice for the interview.", s: 2, roles: [FS, BS], size: "6 steps", featured: true },
-  { id: "job-demo", type: "Demo", title: "From job posting to interview practice", blurb: "Paste a posting, align a resume with ATS in mind, then practice questions out loud in voice mode.", s: 2, roles: [FS], size: "3 parts", isNew: true },
+  { id: "job-demo", type: "Demo", title: "From job posting to interview practice", blurb: "Paste a posting, align a resume for applicant tracking systems, then practice questions out loud in voice mode.", s: 2, roles: [FS], size: "3 parts", isNew: true },
   { id: "career-data", type: "Article", title: ARTICLES["career-data"].title, blurb: "Deep research is fast. Check the year on every figure before it goes on a pathway.", s: 4, roles: [FS, BS], by: "joey", size: "4 min read" },
   { id: "career-skills", type: "Article", title: ARTICLES["career-skills"].title, blurb: "A job title hides most of what someone can do. Career Dreamer helps name the rest.", s: 2, roles: [FS], by: "christin", size: "4 min read" },
   { id: "dashboard", type: "Article", title: S6.article.title, blurb: "AI writes the code from your column headings. The records stay in the sheet.", s: 6, roles: [MG, FS], by: "joey", size: "6 min read", go: "session-6", anchor: "read" },
@@ -1331,7 +1331,7 @@ const WALKS = {
     url: "your AI tool and Career Dreamer",
     related: ["career-data", "career-skills", "job-demo"],
     steps: [
-      { t: "Write the questions", d: "Write three to five questions before you open any tool. They keep the research on what this job seeker needs.",
+      { t: "Write the questions", d: "Write three to five questions before you open any tool. They keep the research on what the job seeker in front of you needs.",
         screen: () => T("wf", `<h5>Questions for a pathway conversation</h5><div class="tgt" style="display:grid;gap:6px;padding:4px"><div>1. Which jobs within 30 miles pay $20 an hour or more?</div><div>2. Which need less than a year of training?</div><div>3. What is the next job after each one?</div><div>4. Which employers here hire for them now?</div></div>`) },
       { t: "Run deep research", d: "In Gemini or ChatGPT, turn on deep research and paste the questions. It takes a few minutes and returns a long report with sources.",
         check: "Wage and openings figures drift. Check the year on each one against your state's labor market site.",
@@ -1376,7 +1376,7 @@ const DEMOS = {
     related: ["career-walk", "career-skills", "s3-walk"],
     chapters: [
       { t: "Paste the posting", icon: "briefcase",
-        prompt: "Here is a job posting. List every skill, certification and requirement in it as a short table with two columns: the keyword, and the exact words from the posting. Mark anything listed as preferred.\n\n[paste the posting]",
+        prompt: "Here is a job posting. List every skill, certification and requirement in it as a short table with two columns: the keyword and the exact words from the posting. Mark anything listed as preferred.\n\n[paste the posting]",
         check: "Copy the whole posting, including the requirements at the bottom. Leave out the employer's application link and anything about the job seeker.",
         frames: [
           { ms: 5200, cap: "Copy the whole posting from the job site, requirements included.",
@@ -1387,10 +1387,10 @@ const DEMOS = {
             html: () => win("your AI tool", `<b style="font-size:14px">Keywords in this posting</b><div class="mrow" style="flex-wrap:wrap;gap:6px">${POSTING_KW.map((k, i) => `<span class="wf-chip ${k.includes("preferred") ? "n" : "on"} gpop" style="--d:${(0.3 + i * 0.35).toFixed(2)}s">${k}</span>`).join("")}</div>`) },
         ] },
       { t: "Align the resume", icon: "file",
-        prompt: "Here is the same job posting and a resume with personal details replaced by placeholders. Make a table with three columns: keyword, where it appears in the posting, and whether the resume shows it. Then suggest wording changes only for skills the resume already supports. Do not add skills or experience that aren't there. Keep plain section headings and no tables or columns in the resume itself.",
-        check: "Never add a keyword the job seeker can't back up in an interview. ATS systems differ, so treat a match count as a guide, not a promise.",
+        prompt: "Here is the same job posting and a resume with personal details replaced by placeholders. Make a table with three columns: keyword, where it appears in the posting and whether the resume shows it. Then suggest wording changes only for skills the resume already supports. Do not add skills or experience that aren't there. Keep plain section headings and no tables or columns in the resume itself.",
+        check: "Never add a keyword the job seeker can't back up in an interview. Applicant tracking systems differ, so treat a match count as a rough guide.",
         frames: [
-          { ms: 6000, cap: "Paste the resume with placeholders for name, phone and address. The table shows 5 of 9 keywords.",
+          { ms: 6000, cap: "Paste the resume with placeholders for name, phone and address. The table shows which keywords the resume already has.",
             html: () => win("your AI tool", `<div class="bubble me ga" style="--d:.1s;font-size:12.5px">[Name] · [Phone] · [City]\nWarehouse associate, 3 years. Moved pallets, counted stock, trained new hires...</div><div class="wf ga" style="--d:.9s"><table><thead><tr><th>Keyword</th><th>In posting</th><th>In resume</th></tr></thead><tbody>${[["Forklift certification", 1], ["Inventory counts", 1], ["RF scanner", 0], ["Lead a team", 0], ["OSHA 10", 1], ["Excel", 0]].map(([k, y], i) => `<tr class="ga" style="--d:${(1.3 + i * 0.3).toFixed(1)}s"><td>${k}</td><td>Yes</td><td>${y ? `<span class="c-green">${ic("check", 14, 3)}</span>` : `<span class="muted">Not shown</span>`}</td></tr>`).join("")}</tbody></table></div>`) },
           { ms: 7200, cap: "Suggested edits use words from the posting for things the person already did. The one skill they don't have stays off.",
             html: () => win("your AI tool", `<div style="display:grid;gap:8px;font-size:13px"><div class="wf ga" style="--d:.2s"><span class="muted" style="text-decoration:line-through">Counted stock</span><br><b>Ran weekly inventory counts with an RF scanner</b></div><div class="wf ga" style="--d:1s"><span class="muted" style="text-decoration:line-through">Trained new hires</span><br><b>Trained and led a team of 4 new associates</b></div><div class="wf ga" style="--d:1.8s"><span class="muted" style="text-decoration:line-through">Made the weekly schedule</span><br><b>Built weekly shift schedules in Excel</b></div><div class="bubble flag ga" style="--d:2.8s">Bilingual Spanish: your resume doesn't show this. Leave it out unless it's true.</div></div>`) },
@@ -1428,7 +1428,7 @@ const DEMOS = {
       prompt: "Make an audio overview for adults starting job search services at our center. Use plain language. Keep it under eight minutes. Explain the first three appointments and what to bring.",
       check: "Listen to the whole thing before you share it. Hosts can add program details that aren't in your documents.",
       frames: [
-        { ms: 5000, cap: "Add your orientation packet and program flyer to a notebook tool, such as Gemini Notebook or Copilot Notebooks.", html: () => win("notebook tool", `<b>Sources</b><div class="mrow ga" style="--d:.3s"><span class="wf-chip on">${ic("file", 12)} Orientation packet.pdf</span></div><div class="mrow ga" style="--d:.9s"><span class="wf-chip on">${ic("file", 12)} Program flyer.pdf</span></div><div class="mrow ga" style="--d:1.5s"><span class="wf-chip">${ic("plus", 12, 3)} Add source</span></div>`) },
+        { ms: 5000, cap: "Add your orientation packet and program flyer to a notebook tool, such as NotebookLM or Copilot Notebooks.", html: () => win("notebook tool", `<b>Sources</b><div class="mrow ga" style="--d:.3s"><span class="wf-chip on">${ic("file", 12)} Orientation packet.pdf</span></div><div class="mrow ga" style="--d:.9s"><span class="wf-chip on">${ic("file", 12)} Program flyer.pdf</span></div><div class="mrow ga" style="--d:1.5s"><span class="wf-chip">${ic("plus", 12, 3)} Add source</span></div>`) },
         { ms: 5400, cap: "Choose audio overview and say who it's for.", html: () => win("notebook tool", `<div class="mrow"><span class="wf-btn">${ic("headphones", 12)} Audio overview</span><span class="wf-chip">Customize</span></div><div class="wf-in gwipe" style="--d:.6s;font-size:12.5px">For adults starting job search services. Plain language. Under eight minutes. Explain the first three appointments.</div>`) },
         { ms: 5400, cap: "Two hosts talk through the packet in about seven minutes.", html: () => win("notebook tool", `<b>Starting services at the job center</b><div class="mrow" style="gap:12px"><span class="wf-btn">${ic("play", 12)} Play</span><div class="wave" style="height:26px">${"<i></i>".repeat(18)}</div></div><span class="hint">6:52</span>`) },
         { ms: 5000, cap: "Listen to all of it. Here, a host said childcare is provided. The packet never says that.", html: () => win("notebook tool", `<div class="bubble ga" style="--d:.2s">...and the center provides childcare during your appointments...</div><div class="bubble flag ga" style="--d:1.2s">Not in the packet. Regenerate with a note to stick to the sources, or record a correction.</div>`) },
@@ -1460,7 +1460,7 @@ CHAT_SEED.general = CHAT_SEED.general.concat([
   { who: "dana", text: "Tried voice mode interview practice with three job seekers this week. Two asked how to do it again at home.", rx: { "🎉": 6 } },
   { who: "aisha", text: "Does anyone have staff guidance on voice mode? I'm wondering whether the audio is kept and where.", replies: [{ who: "joey", text: "Good question, Aisha. We'll cover it in Session 7. Each tool's settings show whether audio is kept. Either way, no real names in practice." }] },
   { who: "nia", text: "Our teens tune out audio overviews after two minutes. Trying a shorter one next week.", rx: { "👍": 2 } },
-  { who: "rosa", text: "Our intake dashboard is live. Two rounds of changes and the link never changed.", rx: { "🎉": 8, "❤️": 3 } },
+  { who: "rosa", text: "Our intake dashboard is live. Two rounds of edits and the link never changed.", rx: { "🎉": 8, "❤️": 3 } },
 ]);
 CHAT_SEED.s1.push({ who: "christin", text: "The shared prompt library, sorted by role. Add a prompt that worked for you.", url: "https://docs.example.org/prompt-library", rx: { "❤️": 5, "👍": 4 } });
 CHAT_SEED.s2.push({ who: "christin", text: "A one-page guide to share with job seekers before they use AI for a job search, including what to leave out.", url: "https://docs.example.org/job-seeker-ai-guide", rx: { "❤️": 6, "👍": 5 } });
@@ -1591,7 +1591,7 @@ function bnavView(active) {
   return `<nav class="bnav" aria-label="Main, bottom">${NAV.map(([h, l, i]) => `<a href="#${h}" class="${active === h ? "on" : ""}" ${active === h ? 'aria-current="page"' : ""}>${ic(i, 21)}${l}</a>`).join("")}<button class="bchat ${ui.chat ? "on" : ""}" data-act="chatopen" aria-label="Chat${n ? ", " + n + " new" : ""}">${ic("msg", 21)}Chat${n ? `<span class="badge" aria-hidden="true">${n}</span>` : ""}</button></nav>`;
 }
 // ---------- cards and thumbnails ----------
-const TOOLS = { "career-walk": ["Gemini", "ChatGPT", "Career Dreamer"], "intake-walk": ["Claude", "ChatGPT", "Apps Script"], "s3-walk": ["ChatGPT", "Copilot"], "s6-walk": ["ChatGPT", "Claude"], "job-demo": ["ChatGPT", "Gemini"], "slow-chat": ["ChatGPT", "Claude"], orientation: ["Gemini Notebook", "Copilot Notebooks"], "grant-agent": ["Claude", "ChatGPT"], "s3-demo": ["ChatGPT", "Copilot"], "s6-demo": ["ChatGPT", "Claude"] };
+const TOOLS = { "career-walk": ["Gemini", "ChatGPT", "Career Dreamer"], "intake-walk": ["Claude", "ChatGPT", "Apps Script"], "s3-walk": ["ChatGPT", "Copilot"], "s6-walk": ["ChatGPT", "Claude"], "job-demo": ["ChatGPT", "Gemini"], "slow-chat": ["ChatGPT", "Claude"], orientation: ["NotebookLM", "Copilot Notebooks"], "grant-agent": ["Claude", "ChatGPT"], "s3-demo": ["ChatGPT", "Copilot"], "s6-demo": ["ChatGPT", "Claude"] };
 const fmtLabel = (type, txt) => `<span class="fmt">${ic(FMT[type], 14)}${txt || type}</span>`;
 const toolsOf = (it) => it.tools || TOOLS[it.id];
 const toolBadges = (it) => (toolsOf(it) || []).length ? `<div class="aitools"><span class="sr">AI tools: </span>${toolsOf(it).map((t) => `<span class="aib">${t}</span>`).join("")}</div>` : "";
@@ -1611,9 +1611,9 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 function tile(dayIdx) { const [, m, d] = DAYS[dayIdx].iso.split("-").map(Number); return `<span class="tile" aria-hidden="true"><span class="tm">${MONTHS[m - 1]}</span><span class="td">${d}</span></span>`; }
 // ---------- home ----------
 const FEED = [
-  { who: "rosa", text: "Our intake dashboard is live. Two rounds of changes and the link never changed.", ch: "general", where: "General", rx: "🎉 8" },
-  { who: "dana", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, the postings said inventory.", id: "job-demo", rx: "❤️ 7" },
-  { who: "kim", text: "It rounded wage figures in ways the source didn't. Now I paste the table and tell it not to change numbers.", href: "#session-6~lab", where: "the lab board", rx: "💡 9" },
+  { who: "rosa", text: "Our intake dashboard is live. Two rounds of edits and the link never changed.", ch: "general", where: "General", rx: "🎉 8" },
+  { who: "dana", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, and the postings said inventory.", id: "job-demo", rx: "❤️ 7" },
+  { who: "kim", text: "The AI tool rounded wage figures in my labor market brief. Now I paste the table and tell it not to change numbers.", href: "#session-6~lab", where: "the lab board", rx: "💡 9" },
   { who: "luis", text: "Step 4 worked well in pairs. People compared sweet spots and found two they both wanted to explore.", id: "career-walk", rx: "❤️ 4" },
   { who: "tom", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", id: "job-demo", rx: "👍 4" },
 ];
@@ -1721,7 +1721,7 @@ function sessionView(n) {
     <p class="lede">${s.summary}</p>
     <details class="reveal"><summary>Learning objectives</summary><ul class="obj">${s.objectives.map((o) => `<li>${o}</li>`).join("")}</ul></details>`;
   if (!s.full) {
-    return `<main class="narrow">${head}<p class="sample-note">This sample builds out <a href="#session-3">Session 3</a> and <a href="#session-6">Session 6</a>.</p></main>`;
+    return `<main class="narrow">${head}<p class="sample-note">This sample includes full pages for <a href="#session-3">Session 3</a> and <a href="#session-6">Session 6</a>.</p></main>`;
   }
   const C = n === 3 ? S3 : S6;
   const parts = (n === 3 ? [["hour", "This hour"]] : []).concat([["start", "Start here"], ["steps", "Step by step"], ["practice", n === 3 ? "Worked example" : "Lab board"], ["read", "Read and discuss"], ["take", "Take it with you"], ["checkit", "Check it"]], n === 6 ? [["agents", "Agents"]] : [], [["shared", "Shared"]]);
@@ -1757,7 +1757,7 @@ function libraryView() {
 }
 function shareDemoForm() {
   return `<form data-form="sharedemo" class="sdform">
-    <label for="sd-t">Title</label><input id="sd-t" class="field" required maxlength="80" placeholder="For example: Weekly job leads list">
+    <label for="sd-t">Title</label><input id="sd-t" class="field" required maxlength="80" placeholder="For example: weekly job leads list">
     <label for="sd-b">What it does</label><input id="sd-b" class="field" required maxlength="140">
     <fieldset><legend>AI tools</legend><div class="row" style="flex-wrap:wrap;gap:6px 14px">${["ChatGPT", "Claude", "Gemini", "Copilot", "Other"].map((t) => `<label class="cbx"><input type="checkbox" name="tool" value="${t}"> ${t}</label>`).join("")}</div></fieldset>
     <label for="sd-p">Prompt</label><textarea id="sd-p" class="field" required style="min-height:96px"></textarea>
@@ -1907,7 +1907,7 @@ function demo3() {
     }
     return `<button class="ln ${cls}" data-act="spot" data-i="${i}" aria-pressed="${on}" ${done ? "disabled" : ""}><span class="mk">${on || cls === "hit" ? ic("check", 11, 3.4) : ""}</span><span>${esc(l.t)}${why}</span></button>`;
   }).join("");
-  const verdict = done ? `<div class="verdict" role="status">${hits === 2 ? "You found both." : hits === 1 ? "You found one of two." : "Both slipped through."} ${wrong ? `You also flagged ${wrong} line${wrong > 1 ? "s" : ""} that ${wrong > 1 ? "match" : "matches"} the note. ` : ""}This is what the breakout groups look for: what the summary added or got wrong, not only what it left out.</div>` : "";
+  const verdict = done ? `<div class="verdict" role="status">${hits === 2 ? "You found both." : hits === 1 ? "You found one of two." : "Both slipped through."} ${wrong ? `You also flagged ${wrong} line${wrong > 1 ? "s" : ""} that ${wrong > 1 ? "match" : "matches"} the note. ` : ""}This is what the breakout groups look for: what the summary added or got wrong, as well as what it left out.</div>` : "";
   return `<section class="part" id="start" style="margin-top:8px"><div class="start">
     <div class="row" style="justify-content:space-between;flex-wrap:wrap"><span class="start-tag">START HERE</span><span class="tag">${ic("sparkles", 13)} Demo · 10 min</span></div>
     <h2>${D.title}</h2>
@@ -1971,7 +1971,7 @@ function practice3() {
 function practice6() {
   const all = S.posts.concat(S6.posts);
   return `<section class="part" id="practice">${partHead(3, "Lab board", `<span class="tag">${ic("users", 13)} ${all.length} posts</span>`)}
-    <p class="muted" style="margin:-4px 0 14px">What people tried on their own tasks, including what didn't work. The board opens before the lab so people can post early and find a partner.</p>
+    <p class="muted" style="margin:-4px 0 14px">Participants post what they tried on their own tasks, including what didn't work. The board opens before the lab, so anyone can post early and find a partner.</p>
     <div class="lab" id="lab">${all.map((p, i) => { const P = PEOPLE[p.who]; return `<div class="post ${p.fresh ? "new" : ""}"><div class="row">${avatar(p.who, "sm")}<div><b style="font-size:14.5px">${P.first}</b> <span class="muted" style="font-size:13.5px">· ${P.role}</span></div></div>
       <h4>${esc(p.task)}</h4><dl><dt class="w">What worked</dt><dd>${esc(p.worked)}</dd><dt class="d">What didn't</dt><dd>${esc(p.didnt)}</dd></dl>${reactBtns("post" + (p.id || i), p.r || {})}</div>`; }).join("")}</div>
     <button class="btn soft" style="margin-top:14px" data-act="postForm">${ic("plus", 18)} Post what you tried</button></section>`;
@@ -2046,7 +2046,7 @@ function gcalUrl(s) {
   const d = DAYS[s.day].iso.replace(/-/g, "");
   const to24 = (t) => { let [h, m] = t.split(":").map(Number); if (h < 9) h += 12; return String(h).padStart(2, "0") + String(m).padStart(2, "0") + "00"; };
   const text = encodeURIComponent(`AI Virtual Academy: ${shortTitle(s)}`);
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${d}T${to24(s.time)}/${d}T${to24(s.end)}&ctz=America/Chicago&details=${encodeURIComponent("Zoom link and session materials are in the academy space.")}`;
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${d}T${to24(s.time)}/${d}T${to24(s.end)}&ctz=America/Chicago&details=${encodeURIComponent("The Zoom link and session materials are on the academy platform.")}`;
 }
 const SAMPLE = { recording: ["Recording", "In the academy, the recording plays here with captions, a transcript and chapters."] };
 
@@ -2123,25 +2123,25 @@ window.addEventListener("hashchange", () => {
 
 // ---------- tour ----------
 const TOUR = [
-  {"view": "home", "sel": "#sched", "t": "Schedule", "d": "All eight sessions are on the home page, with a tab for each day. Past sessions link to their recordings, the live session has a Join on Zoom button, and upcoming sessions can be added to a calendar.", "why": "Workforce staff carry full caseloads. Seeing the whole day, and the days ahead, in one place may make it easier to plan around the sessions and to find a recording later."},
-  {"view": "home", "sel": "#forum", "t": "From the community", "d": "Short notes from participants about what they tried and how it went, gathered from comments and posts across the site.", "why": "Adults bring years of work experience with them, and colleagues doing similar work are often the most useful teachers. These notes keep that experience in view, including what didn't work, which may make sharing something unfinished feel ordinary."},
-  {"view": "home", "sel": "#columns", "t": "Walkthroughs, demos and articles", "d": "The newest walkthroughs, demos and articles. Anyone in the academy can share a demo of their own.", "why": "Some people want to watch a whole task first, some want to follow along step by step, and some want to read about the choices involved. Offering all three leaves the choice with each person, and participant demos let the collection grow from the group's own work."},
-  {"view": "sessions", "sel": "#days", "t": "Eight sessions over three days", "d": "Three days of live sessions on Zoom. Each row opens a page with that session's materials.", "why": "Day 1 covers writing prompts, coaching job seekers and case management. Day 2 covers labor market research, outreach and an open lab. Day 3 covers responsible use and each participant's plan for their own team. Each session builds on the one before and starts from work people already do."},
-  {"view": "session-3", "sel": "#hour", "t": "One page before, during and after a session", "d": "Each session has its own page. Before the session it shows the agenda, during the hour it marks which part is live, and afterward it holds the recording. The Preview buttons switch between before, live and after.", "why": "Learning tends to last when people can look ahead, take part and come back later. Keeping everything on one page also lets anyone who missed the live hour watch the recording and work through the materials at their own pace."},
+  {"view": "home", "sel": "#sched", "t": "Schedule", "d": "All eight sessions are on the home page, with a tab for each day. Past sessions link to their recordings, the live session has a Join on Zoom button and upcoming sessions can be added to a calendar.", "why": "Workforce staff carry full caseloads. Seeing the whole day, and the days ahead, in one place may make it easier to plan around the sessions and to find a recording later."},
+  {"view": "home", "sel": "#forum", "t": "From the community", "d": "Short notes from participants about what they tried and how it went, gathered from comments and posts across the platform.", "why": "Adults bring years of work experience with them, and colleagues doing similar work are often the most useful teachers. These notes include what didn't work as well as what did, which can make it feel ordinary to share something unfinished."},
+  {"view": "home", "sel": "#columns", "t": "Walkthroughs, demos and articles", "d": "The newest walkthroughs, demos and articles. Anyone in the academy can share a demo of their own.", "why": "Some people want to watch a whole task first, some want to follow along step by step and some want to read about the choices involved. Offering all three leaves the choice with each person, and participant demos let the collection grow from the group's own work."},
+  {"view": "sessions", "sel": "#days", "t": "Eight sessions over three days", "d": "Three days of live sessions on Zoom. Each row opens a page with that session's materials.", "why": "Day 1 covers prompt basics, coaching job seekers and case management. Day 2 moves to labor market research, outreach and an open lab. Day 3 closes with responsible use and each participant's plan for their own team. Each session builds on the one before and starts from work people already do."},
+  {"view": "session-3", "sel": "#hour", "t": "One page before, during and after a session", "d": "Each session has its own page. Before the session it shows the agenda, during the hour it marks which part is live and afterward it holds the recording. The Preview buttons switch between before, live and after.", "why": "Learning tends to last when people can look ahead, take part and come back later. Keeping everything on one page also lets anyone who missed the live hour watch the recording and work through the materials at their own pace."},
   {"view": "session-3", "sel": "#start", "t": "Start here", "d": "A short demo and a prompt that participants can copy into an AI tool and try on one of their own case notes, with personal details removed.", "why": "Adults tend to learn most from problems in their own work. Trying the prompt before the live hour means people arrive with their own results and questions to discuss."},
-  {"view": "session-3", "sel": "#spot", "t": "Practice catching the tool's mistakes", "d": "The AI summary has two lines that don't match the case note. Finding errors is a skill participants practice."},
-  {"view": "session-3", "sel": "#steps", "t": "Step-by-step walkthrough", "d": "A pointer shows where to click on each screen. The facilitators tested each walkthrough. Where an AI tool made mistakes, the step includes a note on what to look for.", "why": "Seeing each step done first can make a new tool feel less intimidating. The notes mark the places where a person's judgment matters most."},
-  {"view": "session-3", "sel": "#practice", "t": "Worked example", "d": "A fictional job seeker's case, shown in five stages: intake form, prompt, AI draft, human review and follow-up text message.", "why": "A complete example lets people see how the stages connect before trying their own. Working through it in breakout groups with fictional data means people can practice without risk to anyone's privacy."},
+  {"view": "session-3", "sel": "#spot", "t": "Practice catching the tool's mistakes", "d": "The AI summary has two lines that don't match the case note. Participants tap the lines they would fix and check their picks.", "why": "Catching an AI tool's mistakes takes practice, and a fictional case note with known errors lets people try it without real participant data."},
+  {"view": "session-3", "sel": "#steps", "t": "Step-by-step walkthrough", "d": "Each step shows the screen and what to do on it. The facilitators tested the walkthroughs, and where an AI tool made mistakes, the step notes what to look for.", "why": "Watching each step done first can make a new tool feel less intimidating. The notes mark the places where a person's judgment matters most."},
+  {"view": "session-3", "sel": "#practice", "t": "Worked example", "d": "A fictional job seeker's case, shown in five stages: intake form, prompt, AI draft, human review and follow-up text message.", "why": "A complete example lets people see how the stages connect before working on their own cases. Working through it in breakout groups with fictional data means people can practice without risk to anyone's privacy."},
   {"view": "session-3", "sel": "#read", "t": "Read and discuss", "d": "A short article from a facilitator, followed by comments from participants.", "why": "Time to reflect can help people decide for themselves where AI fits in their work. This article asks which messages to job seekers should be written by a person, and participants answer from their own programs."},
-  {"view": "session-3", "sel": "#take", "t": "Take it with you", "d": "Prompts, checklists and guides from the session, ready to copy or open.", "why": "A new skill may be easier to keep using when the materials are easy to find at work. Participants can adapt these for their own programs and share them with their teams."},
-  {"view": "session-3", "sel": "#checkit", "t": "Check it", "d": "A short checklist for reviewing AI drafts, along with the places where an AI tool made mistakes when the facilitators tested it.", "why": "AI tools can produce wrong details that read as smoothly as correct ones. Running the same checklist each time can help people make a habit of reviewing every draft before it goes to a job seeker or into a case file."},
-  {"view": "session-3", "sel": "#shared", "t": "Shared in this session", "d": "The session's conversation, with questions, links and a poll. It can stay open beside the page.", "why": "Participants often have answers for each other. Keeping the conversation next to the session materials lets people's questions and answers stay connected to what they're about. In this sample, Rosa and Nia each adapted the same case note prompt in a different way, and a facilitator invited them to compare versions in a breakout group."},
-  {"view": "session-6", "sel": "#lab", "t": "Lab board", "d": "Participants post a task they tried, what worked and what didn't. Others react and pair up to work together.", "why": "People often come to know a tool by using it on something real. The board asks for what didn't work as well as what did, so others can learn from those mistakes too. In this sample, Kim noticed an AI tool rounding wage figures in a monthly labor market report and changed the instructions so the tool keeps the numbers as written."},
-  {"view": "session-6", "sel": "#agents", "t": "Agents and connectors", "d": "The AI Tools Lab closes with a look at AI agents, which can be set up to carry out tasks with several steps, and connectors, which link AI tools to email and files.", "why": "People join with different levels of experience, so the lab offers more advanced options for those who want them. The closing conversation is about what an organization would want to decide together before staff use agents and connectors."},
-  {"view": "lib-job-demo", "sel": "#gif", "t": "AI tools for job seekers", "d": "A demo from Session 2. A job seeker pastes a job posting into an AI tool, tailors a resume for applicant tracking systems, then practices answering interview questions out loud.", "why": "Seeing the process from the job seeker's side can help staff coach job seekers with care. Each of the three parts shows its prompt and what to check, so staff and job seekers can review the AI tool's answers together. In this sample, Dana noted that comparing keywords in the resume and the posting helped a job seeker see why their applications weren't getting responses."},
-  {"view": "library", "sel": "#libfilters", "t": "The library", "d": "Every walkthrough, demo and article from the academy, with search and filters by format and role.", "why": "Career coaches, business services staff and managers come with different questions, and the filters let each person follow their own. After the academy ends, the site stays online as a read-only library for the workforce field."},
+  {"view": "session-3", "sel": "#take", "t": "Take it with you", "d": "Prompts, checklists and guides from the session, ready to copy or open.", "why": "People are more likely to keep using a new skill when they can find the materials quickly at work. Participants can adapt these for their own programs and share them with their teams."},
+  {"view": "session-3", "sel": "#checkit", "t": "Check it", "d": "A short checklist for reviewing AI drafts, along with the places where an AI tool made mistakes during the facilitators' testing.", "why": "AI tools can produce wrong details that read as smoothly as correct ones. Running the same checklist each time can help people review each draft before it goes to a job seeker or into a case file."},
+  {"view": "session-3", "sel": "#shared", "t": "Shared in this session", "d": "The session's conversation, with questions, links and a poll. It can stay open beside the page.", "why": "Participants often have answers for each other. Keeping the conversation beside the session materials means each question stays next to the material it's about. In this sample, Rosa and Nia each adapted the same case note prompt in a different way, and a facilitator invited them to compare versions in a breakout group."},
+  {"view": "session-6", "sel": "#lab", "t": "Lab board", "d": "Participants post a task they tried, what worked and what didn't. Others react, and some pair up to try a task together.", "why": "People often come to know a tool by using it on something real. The board asks for what didn't work as well as what did, so others can learn from both. On the sample board, Kim noticed an AI tool rounding wage figures in a monthly labor market brief and changed the instructions so the tool keeps the numbers as written."},
+  {"view": "session-6", "sel": "#agents", "t": "Agents and connectors", "d": "The AI Tools Lab closes with a look at AI agents, which can be set up to carry out tasks with several steps, and connectors, which link AI tools to email and files.", "why": "People join with different levels of experience, so the lab offers more advanced options for those who want them. The closing conversation covers the decisions an organization may want to make together before staff use agents and connectors."},
+  {"view": "lib-job-demo", "sel": "#gif", "t": "AI tools for job seekers", "d": "A demo from Session 2. A job seeker pastes a job posting into an AI tool, tailors a resume for applicant tracking systems, then practices answering interview questions out loud.", "why": "Staff who have tried the process themselves can coach job seekers through it. Each of the three parts shows its prompt and what to check, so staff and job seekers can review the AI tool's answers together. In this sample, Dana noted that comparing keywords in the resume and the posting helped a job seeker see why their applications weren't getting responses."},
+  {"view": "library", "sel": "#libfilters", "t": "The library", "d": "Every walkthrough, demo and article from the academy, with search and filters by format and role.", "why": "Frontline staff, business services staff and managers come with different questions, and the filters let each person follow their own. After the academy ends, the platform, library included, can stay open free of charge."},
   {"view": "library", "sel": ".chat-fab|.bchat|.chatwrap", "t": "Academy conversation", "d": "The Chat button opens the academy's shared conversation, with a channel for each session and one for general questions.", "why": "Questions often come up days after a session, back at work. The channels give people a place to ask them and to hear from colleagues in other programs. Facilitators read and answer there every day of the academy."},
-  {"view": "people", "sel": "#dir", "t": "People", "d": "Each person lists their role, organization and current project, such as Nia's flyers for teens.", "why": "Seeing what others are working on makes it easier to find someone facing a similar problem in another program."},
+  {"view": "people", "sel": "#dir", "t": "People", "d": "Each person lists their role, organization and current project, such as Nia's flyers for teens.", "why": "A list of current projects makes it easier to find someone facing a similar problem in another program."},
   {"view": "people", "sel": "#dir [data-act=\"connect\"]|#dir .dact", "t": "Request to connect", "d": "Participants send a short note with a connection request. If the other person accepts, both see each other's email.", "why": "Email addresses stay private until both people agree. The connections people choose to make can carry on after the academy ends."},
 ];
 const tourEl = (s) => { const els = s.sel.split("|").map((q) => document.querySelector(q)).filter(Boolean); return els.find((e) => e.getClientRects().length) || els[0]; };
@@ -2157,9 +2157,9 @@ function applyRing() {
 function tourHTML() {
   if (tour.i < 0) return `<div class="tour" role="dialog" aria-label="Tour" aria-live="polite">
     <div class="tour-top"><span class="k">Sample tour</span><button class="ibtn" data-act="tourEnd" aria-label="Close tour">${ic("x", 17)}</button></div>
-    <h2>How the proposed website works</h2>
-    <p>This sample shows the website we propose building for the AI Virtual Academy. Each stop describes a feature and the thinking behind it.</p>
-    <p>Demos, walkthroughs, sharing and connecting all work with fictional peers. Nothing you type leaves this page.</p>
+    <h2>How the proposed platform works</h2>
+    <p>Each stop describes a feature and why it's there.</p>
+    <p>Everything works in this sample, including sharing and connecting with fictional peers. Nothing you type leaves this page.</p>
     <div class="tour-f"><button class="btn small quiet" data-act="tourEnd">Explore on my own</button><button class="btn small primary" data-act="tourGo" data-i="0">Take the tour ${ic("arrow", 15)}</button></div></div>`;
   const s = TOUR[tour.i], last = tour.i === TOUR.length - 1;
   return `<div class="tour${s.sel.includes("chat-fab") ? " up" : ""}" role="dialog" aria-label="Tour" aria-live="polite">
@@ -2221,9 +2221,9 @@ document.addEventListener("click", async (e) => {
     const old = el.innerHTML; el.classList.add("copied"); el.innerHTML = ok ? `${ic("check", 15, 3)} Copied` : "Select the text to copy";
     setTimeout(() => { el.classList.remove("copied"); el.innerHTML = old; }, 1800); return;
   }
-  if (a === "zoom") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Join on Zoom", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><p class="muted" style="margin-top:10px">In the live academy, this button opens the Zoom meeting for this session.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
-  if (a === "cal") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Add to calendar", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><div class="acts"><a class="btn primary" href="${gcalUrl(s)}" target="_blank" rel="noopener">${ic("calendar", 18)} Google Calendar</a><button class="btn" data-act="close">Close</button></div><p class="hint" style="margin-top:14px">The live academy also offers Outlook and one calendar file for all eight sessions.</p>`); return; }
-  if (a === "sample") { const [t, d] = SAMPLE[el.dataset.k]; dialog(t, `<p class="muted" style="margin-top:8px">${d}</p><p class="hint" style="margin-top:10px">This is a sample site.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
+  if (a === "zoom") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Join on Zoom", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><p class="muted" style="margin-top:10px">In the actual academy, this button opens the Zoom meeting for this session.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
+  if (a === "cal") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Add to calendar", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><div class="acts"><a class="btn primary" href="${gcalUrl(s)}" target="_blank" rel="noopener">${ic("calendar", 18)} Google Calendar</a><button class="btn" data-act="close">Close</button></div><p class="hint" style="margin-top:14px">The actual academy will also offer Outlook and one calendar file for all eight sessions.</p>`); return; }
+  if (a === "sample") { const [t, d] = SAMPLE[el.dataset.k]; dialog(t, `<p class="muted" style="margin-top:8px">${d}</p><p class="hint" style="margin-top:10px">This is part of the sample.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
   if (a === "jump") { scrollToEl(document.getElementById(el.dataset.to), true); return; }
   if (a === "step") { S.walk[el.dataset.n] = +el.dataset.i; save(); rerender(); return; }
   if (a === "tab") { S.tab[el.dataset.key] = +el.dataset.i; save(); rerender(); return; }
