@@ -48,8 +48,9 @@ const video = {
   kind: 'Recorded training session',
   title: 'Building Custom Dashboards with AI and Google Sheets',
   summary:
-    'One of our training sessions, published on COABE’s YouTube channel. It shows how to build a custom dashboard in Google Sheets with help from AI. In the academy, Session 3 uses the same kind of build for a simple caseload dashboard.',
+    'One of our training sessions from COABE’s AI Virtual Summit on October 6, 2026, published on COABE’s YouTube channel. It shows how to build a custom dashboard in Google Sheets with help from AI. In the academy, Session 3 uses the same kind of build for a simple caseload dashboard.',
   facts: [
+    { label: 'Recorded at', value: 'COABE AI Virtual Summit, October 2026' },
     { label: 'Published by', value: 'COABE, on YouTube' },
     { label: 'In the academy', value: 'Session 3, AI Tools for Case Management' },
   ],
