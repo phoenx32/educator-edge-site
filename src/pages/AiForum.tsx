@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 
 /**
  * AI Virtual Academy proposal companion site (2026-11-22). Same layout and type as /elearning-samples.
- * Sample 1 is the participant website, a static page under public/aiforum/demo.
- * Sample 2 is a recorded training session on COABE's YouTube channel.
+ * Sample 1 is the academy website, a static page under public/aiforum/demo.
+ * Sample 2 is a recorded session from an AI academy CLP developed with COABE.
  */
 
 const DEMO_HREF = '/aiforum/demo';
@@ -54,7 +54,7 @@ const AiForum = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-uc-en-foreground">Proposal companion site</p>
             <h1 className="mt-3 text-[36px] font-bold leading-tight tracking-tight text-foreground md:text-[48px]">AI Virtual Academy</h1>
             <p className="mt-4 max-w-[680px] text-lg leading-relaxed text-muted-foreground md:text-xl">
-              This page has a working sample of the academy’s participant website and a recording of a training session we led.
+              This page has a sample of the website we propose for the academy and a recording of a session we led.
             </p>
           </div>
         </section>
@@ -64,27 +64,24 @@ const AiForum = () => {
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-5">
-                <Kicker n={1} label="Participant website" ink="text-uc-en-foreground" />
+                <Kicker n={1} label="Sample website" ink="text-uc-en-foreground" />
                 <h2 id="academy-website-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
-                  Tour the participant website
+                  The academy website
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  The academy will meet for eight live sessions, and participants will use the participant website before, during and after each one. Before a session, they’ll try a short AI activity using a task from their own job. During the live session, they’ll ask questions and share ideas in a chat that sits beside the slides and examples. Afterward, they’ll post short demos of what they made in the session and get feedback from peers in similar roles.
+                  The website will support participants before, during and after the academy’s live sessions. It will include resources, tutorials and ways to connect and learn with peers doing similar work.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  When the academy ends, the website will stay online as a library of everything participants made.
+                  After the academy ends, the website will stay open as a library participants can come back to.
                 </p>
-                <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-                  Opening the website starts a short guided tour of each part. The people, messages and data on the website are fictional.
-                </p>
-                <Cta href={DEMO_HREF} label="Open the participant website" />
+                <Cta href={DEMO_HREF} label="Open the sample website" />
               </div>
 
               <a
                 href={DEMO_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open the participant website (opens in a new tab)"
+                aria-label="Open the sample website (opens in a new tab)"
                 className="group relative block aspect-[3/2] overflow-hidden rounded-2xl bg-uc-en px-6 pt-8 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-10 sm:pt-10 lg:col-span-7"
               >
                 <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
@@ -96,7 +93,7 @@ const AiForum = () => {
                     </div>
                     <img
                       src="/media/aiforum/academy-website.webp"
-                      alt="Home page of the sample participant website, with the day’s schedule, a live session and notes from participants"
+                      alt="Home page of the sample academy website"
                       width={1600}
                       height={1000}
                       loading="lazy"
@@ -119,7 +116,7 @@ const AiForum = () => {
                   {VIDEO_TITLE}
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  We led this session at the Coalition on Adult Basic Education’s AI Virtual Summit on October 6, 2026. In Session 3 of the academy, participants will use AI tools to build a caseload dashboard of their own in Google Sheets or Excel.
+                  This recording shows how we facilitate. It comes from an earlier AI academy we developed with the Coalition on Adult Basic Education.
                 </p>
                 <Cta href={VIDEO_HREF} label="Watch on YouTube" />
               </div>
