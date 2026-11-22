@@ -54,7 +54,7 @@ const AiForum = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-uc-en-foreground">Proposal companion site</p>
             <h1 className="mt-3 text-[36px] font-bold leading-tight tracking-tight text-foreground md:text-[48px]">AI Virtual Academy</h1>
             <p className="mt-4 max-w-[680px] text-lg leading-relaxed text-muted-foreground md:text-xl">
-              This page has a sample of our proposed platform for the AI Virtual Academy and a recording of one of our AI training sessions.
+              This page has a sample of our proposed platform for the AI Virtual Academy and a facilitation sample from one of our AI training sessions.
             </p>
           </div>
         </section>
@@ -72,16 +72,16 @@ const AiForum = () => {
                   A proposed platform to support engagement and connection before, during and after each live session of the AI Virtual Academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  The platform will stay open permanently after the academy ends, so participants can keep using its resources and tutorials.
+                  We’d be happy to keep the platform open free of charge after the academy ends, so participants can keep learning, come back to resources and stay connected with each other.
                 </p>
-                <Cta href={DEMO_HREF} label="Open the proposed platform" />
+                <Cta href={DEMO_HREF} label="Tour the platform" />
               </div>
 
               <a
                 href={DEMO_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open the proposed platform (opens in a new tab)"
+                aria-label="Tour the platform (opens in a new tab)"
                 className="group relative block aspect-[3/2] overflow-hidden rounded-2xl bg-uc-en px-6 pt-8 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-10 sm:pt-10 lg:col-span-7"
               >
                 <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
