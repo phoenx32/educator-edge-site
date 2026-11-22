@@ -95,7 +95,7 @@ const AiForum = () => {
                       <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
                     </div>
                     <img
-                      src="/media/aiforum/participant-space.webp"
+                      src="/media/aiforum/academy-website.webp"
                       alt="Home page of the sample participant website, with the day’s schedule, a live session and notes from participants"
                       width={1600}
                       height={1000}
