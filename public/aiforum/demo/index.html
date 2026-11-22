@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NAWDP AI Virtual Academy Sample</title>
+<title>AI Virtual Academy Sample</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
@@ -933,7 +933,7 @@ select.field{background:var(--bg);color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="sample"><b>Sample participant space</b> for a proposal to NAWDP. Names, messages and data are fictional. <button class="sample-tour" data-act="tour">Take the tour</button></div>
+<div class="sample"><b>Sample participant space</b> for the AI Virtual Academy proposal. Names, messages and data are fictional. <button class="sample-tour" data-act="tour">Take the tour</button></div>
 <div id="app"></div>
 <div id="chat-root"></div>
 <div id="layer"></div>
@@ -1064,7 +1064,7 @@ const SESSIONS = [
     summary: "Participants look at where bias can enter resume screening, job descriptions and outreach, and decide what participant information stays out of AI tools and where a person needs to review the work. They also run accessibility checks on AI-made materials.",
     objectives: ["Identify points in resume screening, job descriptions and outreach where AI output could disadvantage some job seekers.", "Decide which participant information stays out of AI tools and which steps need a person's review.", "Run an accessibility check on an AI-drafted document and revise it."],
     check: "An AI bias review misses things and flags things that are fine. Have more than one person look, including someone the material is meant for.",
-    materials: [["Demo", "Review a job description for biased language and unneeded degree requirements, then judge the suggestions"], ["Walkthrough", "Run an accessibility check on an AI-drafted flyer"], ["Case", "A workforce board reviews an AI resume screening tool before deciding"], ["Article", "Who gets left out of the prompt"], ["Resource", "Responsible use checklist"], ["Resource", "Information to keep out of AI tools"], ["Resource", "Accessibility quick check"], ["Resource", "NAWDP Code of Professional Ethics and Practices"]] },
+    materials: [["Demo", "Review a job description for biased language and unneeded degree requirements, then judge the suggestions"], ["Walkthrough", "Run an accessibility check on an AI-drafted flyer"], ["Case", "A workforce board reviews an AI resume screening tool before deciding"], ["Article", "Who gets left out of the prompt"], ["Resource", "Responsible use checklist"], ["Resource", "Information to keep out of AI tools"], ["Resource", "Accessibility quick check"], ["Resource", "Code of professional ethics and practices"]] },
   { n: 8, day: 2, time: "1:00", end: "2:00", icon: "users", roles: ROLES,
     title: "Capstone: AI Champions and a Culture of Learning",
     summary: "The capstone looks at how teams keep learning together through small experiments and peer learning circles. Each participant plans one small experiment for their own team and decides what fits their local context.",
@@ -1532,7 +1532,7 @@ function chatView() {
     : `<aside class="chatwrap side" aria-label="Shared resources and questions">${inner}</aside>`;
 }
 // ---------- state ----------
-const KEY = "nawdp-sample-v3";
+const KEY = "aiva-sample-v3";
 const blank = () => ({ chat: {}, comments: {}, reacts: {}, checks: {}, connects: {}, posts: [], walk: {}, wdone: {}, tab: {}, notes: {}, spot: {}, spotDone: false, vote: null, replied: {}, roles: [FS], achat: [], areplied: false, cr: {}, chatSeen: false, mydemos: [] });
 let S = blank();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
@@ -1577,7 +1577,7 @@ const TIPS = ["Paste a screenshot instead of describing what's on your screen. C
 function headerView(active) {
   const n = unread();
   return `<header class="top"><div class="top-inner">
-    <a class="brand" href="#home">AI Virtual Academy<span class="dates">NAWDP · February 23 to 25, 2027</span></a>
+    <a class="brand" href="#home">AI Virtual Academy<span class="dates">February 23 to 25, 2027</span></a>
     <nav class="main" aria-label="Main">${NAV.map(([h, l]) => `<a href="#${h}" class="${active === h ? "on" : ""}" ${active === h ? 'aria-current="page"' : ""}>${l}</a>`).join("")}</nav>
     <div class="top-r">
       <div class="tipwrap"><button class="ibtn" data-act="tip" aria-expanded="${!!ui.tip}" aria-controls="tippop" aria-label="Quick tip">${ic("bulb", 20)}</button>${ui.tip ? `<div class="tippop" id="tippop" role="region" aria-label="Quick tip"><span class="k">Quick tip</span><p>${TIPS[(ui.tipI || 0) % TIPS.length]}</p><button class="linkbtn" data-act="tipnext">Next tip</button></div>` : ""}</div>
@@ -2045,7 +2045,7 @@ function toast(html) { const old = document.querySelector(".toast"); if (old) ol
 function gcalUrl(s) {
   const d = DAYS[s.day].iso.replace(/-/g, "");
   const to24 = (t) => { let [h, m] = t.split(":").map(Number); if (h < 9) h += 12; return String(h).padStart(2, "0") + String(m).padStart(2, "0") + "00"; };
-  const text = encodeURIComponent(`NAWDP AI Virtual Academy: ${shortTitle(s)}`);
+  const text = encodeURIComponent(`AI Virtual Academy: ${shortTitle(s)}`);
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${d}T${to24(s.time)}/${d}T${to24(s.end)}&ctz=America/Chicago&details=${encodeURIComponent("Zoom link and session materials are in the academy space.")}`;
 }
 const SAMPLE = { recording: ["Recording", "In the academy, the recording plays here with captions, a transcript and chapters."] };
@@ -2147,7 +2147,7 @@ const TOUR = [
 const tourEl = (s) => { const els = s.sel.split("|").map((q) => document.querySelector(q)).filter(Boolean); return els.find((e) => e.getClientRects().length) || els[0]; };
 let tour = null;
 const tourRoot = document.getElementById("tour-root");
-const SEEN = "nawdp-sample-tour-seen";
+const SEEN = "aiva-sample-tour-seen";
 function markSeen() { try { localStorage.setItem(SEEN, "1"); } catch (e) {} }
 function applyRing() {
   document.querySelectorAll(".tour-ring").forEach((n) => n.classList.remove("tour-ring"));
@@ -2158,7 +2158,7 @@ function tourHTML() {
   if (tour.i < 0) return `<div class="tour" role="dialog" aria-label="Tour" aria-live="polite">
     <div class="tour-top"><span class="k">Sample tour</span><button class="ibtn" data-act="tourEnd" aria-label="Close tour">${ic("x", 17)}</button></div>
     <h2>How the participant space works</h2>
-    <p>This sample shows the participant space for the NAWDP AI Virtual Academy. Each stop describes a feature and the thinking behind it.</p>
+    <p>This sample shows the participant space for the AI Virtual Academy. Each stop describes a feature and the thinking behind it.</p>
     <p>Demos, walkthroughs, sharing and connecting all work with fictional peers. Nothing you type leaves this page.</p>
     <div class="tour-f"><button class="btn small quiet" data-act="tourEnd">Explore on my own</button><button class="btn small primary" data-act="tourGo" data-i="0">Take the tour ${ic("arrow", 15)}</button></div></div>`;
   const s = TOUR[tour.i], last = tour.i === TOUR.length - 1;
@@ -2221,7 +2221,7 @@ document.addEventListener("click", async (e) => {
     const old = el.innerHTML; el.classList.add("copied"); el.innerHTML = ok ? `${ic("check", 15, 3)} Copied` : "Select the text to copy";
     setTimeout(() => { el.classList.remove("copied"); el.innerHTML = old; }, 1800); return;
   }
-  if (a === "zoom") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Join on Zoom", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><p class="muted" style="margin-top:10px">In the live academy, this button opens NAWDP's Zoom meeting for this session.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
+  if (a === "zoom") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Join on Zoom", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><p class="muted" style="margin-top:10px">In the live academy, this button opens the Zoom meeting for this session.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
   if (a === "cal") { const s = SESSIONS.find((x) => x.n === +el.dataset.n); dialog("Add to calendar", `<p style="margin-top:8px">${s.title}<br><span class="muted">${DAYS[s.day].date} · ${s.time} to ${s.end} CT</span></p><div class="acts"><a class="btn primary" href="${gcalUrl(s)}" target="_blank" rel="noopener">${ic("calendar", 18)} Google Calendar</a><button class="btn" data-act="close">Close</button></div><p class="hint" style="margin-top:14px">The live academy also offers Outlook and one calendar file for all eight sessions.</p>`); return; }
   if (a === "sample") { const [t, d] = SAMPLE[el.dataset.k]; dialog(t, `<p class="muted" style="margin-top:8px">${d}</p><p class="hint" style="margin-top:10px">This is a sample site.</p><div class="acts"><button class="btn primary" data-act="close">Got it</button></div>`); return; }
   if (a === "jump") { scrollToEl(document.getElementById(el.dataset.to), true); return; }
