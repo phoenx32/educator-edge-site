@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Article from "./pages/Article";
 import Articles from "./pages/Articles";
 import ElearningPortfolio from "./pages/ElearningPortfolio";
+import AiForum from "./pages/AiForum";
 import Canonical from "./components/Canonical";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<Article />} />
           <Route path="/elearning-samples" element={<ElearningPortfolio />} />
+          <Route path="/aiforum" element={<AiForum />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
