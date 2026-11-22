@@ -54,7 +54,7 @@ const AiForum = () => {
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-uc-en-foreground">Proposal companion site</p>
             <h1 className="mt-3 text-[36px] font-bold leading-tight tracking-tight text-foreground md:text-[48px]">AI Virtual Academy</h1>
             <p className="mt-4 max-w-[680px] text-lg leading-relaxed text-muted-foreground md:text-xl">
-              This page has a sample of the website we propose for the academy and a recording of a session we led.
+              This page has a sample of our proposed website for the AI Virtual Academy and a recording of one of our AI training sessions.
             </p>
           </div>
         </section>
@@ -66,22 +66,22 @@ const AiForum = () => {
               <div className="lg:col-span-5">
                 <Kicker n={1} label="Sample website" ink="text-uc-en-foreground" />
                 <h2 id="academy-website-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
-                  The academy website
+                  Our proposed website
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  The website will support participants before, during and after the academy’s live sessions. It will include resources, tutorials and ways to connect and learn with peers doing similar work.
+                  The proposed website will support participants before, during and after each live session of the academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  After the academy ends, the website will stay open as a library participants can come back to.
+                  The website will stay open permanently after the academy ends, so participants can keep using its resources and tutorials.
                 </p>
-                <Cta href={DEMO_HREF} label="Open the sample website" />
+                <Cta href={DEMO_HREF} label="Open the proposed website" />
               </div>
 
               <a
                 href={DEMO_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open the sample website (opens in a new tab)"
+                aria-label="Open the proposed website (opens in a new tab)"
                 className="group relative block aspect-[3/2] overflow-hidden rounded-2xl bg-uc-en px-6 pt-8 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-10 sm:pt-10 lg:col-span-7"
               >
                 <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
@@ -93,7 +93,7 @@ const AiForum = () => {
                     </div>
                     <img
                       src="/media/aiforum/academy-website.webp"
-                      alt="Home page of the sample academy website"
+                      alt="Home page of the proposed academy website"
                       width={1600}
                       height={1000}
                       loading="lazy"
@@ -116,7 +116,7 @@ const AiForum = () => {
                   {VIDEO_TITLE}
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  This recording shows how we facilitate. It comes from an earlier AI academy we developed with the Coalition on Adult Basic Education.
+                  We facilitated this session for adult education leaders in the AI Leadership Academy, which we developed with the Coalition on Adult Basic Education.
                 </p>
                 <Cta href={VIDEO_HREF} label="Watch on YouTube" />
               </div>
