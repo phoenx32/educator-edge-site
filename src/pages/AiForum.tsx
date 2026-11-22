@@ -66,22 +66,22 @@ const AiForum = () => {
               <div className="lg:col-span-5">
                 <Kicker n={1} label="Sample website" ink="text-uc-en-foreground" />
                 <h2 id="academy-website-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
-                  Our proposed website
+                  Virtual Academy Platform
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  We propose building a website to support participants before, during and after each live session of the academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
+                  A proposed platform to support engagement and connection before, during and after each live session of the AI Virtual Academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  The website will stay open permanently after the academy ends, so participants can keep using its resources and tutorials.
+                  The platform will stay open permanently after the academy ends, so participants can keep using its resources and tutorials.
                 </p>
-                <Cta href={DEMO_HREF} label="Open the proposed website" />
+                <Cta href={DEMO_HREF} label="Open the proposed platform" />
               </div>
 
               <a
                 href={DEMO_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open the proposed website (opens in a new tab)"
+                aria-label="Open the proposed platform (opens in a new tab)"
                 className="group relative block aspect-[3/2] overflow-hidden rounded-2xl bg-uc-en px-6 pt-8 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-10 sm:pt-10 lg:col-span-7"
               >
                 <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
@@ -93,7 +93,7 @@ const AiForum = () => {
                     </div>
                     <img
                       src="/media/aiforum/academy-website.webp"
-                      alt="Home page of the proposed academy website"
+                      alt="Home page of the proposed academy platform"
                       width={1600}
                       height={1000}
                       loading="lazy"
@@ -111,12 +111,12 @@ const AiForum = () => {
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-5">
-                <Kicker n={2} label="Sample Facilitation" ink="text-uc-cp-foreground" />
+                <Kicker n={2} label="Facilitation sample" ink="text-uc-cp-foreground" />
                 <h2 id="recorded-session-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
                   {VIDEO_TITLE}
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  This is a sample of our facilitation from a session on building data dashboards with AI, which we led at the Coalition on Adult Basic Education’s AI Virtual Summit.
+                  A sample of our facilitation from an October 2026 session on building data dashboards with AI, part of the Coalition on Adult Basic Education’s AI Virtual Summit.
                 </p>
                 <Cta href={VIDEO_HREF} label="Watch on YouTube" />
               </div>
