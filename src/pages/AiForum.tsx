@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 
 const DEMO_HREF = '/aiforum/demo';
 const VIDEO_ID = 'Inh0c_Qdwa8';
-const VIDEO_HREF = `https://youtu.be/${VIDEO_ID}`;
+const VIDEO_HREF = 'https://youtu.be/Inh0c_Qdwa8?si=d8okr1bpOz7eFevK';
 const VIDEO_TITLE = 'Building Custom Dashboards with AI and Google Sheets';
 
 const Kicker = ({ n, label, ink }: { n: number; label: string; ink: string }) => (
@@ -111,7 +111,7 @@ const AiForum = () => {
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-5">
-                <Kicker n={2} label="Recorded session" ink="text-uc-cp-foreground" />
+                <Kicker n={2} label="Sample training" ink="text-uc-cp-foreground" />
                 <h2 id="recorded-session-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
                   {VIDEO_TITLE}
                 </h2>
