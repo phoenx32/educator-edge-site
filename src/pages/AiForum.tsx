@@ -69,7 +69,7 @@ const AiForum = () => {
                   Our proposed website
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  The proposed website will support participants before, during and after each live session of the academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
+                  We propose building a website to support participants before, during and after each live session of the academy. It will include resources and tutorials from each session, a chat for discussion, and a people directory for connecting with peers in similar roles.
                 </p>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
                   The website will stay open permanently after the academy ends, so participants can keep using its resources and tutorials.

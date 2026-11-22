@@ -933,7 +933,7 @@ select.field{background:var(--bg);color:var(--ink)}
 </style>
 </head>
 <body>
-<div class="sample"><b>Sample participant space</b> for the AI Virtual Academy proposal. Names, messages and data are fictional. <button class="sample-tour" data-act="tour">Take the tour</button></div>
+<div class="sample"><b>Sample</b> of our proposed website for the AI Virtual Academy. Names, messages and data are fictional. <button class="sample-tour" data-act="tour">Take the tour</button></div>
 <div id="app"></div>
 <div id="chat-root"></div>
 <div id="layer"></div>
@@ -2157,8 +2157,8 @@ function applyRing() {
 function tourHTML() {
   if (tour.i < 0) return `<div class="tour" role="dialog" aria-label="Tour" aria-live="polite">
     <div class="tour-top"><span class="k">Sample tour</span><button class="ibtn" data-act="tourEnd" aria-label="Close tour">${ic("x", 17)}</button></div>
-    <h2>How the participant space works</h2>
-    <p>This sample shows the participant space for the AI Virtual Academy. Each stop describes a feature and the thinking behind it.</p>
+    <h2>How the proposed website works</h2>
+    <p>This sample shows the website we propose building for the AI Virtual Academy. Each stop describes a feature and the thinking behind it.</p>
     <p>Demos, walkthroughs, sharing and connecting all work with fictional peers. Nothing you type leaves this page.</p>
     <div class="tour-f"><button class="btn small quiet" data-act="tourEnd">Explore on my own</button><button class="btn small primary" data-act="tourGo" data-i="0">Take the tour ${ic("arrow", 15)}</button></div></div>`;
   const s = TOUR[tour.i], last = tour.i === TOUR.length - 1;
