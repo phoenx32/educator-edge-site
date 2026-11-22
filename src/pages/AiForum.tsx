@@ -111,12 +111,12 @@ const AiForum = () => {
           <div className="container mx-auto px-6">
             <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
               <div className="lg:col-span-5">
-                <Kicker n={2} label="Sample Training" ink="text-uc-cp-foreground" />
+                <Kicker n={2} label="Sample Facilitation" ink="text-uc-cp-foreground" />
                 <h2 id="recorded-session-title" className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-foreground md:text-[34px]">
                   {VIDEO_TITLE}
                 </h2>
                 <p className="mt-4 text-[17px] leading-relaxed text-foreground/85">
-                  We facilitated this session for adult education leaders in the AI Leadership Academy, which we developed with the Coalition on Adult Basic Education.
+                  This is a sample of our facilitation from a session on building data dashboards with AI, which we led at the Coalition on Adult Basic Education’s AI Virtual Summit.
                 </p>
                 <Cta href={VIDEO_HREF} label="Watch on YouTube" />
               </div>
