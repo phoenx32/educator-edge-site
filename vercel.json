@@ -1,9 +1,19 @@
 {
   "rewrites": [
-    { "source": "/elearning-samples/career-navigation", "destination": "/elearning-samples/career-navigation/index.html" },
-    { "source": "/elearning-samples/clp-academy", "destination": "/elearning-samples/clp-academy/index.html" },
     {
-      "source": "/((?!assets/|feeds/|lovable-uploads/|media/|elearning-samples/.|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
+      "source": "/elearning-samples/career-navigation",
+      "destination": "/elearning-samples/career-navigation/index.html"
+    },
+    {
+      "source": "/elearning-samples/clp-academy",
+      "destination": "/elearning-samples/clp-academy/index.html"
+    },
+    {
+      "source": "/aiforum/demo",
+      "destination": "/aiforum/demo/index.html"
+    },
+    {
+      "source": "/((?!assets/|feeds/|lovable-uploads/|media/|elearning-samples/.|aiforum/.|favicon\\.ico|favicon\\.png|og-image\\.png|placeholder\\.svg|robots\\.txt).*)",
       "destination": "/index.html"
     }
   ]
