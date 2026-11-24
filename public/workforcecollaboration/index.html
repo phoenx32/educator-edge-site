@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wireframe demo of the Regional Collaboration Dashboard, shown with example data.">
+<title>Regional Collaboration Dashboard</title>
+<style>html,body{margin:0;padding:0}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: app shell with slim header and four tabs. Overview is one column read top to bottom: next session, your commitments, one question, coming up, project record. */
+:root {
+  --bg: #ffffff;
+  --surface: #f4f7f8;
+  --line: #dbe2e5;
+  --line-strong: #b9c5ca;
+  --ink: #1b282e;
+  --muted: #56666d;
+  --accent: #1d5d89;
+  --accent-soft: #e5eff6;
+  --green: #2b7550;
+  --green-soft: #e3f1e8;
+  --brown: #855627;
+  --brown-soft: #f3ebe0;
+  --idle: #66737a;
+  --idle-soft: #edf0f1;
+  --focus: #1d5d89;
+  --font-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --text-scale: 1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171a; --surface: #182125; --line: #2a363b;
+    --line-strong: #435257; --ink: #e5ecee; --muted: #9aaab0;
+    --accent: #72b2de; --accent-soft: #19303f; --green: #74c79b; --green-soft: #173327;
+    --brown: #d6a874; --brown-soft: #33271a; --idle: #9aa6ab; --idle-soft: #232d31; --focus: #72b2de;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11171a; --surface: #182125; --line: #2a363b;
+  --line-strong: #435257; --ink: #e5ecee; --muted: #9aaab0;
+  --accent: #72b2de; --accent-soft: #19303f; --green: #74c79b; --green-soft: #173327;
+  --brown: #d6a874; --brown-soft: #33271a; --idle: #9aa6ab; --idle-soft: #232d31; --focus: #72b2de;
+  color-scheme: dark;
+}
+/* High contrast: stronger text and lines in either theme */
+:root.hc { --muted: #2b373c; --line: #8b989e; --line-strong: #4b585e; --ink: #000000; }
+@media (prefers-color-scheme: dark) { :root.hc:not([data-theme="light"]) { --muted: #d5dee1; --line: #6f7d83; --line-strong: #a9b6bb; --ink: #ffffff; } }
+:root.hc[data-theme="dark"] { --muted: #d5dee1; --line: #6f7d83; --line-strong: #a9b6bb; --ink: #ffffff; }
+
+[hidden] { display: none !important; }
+html { font-size: calc(16px * var(--text-scale)); }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 0.9375rem; line-height: 1.5; }
+* { box-sizing: border-box; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--accent); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.mono { font-family: var(--font-mono); }
+.num { font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.skip { position: absolute; left: 16px; top: -60px; background: var(--accent); color: var(--bg); padding: 8px 12px; border-radius: 6px; z-index: 50; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 8px); }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Header */
+header.top .wrap { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-end; justify-content: space-between; padding-block: 20px 16px; }
+.brand { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.mark { width: 40px; height: 40px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex: none; }
+.brand h1 { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.01em; }
+.brand .sub { color: var(--muted); font-size: 0.8125rem; }
+
+/* Tabs */
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 21; background: var(--bg); }
+nav.tabs .wrap { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; align-items: stretch; }
+nav.tabs a { display: flex; align-items: center; gap: 8px; padding: 12px 14px; text-decoration: none; color: var(--muted); font-weight: 600; white-space: nowrap; border-bottom: 3px solid transparent; }
+nav.tabs a:hover { color: var(--ink); }
+nav.tabs a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+nav.tabs .spacer { flex: 1; }
+.role { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 0.8125rem; white-space: nowrap; padding-left: 12px; }
+@media (max-width: 560px) {
+  nav.tabs a { padding: 12px 9px; }
+  nav.tabs .wrap { gap: 0; }
+  nav.tabs a { flex: 1 1 auto; justify-content: center; padding: 12px 4px; font-size: 0.8125rem; }
+  nav.tabs a svg, nav.tabs .role, nav.tabs .spacer { display: none; }
+}
+main:focus { outline: none; }
+
+main { padding-block: 24px 64px; }
+.view { display: grid; gap: 20px; }
+.view-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 8px 16px; }
+.view-head h2 { font-size: 1.25rem; }
+.view-head .meta { color: var(--muted); font-size: 0.8125rem; }
+
+.grid-2 { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); } }
+
+.panel { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); min-width: 0; }
+.panel > header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.panel > header h3 { font-size: 1rem; font-weight: 700; display: flex; gap: 8px; align-items: center; }
+.panel > header .hint { color: var(--muted); font-size: 0.8125rem; }
+.panel-body { padding: 16px; display: grid; gap: 12px; }
+
+.tag { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); border: 1px dashed var(--line-strong); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+
+/* Status pills */
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; border-radius: 999px; padding: 2px 10px 2px 8px; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.s-done { color: var(--green); background: var(--green-soft); }
+.s-progress { color: var(--accent); background: var(--accent-soft); }
+.s-support { color: var(--brown); background: var(--brown-soft); }
+.s-planned { color: var(--idle); background: var(--idle-soft); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line-strong); background: var(--bg); border-radius: 8px; padding: 6px 12px; font-weight: 600; font-size: 0.8125rem; cursor: pointer; text-decoration: none; color: var(--ink); }
+.btn:hover { background: var(--surface); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.small { padding: 3px 10px; font-size: 0.75rem; }
+.btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+th { text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 600; padding: 10px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child > td { border-bottom: 0; }
+tr.detail > td { background: var(--surface); padding: 16px; }
+.row-toggle { display: flex; gap: 8px; align-items: flex-start; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; font-weight: 600; color: var(--ink); }
+.row-toggle .chev { flex: none; margin-top: 3px; transition: transform .15s; color: var(--muted); }
+.row-toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.row-toggle:hover span { color: var(--accent); }
+.sub-text { color: var(--muted); font-size: 0.8125rem; font-weight: 400; }
+
+@media (max-width: 620px) {
+  table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.stack, table.stack tbody, table.stack tr, table.stack td { display: block; width: 100%; }
+  table.stack tr.item { padding: 12px 16px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  table.stack tr.item td { padding: 0; border: 0; }
+  table.stack tr.item td:first-child { grid-column: 1 / -1; }
+  table.stack tr.item td[data-label]::before { content: attr(data-label); display: block; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  table.stack tr.detail td { border-bottom: 1px solid var(--line); }
+}
+
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.detail-grid h4 { margin: 0 0 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.detail-grid ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+
+/* Timeline */
+.years { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.year { padding: 16px; border-right: 1px solid var(--line); min-width: 0; }
+.year:last-child { border-right: 0; }
+.year h4 { margin: 0; font-size: 0.875rem; display: flex; justify-content: space-between; gap: 8px; }
+.year .range { color: var(--muted); font-size: 0.75rem; }
+.bar { height: 6px; background: var(--idle-soft); border-radius: 3px; margin: 10px 0 12px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.year.complete .bar i { background: var(--green); }
+.ms { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 0.8125rem; }
+.ms li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 8px; align-items: start; }
+.ms .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--line-strong); margin-top: 5px; }
+.ms .done .dot { background: var(--green); border-color: var(--green); }
+.ms .now .dot { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.ms .done { color: var(--muted); }
+.ms .now { font-weight: 600; }
+@media (max-width: 760px) { .years { grid-template-columns: minmax(0, 1fr); } .year { border-right: 0; border-bottom: 1px solid var(--line); } .year:last-child { border-bottom: 0; } }
+
+/* Lists */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.list li:last-child { border-bottom: 0; }
+.date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-transform: uppercase; min-width: 52px; padding-top: 2px; }
+.src { color: var(--muted); font-size: 0.8125rem; }
+
+/* Media placeholder */
+.media { border: 1px dashed var(--line-strong); border-radius: 8px; padding: 12px; display: grid; gap: 8px; background: var(--bg); }
+.media .frame { aspect-ratio: 16 / 7; max-width: 100%; background: repeating-linear-gradient(135deg, var(--surface) 0 10px, var(--bg) 10px 20px); border-radius: 6px; display: grid; place-items: center; color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; }
+.caption-line { font-size: 0.8125rem; background: var(--surface); border-radius: 6px; padding: 6px 10px; }
+
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 16px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+.filter-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border: 0; margin: 0; padding: 0; min-width: 0; }
+.filter-group legend { float: left; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-right: 6px; padding: 4px 0; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px 10px; font-size: 0.8125rem; cursor: pointer; }
+.chip input:checked + span { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.chip input:checked + span::before { content: "\2713"; font-size: 0.75rem; }
+.chip input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.empty { padding: 24px 16px; color: var(--muted); text-align: center; }
+
+/* Summary figures */
+.figs { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.fig b { display: block; font-size: 1.5rem; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.fig span { color: var(--muted); font-size: 0.8125rem; }
+
+/* Dumbbell chart */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.8125rem; color: var(--muted); align-items: center; }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.key i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.k1 { border: 2px solid var(--idle); background: var(--bg); }
+.k2 { background: var(--accent); }
+.chart { display: grid; gap: 4px; }
+.crow { display: grid; grid-template-columns: minmax(150px, 230px) minmax(0, 1fr) 64px; gap: 12px; align-items: center; padding: 6px 0; }
+.crow .lab { font-size: 0.875rem; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; color: var(--ink); display: flex; gap: 6px; align-items: flex-start; }
+.crow .lab .chev { color: var(--muted); margin-top: 3px; flex: none; transition: transform .15s; }
+.crow .lab[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.track { position: relative; height: 22px; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--line); }
+.gridline { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); opacity: .6; }
+.seg { position: absolute; top: calc(50% - 2px); height: 4px; background: var(--accent-soft); border-radius: 2px; }
+.d1, .d2 { position: absolute; top: 50%; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; }
+.d1 { border: 2px solid var(--idle); background: var(--bg); }
+.d2 { background: var(--accent); }
+.chg { font-size: 0.8125rem; font-weight: 600; color: var(--green); text-align: right; font-variant-numeric: tabular-nums; }
+.axis { display: grid; grid-template-columns: minmax(150px, 230px) minmax(0, 1fr) 64px; gap: 12px; }
+.axis .ticks { position: relative; height: 16px; font-size: 0.6875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.axis .ticks span { position: absolute; transform: translateX(-50%); }
+.axis .ticks span:first-child { transform: none; }
+.axis .ticks span:last-child { transform: translateX(-100%); }
+.plain { grid-column: 1 / -1; background: var(--surface); border-radius: 8px; padding: 10px 12px; font-size: 0.875rem; }
+@media (max-width: 620px) {
+  .crow, .axis { grid-template-columns: minmax(0, 1fr) 56px; }
+  .crow .lab { grid-column: 1 / -1; }
+  .axis > :first-child { display: none; }
+}
+
+.seg-ctl { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; }
+.seg-ctl button { border: 0; background: var(--bg); padding: 5px 12px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; color: var(--muted); }
+.seg-ctl button + button { border-left: 1px solid var(--line-strong); }
+.seg-ctl button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+
+.lock { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 0.8125rem; }
+.suppressed { color: var(--muted); font-style: italic; }
+
+/* Participate */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.steps li label { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.steps li input { margin-top: 4px; accent-color: var(--green); width: 16px; height: 16px; flex: none; }
+.steps li input:checked ~ span { color: var(--muted); text-decoration: line-through; }
+.steps .time { margin-left: auto; color: var(--muted); font-size: 0.75rem; white-space: nowrap; padding-left: 8px; }
+
+.field { display: grid; gap: 6px; }
+.field > label, .field > .lbl { font-size: 0.8125rem; font-weight: 600; }
+textarea, input[type="text"], select { width: 100%; border: 1px solid var(--line-strong); border-radius: 8px; padding: 8px 10px; background: var(--bg); }
+textarea { min-height: 88px; resize: vertical; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.radio-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.radio-row label { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 0.8125rem; cursor: pointer; }
+.radio-row input { accent-color: var(--accent); }
+
+.poll-opt { display: grid; gap: 4px; }
+.poll-opt label { display: flex; gap: 8px; align-items: center; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; font-size: 0.875rem; }
+.poll-res { display: grid; gap: 8px; }
+.poll-res .pr { display: grid; gap: 4px; font-size: 0.8125rem; }
+.poll-res .pr div:first-child { display: flex; justify-content: space-between; gap: 8px; }
+.poll-res .meter { height: 8px; background: var(--idle-soft); border-radius: 4px; overflow: hidden; }
+.poll-res .meter i { display: block; height: 100%; background: var(--accent); }
+.poll-res .mine .meter i { background: var(--green); }
+
+.practice { padding: 12px 16px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.practice:last-child { border-bottom: 0; }
+.practice h4 { margin: 0; font-size: 0.9375rem; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tags span { font-size: 0.75rem; background: var(--surface); border-radius: 4px; padding: 1px 8px; color: var(--muted); }
+
+/* Display settings */
+.settings { position: relative; }
+.settings-panel { position: absolute; right: 0; top: calc(100% + 6px); width: min(300px, calc(100vw - 32px)); background: var(--bg); border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.12); padding: 14px; display: grid; gap: 14px; z-index: 40; font-family: var(--font-body); font-size: 0.875rem; color: var(--ink); letter-spacing: 0; }
+.set-row { display: grid; gap: 6px; }
+.set-row > span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.switch { display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; }
+.switch input { width: 36px; height: 20px; accent-color: var(--accent); }
+
+/* Low bandwidth */
+.lowbw .media .frame { display: none; }
+.lowbw .chart-graphic { display: none; }
+.chart-table { display: none; }
+.lowbw .chart-table { display: block; }
+.lowbw-only { display: none; }
+.lowbw .lowbw-only { display: block; }
+
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 8px; font-size: 0.875rem; z-index: 60; max-width: calc(100vw - 32px); }
+
+footer.foot { border-top: 1px solid var(--line); }
+footer.foot .wrap { padding-block: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 0.75rem; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.reduce-motion * { transition: none !important; }
+
+/* v4 system. One meaning per style:
+   filled blue button = the main action; outlined button = other actions;
+   status = colored dot + colored text, never boxed; chevron row = opens in place. */
+body { font-size: 1rem; }
+.view-head h2 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.2; }
+.view-head .meta { font-family: var(--font-body); font-size: 0.875rem; }
+.panel > header h3 { font-size: 1.0625rem; }
+th { text-transform: none; letter-spacing: 0; font-size: 0.8125rem; }
+.detail-grid h4, .filter-group legend, .set-row > span { text-transform: none; letter-spacing: 0; font-size: 0.8125rem; }
+table.stack tr.item td[data-label]::before { text-transform: none; letter-spacing: 0; font-size: 0.75rem; }
+
+.btn { min-height: 40px; padding: 0 14px; font-size: 0.875rem; border-radius: 8px; justify-content: center; }
+.btn.small { min-height: 32px; padding: 0 10px; font-size: 0.8125rem; }
+.btn.primary { min-height: 44px; padding: 0 20px; font-size: 0.9375rem; }
+.btn svg { flex: none; }
+
+.pill { background: none !important; padding: 0; border-radius: 0; font-size: 0.875rem; font-weight: 600; gap: 7px; }
+.pill::before { width: 8px; height: 8px; }
+
+/* Header */
+header.top { border-bottom: 1px solid var(--line); }
+header.top .wrap { align-items: center; padding-block: 14px; }
+.brand h1 { font-size: 1.125rem; }
+.mark { width: 36px; height: 36px; }
+.quiet-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 10px; border: 0; background: none; border-radius: 8px; color: var(--muted); font-weight: 600; font-size: 0.875rem; cursor: pointer; }
+.quiet-btn:hover { background: var(--surface); color: var(--ink); }
+nav.tabs { border-bottom: 1px solid var(--line); }
+
+/* Overview: one column, read top to bottom */
+.ov { max-width: 760px; display: grid; gap: 36px; }
+.ov-head { display: grid; gap: 4px; }
+.ov-head h2 { font-size: 1.75rem; letter-spacing: -0.015em; line-height: 1.2; }
+.ov-head p { color: var(--muted); font-size: 0.9375rem; }
+.ov-progress { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-size: 0.875rem; color: var(--muted); }
+.ov-progress .bar { flex: 1; max-width: 240px; margin: 0; }
+
+.sec { display: grid; gap: 12px; }
+.sec > h3 { font-size: 1.125rem; font-weight: 700; display: flex; align-items: baseline; gap: 8px; }
+.sec > h3 .count { font-size: 0.875rem; font-weight: 500; color: var(--muted); }
+
+.hero { background: var(--accent-soft); border-radius: 14px; padding: 24px; display: grid; gap: 20px; }
+.hero-top { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: center; }
+.datetile { width: 68px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); text-align: center; padding: 8px 0 10px; }
+.datetile .m { display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); font-weight: 500; letter-spacing: 0.06em; }
+.datetile .d { display: block; font-size: 1.75rem; font-weight: 700; line-height: 1.05; }
+.hero .eyebrow { font-size: 0.875rem; font-weight: 600; color: var(--accent); }
+.hero h3 { font-size: 1.375rem; font-weight: 700; line-height: 1.25; margin-top: 2px; }
+.hero .when { display: flex; flex-wrap: wrap; gap: 4px 16px; color: var(--muted); font-size: 0.9375rem; margin-top: 4px; }
+.hero .when span { display: inline-flex; align-items: center; gap: 6px; }
+.prep { display: grid; gap: 8px; }
+.prep-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.9375rem; font-weight: 700; }
+.prep-head span:last-child { font-weight: 500; color: var(--muted); }
+.prep .steps li label { background: var(--bg); min-height: 48px; align-items: center; }
+.prep .steps li input { margin-top: 0; width: 18px; height: 18px; }
+.catchup { border-top: 1px solid var(--line-strong); padding-top: 14px; }
+.catchup > summary, details.rec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; min-height: 32px; }
+.catchup > summary::-webkit-details-marker, details.rec > summary::-webkit-details-marker { display: none; }
+.catchup > summary .chev, details.rec > summary .chev { transition: transform .15s; }
+.catchup[open] > summary .chev, details.rec[open] > summary .chev { transform: rotate(90deg); }
+.catchup .inner { display: grid; gap: 10px; padding-top: 10px; }
+.catchup ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+
+/* Commitments */
+.items { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.items > li { border-bottom: 1px solid var(--line); }
+.item-row { width: 100%; display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 12px; align-items: center; background: none; border: 0; padding: 14px 8px; text-align: left; cursor: pointer; color: var(--ink); border-radius: 8px; }
+.item-row:hover { background: var(--surface); }
+.item-row .chev { color: var(--muted); transition: transform .15s; }
+.item-row[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.item-row .t { font-weight: 600; display: block; }
+.item-row .s { color: var(--muted); font-size: 0.875rem; display: block; margin-top: 2px; }
+.item-panel { padding: 4px 8px 18px 36px; display: grid; gap: 14px; }
+.item-panel .next { font-size: 0.9375rem; }
+.item-panel .next b { font-weight: 600; }
+fieldset.status-pick { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+fieldset.status-pick legend { font-size: 0.875rem; font-weight: 600; padding: 0; margin-bottom: 8px; }
+.status-pick .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.status-pick label { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; font-size: 0.9375rem; background: var(--bg); }
+.status-pick input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
+.status-pick label:has(input:checked) { border-color: var(--accent); }
+.item-panel textarea { min-height: 64px; }
+.saved { color: var(--green); font-size: 0.875rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+
+/* Poll */
+.poll-card { border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 14px; }
+.poll-card .q { font-size: 1.0625rem; font-weight: 600; }
+.poll-opt label { min-height: 48px; font-size: 0.9375rem; }
+.poll-opt input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+
+/* Coming up */
+.events { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.events li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; padding: 12px 8px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.events .date { min-width: 0; }
+.events .n { font-weight: 600; }
+.events .f { color: var(--muted); font-size: 0.875rem; }
+
+/* Project record */
+details.rec { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 8px; }
+details.rec > summary { color: var(--ink); font-size: 1.125rem; font-weight: 700; min-height: 40px; }
+details.rec > summary .chev { color: var(--muted); }
+details.rec > summary .hint { font-size: 0.875rem; font-weight: 500; color: var(--muted); }
+details.rec .inner { display: grid; gap: 20px; padding: 12px 0 8px; }
+
+/* Participate in one column */
+.stack-col { display: grid; gap: 20px; max-width: 760px; }
+
+header.top .wrap { flex-wrap: nowrap; }
+#plan-table td.num { white-space: nowrap; }
+.brand > div { min-width: 0; }
+@media (max-width: 560px) {
+  .brand h1 { font-size: 1rem; }
+  .brand .sub { font-size: 0.75rem; }
+  .mark { display: none; }
+  .quiet-btn .lbl { display: none; }
+  .item-row { grid-template-columns: 16px minmax(0, 1fr); row-gap: 6px; }
+  .item-row .pill { grid-column: 2; }
+  details.rec > summary .hint { display: none; }
+  .hero { padding: 18px; }
+  .hero-top { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .datetile { display: none; }
+  .item-panel { padding-left: 8px; }
+  .events li { grid-template-columns: 64px minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18l5-8 4 5 3-4 6 7z"/><circle cx="17" cy="6" r="2"/></svg>
+      </div>
+      <div>
+        <h1>Regional Collaboration Dashboard</h1>
+        <div class="sub">Appalachian Advancement · Example data</div>
+      </div>
+    </div>
+    <div class="settings">
+      <button class="quiet-btn" id="display-btn" type="button" aria-label="Display settings" aria-expanded="false" aria-controls="display-panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+        <span class="lbl">Display</span>
+      </button>
+      <div class="settings-panel" id="display-panel" hidden role="group" aria-label="Display settings">
+        <div class="set-row">
+          <span>Text size</span>
+          <div class="seg-ctl" role="group" aria-label="Text size">
+            <button type="button" data-size="1" aria-pressed="true">A</button>
+            <button type="button" data-size="1.15" aria-pressed="false" style="font-size:1.05em">A+</button>
+            <button type="button" data-size="1.3" aria-pressed="false" style="font-size:1.15em">A++</button>
+          </div>
+        </div>
+        <label class="switch"><span>High contrast</span><input type="checkbox" id="opt-hc"></label>
+        <label class="switch"><span>Low bandwidth</span><input type="checkbox" id="opt-lowbw"></label>
+        <label class="switch"><span>Reduce motion</span><input type="checkbox" id="opt-motion"></label>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Dashboard views">
+  <div class="wrap">
+    <a href="#overview" data-view="overview">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Overview</a>
+    <a href="#action-plans" data-view="action-plans">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg>Action plans</a>
+    <a href="#assessment" data-view="assessment">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Assessment</a>
+    <a href="#participate" data-view="participate">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Participate</a>
+    <span class="spacer"></span>
+    <span class="role" title="Example signed-in role">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      Board project lead (example)
+    </span>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+  <div class="wrap">
+
+  <!-- OVERVIEW -->
+  <section class="view" id="view-overview" data-view="overview" aria-labelledby="h-overview">
+    <div class="ov">
+      <div class="ov-head">
+        <h2 id="h-overview">This week</h2>
+        <p>Monday, April 24, 2028 · Board project lead, New River/Mount Rogers</p>
+        <div class="ov-progress"><span>Year 2 of 3</span><div class="bar" role="img" aria-label="Project about 55 percent complete"><i style="width:55%"></i></div><span>Summit in September</span></div>
+      </div>
+
+      <div class="hero">
+        <div class="hero-top">
+          <div class="datetile" aria-hidden="true"><span class="m">APR</span><span class="d">26</span></div>
+          <div>
+            <div class="eyebrow">Next session · in 2 days</div>
+            <h3>Collaborative learning session 2</h3>
+            <div class="when">
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Wed, Apr 26, 1 to 4 PM ET</span>
+              <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 10.5a2 2 0 1 0 0 3M16 10.5a2 2 0 1 0 0 3"/></svg>Virtual, captions on</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn primary" type="button" data-toast="Join link opens 15 minutes before the session.">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>Join session</button>
+          <button class="btn" type="button" data-toast="Calendar invite would download with captioning and dial-in details.">Add to calendar</button>
+        </div>
+        <div class="prep">
+          <div class="prep-head"><span>Before the session · 10 min</span><span id="prep-count">0 of 3 done</span></div>
+          <ul class="steps" id="prep">
+            <li><label><input type="checkbox" id="prep-1"><span>Read the 2-minute summary of follow-up findings</span><span class="time">2 min</span></label></li>
+            <li><label><input type="checkbox" id="prep-2"><span>Answer the discussion prompt</span><span class="time">5 min</span></label></li>
+            <li><label><input type="checkbox" id="prep-3"><span>Name a challenge to bring to colleagues</span><span class="time">3 min</span></label></li>
+          </ul>
+        </div>
+        <details class="catchup">
+          <summary><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>Missed session 1? Catch up in 5 minutes</summary>
+          <div class="inner">
+            <div class="media"><div class="frame">Recording placeholder</div><div class="caption-line"><b>Captions</b> · Searchable transcript</div><p class="lowbw-only sub-text">Low bandwidth: audio and transcript only.</p></div>
+            <ol>
+              <li>Training news reaches frontline staff too late to refer.</li>
+              <li>Two Boards will pilot a shared training calendar.</li>
+              <li>Session 2 focuses on referral timing.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+
+      <div class="sec">
+        <h3>Your commitments <span class="count" id="mine-count">3</span></h3>
+        <ul class="items" id="mine"></ul>
+      </div>
+
+      <div class="sec">
+        <h3>Quick question</h3>
+        <form class="poll-card" id="poll">
+          <p class="q">Which topic should the May business services session take first?</p>
+          <div class="poll-opt" id="poll-opts">
+            <label><input type="radio" name="poll" value="0"> Shared employer referral note</label>
+            <label><input type="radio" name="poll" value="1"> Work-based learning practices</label>
+            <label><input type="radio" name="poll" value="2"> Registered Apprenticeship messaging</label>
+          </div>
+          <div class="poll-res" id="poll-res" hidden></div>
+          <div class="row"><button class="btn" type="submit" id="poll-submit">Vote</button><span class="sub-text" id="poll-count">38 responses</span></div>
+        </form>
+      </div>
+
+      <div class="sec">
+        <h3>Coming up</h3>
+        <ul class="events">
+          <li><span class="date">May 10</span><div><div class="n">Business services collaboration session</div><div class="f">Virtual · 2 hours</div></div></li>
+          <li><span class="date">May 17</span><div><div class="n">Monthly coordination meeting</div><div class="f">Virtual · 1 hour</div></div></li>
+          <li><span class="date">Sep 2028</span><div><div class="n">Regional Workforce Collaborative Summit</div><div class="f">In person · Radford · Full day</div></div></li>
+        </ul>
+      </div>
+
+      <details class="rec">
+        <summary><svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>Project record <span class="hint">Milestones, decisions, deliverables, playbook</span></summary>
+        <div class="inner">
+    <div class="panel">
+      <header><h3>Project milestones</h3><span class="hint">Three project years, through September 30, 2029</span></header>
+      <div class="years">
+        <div class="year complete">
+          <h4>Year 1 <span class="pill s-done">Complete</span></h4>
+          <div class="range">Authorization to Sep 30, 2027</div>
+          <div class="bar"><i style="width:100%"></i></div>
+          <ul class="ms">
+            <li class="done"><span class="dot"></span><span>Virtual orientation and Radford kickoff</span></li>
+            <li class="done"><span class="dot"></span><span>Baseline survey and 35 interviews</span></li>
+            <li class="done"><span class="dot"></span><span>Integrated baseline assessment</span></li>
+            <li class="done"><span class="dot"></span><span>2 learning sessions, 3 business services sessions</span></li>
+            <li class="done"><span class="dot"></span><span>Summit, action agenda, learning brief</span></li>
+          </ul>
+        </div>
+        <div class="year">
+          <h4>Year 2 <span class="pill s-progress">In progress</span></h4>
+          <div class="range">Oct 1, 2027 to Sep 30, 2028</div>
+          <div class="bar"><i style="width:55%"></i></div>
+          <ul class="ms">
+            <li class="done"><span class="dot"></span><span>Work plan update</span></li>
+            <li class="done"><span class="dot"></span><span>Follow-up survey and findings report</span></li>
+            <li class="now"><span class="dot"></span><span>Learning session 2 of 3</span></li>
+            <li><span class="dot"></span><span>15 reflection interviews and brief</span></li>
+            <li><span class="dot"></span><span>Summit in Radford</span></li>
+          </ul>
+        </div>
+        <div class="year">
+          <h4>Year 3 <span class="pill s-planned">Planned</span></h4>
+          <div class="range">Oct 1, 2028 to Sep 30, 2029</div>
+          <div class="bar"><i style="width:0%"></i></div>
+          <ul class="ms">
+            <li><span class="dot"></span><span>Final follow-up survey</span></li>
+            <li><span class="dot"></span><span>Playbook stakeholder review</span></li>
+            <li><span class="dot"></span><span>Final summit</span></li>
+            <li><span class="dot"></span><span>Final playbook</span></li>
+            <li><span class="dot"></span><span>Dashboard transition</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="panel">
+        <header><h3>Recent decisions</h3><span class="hint">From meeting action summaries</span></header>
+        <ul class="list">
+          <li><span class="date">Apr 12</span><div>Pilot a shared regional training calendar with two Boards before regional rollout.<div class="src">Monthly coordination meeting</div></div></li>
+          <li><span class="date">Mar 21</span><div>Use the follow-up survey findings to set the topic for learning session 2.<div class="src">Monthly coordination meeting</div></div></li>
+          <li><span class="date">Mar 07</span><div>Draft a common referral note for employers operating in more than one workforce area.<div class="src">Business services collaboration session</div></div></li>
+          <li><span class="date">Feb 15</span><div>Add a playbook chapter on onboarding new frontline staff.<div class="src">Monthly coordination meeting</div></div></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <header><h3>Deliverables</h3><span class="hint">Year 2</span></header>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Deliverable</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><td>Annual work plan update</td><td><span class="pill s-done">Accepted</span></td></tr>
+              <tr><td>Aggregate survey findings report</td><td><span class="pill s-done">Accepted</span></td></tr>
+              <tr><td>Session findings and action summaries</td><td><span class="pill s-progress">Ongoing</span></td></tr>
+              <tr><td>Annual reflection brief</td><td><span class="pill s-planned">Aug 2028</span></td></tr>
+              <tr><td>Regional action agenda</td><td><span class="pill s-planned">Sep 2028</span></td></tr>
+              <tr><td>Annual learning brief</td><td><span class="pill s-planned">Sep 2028</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <div class="panel">
+      <header><h3>Regional collaboration playbook</h3><span class="hint">Grows from each learning brief and summit</span></header>
+      <div class="table-wrap">
+        <table class="stack">
+          <thead><tr><th scope="col">Chapter</th><th scope="col">Draws from</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead>
+          <tbody>
+            <tr class="item"><td><b>Communication and coordination</b></td><td data-label="Draws from">Year 1 learning brief, 4 sessions</td><td data-label="Status"><span class="pill s-progress">Draft</span></td><td><button class="btn small" data-toast="Comment form would open beside this chapter.">Comment</button></td></tr>
+            <tr class="item"><td><b>Business services collaboration</b></td><td data-label="Draws from">3 business services sessions</td><td data-label="Status"><span class="pill s-progress">Draft</span></td><td><button class="btn small" data-toast="Comment form would open beside this chapter.">Comment</button></td></tr>
+            <tr class="item"><td><b>Peer learning and professional collaboration</b></td><td data-label="Draws from">Practice exchange library</td><td data-label="Status"><span class="pill s-planned">Outline</span></td><td><button class="btn small" data-toast="Comment form would open beside this chapter.">Comment</button></td></tr>
+            <tr class="item"><td><b>Sustainability and replication</b></td><td data-label="Draws from">Year 3 summit</td><td data-label="Status"><span class="pill s-planned">Not started</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ACTION PLANS -->
+  <section class="view" id="view-action-plans" data-view="action-plans" aria-labelledby="h-plans" hidden>
+    <div class="view-head">
+      <h2 id="h-plans">Action plans</h2>
+      <span class="meta">From the Year 1 summit action agenda and later sessions</span>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="figs" id="plan-figs"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <form class="filters" id="plan-filters" aria-label="Filter action plans">
+        <fieldset class="filter-group" id="f-board"><legend>Lead</legend></fieldset>
+        <fieldset class="filter-group" id="f-area"><legend>Area</legend></fieldset>
+        <fieldset class="filter-group" id="f-status"><legend>Status</legend></fieldset>
+      </form>
+      <div class="table-wrap">
+        <table class="stack" id="plan-table">
+          <thead><tr><th scope="col">Shared priority</th><th scope="col">Lead</th><th scope="col">Next step</th><th scope="col">Due</th><th scope="col">Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty" id="plan-empty" hidden>No priorities match these filters.</p>
+    </div>
+
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section class="view" id="view-assessment" data-view="assessment" aria-labelledby="h-assess" hidden>
+    <div class="view-head">
+      <h2 id="h-assess">Assessment</h2>
+      <span class="lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Approved aggregate findings only</span>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="figs">
+          <div class="fig"><b class="num">112</b><span>Baseline responses, 2027</span></div>
+          <div class="fig"><b class="num">104</b><span>Follow-up responses, 2028</span></div>
+          <div class="fig"><b class="num">35</b><span>Baseline interviews</span></div>
+          <div class="fig"><b class="num">7</b><span>Assessment domains</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <header>
+        <h3>Collaboration indicators</h3>
+        <div class="legend">
+          <span class="key"><i class="k1"></i>Year 1 baseline</span>
+          <span class="key"><i class="k2"></i>Year 2 follow-up</span>
+        </div>
+      </header>
+      <div class="panel-body">
+        <p class="sub-text">Share of respondents who agree or strongly agree. Open a domain for a plain-language summary.</p>
+        <div class="chart-graphic">
+          <div class="chart" id="chart"></div>
+          <div class="axis" aria-hidden="true"><span></span><div class="ticks"><span style="left:0">0%</span><span style="left:25%">25%</span><span style="left:50%">50%</span><span style="left:75%">75%</span><span style="left:100%">100%</span></div><span></span></div>
+        </div>
+        <div class="chart-table table-wrap" id="chart-table"></div>
+        <p class="sub-text">Differences in who responded each year are noted in the findings report. Changes are descriptive and do not show cause.</p>
+      </div>
+    </div>
+
+
+    <div class="grid-2">
+      <div class="panel">
+        <header><h3>Responses by role</h3><span class="hint">Follow-up survey, 2028</span></header>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Role group</th><th scope="col">Responses</th><th scope="col">Peer learning</th></tr></thead>
+            <tbody>
+              <tr><td>Executive leadership</td><td class="num">18</td><td class="num">67%</td></tr>
+              <tr><td>Business Solutions Teams</td><td class="num">31</td><td class="num">61%</td></tr>
+              <tr><td>Program staff</td><td class="num">43</td><td class="num">65%</td></tr>
+              <tr><td>Regional partners</td><td class="suppressed">Not shown</td><td class="suppressed">Not shown</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-body"><p class="sub-text">Groups below the reporting threshold are not shown, to protect respondents in small teams.</p></div>
+      </div>
+      <div class="panel">
+        <header><h3>What we heard</h3><span class="hint">Deidentified interview themes</span></header>
+        <ul class="list">
+          <li><span class="date num">21/35</span><div>Staff learn about other Boards' training opportunities too late to refer.</div></li>
+          <li><span class="date num">17/35</span><div>Employers that cross workforce areas get contacted more than once.</div></li>
+          <li><span class="date num">12/35</span><div>New frontline staff take months to learn regional partners.</div></li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PARTICIPATE -->
+  <section class="view" id="view-participate" data-view="participate" aria-labelledby="h-part" hidden>
+    <div class="view-head">
+      <h2 id="h-part">Participate</h2>
+      <span class="meta">Take part on your schedule</span>
+    </div>
+
+    <div class="stack-col">
+    <div class="panel">
+      <header><h3>Contribute a perspective</h3><span class="hint">Prompt for learning session 2</span></header>
+      <form class="panel-body" id="perspective">
+        <p class="caption-line">Where does a referral between Boards slow down today, and what would help?</p>
+        <div class="field">
+          <label for="persp-text">Your response</label>
+          <textarea id="persp-text" placeholder="Type, or use voice input"></textarea>
+        </div>
+        <div class="row">
+          <button class="btn" type="button" data-toast="Voice input would transcribe speech into the response box.">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+            Voice input
+          </button>
+          <button class="btn" type="button" data-toast="File picker would open for a photo, document or recording.">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 11l-8.5 8.5a5 5 0 0 1-7-7L13 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L14 7"/></svg>
+            Attach a file
+          </button>
+        </div>
+        <div class="field">
+          <span class="lbl" id="vis-lbl">Who can see it</span>
+          <div class="radio-row" role="radiogroup" aria-labelledby="vis-lbl">
+            <label><input type="radio" name="vis" id="vis-fac" checked> Facilitators only</label>
+            <label><input type="radio" name="vis" id="vis-all"> All participants, with my name</label>
+            <label><input type="radio" name="vis" id="vis-anon"> All participants, without my name</label>
+          </div>
+        </div>
+        <div class="row"><button class="btn primary" type="submit">Submit</button></div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <header><h3>Practice exchange</h3><button class="btn small" type="button" id="share-btn" aria-expanded="false" aria-controls="share-form">Share a practice</button></header>
+      <form class="panel-body" id="share-form" hidden>
+        <div class="field"><label for="pr-title">Practice</label><input type="text" id="pr-title" placeholder="Short name"></div>
+        <div class="field"><label for="pr-what">What it helps with</label><textarea id="pr-what"></textarea></div>
+        <div class="row"><button class="btn primary" type="submit">Add to library</button><button class="btn" type="button" id="share-cancel">Cancel</button></div>
+      </form>
+      <div id="practices">
+        <div class="practice"><h4>Weekly training opportunity digest</h4><p class="sub-text">One email to frontline staff across partner Boards</p><div class="tags"><span>Communication</span><span>Saved by 9</span></div></div>
+        <div class="practice"><h4>Employer intake checklist</h4><p class="sub-text">Avoids repeat contacts for multi-area employers</p><div class="tags"><span>Business services</span><span>Saved by 6</span></div></div>
+        <div class="practice"><h4>New staff partner tour</h4><p class="sub-text">Virtual visits to each Board in the first 60 days</p><div class="tags"><span>Organizational capacity</span><span>Saved by 4</span></div></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Built on Consortium-approved systems with access controls. No participant-level workforce data.</span>
+    <span>Community Learning Partners · Wireframe</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  var chev = '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+
+  /* Toast */
+  var toastEl = document.getElementById('toast'), toastT;
+  function toast(msg) {
+    toastEl.textContent = 'Illustrative: ' + msg;
+    toastEl.hidden = false;
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { toastEl.hidden = true; }, 3200);
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-toast]');
+    if (t) toast(t.getAttribute('data-toast'));
+  });
+
+  /* Routing */
+  var views = ['overview', 'action-plans', 'assessment', 'participate'];
+  function route() {
+    var v = (location.hash || '').replace('#', '');
+    if (views.indexOf(v) < 0) v = 'overview';
+    document.querySelectorAll('section.view').forEach(function (s) { s.hidden = s.dataset.view !== v; });
+    document.querySelectorAll('nav.tabs a').forEach(function (a) {
+      if (a.dataset.view === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('hashchange', function () {
+    route();
+    var m = document.getElementById('main');
+    window.scrollTo(0, 0);
+    m.focus({ preventScroll: true });
+  });
+  route();
+
+  /* Display settings */
+  var dBtn = document.getElementById('display-btn'), dPanel = document.getElementById('display-panel');
+  dBtn.addEventListener('click', function () {
+    var open = dPanel.hidden;
+    dPanel.hidden = !open;
+    dBtn.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', function (e) {
+    if (!dPanel.hidden && !e.target.closest('.settings')) { dPanel.hidden = true; dBtn.setAttribute('aria-expanded', 'false'); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !dPanel.hidden) { dPanel.hidden = true; dBtn.setAttribute('aria-expanded', 'false'); dBtn.focus(); }
+  });
+  function setSize(s) {
+    root.style.setProperty('--text-scale', s);
+    document.querySelectorAll('[data-size]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.size === s)); });
+    store.set('rcd-size', s);
+  }
+  document.querySelectorAll('[data-size]').forEach(function (b) { b.addEventListener('click', function () { setSize(b.dataset.size); }); });
+  function bindToggle(id, cls, key, target) {
+    var el = document.getElementById(id);
+    var tgt = target || root;
+    el.addEventListener('change', function () { tgt.classList.toggle(cls, el.checked); store.set(key, el.checked ? '1' : '0'); });
+    if (store.get(key) === '1') { el.checked = true; tgt.classList.add(cls); }
+  }
+  bindToggle('opt-hc', 'hc', 'rcd-hc');
+  bindToggle('opt-lowbw', 'lowbw', 'rcd-lowbw', document.body);
+  bindToggle('opt-motion', 'reduce-motion', 'rcd-motion', document.body);
+  var savedSize = store.get('rcd-size');
+  if (savedSize) setSize(savedSize);
+
+  /* Expandable rows */
+  function wireToggle(btn, detailRow) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      detailRow.hidden = open;
+    });
+  }
+
+  /* Action plans */
+  var plans = [
+    { mine: true, p: 'Shared regional training calendar', lead: 'Greater Roanoke', area: 'Coordination', next: 'Pilot calendar format with two Boards', due: 'May 30', status: 'progress', steps: ['Agree on fields (done)', 'Pilot with two Boards', 'Review at June coordination meeting'], support: 'None right now', src: 'Year 1 summit action agenda' },
+    { mine: true, p: 'Cross-area employer referral note', lead: 'Southwest Virginia', area: 'Business services', next: 'Draft note for May session', due: 'May 10', status: 'progress', steps: ['Collect current referral examples', 'Draft common note', 'Test with two employers'], support: 'Facilitated review at May session', src: 'Business services session, Mar 7' },
+    { p: 'Onboarding guide for new frontline staff', lead: 'Shenandoah Valley', area: 'Learning', next: 'Gather onboarding materials from each Board', due: 'Jun 15', status: 'planned', steps: ['Gather materials', 'Identify common content', 'Draft playbook chapter'], support: 'Template from CLP', src: 'Coordination meeting, Feb 15' },
+    { p: 'Work-based learning practice exchange', lead: 'West Piedmont', area: 'Business services', next: 'Posted to practice exchange', due: 'Mar 21', status: 'done', steps: ['Collect practices', 'Present at session', 'Post to library'], support: 'None', src: 'Year 1 summit action agenda' },
+    { mine: true, p: 'Regional sector partnership meeting calendar', lead: 'New River/Mount Rogers', area: 'Business services', next: 'Agree on what can be shared across Boards', due: 'May 31', status: 'support', steps: ['List partnership meetings', 'Agree on sharing guidance', 'Publish calendar'], support: 'Guidance on sharing meeting details without employer information', src: 'Year 1 summit action agenda' },
+    { p: 'Registered Apprenticeship messaging', lead: 'All five Boards', area: 'Business services', next: 'Choose shared talking points', due: 'Jun 30', status: 'progress', steps: ['Compare current materials', 'Choose shared talking points', 'Use in employer outreach'], support: 'Discussion time at summit', src: 'Year 1 summit action agenda' },
+    { p: 'Follow-up findings into session topics', lead: 'All five Boards', area: 'Learning', next: 'Learning session 2 on referral timing', due: 'Apr 26', status: 'progress', steps: ['Review findings report (done)', 'Set session focus (done)', 'Hold session'], support: 'None', src: 'Coordination meeting, Mar 21' }
+  ];
+  var statusLabel = { progress: 'In progress', planned: 'Not started', support: 'Needs support', done: 'Done' };
+  var statusCls = { progress: 's-progress', planned: 's-planned', support: 's-support', done: 's-done' };
+  function uniq(arr) { return arr.filter(function (v, i) { return arr.indexOf(v) === i; }); }
+  function chips(fsId, name, values, labels) {
+    var fs = document.getElementById(fsId);
+    values.forEach(function (v, i) {
+      var id = name + '-' + i;
+      var l = document.createElement('label'); l.className = 'chip';
+      l.innerHTML = '<input type="checkbox" id="' + id + '" name="' + name + '" value="' + v + '"><span>' + (labels ? labels[v] : v) + '</span>';
+      fs.appendChild(l);
+    });
+  }
+  chips('f-board', 'fb', uniq(plans.map(function (x) { return x.lead; })));
+  chips('f-area', 'fa', uniq(plans.map(function (x) { return x.area; })));
+  chips('f-status', 'fs', ['progress', 'support', 'planned', 'done'], statusLabel);
+
+
+  /* Status update form, used in Your commitments and in Action plans */
+  var uid = 0;
+  function statusForm(x) {
+    var f = document.createElement('form'); f.className = 'status-form'; f.style.display = 'grid'; f.style.gap = '12px';
+    var n = 'st' + (++uid);
+    f.innerHTML = '<fieldset class="status-pick"><legend>Update status</legend><div class="opts">' +
+      ['progress', 'support', 'done'].map(function (k) {
+        return '<label><input type="radio" name="' + n + '" value="' + k + '"' + (x.status === k ? ' checked' : '') + '> ' + statusLabel[k] + '</label>';
+      }).join('') + '</div></fieldset>' +
+      '<div class="field"><label for="' + n + '-note">' + (x.status === 'support' ? 'What would help?' : 'Note (optional)') + '</label><textarea id="' + n + '-note"></textarea></div>' +
+      '<div class="row"><button class="btn primary" type="submit">Save update</button></div>';
+    var lab = f.querySelector('label[for="' + n + '-note"]');
+    f.addEventListener('change', function () {
+      var v = f.querySelector('input[name="' + n + '"]:checked');
+      lab.textContent = v && v.value === 'support' ? 'What would help?' : 'Note (optional)';
+    });
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = f.querySelector('input[name="' + n + '"]:checked');
+      if (!v) { toast('Choose a status first.'); return; }
+      x.status = v.value;
+      openKeys = {};
+      renderAll();
+      toast(v.value === 'support' ? 'Sent to CLP. It goes on the next coordination agenda.' : 'Saved. Everyone sees the new status in Action plans.');
+    });
+    return f;
+  }
+
+  var openKeys = {};
+  function renderFigs() {
+    var counts = { progress: 0, support: 0, planned: 0, done: 0 };
+    plans.forEach(function (x) { counts[x.status]++; });
+    document.getElementById('plan-figs').innerHTML = '<div class="fig"><b>' + plans.length + '</b><span>Shared priorities</span></div>' +
+      '<div class="fig"><b>' + counts.progress + '</b><span>In progress</span></div>' +
+      '<div class="fig"><b>' + counts.support + '</b><span>Need support</span></div>' +
+      '<div class="fig"><b>' + counts.done + '</b><span>Done</span></div>';
+  }
+
+  function renderMine() {
+    var ul = document.getElementById('mine'); ul.innerHTML = '';
+    plans.forEach(function (x, i) {
+      if (!x.mine) return;
+      var key = 'm' + i, open = !!openKeys[key];
+      var li = document.createElement('li');
+      li.innerHTML = '<button class="item-row" type="button" aria-expanded="' + open + '" aria-controls="mine-' + i + '">' + chev +
+        '<span><span class="t">' + x.p + '</span><span class="s">Due ' + x.due + ' · Next: ' + x.next + '</span></span>' +
+        '<span class="pill ' + statusCls[x.status] + '">' + statusLabel[x.status] + '</span></button>';
+      var panel = document.createElement('div'); panel.className = 'item-panel'; panel.id = 'mine-' + i; panel.hidden = !open;
+      if (x.status === 'support' && x.support) panel.innerHTML = '<p class="next"><b>Support asked for:</b> ' + x.support + '</p>';
+      panel.appendChild(statusForm(x));
+      li.appendChild(panel); ul.appendChild(li);
+      li.querySelector('.item-row').addEventListener('click', function () { openKeys[key] = !openKeys[key]; this.setAttribute('aria-expanded', String(!!openKeys[key])); panel.hidden = !openKeys[key]; });
+    });
+  }
+
+  var pBody = document.querySelector('#plan-table tbody');
+  function checked(name) { return Array.prototype.map.call(document.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; }); }
+  function renderPlans() {
+    var fb = checked('fb'), fa = checked('fa'), fs = checked('fs');
+    pBody.innerHTML = '';
+    var shown = 0;
+    plans.forEach(function (x, i) {
+      if (fb.length && fb.indexOf(x.lead) < 0) return;
+      if (fa.length && fa.indexOf(x.area) < 0) return;
+      if (fs.length && fs.indexOf(x.status) < 0) return;
+      shown++;
+      var key = 'p' + i, open = !!openKeys[key];
+      var tr = document.createElement('tr'); tr.className = 'item';
+      tr.innerHTML = '<td><button class="row-toggle" type="button" aria-expanded="' + open + '" aria-controls="plan-d' + i + '">' + chev + '<span>' + x.p + '<br><span class="sub-text">' + x.area + '</span></span></button></td>' +
+        '<td data-label="Lead">' + x.lead + '</td><td data-label="Next step">' + x.next + '</td><td data-label="Due" class="num">' + x.due + '</td>' +
+        '<td data-label="Status"><span class="pill ' + statusCls[x.status] + '">' + statusLabel[x.status] + '</span></td>';
+      var dr = document.createElement('tr'); dr.className = 'detail'; dr.id = 'plan-d' + i; dr.hidden = !open;
+      var td = document.createElement('td'); td.colSpan = 5;
+      td.innerHTML = '<div class="detail-grid">' +
+        '<div><h4>Steps</h4><ul>' + x.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul></div>' +
+        '<div><h4>Support needed</h4><p>' + x.support + '</p></div>' +
+        '<div><h4>Source</h4><p>' + x.src + '</p><p class="sub-text">Last update by Board project lead, Apr 12</p></div></div>';
+      var act = document.createElement('div'); act.className = 'detail-actions'; act.style.display = 'grid';
+      act.appendChild(statusForm(x));
+      td.appendChild(act); dr.appendChild(td);
+      pBody.appendChild(tr); pBody.appendChild(dr);
+      var btn = tr.querySelector('.row-toggle');
+      btn.addEventListener('click', function () { openKeys[key] = !openKeys[key]; btn.setAttribute('aria-expanded', String(!!openKeys[key])); dr.hidden = !openKeys[key]; });
+    });
+    document.getElementById('plan-empty').hidden = shown > 0;
+  }
+  function renderAll() { renderFigs(); renderMine(); renderPlans(); }
+  document.getElementById('plan-filters').addEventListener('change', renderPlans);
+  document.getElementById('plan-filters').addEventListener('submit', function (e) { e.preventDefault(); });
+  renderAll();
+
+  /* Prep checklist */
+  var prepBoxes = document.querySelectorAll('#prep input');
+  prepBoxes.forEach(function (b) { b.addEventListener('change', function () {
+    var n = Array.prototype.filter.call(prepBoxes, function (x) { return x.checked; }).length;
+    document.getElementById('prep-count').textContent = n === 3 ? 'Ready' : n + ' of 3 done';
+  }); });
+
+  /* Assessment chart */
+  var domains = [
+    { d: 'Regional communication', a: 41, b: 58, s: 'More people now say they hear about partner Boards’ activities in time to act. Training opportunities still reach frontline staff late.' },
+    { d: 'Collaborative leadership', a: 52, b: 61, s: 'Leaders report clearer roles in regional decisions. Trust was already a strength at baseline.' },
+    { d: 'Organizational capacity', a: 47, b: 50, s: 'Little change. Staff time for regional work remains the main limit people describe.' },
+    { d: 'Employer services coordination', a: 33, b: 46, s: 'Business Solutions Teams report fewer duplicate employer contacts since the referral note work began.' },
+    { d: 'Peer learning', a: 38, b: 63, s: 'The largest gain. Respondents credit practice exchanges and the shared library.' },
+    { d: 'Implementation and accountability', a: 35, b: 55, s: 'People can now see who leads each shared priority and what comes next.' },
+    { d: 'Sustainability', a: 29, b: 36, s: 'Still the lowest domain. Year 3 sessions and the playbook will focus here.' }
+  ];
+  var chart = document.getElementById('chart');
+  domains.forEach(function (x, i) {
+    var row = document.createElement('div'); row.className = 'crow';
+    var lo = Math.min(x.a, x.b), hi = Math.max(x.a, x.b);
+    row.innerHTML = '<button class="lab" type="button" aria-expanded="false" aria-controls="plain-' + i + '">' + chev + '<span>' + x.d + '</span></button>' +
+      '<div class="track" role="img" aria-label="' + x.d + ': ' + x.a + ' percent in Year 1, ' + x.b + ' percent in Year 2">' +
+      '<span class="gridline" style="left:25%"></span><span class="gridline" style="left:50%"></span><span class="gridline" style="left:75%"></span>' +
+      '<span class="seg" style="left:' + lo + '%;width:' + (hi - lo) + '%"></span>' +
+      '<span class="d1" style="left:' + x.a + '%"></span><span class="d2" style="left:' + x.b + '%"></span></div>' +
+      '<span class="chg">+' + (x.b - x.a) + ' pts</span>' +
+      '<p class="plain" id="plain-' + i + '" hidden>' + x.s + '</p>';
+    chart.appendChild(row);
+    var btn = row.querySelector('.lab'), pl = row.querySelector('.plain');
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open)); pl.hidden = open;
+    });
+  });
+  document.getElementById('chart-table').innerHTML = '<table><thead><tr><th scope="col">Domain</th><th scope="col">Year 1</th><th scope="col">Year 2</th><th scope="col">Change</th></tr></thead><tbody>' +
+    domains.map(function (x) { return '<tr><td>' + x.d + '<div class="sub-text">' + x.s + '</div></td><td class="num">' + x.a + '%</td><td class="num">' + x.b + '%</td><td class="num">+' + (x.b - x.a) + '</td></tr>'; }).join('') +
+    '</tbody></table>';
+
+  /* Poll */
+  var pollData = [17, 12, 9], voted = false;
+  var pollLabels = ['Shared employer referral note', 'Work-based learning practices', 'Registered Apprenticeship messaging'];
+  document.getElementById('poll').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (voted) return;
+    var sel = document.querySelector('input[name="poll"]:checked');
+    if (!sel) { toast('Choose an option before voting.'); return; }
+    var mine = +sel.value; pollData[mine]++; voted = true;
+    var total = pollData.reduce(function (a, b) { return a + b; }, 0);
+    var res = document.getElementById('poll-res');
+    res.innerHTML = pollData.map(function (n, i) {
+      var pct = Math.round(n / total * 100);
+      return '<div class="pr' + (i === mine ? ' mine' : '') + '"><div><span>' + pollLabels[i] + (i === mine ? ' (your vote)' : '') + '</span><span class="num">' + pct + '%</span></div><div class="meter"><i style="width:' + pct + '%"></i></div></div>';
+    }).join('');
+    res.hidden = false;
+    document.getElementById('poll-opts').hidden = true;
+    document.getElementById('poll-submit').hidden = true;
+    document.getElementById('poll-count').textContent = total + ' responses';
+  });
+
+  /* Forms */
+  document.getElementById('perspective').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var vis = document.getElementById('vis-fac').checked ? 'facilitators only' : 'all participants';
+    toast('Response saved and shared with ' + vis + '.');
+    document.getElementById('persp-text').value = '';
+  });
+  var shareBtn = document.getElementById('share-btn'), shareForm = document.getElementById('share-form');
+  function setShare(open) { shareForm.hidden = !open; shareBtn.setAttribute('aria-expanded', String(open)); if (open) document.getElementById('pr-title').focus(); }
+  shareBtn.addEventListener('click', function () { setShare(shareForm.hidden); });
+  document.getElementById('share-cancel').addEventListener('click', function () { setShare(false); });
+  shareForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var t = document.getElementById('pr-title').value.trim(), w = document.getElementById('pr-what').value.trim();
+    if (!t) { toast('Add a short name for the practice.'); return; }
+    var div = document.createElement('div'); div.className = 'practice';
+    var h = document.createElement('h4'); h.textContent = t;
+    var p = document.createElement('p'); p.className = 'sub-text'; p.textContent = w || 'Added just now';
+    var tg = document.createElement('div'); tg.className = 'tags'; tg.innerHTML = '<span>New</span>';
+    div.appendChild(h); div.appendChild(p); div.appendChild(tg);
+    document.getElementById('practices').prepend(div);
+    shareForm.reset(); setShare(false);
+    toast('Practice added to the library.');
+  });
+})();
+</script>
+
+</body>
+</html>
