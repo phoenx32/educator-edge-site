@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Wireframe demo of the Regional Collaboration Dashboard, shown with example data.">
+<meta name="description" content="Wireframe demo of the Regional Collaboration Dashboard, with illustrative content.">
 <title>Regional Collaboration Dashboard</title>
-<style>html,body{margin:0;padding:0}</style>
+<style>html,body{margin:0;padding:0}
+/* Concept note: information, not an action or a warning */
+.concept-note { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 24px; padding: 10px 14px; border-radius: 8px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-size: 0.875rem; line-height: 1.45; }
+.concept-note svg { flex: none; margin-top: 2px; color: var(--accent); }
+.concept-note p { margin: 0; }
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -433,7 +438,7 @@ header.top .wrap { flex-wrap: nowrap; }
       </div>
       <div>
         <h1>Regional Collaboration Dashboard</h1>
-        <div class="sub">Appalachian Advancement · Example data</div>
+        <div class="sub">Appalachian Advancement</div>
       </div>
     </div>
     <div class="settings">
@@ -469,15 +474,19 @@ header.top .wrap { flex-wrap: nowrap; }
     <a href="#participate" data-view="participate">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Participate</a>
     <span class="spacer"></span>
-    <span class="role" title="Example signed-in role">
+    <span class="role" title="Signed-in role">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-      Board project lead (example)
+      Board project lead
     </span>
   </div>
 </nav>
 
 <main id="main" tabindex="-1">
   <div class="wrap">
+  <div class="concept-note" role="note" aria-label="About this demo">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+    <p>This is a draft concept built to show the idea. Its content is illustrative, not actual project data. The full dashboard would add more features and be developed with the Consortium and its partners during the project.</p>
+  </div>
 
   <!-- OVERVIEW -->
   <section class="view" id="view-overview" data-view="overview" aria-labelledby="h-overview">
