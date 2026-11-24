@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -876,60 +877,167 @@ select.field{background:var(--bg);color:var(--ink)}
   .wk{grid-template-columns:1fr}
   .tour{left:12px;right:12px}
 }
-
-/* ===== home schedule, community and phone nav (styles the v9 home markup) ===== */
-.home-h{font-family:var(--display);font-size:23px;font-weight:600;line-height:1.2}
-.home-h .muted{font-family:var(--body);font-size:14px;font-weight:500;margin-left:6px}
+/* ---------- v5: home schedule ---------- */
+.home-h{font-family:var(--display);font-size:23px;font-weight:600}
+.home-h .muted{font-family:var(--body);font-size:14px;font-weight:500;margin-left:8px}
 .sched{margin-top:4px}
-.sched-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.dtabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px}
-.dtab{border:0;background:transparent;border-radius:9px;padding:7px 14px;display:grid;justify-items:start;gap:1px;text-align:left;color:var(--muted);min-height:44px}
-.dtab>span{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:6px;color:inherit}
-.dtab small{font-size:12.5px;font-weight:500}
-.dtab:hover{color:var(--ink)}
-.dtab[aria-selected="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 2px rgba(29,52,65,.12),0 0 0 1px var(--line)}
-.today{background:var(--accent-soft);color:var(--accent-strong);font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:1px 7px}
-.srows{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.srow{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:18px;align-items:center;padding:16px 20px;border-top:1px solid var(--line);background:var(--bg)}
-.srow:first-child{border-top:0}
-.stime{font-size:14px;font-weight:600;color:var(--ink);display:grid;gap:4px;font-variant-numeric:tabular-nums}
-.sdone{font-size:12px;font-weight:600;color:var(--muted)}
-.sbody{display:grid;gap:3px;min-width:0}
-.sk{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.stt{font-weight:650;font-size:16.5px;line-height:1.3;color:var(--ink);text-decoration:none}
-.stt:hover{color:var(--accent-strong);text-decoration:underline}
-.sd{font-size:14.5px;color:var(--muted);line-height:1.45;max-width:70ch}
-.sf{font-size:13.5px;font-weight:600;color:var(--ink);margin-top:2px}
-.sacts{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
-.srow.past{background:var(--surface)}
+.sched-h{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.dtabs{display:flex;gap:8px;flex-wrap:wrap}
+.dtab{border:1px solid var(--line-2);background:var(--bg);color:var(--ink);border-radius:12px;padding:8px 14px;text-align:left;display:grid;gap:1px;font-weight:600;font-size:14.5px;min-width:104px;cursor:pointer}
+.dtab small{color:var(--brown);font-weight:600;font-size:12.5px}
+.dtab:hover{border-color:var(--accent)}
+.dtab[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-strong)}
+.today{color:var(--green);font-size:12px;font-weight:700;margin-left:4px}
+.srows{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid var(--line)}
+.srow{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:18px;align-items:center;padding:16px 12px;border-bottom:1px solid var(--line)}
+.stime{color:var(--brown);font-weight:600;font-size:15px;font-variant-numeric:tabular-nums;display:grid;gap:4px;justify-items:start}
+a.sbody{text-decoration:none;color:var(--ink);display:grid;gap:2px}
+.sk{display:block;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.stt{font-weight:600;font-size:17px;line-height:1.3}
+a.sbody:hover .stt{color:var(--accent-strong);text-decoration:underline}
+.srow.live{background:var(--green-soft);border-radius:12px;border-bottom-color:transparent}
 .srow.past .stt{color:var(--muted)}
-.srow.live{box-shadow:inset 4px 0 0 var(--green);background:var(--green-soft)}
-.srow.brk{padding:9px 20px;background:var(--surface)}
-.srow.brk .stime{font-weight:500;color:var(--muted)}
-.srow.brk .sbody{font-size:13.5px;color:var(--muted);font-weight:600}
-.community{margin-top:40px}
-.community .feed{border-top:1px solid var(--line)}
-.ft{display:block;min-width:0}
-.frx{white-space:nowrap}
-.col3{min-width:0;display:flex;flex-direction:column}
-.col3 .card{flex:none}
-.dmain{min-width:0}
-.bchat{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11.5px;font-weight:600;color:var(--muted);border:0;background:none;padding:4px 0;position:relative}
-.bchat.on{color:var(--accent-strong)}
-.bchat .badge{position:absolute;top:0;left:calc(50% + 6px);font-size:10px;padding:0 5px}
+.srow.brk{padding:10px 12px}
+.srow.brk .sbody{color:var(--muted);font-size:14.5px}
+.srow.brk .stime{color:var(--muted);font-weight:500;font-size:14px}
+.sacts{display:flex;justify-content:flex-end}
+.arow .sk{margin-bottom:2px}
 @media (max-width:680px){
-  .bnav{grid-template-columns:repeat(5,1fr)}
-  .chat-fab{display:none}
-  header.top{position:sticky;top:0;z-index:30}
-  .sched-h{align-items:stretch}
-  .dtabs{width:100%}
-  .dtab{flex:1;padding:6px 8px}
-  .srow{grid-template-columns:1fr;gap:8px;padding:14px 16px}
-  .srow.brk{grid-template-columns:auto 1fr;gap:12px}
-  .stime{grid-auto-flow:column;justify-content:start;align-items:center;gap:10px}
-  .sacts{justify-content:flex-start}
-  .home-h{font-size:21px}
+  .srow{grid-template-columns:1fr auto;gap:6px 12px;padding:14px 10px}
+  .srow .stime{grid-column:1/-1;display:flex;gap:10px;align-items:center}
+  .srow.brk{grid-template-columns:auto 1fr}
+  .srow.brk .stime{grid-column:auto}
+  .dtab{min-width:0;flex:1}
 }
+/* ---------- v5: session pages ---------- */
+.s-sum{font-size:17px;line-height:1.6;max-width:68ch;margin:22px 0 0}
+#obj .obj{margin-top:10px}
+.onpage{align-items:center}
+.onpage-k{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.onpage button{display:inline-flex;align-items:center;gap:7px}
+.onum{width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent-strong);font-size:11.5px;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+.part-h .fmt{font-size:11.5px}
+.fmt.Demo{color:var(--accent-strong)}.fmt.Walkthrough{color:var(--green)}.fmt.Article{color:var(--brown)}
+/* explore card */
+.xcard{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px;align-items:center}
+.xthumb{position:relative;border:1px solid var(--line-2);border-radius:12px;background:var(--surface);padding:14px 16px;display:grid;gap:8px;text-align:left;color:var(--ink);cursor:pointer;width:100%}
+.xthumb:hover{border-color:var(--accent)}
+.xt-h{font-size:12.5px;font-weight:700}
+.xt-row{display:block;height:12px;background:var(--bg);border-radius:4px;overflow:hidden}
+.xt-bar{display:block;height:100%;background:var(--accent);border-radius:4px}
+.xt-bar.g{background:var(--green)}
+.xt-play{position:absolute;top:10px;right:10px;color:var(--accent-strong)}
+@media (max-width:680px){.xcard{grid-template-columns:1fr}}
+/* dashboard modal */
+.dialog.wide{max-width:980px;padding:20px 22px}
+.gwin{border:1px solid var(--line-2);border-radius:12px;overflow:hidden;margin-top:14px;background:var(--bg)}
+.gwin-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--surface);border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
+.gwin-bar i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+.gwin-bar span{margin-left:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dash{padding:18px}
+.dash-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.dash-top h3{font-size:18px;font-weight:700}
+.dash-f{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.dash-f .field{width:auto;padding:6px 10px;font-size:14px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.kpi b{display:block;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.2;color:var(--accent-strong)}
+.kpi span{font-size:13px;color:var(--muted);font-weight:600}
+.kpi.o b{color:var(--brown)}.kpi.p b{color:var(--green)}
+.dash-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:20px}
+.dash-grid h4{font-size:14.5px;font-weight:700}
+.pipe{display:grid;gap:4px}
+.pstage{display:grid;grid-template-columns:96px minmax(0,1fr) 30px;gap:10px;align-items:center;border:1px solid transparent;background:none;padding:6px 8px;border-radius:8px;text-align:left;color:var(--ink);font-size:14px;font-weight:600;cursor:pointer}
+.pstage:hover{background:var(--surface)}
+.pstage[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.ptrack{display:block;height:20px}
+.pbar{display:block;height:100%;border-radius:5px;background:var(--accent);min-width:4px}
+.pstage.placed .pbar{background:var(--green)}
+.pcount{text-align:right;font-variant-numeric:tabular-nums}
+.dtbl{margin-top:8px}
+.ago{color:var(--brown);font-weight:600}
+.gsheet-top{display:flex;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+.gsheet-top b{font-size:14px}
+.gs-ic{width:22px;height:28px;border-radius:3px;background:var(--green);flex:none;position:relative}
+.gs-ic::after{content:"";position:absolute;inset:9px 5px 7px;border:2px solid var(--bg);border-radius:1px}
+.gs-menu{font-size:12px;color:var(--muted);word-spacing:6px}
+.gsheet{max-height:min(420px,55vh);overflow:auto}
+table.sheet{border-collapse:collapse;font-size:12.5px;min-width:100%;width:max-content;font-variant-numeric:tabular-nums}
+.sheet th,.sheet td{border:1px solid var(--line);padding:4px 9px;white-space:nowrap;text-align:left}
+.sheet thead th{background:var(--surface);color:var(--muted);font-weight:500;text-align:center;position:sticky;top:0}
+.sheet .rn{background:var(--surface);color:var(--muted);text-align:center;width:34px;padding:4px}
+.sheet tr.hd td{font-weight:700}
+@media (max-width:760px){.dash-grid{grid-template-columns:1fr}.kpi b{font-size:22px}}
+/* walkthrough */
+.credit{font-size:13.5px;color:var(--muted);margin:-4px 0 0}
+.bsteps{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.bsteps button{width:100%;height:100%;border:1px solid var(--line-2);background:var(--bg);border-radius:10px;padding:8px 10px;text-align:left;display:grid;gap:2px;align-content:start;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer}
+.bsteps button b{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.bsteps button:hover{border-color:var(--accent)}
+.bsteps button[aria-current="step"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-strong)}
+.bsteps button.done b{color:var(--green)}
+.bpanel{margin-top:20px}
+.bpanel h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.bpanel p{margin:0 0 10px;max-width:68ch}
+.bpart{margin-top:22px}
+.bpart h4{font-size:15.5px;font-weight:700;display:flex;gap:9px;align-items:center;margin-bottom:6px}
+.pl{font-size:12px;font-weight:700;color:var(--accent-strong);background:var(--accent-soft);border-radius:6px;padding:1px 7px}
+figure.shot{margin:12px 0 4px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f4f4f2}
+figure.shot img{display:block;width:100%;height:auto}
+.bres{display:flex;gap:8px;align-items:flex-start;color:var(--green);font-weight:600;margin-top:16px!important}
+.bres .i{margin-top:3px;flex:none}
+.bnav-row{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+@media (max-width:680px){.bsteps .bt{display:none}.bsteps button{text-align:center;justify-items:center}}
+/* reflect */
+.readcard{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:18px;align-items:center;border:1px solid var(--line-2);border-radius:14px;padding:14px;color:inherit;text-decoration:none;background:var(--bg);transition:border-color .15s,box-shadow .15s}
+.readcard:hover{border-color:var(--green);box-shadow:0 2px 10px rgba(29,42,49,.08)}
+.readcard img{width:100%;height:auto;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.readcard h3{font-family:var(--display);font-size:21px;font-weight:600;margin:0 0 6px;line-height:1.3}
+.readcard p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.rc-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:620px){.readcard{grid-template-columns:1fr}}
+#reflect .cmts{margin-top:16px}
+.art2 h2{font-family:var(--body);font-size:22px;font-weight:700;line-height:1.3;margin:34px 0 12px}
+.art2{max-width:68ch}
+.afig-img{margin:6px 0 24px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;overflow:hidden}
+.afig-img img{display:block;width:100%;height:auto}
+.refs{font-family:var(--body);font-size:15px;line-height:1.55;padding-left:22px;margin:0}
+.refs li{margin-bottom:8px}
+.refs a{color:var(--accent-strong)}
+.af{font-family:var(--body);font-size:14.5px;line-height:1.45;border:1px solid var(--line-2);border-radius:14px;padding:16px;margin:6px 0 26px;background:var(--bg)}
+.af-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}
+.af-t{font-size:16px}
+.af-k{font-size:13px;color:var(--muted)}
+.af-ctl{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.af-seg,.af-sites{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.af-btn,.af-chip{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:var(--bg);border:1.5px solid var(--line-2);border-radius:10px;padding:7px 16px;cursor:pointer}
+.af-chip{border-radius:999px;padding:6px 14px}
+.af-btn[aria-pressed="true"],.af-chip[aria-pressed="true"]{border-color:var(--green);background:var(--green-soft)}
+.af-sheet{width:100%;border-collapse:collapse;font-size:14px}
+.af-sheet th{text-align:left;font-weight:700;background:var(--green-soft);border-top:1.5px solid var(--green);border-bottom:1.5px solid var(--green);padding:8px 10px}
+.af-sheet td{padding:7px 10px;border-bottom:1px solid var(--line)}
+.af-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:10px}
+.af-stats div{border:1px solid var(--line-2);border-radius:12px;padding:10px 12px}
+.af-stats span{display:block;font-size:13px;color:var(--muted)}
+.af-stats b{font-size:26px}
+.af-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.af-panel{border:1px solid var(--line-2);border-radius:12px;padding:12px}
+.af-panel h4{margin:0 0 10px;font-size:14.5px}
+.af-panel ul{list-style:none;margin:0;padding:0}
+.af-panel li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.af-bar{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:13.5px;color:var(--muted)}
+.af-bar span{flex:0 0 52px}
+.af-bar i{display:block;height:14px;border-radius:5px;background:var(--green-soft);border:1.5px solid var(--green)}
+.af-bar em{font-style:normal;color:var(--ink)}
+.af-empty{color:var(--muted);margin:6px 0}
+@media (max-width:620px){.af-stats,.af-panels{grid-template-columns:1fr}}
+.reflect-q{font-size:17px;font-weight:600;margin:0 0 12px;max-width:62ch}
+.myans{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border-radius:12px;padding:14px 16px}
+.myans p{margin:4px 0 6px}
+.peers-h{font-size:14px;font-weight:700;color:var(--muted);margin:24px 0 8px}
+.peerans{list-style:none;margin:0;padding:0}
+.peerans li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.peerans p{margin:3px 0 0}
 </style>
 </head>
 <body>
@@ -1026,170 +1134,39 @@ const DAYS = [
 const ROLES = ["Frontline staff", "Business services", "Managers"];
 const SESSIONS = [
   { n: 1, day: 0, time: "11:00", end: "12:00", icon: "sparkles", roles: ROLES,
-    title: "Prompt Basics for Everyday Workforce Tasks",
-    summary: "Participants work on the weekly writing that takes up staff time, such as program letters, meeting notes and messages to job seekers, and rewrite a confusing letter in plain English and Spanish one revision at a time. Along the way, the group keeps in view what never goes into a public tool and posts prompts that worked to a shared library.",
-    objectives: ["Write a prompt that states the task, audience and format, then improve the draft through follow-up requests.", "Name the kinds of participant information that never go into a public AI tool.", "Post at least one prompt that worked to the shared library."],
-    check: "A tool can't tell you whether its Spanish reads naturally or whether a letter is really in plain English. Ask someone who knows the audience to read it.",
-    materials: [["Demo", "Rewrite a confusing program letter in plain English and Spanish, one revision at a time"], ["Walkthrough", "From a one-line prompt to one you can reuse"], ["Case", "A prompt library built by a team of career coaches"], ["Article", "Why the first answer is rarely the one to keep"], ["Resource", "Information that never goes into a public AI tool"], ["Resource", "Shared prompt library for workforce tasks, sorted by role"]] },
+    title: "Writing Prompts for Everyday Workforce Tasks",
+    summary: "Workforce professionals may use AI to draft communications, summarize information, plan services, develop resources, analyze a problem, or prepare for work with job seekers. This session is designed to work for people who are just getting started as well as those who have already been experimenting with AI. Participants can begin with straightforward prompting for familiar tasks, then build toward more advanced approaches such as using examples, reference materials, reusable instructions, and simple harnesses that help produce more consistent results across repeated work. The focus stays on practical workforce applications and on helping participants decide which techniques are useful for the work they actually do.",
+    objectives: ["Describe how context, audience, instructions, examples, and format can influence an AI-generated response.", "Write and revise prompts for a range of workforce tasks.", "Use follow-up prompts, examples, and reference materials to improve the accuracy, relevance, or usefulness of an AI response.", "Identify when a reusable prompt, set of instructions, or simple harness could support more consistent results across repeated tasks."] },
   { n: 2, day: 0, time: "12:00", end: "1:00", icon: "compass", roles: ["Frontline staff", "Business services"],
     title: "AI Tools for Job Seekers",
-    summary: "Staff practice teaching job seekers to use AI for their own career planning and job search. Facilitators coach a fictional job seeker through a career navigation walkthrough: exploring careers that fit their work history, comparing local training programs on cost, length and credentials, tailoring a resume for applicant tracking systems and practicing interview questions out loud. Participants then take turns as coach and job seeker in pairs.",
-    objectives: ["Coach a job seeker through using AI to explore careers and compare training programs.", "Help a job seeker use AI to tailor a resume for applicant tracking systems and practice for an interview.", "Check AI answers about careers, wages and training against reliable sources.", "Explain to job seekers which personal information to keep out of AI tools."],
-    check: "Tools can give outdated wages and program costs. Check each figure against state labor market data and the training provider's own website.",
-    materials: [["Walkthrough", "Plan a career pathway with a job seeker"], ["Demo", "From job posting to interview practice"], ["Article", "Helping job seekers see where their skills lead"], ["Resource", "Prompts written for job seekers"], ["Resource", "A one-page guide to share with job seekers before they use AI"]] },
+    summary: "Job seekers are already using AI to explore careers, understand job postings, revise resumes and cover letters, prepare for interviews, compare training options, and make decisions about their next steps. For workforce professionals, the question is not simply how the tools work, but how they can support people in using them well. This session explores practical applications across the job search, with attention to preserving a job seeker’s experience and voice, checking information that may affect a decision, and helping people develop approaches they can continue using independently.",
+    objectives: ["Identify practical uses of AI across career exploration, training decisions, job search, application, and interview preparation.", "Use AI with a job posting or career goal to support resume development, interview preparation, or exploration of related opportunities.", "Evaluate AI-generated career, training, or employment information using relevant context and reliable sources.", "Help job seekers use AI in ways that accurately represent their experience, respond to their goals, and build greater independence in navigating the job search."] },
   { n: 3, day: 0, time: "2:00", end: "3:00", icon: "file", roles: ["Frontline staff"], full: true,
     title: "AI Tools for Case Management",
-    summary: "Case managers try AI for case note summaries, follow-up messages and tracking, with participant details removed and a person reviewing every draft. Participants also build a simple caseload dashboard in Google Sheets and Excel with AI's help, without giving AI any participant data.",
-    objectives: ["Remove identifying details from a case note, then use a prompt to produce a plain-language summary with next steps and deadlines.", "Review an AI draft for accuracy, tone and missing information before it is used.", "Build a simple caseload dashboard in Google Sheets or Excel without giving AI participant data."],
-    check: "Summaries drop deadlines and sometimes add details that were never in the note." },
+    summary: "Case management often requires staff to make sense of information spread across notes, follow-up tasks, service records, and multiple points in a participant’s progress. This session explores how AI can help organize that information into more useful formats, including structured summaries, recurring categories, follow-up lists, and simple dashboards that make patterns across a caseload easier to see. Participants will consider where AI can reduce administrative work, where structured data can improve visibility, and how those tools can support stronger follow-up without replacing staff judgment.",
+    objectives: ["Identify case management information that can be organized into consistent fields for tracking and review.", "Use AI to summarize or categorize information in ways that support follow-up and caseload management.", "Interpret a simple caseload dashboard to identify patterns, overdue follow-up, or emerging needs.", "Describe how AI-supported workflows can reduce repetitive administrative work and make case information easier to use in day-to-day decision-making."] },
   { n: 4, day: 1, time: "11:00", end: "12:00", icon: "chart", roles: ["Managers", "Business services"],
-    title: "Leveraging AI and Labor Market Information to Identify Trends and Opportunities",
-    summary: "For staff who design programs and curricula, this session uses AI to read state labor market reports, compare occupations and check which credentials line up with local openings. Participants check every figure against the source before they use it.",
-    objectives: ["Use AI to summarize a state labor market report and note the trends that matter for local programs.", "Compare occupations on wages, openings and training requirements using source data.", "Check which credentials line up with local openings, and verify every AI-generated figure against the original data."],
-    check: "Tools round wages, mix up years and sometimes invent a figure to fill a gap. Check every number against the source table.",
-    materials: [["Demo", "Read a state labor market report and list the trends that matter for local programs"], ["Walkthrough", "Compare local occupations with public data and an AI tool"], ["Case", "A program team checking whether its credentials match local openings"], ["Article", "When the numbers look right and aren't"], ["Resource", "Public labor market information sources by state"], ["Resource", "Credential and openings comparison template"]] },
+    title: "Using AI to Interpret Local Labor Market Information",
+    summary: "Labor market information can inform decisions about which programs to offer, which occupations to prioritize, and how training connects to jobs in a local or regional economy. This session explores how AI can help workforce professionals work across public labor market data, employer information, occupational requirements, and credential data to identify patterns and compare opportunities. Applications may include planning curriculum, reviewing career pathways, aligning programming with in-demand occupations and credentials, comparing wages and openings, and translating findings into useful information for job seekers, employers, program staff, and workforce boards.",
+    objectives: ["Use AI to interpret labor market data related to employment, wages, openings, occupational demand, skills, and credentials.", "Compare occupations, career pathways, and training options using relevant local or regional data.", "Examine how labor market information can inform curriculum, program planning, and alignment with in-demand credentials.", "Translate labor market findings into useful information for job seekers, employers, program staff, or workforce boards.", "Evaluate AI-generated conclusions against the underlying data and identify where additional evidence is needed."] },
   { n: 5, day: 1, time: "12:00", end: "1:00", icon: "video", roles: ROLES,
     title: "AI for Outreach and Multimedia",
-    summary: "Participants make a flyer, a short slide deck, a podcast-style audio clip and a short video for recruiting job seekers or employers. They check each piece for reading level, accessibility and translation before it goes out.",
-    objectives: ["Make a flyer and a short slide deck for a recruiting goal with help from an AI tool.", "Make a podcast-style audio clip and a short video from the same program information.", "Check each piece for reading level, accessibility and translation quality."],
-    check: "Audio and video tools sometimes add program details that aren't in your source. Listen to and watch every piece in full before it goes out.",
-    materials: [["Demo", "Turn one program description into a flyer, a slide deck, an audio clip and a short video"], ["Walkthrough", "Check a flyer for reading level, accessibility and translation"], ["Case", "A business services team recruiting employers for a hiring event"], ["Article", "One message, four formats"], ["Resource", "Accessibility quick check for outreach materials"]] },
-  { n: 6, day: 1, time: "2:00", end: "3:00", icon: "wrench", roles: ROLES, full: true,
+    summary: "Workforce programs communicate across many formats, including websites, flyers, social media, email, audio, video, and multilingual materials. This session explores how AI can help staff create and adapt outreach more efficiently, expand the kinds of materials they are able to produce, and make information more accessible across languages and formats. The focus is on using AI to help more people understand available services, recognize what is relevant to them, and take the next step.",
+    objectives: ["Use generative AI to create and adapt outreach across text, image, audio, video, and multilingual formats.", "Rework the same core information for different audiences, channels, or communication needs.", "Use AI to make outreach more accessible based on WCAG guidelines, timely, and responsive to the people a program is trying to reach.", "Identify ways AI-supported outreach can improve awareness of services and help more people act on available opportunities."] },
+  { n: 6, day: 1, time: "2:00", end: "3:00", icon: "wrench", roles: ROLES,
     title: "AI Tools Lab",
-    summary: "Participants bring a task they do every week and work through it with facilitators and peers. Those further along try advanced tools in Google and Microsoft: agents that carry out multistep tasks, agentic scans of job boards and funding notices, and connectors that link AI to email, files and case management systems. Some build a program brain, an AI assistant loaded with a program's handbook and rules.",
-    objectives: ["Break a recurring task into steps an AI tool can help with.", "Test at least one approach on their own task and record the result.", "Give and receive feedback on another participant's approach."],
-    check: "In our testing, the tool skipped a listing that welcomed applicants without a diploma, because the listing never used the word \"required.\"" },
+    summary: "This advanced lab moves beyond prompts to explore how AI can support multi-step systems and workflows in workforce development. Participants will examine agentic workflows that can carry out a sequence of tasks and AI harnesses that combine instructions, reference materials, data, and tool connections to produce more consistent results for a specific use case. Applications may include automating parts of intake and follow-up, combining data for reporting, creating internal staff assistants, generating resources from approved materials, or connecting information across existing systems.",
+    objectives: ["Explain the progression from individual prompts to reusable AI systems and agentic workflows.", "Identify the instructions, reference materials, data, and tool connections that can make up an AI harness.", "Map a workforce process into steps that could be supported by an AI agent or automated workflow.", "Develop a concept for a customized AI system connected to an operational, reporting, service, or program need."] },
   { n: 7, day: 2, time: "11:00", end: "12:00", icon: "scale", roles: ROLES,
-    title: "Responsible and Ethical Use of AI: Bias, Equity and Accessibility",
-    summary: "Participants look at where bias can enter resume screening, job descriptions and outreach, and decide what participant information stays out of AI tools and where a person needs to review the work. They also run accessibility checks on AI-made materials.",
-    objectives: ["Identify points in resume screening, job descriptions and outreach where AI output could disadvantage some job seekers.", "Decide which participant information stays out of AI tools and which steps need a person's review.", "Run an accessibility check on an AI-drafted document and revise it."],
-    check: "An AI bias review misses things and flags things that are fine. Have more than one person look, including someone the material is meant for.",
-    materials: [["Demo", "Review a job description for biased language and unneeded degree requirements, then judge the suggestions"], ["Walkthrough", "Run an accessibility check on an AI-drafted flyer"], ["Case", "A workforce board reviews an AI resume screening tool before deciding"], ["Article", "Who gets left out of the prompt"], ["Resource", "Responsible use checklist"], ["Resource", "Information to keep out of AI tools"], ["Resource", "Accessibility quick check"], ["Resource", "Code of Professional Ethics"]] },
+    title: "Responsible and Ethical Use of AI in Workforce Services",
+    summary: "AI is increasingly shaping how workforce programs communicate, make recommendations, support hiring, and connect people to opportunities. This panel discussion brings together workforce staff and job seeker perspectives to examine the practical and ethical questions that come with those uses, including hiring, outreach, translation, accessibility, and bias. Panelists will consider where AI may affect people differently, what those differences mean in practice, and how workforce professionals can respond. The discussion will also address how organizations can translate those principles into clear AI use policies and guidance for staff. A professional code of ethics will provide a common framework for connecting these questions to professional responsibilities in workforce development.",
+    objectives: ["Identify ways AI-supported workforce processes may create different outcomes for different job seekers.", "Analyze AI-assisted hiring, outreach, translation, or screening practices through the lens of professional ethics and equitable access.", "Apply a professional code of ethics to questions about AI use in workforce services.", "Identify key considerations for developing organizational AI use policies and staff guidance.", "Develop criteria for evaluating whether an AI-supported practice aligns with the goals and responsibilities of a workforce program."] },
   { n: 8, day: 2, time: "1:00", end: "2:00", icon: "users", roles: ROLES,
-    title: "Capstone: AI Champions and a Culture of Learning",
-    summary: "The capstone looks at how teams keep learning together through small experiments and peer learning circles. Each participant plans one small experiment for their own team and decides what fits their local context.",
-    objectives: ["Describe how small experiments and learning circles help a team keep learning about AI.", "Plan one small experiment for their own team, with a question to answer and a way to check the result.", "Decide what fits their local context and identify peers in the academy to share results with."],
-    check: "AI-drafted plans run long and promise too much. Keep your experiment small enough to try in a few weeks.",
-    materials: [["Demo", "Turn rough notes into a plan for one small experiment"], ["Walkthrough", "Set up a learning circle for your team"], ["Case", "How a regional group of workforce partners shares what they are testing"], ["Article", "Small experiments, shared results"], ["Resource", "Small experiment planning template"], ["Resource", "Learning circle guide"], ["Resource", "List of peers to keep comparing notes with"]] },
+    title: "Lifelong Learning with Artificial Intelligence",
+    summary: "This capstone focuses on what it takes to build an organizational culture where staff can continue learning about AI, testing ideas, and sharing what they learn with one another. Participants will consider the change management involved in introducing new tools and practices, including how to create space for experimentation, respond to different levels of comfort and experience, and connect AI use to existing program goals rather than treating it as a separate initiative. The session will also examine the role of AI champions, learning circles, and peer networks in helping teams build shared capacity over time.",
+    objectives: ["Identify elements of an organizational culture that can support ongoing AI learning and experimentation.", "Apply basic change management considerations to the introduction of AI tools, workflows, or practices within a workforce organization.", "Describe how AI champions can support colleagues, share emerging practices, and connect experimentation across teams.", "Identify structures such as learning circles, peer networks, or regular opportunities for staff to exchange what they are learning.", "Outline practical next steps for continuing AI learning and adoption within their organization after the academy."] },
 ];
 const NEXT = 3;
-
-// ---------- full content: session 3 ----------
-const S3 = {
-  demo: {
-    title: "Summarize a case note in plain language",
-    prompt: "You are helping a career coach keep clear records. Summarize the case note below in plain-language bullets.\n\nPut next steps and deadlines first, with dates written out. Do not add anything that is not in the note. If something is unclear, list it as a question at the end.\n\nCase note:\n[paste the note here, with names, ID numbers and addresses removed]",
-    input: "Met w/ client 11/3. Completed WIOA eligibility docs except proof of Selective Service reg, client to bring by 11/10. Interested in CDL program at county CC, next cohort starts 1/12, app due 12/1. Transportation is a barrier, discussed bus pass through supportive services, form needs supervisor signature. Resume draft started, client wants feedback before applying to warehouse roles at the distribution center. F/u call sched 11/7 2pm.",
-    lines: [
-      { h: "Next steps and deadlines" },
-      { t: "Nov 7, 2:00 PM: follow-up call." },
-      { t: "Nov 10: client brings proof of Selective Service registration." },
-      { t: "Dec 1: CDL program application due. Next cohort starts Jan 12." },
-      { t: "Bus pass approved through supportive services.", bad: "The note says a bus pass was discussed and the form still needs a supervisor's signature. Nothing was approved." },
-      { h: "Other notes" },
-      { t: "Eligibility documents are complete except Selective Service." },
-      { t: "Client has a valid driver's license.", bad: "The note never says this. The tool filled it in because of the CDL goal. It is a question for the next meeting." },
-      { t: "Resume draft started. Client wants feedback before applying to warehouse roles." },
-      { h: "Questions" },
-      { t: "Is there a cost for the CDL program, and does the client need help with it?" },
-    ],
-  },
-  walk: {
-    title: "Write a follow-up text to a job seeker who missed an appointment",
-    steps: [
-      { t: "Open your AI tool", d: "Use the tool your organization has approved. If there isn't one yet, check with your supervisor before you start.", screen: [["Start a new chat", 0, 1]] },
-      { t: "Paste the prompt", d: "Copy the follow-up prompt from the Take it with you section. It asks for a short, friendly text with two new times.", screen: [["Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Under 60 words.", 1, 1]] },
-      { t: "Add only what the text needs", d: "First name, the day they missed and two times you can meet. Leave out case details, ID numbers and any guess about why they missed.", screen: [["Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Under 60 words.", 1, 0], ["First name: Andre. Missed: Tuesday. Times: Thursday 10:00 or Friday 2:00.", 1, 1]] },
-      { t: "Ask for two versions", d: "One shorter, one a little warmer. Picking between two drafts is faster than fixing one.", screen: [["Give me two versions. Make one shorter.", 1, 1], ["1. Hi Andre, we missed you Tuesday. I have Thursday at 10 or Friday at 2. Which works for you?\n2. Hi Andre, sorry we missed each other. Could you do Thursday at 10 or Friday at 3?", 0, 0]] },
-      { t: "Check it before you send", d: "Version 2 moved Friday to 3:00. Small changes like this are easy to miss. Check names, days and times against what you typed, then send from your usual texting system.", screen: [["2. Hi Andre, sorry we missed each other. Could you do Thursday at 10 or Friday at 3?", 0, 2], ["Friday was 2:00, not 3:00. Use version 1 or fix the time.", 1, 0]] },
-    ],
-  },
-  practice: {
-    title: "Worked example: from intake form to summary and follow-up",
-    note: "Sample data. In real use, remove names, ID numbers and addresses before anything goes into an AI tool.",
-    stages: [
-      { t: "Intake form", body: () => `<table class="data"><thead><tr><th scope="col">Field</th><th scope="col">Sample entry</th></tr></thead><tbody><tr><td>Goal</td><td>Commercial driver's license, then a local delivery job</td></tr><tr><td>Barriers</td><td>No car. Childcare after 3 PM.</td></tr><tr><td>Work history</td><td>Two years in a warehouse, forklift certified</td></tr><tr><td>Documents</td><td>ID and Social Security card on file. Selective Service pending.</td></tr><tr><td>Next contact</td><td>Phone, weekday mornings</td></tr></tbody></table>` },
-      { t: "Prompt", body: () => `<div class="prompt">Using the intake answers below, write a one-paragraph summary for the case file, then list three questions I should ask at our next meeting. Use plain language. Do not guess at anything the form doesn't say.</div>` },
-      { t: "AI draft", body: () => `<div class="prompt plain">Summary: The participant wants a commercial driver's license and a local delivery job. They have two years of warehouse experience and a forklift certification. Transportation and afternoon childcare are barriers. Selective Service documentation is still pending.\n\nQuestions for the next meeting\n1. Which CDL programs fit your schedule before 3 PM?\n2. Would a bus pass or gas card help you get to training?\n3. Do you have proof of Selective Service registration, or do you need help getting it?</div>` },
-      { t: "Human review", body: () => `<ul class="review"><li><span class="c-green">${ic("check", 18, 3)}</span><span>Every fact in the summary matches the form.</span></li><li><span class="c-brown">${ic("alert", 18)}</span><span>Question 2 offers a gas card. Confirm your program can give one before you ask.</span></li><li><span class="c-brown">${ic("alert", 18)}</span><span>"Before 3 PM" comes from the childcare note. Ask about the schedule instead of assuming it.</span></li><li><span class="c-green">${ic("check", 18, 3)}</span><span>The coach edits the summary and saves it in the case management system.</span></li></ul>` },
-      { t: "Follow-up text", body: () => `<div class="mock me" style="max-width:440px">Hi, this is Dana from the job center. Thanks for meeting today. Next time, let's look at CDL programs and talk through what schedule works for you. Does Thursday at 10 work?</div><p class="hint" style="margin-top:10px">Sent from the job center's texting system, not from the AI tool.</p>` },
-    ],
-  },
-  article: {
-    title: "Writing to job seekers with AI", by: "joey", mins: 4,
-    body: [
-      "Most of what a career coach writes is short: a reminder, a follow-up, a note after a missed appointment. These messages matter more than their length suggests. A clear, friendly text can decide whether someone comes back.",
-      "AI tools are good at first drafts of short messages. They are quick, and they can aim for a reading level when asked. [[h1|Their drafts also get details wrong]], and the wrong details read as smoothly as the right ones. The default tone can sound like a letter from a bank.",
-      "A few habits help. Give the tool only what the message needs: a first name, a day, two times. Ask for two versions and pick the one that sounds like you. Read the message the way the person receiving it would, on a phone, between other things.",
-      "The harder question is where not to use AI for this. Messages about benefit decisions, sanctions or anything a person might reread three times [[h2|probably deserve your own words]]. Which messages in your program would you keep for a person to write?",
-    ],
-  },
-  comments: [
-    { id: "c1", who: "rosa", when: "Mon 8:14 PM", text: "We asked for a sixth-grade reading level on our reminder texts. Fewer people called to ask what the message meant.", r: { heart: 6, bulb: 3 } },
-    { id: "c2", who: "dana", when: "Mon 9:02 PM", text: "Trying that with my morning follow-ups.", reply: true, r: { heart: 2 } },
-    { id: "c3", who: "tom", when: "Tue 7:05 AM", text: "We tried AI drafts for a sanction notice and stopped. Too much depends on the exact wording, and the draft softened a deadline.", r: { thumbs: 5, bulb: 2 } },
-  ],
-  resources: [
-    { icon: "file", title: "Case note summary checklist", type: "Checklist", preview: "Before you save an AI-assisted summary:\n1. Every date matches the original note.\n2. Nothing was added that isn't in the note.\n3. No names, ID numbers or addresses went into the tool.\n4. Unclear items are listed as questions, not guesses.\n5. A person read it before it went in the file." },
-    { icon: "shield", title: "De-identification guide for case notes", type: "Guide", preview: "Remove before pasting: full names, dates of birth, Social Security or state ID numbers, addresses, phone numbers, employer names tied to a person and details about health, legal status or family that the task doesn't need.\n\nReplace with roles: \"the participant,\" \"their employer,\" \"the training provider.\"" },
-    { icon: "sparkles", title: "Follow-up message prompts", type: "Prompt", copy: "Write a short, friendly text to a job seeker who missed an appointment. Offer two new times. Keep it under 60 words and at a sixth-grade reading level. Give me two versions." },
-    { icon: "rec", title: "Session recording and slides", type: "Recording", preview: "The recording, transcript and slides post here within a day of the live session on February 23." },
-  ],
-  checks: ["Every date and time matches the original note", "Nothing was added that isn't in the note", "No names, ID numbers or addresses went into the tool", "The tone fits the person who will read it", "A person reviewed it before it went in the file or to the job seeker"],
-};
-
-// ---------- full content: session 6 ----------
-const LEADS = [
-  ["Riverside Distribution", "Warehouse associate", "$18.50/hr", "Nights", "No diploma required. Must be 18+."],
-  ["Lakeview Regional Hospital", "Patient transporter", "$16.75/hr", "Days", "High school diploma or GED required."],
-  ["Metro Transit", "Bus cleaner", "$17.20/hr", "Evenings", "Education: none listed."],
-  ["Corner Market", "Deli clerk", "$15.00/hr", "Flexible", "Food handler card within 30 days."],
-  ["Summit Bank", "Teller trainee", "$17.00/hr", "Days", "Diploma or equivalent preferred."],
-  ["Greenway Landscaping", "Crew member", "$18.00/hr", "Days, seasonal", "No education requirement. Valid license a plus."],
-  ["City Schools", "Cafeteria aide", "$15.50/hr", "Weekdays", "High school diploma required."],
-  ["BrightPath Senior Living", "Dietary aide", "$16.00/hr", "Rotating", "We welcome applicants without a diploma."],
-];
-const S6 = {
-  demo: {
-    title: "Worked example: filter a weekly job leads list",
-    prompt: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED.\n\nColumns: employer, job title, pay, schedule and the exact words from the listing that show the requirement.\n\nIf a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess.\n\n[paste the list here]",
-  },
-  walk: {
-    title: "From task to tested prompt",
-    steps: [
-      { t: "Pick one recurring task", d: "Something you do every week that takes longer than it should. Write it in one sentence.", screen: [["Every Monday I go through the job leads list and pull out jobs that don't need a diploma.", 1, 1]] },
-      { t: "Describe a good result", d: "What would you hand to a job seeker or a coworker? List the columns, the length and the format.", screen: [["A table: employer, title, pay, schedule and the listing's own words as proof.", 1, 1]] },
-      { t: "Write a first prompt", d: "Say what the input is, what to return and what to do when the input is unclear.", screen: [["...If a listing doesn't say, put it in a separate list. Don't guess.", 1, 1]] },
-      { t: "Test it on real examples", d: "Use last week's list or a sample. Remove anything that identifies a person.", screen: [["3 jobs found. 2 to check with the employer.", 0, 1]] },
-      { t: "Compare with a hand check", d: "Do the same list by hand. Where you and the tool disagree, change the prompt or decide this task stays with a person.", screen: [["Tool missed: \"We welcome applicants without a diploma.\"", 0, 2], ["Add to the prompt: count wording like \"welcome applicants without a diploma\" as no requirement.", 1, 1]] },
-    ],
-  },
-  posts: [
-    { who: "rosa", task: "Turning intake notes into plain-language summaries", worked: "Summaries were faster to review than to write from scratch.", didnt: "It wrote dates in two formats. Added a line to the prompt asking for one.", r: { heart: 8, bulb: 4 } },
-    { who: "marcus", task: "First emails to employers we haven't worked with", worked: "Usable drafts once I gave it the employer's industry and the services we offer.", didnt: "Too formal and too long. Asked for something a person would actually send.", r: { thumbs: 6 } },
-    { who: "luis", task: "Career pathway guide for adult learners", worked: "It sorted programs by length and cost clearly.", didnt: "Two program details were out of date. Checked every one against the college website.", r: { heart: 5, bulb: 6 } },
-    { who: "kim", task: "Monthly labor market brief for the board", worked: "A readable summary of a dense state report.", didnt: "The AI tool rounded wage figures in my labor market brief. Now I paste the table and tell it not to change numbers.", r: { bulb: 9 } },
-  ],
-  article: {
-    title: "Getting AI help with program data without sharing the data", by: "christin", mins: 3,
-    body: [
-      "Program data is where AI could save the most time, and it is also data most of us should not paste into an AI tool. One option is to [[h3|have AI write a formula or script that works on the data]], so the AI tool never reads the data itself.",
-      "Describe your spreadsheet's columns to the AI tool, using made-up rows, and say what you want to see. Then run the formula or script yourself, inside the systems your organization already approves.",
-      "You still have to test the formula or script, the same way you would check a coworker's spreadsheet before it goes into a board report.",
-    ],
-  },
-  comments: [
-    { id: "d1", who: "aisha", when: "Mon 3:40 PM", text: "This is the approach our IT person was comfortable with. The data stays with us.", r: { heart: 4, thumbs: 3 } },
-    { id: "d2", who: "tom", when: "Mon 6:12 PM", text: "Tried it with formulas in our shared spreadsheet. The first formula counted blank rows. Took two rounds to get it right.", r: { bulb: 2 } },
-  ],
-  resources: [
-    { icon: "steps", title: "Task breakdown worksheet", type: "Worksheet", preview: "Task in one sentence:\nHow often:\nWhat a good result looks like:\nWhat must never go into the tool:\nFirst prompt:\nTested on (3 examples):\nWhat the tool got wrong:\nKeep, change or drop?" },
-    { icon: "wrench", title: "Comparing AI tools: cost and what each keeps", type: "Comparison", preview: "Columns, with one row per tool:\n\nCost per staff member\nWhat the tool keeps from your chats, and for how long\nWhether you can turn off training on your data\nWhether your organization has approved it\nWho at your organization can answer questions about it\n\nFacilitators fill in rows for common tools the week of the academy, because prices and data policies change often. Add rows for any other tool your organization is considering." },
-    { icon: "sparkles", title: "Job leads filter prompt", type: "Prompt", copy: "Below is this week's job leads list. Return a table of only the jobs that do not require a high school diploma or GED. Columns: employer, job title, pay, schedule and the exact words from the listing that show the requirement. If a listing doesn't say, or says \"preferred,\" put it in a separate list called Check with employer. Don't guess." },
-    { icon: "rec", title: "Session recording and slides", type: "Recording", preview: "The recording, transcript and slides post here within a day of the live session." },
-  ],
-  checks: ["Run the tool's output against a small sample you did by hand", "Read the quoted words for every job in the table", "Look for wording the prompt doesn't cover", "Decide: keep the prompt, change it or keep this task with a person"],
-};
 
 // ---------- peer notes on highlighted passages ----------
 const NOTES = {
@@ -1208,51 +1185,122 @@ const CHAT_SEED = {
     { who: "dana", text: "Career coach. Follow-up messages after missed appointments." },
   ],
   s3: [
-    { day: "MONDAY 9:42 PM" }, { who: "dana", text: "Anyone using the case note prompt for intake?" },
-    { day: "TUESDAY 6:58 AM" }, { who: "rosa", text: "Yes. We added a line about employer contacts so the summary doesn't drop them." },
-    { who: "nia", text: "We use it too, with a different change. It once put a deadline in the wrong month, so we read every date." },
-    { who: "christin", text: "Rosa and Nia, bring both versions to the breakout and we'll compare them.", poll: true },
-    { day: "TUESDAY 9:24 AM" }, { who: "luis", text: "The summary prompt saves me time. A person still checks every summary before it goes in the file." },
+    { day: "MONDAY 9:42 PM" }, { who: "dana", text: "Anyone tried the dashboard walkthrough with their own sheet?" },
+    { day: "TUESDAY 6:58 AM" }, { who: "rosa", text: "Yes. Ours sorts by days since last contact. Two rounds of changes and the link never changed." },
+    { who: "nia", text: "We started with 40 made-up rows, like the article says. Our coordinator caught a column we had labeled wrong." },
+    { who: "christin", text: "Rosa and Nia, bring both versions on Tuesday and we'll compare them." },
+    { day: "TUESDAY 9:24 AM" }, { who: "luis", text: "Step 4 matters. Ours is limited to people in our organization." },
   ],
   s6: [
     { day: "TUESDAY 11:04 AM" }, { who: "tom", text: "Bringing our resume feedback checklist to the lab." },
     { who: "kim", text: "I'll bring the board brief. Would someone check my prompt?" },
-    { who: "joey", text: "Yes. Post it on the lab board and we'll pair people up." },
+    { who: "joey", text: "Yes. Post it here and we'll pair people up." },
   ],
 };
 for (const s of SESSIONS) if (!CHAT_SEED["s" + s.n]) CHAT_SEED["s" + s.n] = [{ day: "MONDAY 9:00 AM" }, { who: s.n % 2 ? "joey" : "christin", text: "Questions and follow-ups about this session go here." }];
 const AUTO = {
   general: ["joey", "Thanks for posting, Dana. Christin and I read this thread before each session."],
   s3: ["christin", "Thanks, Dana. I'll bring this into the session discussion."],
-  s6: ["joey", "Thanks, Dana. If this is a task you're bringing to the lab, post it on the lab board so others can give feedback."],
+  s6: ["joey", "Thanks, Dana. If this is a task you're bringing to the lab, post a short description here so others can give feedback."],
 };
 const autoFor = (ch) => AUTO[ch] || [Number(ch.slice(1)) % 2 ? "joey" : "christin", "Thanks for posting. We read these threads every day of the academy and answer here."];
 
 // ---------- integrated content ----------
 const STAGE = { dana: "Pilot", marcus: "Idea", rosa: "Results", luis: "Pilot", aisha: "Idea", kim: "Results", tom: "Pilot", nia: "Idea" };
 const STAGES = ["Idea", "Pilot", "Results"];
-const SHORT = { 1: "Prompts", 2: "Job seekers", 3: "Case management", 4: "Labor data", 5: "Outreach", 6: "AI Tools Lab", 7: "Ethics", 8: "Capstone" };
+const SHORT = { 1: "Prompts", 2: "Job seekers", 3: "Case management", 4: "Labor data", 5: "Outreach", 6: "AI Tools Lab", 7: "Ethics", 8: "Lifelong learning" };
 const FS = "Frontline staff", BS = "Business services", MG = "Managers";
 const FMT = { Article: "file", Walkthrough: "pointer", Demo: "play" };
 
-// Session 6 now uses the dashboard article from the academy, adapted for program records.
-S6.article = {
-  title: "Building a dashboard with AI, without giving AI your data", by: "joey", mins: 6,
-  body: [
-    "Most programs keep participant records in a spreadsheet, and many of us want a clearer view of them: who enrolled this month, who hasn't been contacted in two weeks, which office is behind. Pasting those records into an AI tool is the risk to avoid. Instead, [[h3|have AI write the code that builds the view]], so the records never leave the sheet.",
-    "In Google Sheets this works through Apps Script, which comes with Sheets. You give the AI tool only the column headings, such as Name, Program, Intake date, Status and Office, and describe the dashboard you want. It writes two files. You paste them into Apps Script and publish a web page that reads the sheet directly.",
-    "You decide who can open the page. Sample data can be open to anyone with the link. Real records should be limited to people in your organization, and the page can show each staff member only their own caseload when they sign in.",
-    "[[h8|Start with 40 rows of made-up participants]] and show the page to one coordinator. Fix what confuses them before you connect real data. Keep the script in a shared drive so it stays when someone leaves.",
-    "Expect a few things. Google may show an \"unverified app\" warning the first time, because the script is yours and not a published app. Your organization's Google license decides how widely you can share. If your team works in Microsoft 365, Power BI does the same job there.",
+// Session 3, step 3: the AI Leadership Academy article, on its own page (#lib-dashboard).
+const DASH_ART = {
+  title: "Building a Dashboard With AI, Without Giving AI Your Data",
+  dek: "How AI can be used to build a Google Sheets dashboard, and how to ensure learner data stays protected by the same sharing settings as any Google Sheet.",
+  by: "joey", mins: 10,
+  blocks: [
+    { p: "A Google Sheet can be used to store a program's enrollment, attendance, and outcome data. As the sheet grows to hundreds of rows, specific answers can become hard to find, such as how many learners are active at each site or which learners have stopped attending." },
+    { p: "A dashboard built on that sheet can show those answers directly. Instead of scrolling through rows, staff can see totals by site, filter the list to one site or class, and click a learner's email address to copy it. With that information in one place, staff can follow up with learners sooner." },
+    { p: "Building a dashboard once required someone who could write code. AI tools now make it possible for staff who are not developers to build one themselves." },
+    { live: true },
+    { h: "Learner records stay in a Google Sheet" },
+    { p: "When a dashboard displays learner records, privacy is often the first consideration. Two questions usually come up: who else will be able to see the records, and will the AI tool used to build it have access to them?" },
+    { p: "Both questions have the same answer. The records stay in the Google Sheet where they are already stored. A dashboard built with Google Apps Script reads them from that sheet without copying or moving them, and the sheet keeps the sharing settings you have already chosen. Anyone who could not open the sheet before the dashboard existed still cannot open it. The AI writes the instructions for the dashboard without ever accessing the records." },
+    { p: "Protecting learner information therefore works the same way it does for any Google Sheet: only the people you choose can open the sheet or the dashboard." },
+    { p: "You choose who can open the dashboard when you publish it. Google asks who should have access, with choices such as only you, anyone in your organization, or anyone with a Google account. If you choose your organization, only people signed in with your organization's accounts can open it, and anyone else is denied access. Staff who use the dashboard do not need access to the sheet itself." },
+    { img: "/aiforum/demo/art/a1-access.png", w: 1200, ht: 810, alt: "Choosing who can open the dashboard, illustration. A New deployment window with Who has access set to Anyone within yourprogram.org." },
+    { p: "The dashboard can also show each person only the records they work with, such as the learners at their site. It does this by checking the work account each person signed in with. You could also give each staff member a separate link that opens only the records for their site. Anyone who receives a copy of that link, however, can open the same records. Separate links work well for information that is not sensitive, such as an interactive class catalog with a link for each site that learners can filter by program area. For learner records, the work account sign-in is the safer choice." },
+    { img: "/aiforum/demo/art/a2-views.png", w: 1200, ht: 578, alt: "One dashboard, two staff views, sample data. The Site A coordinator sees only Site A learners and the Site B coordinator sees only Site B learners." },
+    { p: "Two other options can make access easier to manage. The first is a password. You can ask the AI to add a sign-in screen to the dashboard, then give the password to the staff who need it. Anyone who learns the password can open the dashboard, though, so this option suits summary information better than individual learner records." },
+    { p: "The second option is a staff access list. You can ask the AI to have the dashboard read a \"Staff access\" tab in the sheet, or to build an admin page inside the dashboard, where you list each staff member's email and the site they work with. Giving a new staff member access, or removing access when someone leaves, then means editing one row, or using an \"Add staff member\" button on the admin page without opening the sheet at all. Program leaders can manage access themselves, without changing any code." },
+    { h: "AI writes the code without accessing learner records" },
+    { p: "The dashboard is built with Apps Script, Google's built-in tool for adding features to Workspace files. If you've used a Sheets or Forms add-on, such as autoCrat or Yet Another Mail Merge, you've used a tool built with it. For a dashboard, Apps Script reads the rows in your sheet and displays them as a web page with charts, totals, and lists. It can also write information back to the sheet. A staff member could log a follow-up call in a short form on the dashboard, and the call would appear as a new row in the sheet. Apps Script can also send emails, such as a weekly message to each site coordinator listing the learners at their site who have missed two weeks of class. It can create custom exports or open a pop-up window with one learner's details, so a dashboard can grow into a small app built around how your program works." },
+    { img: "/aiforum/demo/art/a3-extensions.png", w: 1200, ht: 557, alt: "The Extensions menu in Google Sheets, illustration. Add-ons, Macros, Apps Script and AppSheet, with autoCrat and Yet Another Mail Merge listed under add-ons." },
+    { p: "AI can write the Apps Script code, and it needs only two things to do it. The first is the structure of your sheet: the tab names and column headers, such as \"Site\" or \"Hours Attended.\" The second is a description of what the dashboard should show and do, such as \"Add a button that creates a print-ready sign-in sheet for each class.\" The AI does not need to see or access any learner's record." },
+    { img: "/aiforum/demo/art/a4-headers.png", w: 1200, ht: 570, alt: "What the AI needs from your sheet. Tab names and column headers are shared with the AI. The learner information in each row is never shared." },
+    { p: "You then paste the code the AI writes into Apps Script in your own Google account." },
+    { p: "The simplest way to open Apps Script is from the sheet's Extensions menu. Opening it there connects the script to that sheet, so you don't have to look anything up or paste anything into the code. Tell the AI you are working this way so the code it writes matches. When someone opens the dashboard, the code reads the sheet inside Google Drive. Learner records never pass through the AI." },
+    { img: "/aiforum/demo/art/a5-dataflow.png", w: 1200, ht: 514, alt: "Where the data moves when an AI-built dashboard runs. The AI tool receives headers and writes code, with no access to the Google Sheet. The Apps Script dashboard in your Google account reads the rows and shares results with your staff." },
+    { p: "A dashboard can also combine information from more than one sheet. For example, a program might keep enrollment in one sheet, instructors might record attendance in another, and a Google Form might collect learner survey responses in a third. One dashboard can show all three side by side, even when different staff maintain each sheet, and one button can export the combined information for a funder or state report." },
+    { p: "Apps Script also works with Google Forms, Docs, Slides, and Calendar, so a dashboard can connect to the other tools a program already uses. A registration submitted through a Google Form could appear on the dashboard and add the learner to an orientation session on the program's calendar. A button could fill in a welcome letter in Docs with each learner's class and start date, or create a certificate in Slides for each learner who completes a course." },
+    { p: "To use another sheet, the dashboard needs that sheet's ID, a string of letters and numbers in the sheet's web address. You can paste the ID into the code yourself or give it to the AI so the code is ready to use. Like a link, the ID points to the sheet but opens nothing without the owner's permission. The AI cannot open the sheet with it, and the sheet's sharing settings stay the same." },
+    { h: "The main risk is sharing learner records with AI by accident" },
+    { p: "The risk to be mindful of is a staff member sharing learner records with an AI tool while asking it for help. An AI tool can access learner records only when someone shares them, such as by pasting rows into a chat, uploading a screenshot of the sheet, or connecting the tool to Google Drive. This usually happens without anyone intending it, while someone is trying to fix a problem quickly. The example below shows one way to ask for help without including any records." },
+    { img: "/aiforum/demo/art/a6-ask.png", w: 1200, ht: 506, alt: "Two ways to ask an AI tool for help, sample names. One pastes learner records into the chat. The other describes the sheet's structure, so no learner information leaves the sheet." },
+    { p: "An enterprise or education license can add protection. These organization-wide agreements generally keep your data out of model training and let administrators control how staff use the tool. If your agency has one, connecting the tool to your files may be permitted under its terms. Your IT department or technology director should be able to tell you which tools are covered." },
+    { h: "The permission screen applies only to your own account" },
+    { p: "The first time the dashboard runs, Google asks you to authorize it. The screen names the project, which appears as \"Untitled project\" until someone renames it. It also warns that Google hasn't verified the app, because the script has not gone through Google's review for public apps. Finally, it lists what the script can do, such as see and edit your spreadsheets. That list can look alarming, but the access stays within your own account. The script runs as you, on files you can already open, and it gives no one else access, including the AI." },
+    { p: "Approving the script still asks you to trust code you did not write yourself, so it is reasonable to be careful. You can rename the project so you recognize it, test the dashboard on sample data first, or ask your IT staff to look over the code." },
+    { img: "/aiforum/demo/art/a7-auth.png", w: 1200, ht: 626, alt: "Google's authorization screens for a new Apps Script project, illustration. The unverified app warning, then the request to see, edit, create and delete Google Sheets spreadsheets." },
+    { h: "Sample data lets you build skills before using real records" },
+    { p: "Building a dashboard on learner records can seem intimidating, and it makes sense to be careful with learner information. A good way to begin is to practice building dashboards before any real records are involved." },
+    { p: "Start with sample data. For example, a program director might ask the AI: \"Create a spreadsheet with columns for Learner ID, Site, Start Date, Hours Attended, and Last Attended, filled with 40 sample learners across three sites.\" Next: \"Write Apps Script for a dashboard that shows active learners by site and lists anyone who has not attended in 14 days.\" Then: \"Add a chart of weekly attendance hours for each site, and let me copy a learner's email address by clicking it.\" Building and adjusting a dashboard this way shows how the process works, with no learner information involved." },
+    { p: "Many useful dashboards also involve no sensitive information at all. A program could track staff professional development hours, class schedules and room use, or the number of referrals from community partners each month. These make good first projects for staff who want practice before working with learner records." },
+    { p: "When you are ready to use real records, connect the dashboard to the real sheet and share it with one site coordinator for a few weeks. Their feedback can show what to change before the rest of the staff use it. At no point does the AI need access to a real learner's record." },
+    { p: "Store the sheet and the dashboard in a shared drive your program owns. If the person who built the dashboard leaves the organization, another staff member can update and republish it." },
+    { h: "Microsoft 365 offers similar tools" },
+    { p: "This post focuses on Google Sheets and Apps Script, but programs that work in Microsoft 365 have similar options. Power BI can create dashboards from Excel workbooks, and Power Apps can build simple apps on the same data." },
+  ],
+  refs: [
+    ["", "Building Custom Dashboards with AI and Google Sheets", "https://customdashboards.communitylearningpartners.com/", "Sample dashboards built on Google Sheets and Forms, open to browse."],
+    ["Google.", "Web apps", "https://developers.google.com/apps-script/guides/web", "Apps Script guides."],
+    ["Google.", "Class Session", "https://developers.google.com/apps-script/reference/base/session", "Apps Script reference."],
+    ["Google.", "Extending Google Forms with add-ons", "https://developers.google.com/apps-script/add-ons/editors/forms", "Apps Script guides."],
+    ["Google.", "Unverified apps", "https://support.google.com/cloud/answer/7454865", "Google Cloud Help."],
+    ["Microsoft.", "Import Excel workbooks into Power BI Desktop", "https://learn.microsoft.com/en-gb/power-BI/connect-data/desktop-import-excel-workbooks", "Microsoft Learn."],
   ],
 };
+// The article's interactive figure: the same records, as a sheet and as a dashboard (sample data).
+const AF_ROWS = [["1042", "A", 12, "Sep 29"], ["1066", "A", 18, "Oct 13"], ["1101", "A", 22, "Oct 14"], ["1187", "C", 4, "Sep 30"], ["1203", "B", 15, "Oct 12"], ["1219", "B", 20, "Oct 14"], ["1250", "B", 0, "Sep 24"], ["1288", "C", 16, "Oct 9"], ["1301", "A", 9, "Oct 8"], ["1324", "C", 11, "Oct 13"]];
+function afigHTML() {
+  const view = ui.afView || "sheet", on = ui.afSites || (ui.afSites = new Set(["A", "B", "C"]));
+  const rows = AF_ROWS.filter((r) => on.has(r[1]));
+  const missed = rows.filter((r) => r[3].startsWith("Sep"));
+  const avg = rows.length ? (rows.reduce((a, r) => a + r[2], 0) / rows.length).toFixed(1) : "0";
+  const bySite = ["A", "B", "C"].filter((s) => on.has(s)).map((s) => [s, rows.filter((r) => r[1] === s).length]);
+  const max = Math.max(1, ...bySite.map((x) => x[1]));
+  const top = `<div class="af-top"><b class="af-t">The same records, as a sheet and as a dashboard</b><span class="af-k">Sample data</span></div>
+    <div class="af-ctl"><div class="af-seg" role="group" aria-label="View">${[["sheet", "Sheet"], ["dash", "Dashboard"]].map(([v, l]) => `<button class="af-btn" data-act="afView" data-v="${v}" aria-pressed="${view === v}">${l}</button>`).join("")}</div>
+    <div class="af-sites" role="group" aria-label="Sites"><span class="af-k">Sites</span>${["A", "B", "C"].map((s) => `<button class="af-chip" data-act="afSite" data-v="${s}" aria-pressed="${on.has(s)}">Site ${s}</button>`).join("")}</div></div>`;
+  let body;
+  if (!rows.length) body = `<p class="af-empty">Select a site to see its learners.</p>`;
+  else if (view === "sheet") body = `<div class="scroll"><table class="af-sheet"><thead><tr><th>Learner ID</th><th>Site</th><th>Hours this month</th><th>Last attended</th></tr></thead><tbody>${rows.map((r) => `<tr><td>${r[0]}</td><td>Site ${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</tbody></table></div>`;
+  else body = `<div class="af-stats"><div><span>Active learners</span><b>${rows.length}</b></div><div><span>Average hours this month</span><b>${avg}</b></div><div><span>Missed two or more weeks</span><b>${missed.length}</b></div></div>
+    <div class="af-panels"><div class="af-panel"><h4>Learners by site</h4>${bySite.map(([s, n]) => `<div class="af-bar"><span>Site ${s}</span><i style="width:${Math.round((n / max) * 70)}%"></i><em>${n}</em></div>`).join("")}</div>
+    <div class="af-panel"><h4>Learners to contact</h4>${missed.length ? `<ul>${missed.map((r) => `<li>Learner ${r[0]} · Site ${r[1]} · last attended ${r[3]}</li>`).join("")}</ul>` : `<p class="af-empty">No one at these sites has missed two weeks.</p>`}</div></div>`;
+  return `<figure class="af" id="afig">${top}<div aria-live="polite">${body}</div></figure>`;
+}
+function dashArticleHTML() {
+  const A = DASH_ART;
+  return `<div class="article art2">${A.blocks.map((b) => b.h ? `<h2>${esc(b.h)}</h2>` : b.img ? `<figure class="afig-img"><img src="${b.img}" width="${b.w}" height="${b.ht}" alt="${esc(b.alt)}" loading="lazy"></figure>` : b.live ? afigHTML() : `<p>${esc(b.p)}</p>`).join("")}
+    <h2>References</h2><ol class="refs">${A.refs.map(([who, t, u, src]) => `<li>${who ? esc(who) + " " : ""}<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>. <em>${esc(src)}</em></li>`).join("")}</ol></div>`;
+}
 
 const ARTICLES = {
   "career-data": {
     title: "Check the local data before you choose a pathway", by: "joey", mins: 4,
     body: [
-      "A good career pathway conversation starts with local facts: which employers are hiring nearby, what they pay and how long the training takes. AI research tools can pull those facts together in minutes. They can also hand you figures from three years ago in a confident table.",
-      "Write the questions before you open any tool. Which jobs within 30 miles pay at least $20 an hour and need less than a year of training? What are the first two jobs on each path? Questions like these keep the research on what the job seeker in front of you needs.",
+      "A good career pathway conversation starts with local facts: which jobs are hiring nearby, what they pay and how long the training takes. AI research tools can pull those facts together in minutes. They can also hand you figures from three years ago in a confident table.",
+      "Write the questions before you open any tool. Which jobs within 30 miles pay at least $20 an hour and need less than a year of training? What are the first two jobs on each path? Questions like these keep the research on what this job seeker needs.",
       "Then run a deep research request in Gemini or ChatGPT and read the report the way you would read a vendor's brochure. [[h4|Check the year on every wage and openings figure]], and compare each one with your state's labor market site.",
       "Turn what holds up into three to five pathways, each with an entry job, the training, the next job and the source for every number. A simple table works. [[h5|An infographic can help a job seeker see the steps]], as long as every name and number on it matches the table.",
       "The pathways start a conversation. The job seeker decides which ones are worth a closer look.",
@@ -1261,9 +1309,9 @@ const ARTICLES = {
   "career-skills": {
     title: "Helping job seekers see where their skills lead", by: "christin", mins: 4,
     body: [
-      "Many job seekers describe their experience by job title: cashier, warehouse associate, home health aide. The title hides most of what they can do. Naming the skills underneath often points to jobs they hadn't considered.",
+      "Many job seekers describe their experience by job title: cashier, warehouse associate, home health aide. The title hides most of what they can do. Naming the skills underneath often opens jobs they hadn't considered.",
       "Google's Career Dreamer is one free way to do this. A job seeker enters a current or past role, picks the tasks they did and the skills they used, and the tool suggests related jobs. [[h6|The sweet spots view lists jobs that use the most skills they already have]]. It draws on national data, so treat the results as ideas to check locally.",
-      "The value is in the conversation around the results. Ask which suggestions surprised them and which they would never want. [[h7|Let the job seeker type and choose]], even when it's slower. People trust a list they built themselves.",
+      "The value is in the conversation around it. Ask which suggestions surprised them and which they would never want. [[h7|Let the job seeker type and choose]], even when it's slower. People trust a list they built themselves.",
       "The next steps are concrete: a resume that names those skills in the words employers use, and practice answering questions about them out loud. The job search demo shows both.",
     ],
   },
@@ -1278,10 +1326,10 @@ const ARTICLES = {
     ],
   },
   slides: {
-    title: "Why I stopped starting decks in Google Slides or PowerPoint", by: "joey", mins: 4,
+    title: "Why I'll never use Google Slides or PowerPoint again", by: "joey", mins: 4,
     body: [
       "For the last few months I've built every presentation with Claude instead of Google Slides or PowerPoint. I describe the goal and the audience, often by voice, and get a full first draft. Then I revise one slide at a time with a short request, such as \"make this a three-step build\" or \"add a chart from this table.\"",
-      "Two things changed how I work. I ask for accessibility at the start, with alt text, a sensible heading order and enough color contrast, instead of fixing it at the end. And I can build a slide that walks through a process step by step, such as searching a job site. That used to take me an afternoon.",
+      "Two things changed how I work. I ask for accessibility at the start, with alt text, a sensible heading order and enough color contrast, instead of fixing it at the end. And I can build a slide that walks through a process step by step, like a job search site, which used to take an afternoon.",
       "[[h10|There are tradeoffs]]. Animations don't survive an export to PowerPoint. Colleagues need an account to edit. Heavy use needs a paid plan.",
       "If you want to try it, start with one slide you already need, not a whole deck.",
     ],
@@ -1290,36 +1338,32 @@ const ARTICLES = {
 Object.assign(NOTES, {
   h4: [{ who: "kim", text: "Deep research gave me 2023 wages for two of our occupations. The state site had 2025 figures that were almost two dollars higher." }],
   h5: [{ who: "luis", text: "We print the infographic for orientation. One version misspelled a certificate, so someone proofs each one now." }],
-  h6: [{ who: "dana", text: "Career Dreamer showed a former cashier that inventory control was a sweet spot. She had never thought of her register counts as inventory work." }],
+  h6: [{ who: "dana", text: "A former cashier found inventory control as a sweet spot. She had never thought of her register counts as inventory work." }],
   h7: [{ who: "tom", text: "When I typed for people, they nodded along. When they typed, they argued with the results, which is what I wanted." }],
   h8: [{ who: "rosa", text: "Our coordinator asked for one change: sort by days since last contact. We'd never have guessed that." }],
   h9: [{ who: "nia", text: "Our youth program tried a teacher tool for flyers. Everything came back sounding like a fourth-grade worksheet." }],
   h10: [{ who: "marcus", text: "The export issue caught me. Our board packet has to be a PowerPoint file, so I keep those slides plain." }],
 });
 const LIB_COMMENTS = {
+  dashboard: [{ id: "da1", who: "aisha", when: "Mon 3:40 PM", text: "The diagram of where the data moves is what our IT person needed to see. The records stay with us.", r: { heart: 4, thumbs: 3 } }, { id: "da2", who: "tom", when: "Mon 6:12 PM", text: "Tried it on sample data first, like the article says. The first version counted blank rows as learners. It took two rounds to get right.", r: { bulb: 2 } }],
   "career-data": [{ id: "lc1", who: "kim", when: "Mon 2:15 PM", text: "Our state posts wages by region. That table is now the first thing I open.", r: { bulb: 5 } }],
   "career-walk": [{ id: "lc2", who: "luis", when: "Mon 4:40 PM", text: "Step 4 worked well in pairs. People compared sweet spots and found two they both wanted to explore.", r: { heart: 4, bulb: 2 } }],
-  "job-demo": [{ id: "lc3", who: "dana", when: "Tue 7:40 AM", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, and the postings said inventory.", r: { heart: 7 } }, { id: "lc4", who: "tom", when: "Tue 9:05 AM", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", r: { thumbs: 4 } }],
+  "job-demo": [{ id: "lc3", who: "dana", when: "Tue 7:40 AM", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, the postings said inventory.", r: { heart: 7 } }, { id: "lc4", who: "tom", when: "Tue 9:05 AM", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", r: { thumbs: 4 } }],
 };
 
 // ---------- library ----------
 const LIB = [
   { id: "career-walk", type: "Walkthrough", title: "Plan a career pathway with a job seeker", blurb: "Research local jobs, build three to five pathways, explore skills with Career Dreamer, then practice for the interview.", s: 2, roles: [FS, BS], size: "6 steps", featured: true },
-  { id: "job-demo", type: "Demo", title: "From job posting to interview practice", blurb: "Paste a posting, align a resume for applicant tracking systems, then practice questions out loud in voice mode.", s: 2, roles: [FS], size: "3 parts", isNew: true },
+  { id: "job-demo", type: "Demo", title: "From job posting to interview practice", blurb: "Paste a posting, align a resume with ATS in mind, then practice questions out loud in voice mode.", s: 2, roles: [FS], size: "3 parts", isNew: true },
   { id: "career-data", type: "Article", title: ARTICLES["career-data"].title, blurb: "Deep research is fast. Check the year on every figure before it goes on a pathway.", s: 4, roles: [FS, BS], by: "joey", size: "4 min read" },
   { id: "career-skills", type: "Article", title: ARTICLES["career-skills"].title, blurb: "A job title hides most of what someone can do. Career Dreamer helps name the rest.", s: 2, roles: [FS], by: "christin", size: "4 min read" },
-  { id: "dashboard", type: "Article", title: S6.article.title, blurb: "AI writes the code from your column headings. The records stay in the sheet.", s: 6, roles: [MG, FS], by: "joey", size: "6 min read", go: "session-6", anchor: "read" },
+  { id: "dashboard", type: "Article", title: DASH_ART.title, blurb: "AI writes the code from your column headers. The learner records stay in the Google Sheet.", s: 3, roles: [MG, FS], by: "joey", size: "10 min read" },
   { id: "harness", type: "Article", title: ARTICLES.harness.title, blurb: "Why tools built for one field feel tuned to it, and how to set up the same thing yourself.", s: 6, roles: ROLES, by: "joey", size: "7 min read" },
   { id: "slides", type: "Article", title: ARTICLES.slides.title, blurb: "Building decks by describing them, with accessibility asked for at the start.", s: null, roles: [MG, BS], by: "joey", size: "4 min read" },
-  { id: "writing", type: "Article", title: S3.article.title, blurb: "Short messages matter more than their length suggests. Where AI helps, and where it shouldn't.", s: 3, roles: [FS], by: "joey", size: "4 min read", go: "session-3", anchor: "read" },
-  { id: "intake-walk", type: "Walkthrough", title: "Build an intake dashboard from a spreadsheet", blurb: "Five steps from column headings to a web page your team can open, without the AI seeing a record.", s: 3, roles: [MG, FS], size: "5 steps" },
-  { id: "s3-walk", type: "Walkthrough", title: S3.walk.title, blurb: "A short, friendly text with two new times, checked before it goes out.", s: 3, roles: [FS], size: "5 steps", go: "session-3", anchor: "steps" },
-  { id: "s6-walk", type: "Walkthrough", title: S6.walk.title, blurb: "Turn one weekly task into a prompt, then test it against a hand check.", s: 6, roles: ROLES, size: "5 steps", go: "session-6", anchor: "steps" },
+  { id: "intake-walk", type: "Walkthrough", title: "Build a caseload dashboard with Google Apps Script", blurb: "Five steps with GIFs, from column headings to a link your team can open, without AI seeing a record.", s: 3, roles: [MG, FS], size: "5 steps", go: "session-3", anchor: "build" },
   { id: "slow-chat", type: "Demo", title: "Move a slow chat to a fresh one", blurb: "Long chats slow down and lose track of details. A summary file fixes both.", s: 1, roles: ROLES, size: "4 frames" },
   { id: "orientation", type: "Demo", title: "Turn an orientation packet into an audio overview", blurb: "A short listen for people starting services, made from your own documents.", s: 5, roles: [FS, MG], size: "4 frames" },
   { id: "grant-agent", type: "Demo", title: "Set up an agent that checks for new grants", blurb: "Every Monday it looks for funding that fits your program and messages you.", s: 6, roles: [MG], size: "4 frames" },
-  { id: "s3-demo", type: "Demo", title: "Spot the mistakes in an AI case note summary", blurb: "Two lines don't match the note. Find them, then check your picks.", s: 3, roles: [FS], size: "10 min", go: "session-3", anchor: "spot" },
-  { id: "s6-demo", type: "Demo", title: S6.demo.title, blurb: "Eight job leads in, a short list out, then a hand check that finds what the tool missed.", s: 6, roles: ROLES, size: "10 min", go: "session-6", anchor: "start" },
 ];
 const libById = (id) => (S.mydemos || []).concat(LIB).find((x) => x.id === id);
 const libHref = (it) => it.go ? `#${it.go}~${it.anchor}` : `#lib-${it.id}`;
@@ -1331,7 +1375,7 @@ const WALKS = {
     url: "your AI tool and Career Dreamer",
     related: ["career-data", "career-skills", "job-demo"],
     steps: [
-      { t: "Write the questions", d: "Write three to five questions before you open any tool. They keep the research on what the job seeker in front of you needs.",
+      { t: "Write the questions", d: "Write three to five questions before you open any tool. They keep the research on what this job seeker needs.",
         screen: () => T("wf", `<h5>Questions for a pathway conversation</h5><div class="tgt" style="display:grid;gap:6px;padding:4px"><div>1. Which jobs within 30 miles pay $20 an hour or more?</div><div>2. Which need less than a year of training?</div><div>3. What is the next job after each one?</div><div>4. Which employers here hire for them now?</div></div>`) },
       { t: "Run deep research", d: "In Gemini or ChatGPT, turn on deep research and paste the questions. It takes a few minutes and returns a long report with sources.",
         check: "Wage and openings figures drift. Check the year on each one against your state's labor market site.",
@@ -1376,7 +1420,7 @@ const DEMOS = {
     related: ["career-walk", "career-skills", "s3-walk"],
     chapters: [
       { t: "Paste the posting", icon: "briefcase",
-        prompt: "Here is a job posting. List every skill, certification and requirement in it as a short table with two columns: the keyword and the exact words from the posting. Mark anything listed as preferred.\n\n[paste the posting]",
+        prompt: "Here is a job posting. List every skill, certification and requirement in it as a short table with two columns: the keyword, and the exact words from the posting. Mark anything listed as preferred.\n\n[paste the posting]",
         check: "Copy the whole posting, including the requirements at the bottom. Leave out the employer's application link and anything about the job seeker.",
         frames: [
           { ms: 5200, cap: "Copy the whole posting from the job site, requirements included.",
@@ -1387,10 +1431,10 @@ const DEMOS = {
             html: () => win("your AI tool", `<b style="font-size:14px">Keywords in this posting</b><div class="mrow" style="flex-wrap:wrap;gap:6px">${POSTING_KW.map((k, i) => `<span class="wf-chip ${k.includes("preferred") ? "n" : "on"} gpop" style="--d:${(0.3 + i * 0.35).toFixed(2)}s">${k}</span>`).join("")}</div>`) },
         ] },
       { t: "Align the resume", icon: "file",
-        prompt: "Here is the same job posting and a resume with personal details replaced by placeholders. Make a table with three columns: keyword, where it appears in the posting and whether the resume shows it. Then suggest wording changes only for skills the resume already supports. Do not add skills or experience that aren't there. Keep plain section headings and no tables or columns in the resume itself.",
-        check: "Never add a keyword the job seeker can't back up in an interview. Applicant tracking systems differ, so treat a match count as a rough guide.",
+        prompt: "Here is the same job posting and a resume with personal details replaced by placeholders. Make a table with three columns: keyword, where it appears in the posting, and whether the resume shows it. Then suggest wording changes only for skills the resume already supports. Do not add skills or experience that aren't there. Keep plain section headings and no tables or columns in the resume itself.",
+        check: "Never add a keyword the job seeker can't back up in an interview. ATS systems differ, so treat a match count as a guide, not a promise.",
         frames: [
-          { ms: 6000, cap: "Paste the resume with placeholders for name, phone and address. The table shows which keywords the resume already has.",
+          { ms: 6000, cap: "Paste the resume with placeholders for name, phone and address. The table shows 5 of 9 keywords.",
             html: () => win("your AI tool", `<div class="bubble me ga" style="--d:.1s;font-size:12.5px">[Name] · [Phone] · [City]\nWarehouse associate, 3 years. Moved pallets, counted stock, trained new hires...</div><div class="wf ga" style="--d:.9s"><table><thead><tr><th>Keyword</th><th>In posting</th><th>In resume</th></tr></thead><tbody>${[["Forklift certification", 1], ["Inventory counts", 1], ["RF scanner", 0], ["Lead a team", 0], ["OSHA 10", 1], ["Excel", 0]].map(([k, y], i) => `<tr class="ga" style="--d:${(1.3 + i * 0.3).toFixed(1)}s"><td>${k}</td><td>Yes</td><td>${y ? `<span class="c-green">${ic("check", 14, 3)}</span>` : `<span class="muted">Not shown</span>`}</td></tr>`).join("")}</tbody></table></div>`) },
           { ms: 7200, cap: "Suggested edits use words from the posting for things the person already did. The one skill they don't have stays off.",
             html: () => win("your AI tool", `<div style="display:grid;gap:8px;font-size:13px"><div class="wf ga" style="--d:.2s"><span class="muted" style="text-decoration:line-through">Counted stock</span><br><b>Ran weekly inventory counts with an RF scanner</b></div><div class="wf ga" style="--d:1s"><span class="muted" style="text-decoration:line-through">Trained new hires</span><br><b>Trained and led a team of 4 new associates</b></div><div class="wf ga" style="--d:1.8s"><span class="muted" style="text-decoration:line-through">Made the weekly schedule</span><br><b>Built weekly shift schedules in Excel</b></div><div class="bubble flag ga" style="--d:2.8s">Bilingual Spanish: your resume doesn't show this. Leave it out unless it's true.</div></div>`) },
@@ -1428,7 +1472,7 @@ const DEMOS = {
       prompt: "Make an audio overview for adults starting job search services at our center. Use plain language. Keep it under eight minutes. Explain the first three appointments and what to bring.",
       check: "Listen to the whole thing before you share it. Hosts can add program details that aren't in your documents.",
       frames: [
-        { ms: 5000, cap: "Add your orientation packet and program flyer to a notebook tool, such as NotebookLM or Copilot Notebooks.", html: () => win("notebook tool", `<b>Sources</b><div class="mrow ga" style="--d:.3s"><span class="wf-chip on">${ic("file", 12)} Orientation packet.pdf</span></div><div class="mrow ga" style="--d:.9s"><span class="wf-chip on">${ic("file", 12)} Program flyer.pdf</span></div><div class="mrow ga" style="--d:1.5s"><span class="wf-chip">${ic("plus", 12, 3)} Add source</span></div>`) },
+        { ms: 5000, cap: "Add your orientation packet and program flyer to a notebook tool, such as Gemini Notebook or Copilot Notebooks.", html: () => win("notebook tool", `<b>Sources</b><div class="mrow ga" style="--d:.3s"><span class="wf-chip on">${ic("file", 12)} Orientation packet.pdf</span></div><div class="mrow ga" style="--d:.9s"><span class="wf-chip on">${ic("file", 12)} Program flyer.pdf</span></div><div class="mrow ga" style="--d:1.5s"><span class="wf-chip">${ic("plus", 12, 3)} Add source</span></div>`) },
         { ms: 5400, cap: "Choose audio overview and say who it's for.", html: () => win("notebook tool", `<div class="mrow"><span class="wf-btn">${ic("headphones", 12)} Audio overview</span><span class="wf-chip">Customize</span></div><div class="wf-in gwipe" style="--d:.6s;font-size:12.5px">For adults starting job search services. Plain language. Under eight minutes. Explain the first three appointments.</div>`) },
         { ms: 5400, cap: "Two hosts talk through the packet in about seven minutes.", html: () => win("notebook tool", `<b>Starting services at the job center</b><div class="mrow" style="gap:12px"><span class="wf-btn">${ic("play", 12)} Play</span><div class="wave" style="height:26px">${"<i></i>".repeat(18)}</div></div><span class="hint">6:52</span>`) },
         { ms: 5000, cap: "Listen to all of it. Here, a host said childcare is provided. The packet never says that.", html: () => win("notebook tool", `<div class="bubble ga" style="--d:.2s">...and the center provides childcare during your appointments...</div><div class="bubble flag ga" style="--d:1.2s">Not in the packet. Regenerate with a note to stick to the sources, or record a correction.</div>`) },
@@ -1460,7 +1504,7 @@ CHAT_SEED.general = CHAT_SEED.general.concat([
   { who: "dana", text: "Tried voice mode interview practice with three job seekers this week. Two asked how to do it again at home.", rx: { "🎉": 6 } },
   { who: "aisha", text: "Does anyone have staff guidance on voice mode? I'm wondering whether the audio is kept and where.", replies: [{ who: "joey", text: "Good question, Aisha. We'll cover it in Session 7. Each tool's settings show whether audio is kept. Either way, no real names in practice." }] },
   { who: "nia", text: "Our teens tune out audio overviews after two minutes. Trying a shorter one next week.", rx: { "👍": 2 } },
-  { who: "rosa", text: "Our intake dashboard is live. Two rounds of edits and the link never changed.", rx: { "🎉": 8, "❤️": 3 } },
+  { who: "rosa", text: "Our intake dashboard is live. Two rounds of changes and the link never changed.", rx: { "🎉": 8, "❤️": 3 } },
 ]);
 CHAT_SEED.s1.push({ who: "christin", text: "The shared prompt library, sorted by role. Add a prompt that worked for you.", url: "https://docs.example.org/prompt-library", rx: { "❤️": 5, "👍": 4 } });
 CHAT_SEED.s2.push({ who: "christin", text: "A one-page guide to share with job seekers before they use AI for a job search, including what to leave out.", url: "https://docs.example.org/job-seeker-ai-guide", rx: { "❤️": 6, "👍": 5 } });
@@ -1533,7 +1577,7 @@ function chatView() {
 }
 // ---------- state ----------
 const KEY = "aiva-sample-v3";
-const blank = () => ({ chat: {}, comments: {}, reacts: {}, checks: {}, connects: {}, posts: [], walk: {}, wdone: {}, tab: {}, notes: {}, spot: {}, spotDone: false, vote: null, replied: {}, roles: [FS], achat: [], areplied: false, cr: {}, chatSeen: false, mydemos: [] });
+const blank = () => ({ chat: {}, comments: {}, reacts: {}, checks: {}, connects: {}, posts: [], walk: {}, wdone: {}, tab: {}, notes: {}, spot: {}, spotDone: false, vote: null, replied: {}, roles: [FS], achat: [], areplied: false, cr: {}, chatSeen: false, mydemos: [], reflect: "" });
 let S = blank();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
@@ -1591,7 +1635,7 @@ function bnavView(active) {
   return `<nav class="bnav" aria-label="Main, bottom">${NAV.map(([h, l, i]) => `<a href="#${h}" class="${active === h ? "on" : ""}" ${active === h ? 'aria-current="page"' : ""}>${ic(i, 21)}${l}</a>`).join("")}<button class="bchat ${ui.chat ? "on" : ""}" data-act="chatopen" aria-label="Chat${n ? ", " + n + " new" : ""}">${ic("msg", 21)}Chat${n ? `<span class="badge" aria-hidden="true">${n}</span>` : ""}</button></nav>`;
 }
 // ---------- cards and thumbnails ----------
-const TOOLS = { "career-walk": ["Gemini", "ChatGPT", "Career Dreamer"], "intake-walk": ["Claude", "ChatGPT", "Apps Script"], "s3-walk": ["ChatGPT", "Copilot"], "s6-walk": ["ChatGPT", "Claude"], "job-demo": ["ChatGPT", "Gemini"], "slow-chat": ["ChatGPT", "Claude"], orientation: ["NotebookLM", "Copilot Notebooks"], "grant-agent": ["Claude", "ChatGPT"], "s3-demo": ["ChatGPT", "Copilot"], "s6-demo": ["ChatGPT", "Claude"] };
+const TOOLS = { "career-walk": ["Gemini", "ChatGPT", "Career Dreamer"], "intake-walk": ["Claude", "ChatGPT", "Apps Script"], "s3-walk": ["ChatGPT", "Copilot"], "s6-walk": ["ChatGPT", "Claude"], "job-demo": ["ChatGPT", "Gemini"], "slow-chat": ["ChatGPT", "Claude"], orientation: ["Gemini Notebook", "Copilot Notebooks"], "grant-agent": ["Claude", "ChatGPT"], "s3-demo": ["ChatGPT", "Copilot"], "s6-demo": ["ChatGPT", "Claude"] };
 const fmtLabel = (type, txt) => `<span class="fmt">${ic(FMT[type], 14)}${txt || type}</span>`;
 const toolsOf = (it) => it.tools || TOOLS[it.id];
 const toolBadges = (it) => (toolsOf(it) || []).length ? `<div class="aitools"><span class="sr">AI tools: </span>${toolsOf(it).map((t) => `<span class="aib">${t}</span>`).join("")}</div>` : "";
@@ -1611,9 +1655,9 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 function tile(dayIdx) { const [, m, d] = DAYS[dayIdx].iso.split("-").map(Number); return `<span class="tile" aria-hidden="true"><span class="tm">${MONTHS[m - 1]}</span><span class="td">${d}</span></span>`; }
 // ---------- home ----------
 const FEED = [
-  { who: "rosa", text: "Our intake dashboard is live. Two rounds of edits and the link never changed.", ch: "general", where: "General", rx: "🎉 8" },
-  { who: "dana", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, and the postings said inventory.", id: "job-demo", rx: "❤️ 7" },
-  { who: "kim", text: "The AI tool rounded wage figures in my labor market brief. Now I paste the table and tell it not to change numbers.", href: "#session-6~lab", where: "the lab board", rx: "💡 9" },
+  { who: "rosa", text: "Our intake dashboard is live. Two rounds of changes and the link never changed.", ch: "general", where: "General", rx: "🎉 8" },
+  { who: "dana", text: "The keyword table helped one job seeker see why she never heard back. Her resume said cashier, the postings said inventory.", id: "job-demo", rx: "❤️ 7" },
+  { who: "kim", text: "It rounded wage figures in ways the source didn't. Now I paste the table and tell it not to change numbers.", href: "#session-4", where: "Session 4", rx: "💡 9" },
   { who: "luis", text: "Step 4 worked well in pairs. People compared sweet spots and found two they both wanted to explore.", id: "career-walk", rx: "❤️ 4" },
   { who: "tom", text: "We tell people to ignore any keyword they can't back up in an interview. Part 3 is where that shows.", id: "job-demo", rx: "👍 4" },
 ];
@@ -1625,20 +1669,19 @@ function feedLine(f) {
   if (f.href) return `<li><a class="fl" href="${f.href}">${inner}</a></li>`;
   return `<li><button class="fl" data-act="openChat" data-ch="${f.ch}">${inner}</button></li>`;
 }
-const HOME_COLS = [["Walkthrough", "Walkthroughs", "career-walk", ["intake-walk", "s3-walk"]], ["Demo", "Demos", "job-demo", ["grant-agent", "orientation"]], ["Article", "Articles", "career-data", ["career-skills", "harness"]]];
+const HOME_COLS = [["Walkthrough", "Walkthroughs", "career-walk", ["intake-walk"]], ["Demo", "Demos", "job-demo", ["grant-agent", "orientation"]], ["Article", "Articles", "career-data", ["career-skills", "harness"]]];
+// ---------- home schedule: day tabs, time, session title, one button ----------
 function schedRow(s) {
   const st = s.n < NEXT ? "past" : s.n === NEXT ? "live" : "next";
-  const title = `<a class="stt" href="#session-${s.n}">${s.title}</a>`;
-  const acts = st === "past" ? `<button class="btn small quiet" data-act="sample" data-k="recording">${ic("play", 14, 2, "currentColor")} Recording</button>`
-    : st === "live" ? `<button class="btn primary" data-act="zoom" data-n="${s.n}">${ic("video", 18)} Join on Zoom</button><a class="btn" href="#session-${s.n}">Session page</a>`
-    : `<button class="btn small" data-act="cal" data-n="${s.n}">${ic("calendar", 15)} Add to calendar</button>`;
-  return `<li class="srow ${st}"><div class="stime">${s.time} to ${s.end}${st === "live" ? '<span class="livedot">Live now</span>' : st === "past" ? '<span class="sdone">Ended</span>' : ""}</div>
-    <div class="sbody"><span class="sk">Session ${s.n}</span>${title}${st === "past" ? "" : `<p class="sd">${DESC[s.n]}</p>`}${st === "live" ? `<p class="sf">${FACS}</p>` : ""}</div>
-    <div class="sacts">${acts}</div></li>`;
+  const btn = st === "past" ? `<button class="btn small quiet" data-act="sample" data-k="recording">${ic("play", 14, 2, "currentColor")} Recording</button>`
+    : `<button class="btn ${st === "live" ? "primary" : ""}" data-act="zoom" data-n="${s.n}">${ic("video", 17)} Join on Zoom</button>`;
+  return `<li class="srow ${st}"><div class="stime">${s.time} to ${s.end}${st === "live" ? '<span class="livedot">Live now</span>' : ""}</div>
+    <a class="sbody" href="#session-${s.n}"><span class="sk">Session ${s.n}</span><span class="stt">${s.title}</span></a>
+    <div class="sacts">${btn}</div></li>`;
 }
 function schedView() {
   const di = ui.hday === undefined ? 0 : ui.hday, d = DAYS[di];
-  const rows = SESSIONS.filter((x) => x.day === di).map((x, j) => schedRow(x) + ((di < 2 && j === 1) || (di === 2 && j === 0) ? `<li class="srow brk"><div class="stime">${d.brk.replace(" CT, break", "")}</div><div class="sbody">Break</div></li>` : "")).join("");
+  const rows = SESSIONS.filter((x) => x.day === di).map((x, j) => schedRow(x) + ((di < 2 && j === 1) || (di === 2 && j === 0) ? `<li class="srow brk"><div class="stime">${d.brk.replace(" CT, break", "")}</div><div class="sbody">Break</div><div></div></li>` : "")).join("");
   return `<section class="sched" id="sched" aria-labelledby="sched-h">
     <div class="sched-h"><h2 class="home-h" id="sched-h">Schedule <span class="muted">All times Central</span></h2>
       <div class="dtabs" role="tablist" aria-label="Academy days">${DAYS.map((x, i) => `<button class="dtab" role="tab" id="dt-${i}" aria-controls="dpanel" aria-selected="${i === di}" tabindex="${i === di ? 0 : -1}" data-act="hday" data-i="${i}"><span>${x.label}${i === 0 ? ' <span class="today">Today</span>' : ""}</span><small>${x.short}</small></button>`).join("")}</div></div>
@@ -1671,44 +1714,19 @@ function featureMini() {
   </div><span class="mcur">${ic("pointer", 20)}</span><span class="mclick"></span></div>`;
 }
 // ---------- sessions ----------
-const DESC = { 1: "Prompts for program letters, meeting notes and messages to job seekers, and what never goes into a public tool.", 2: "Coach job seekers to explore careers, compare training programs, tailor resumes for applicant tracking systems and practice interviews with AI.", 3: "Case note summaries, follow-ups and a simple caseload dashboard, without giving AI participant data.", 4: "For program and curriculum staff: labor market reports, occupation comparisons and credentials that match local openings.", 5: "A flyer, slide deck, audio clip and short video for recruiting, each checked for reading level, accessibility and translation.", 6: "Bring one weekly task and work through it with peers, or try agents, agentic scans, connectors and program brains.", 7: "Where bias enters resume screening, job descriptions and outreach, what stays out of AI tools, and an accessibility check.", 8: "Small experiments, learning circles and a plan for one experiment with your own team." };
 const FACS = "Joey Lehrman and Christin Smith";
 function sessionsView() {
   return `<main class="narrow"><h1 class="page">Sessions</h1><p class="lede">Eight live sessions on Zoom, all times Central.</p>
     <div class="agenda" id="days">${DAYS.map((d, i) => `<section class="aday" aria-labelledby="ad-${i}"><div class="aday-h">${tile(i)}<h2 id="ad-${i}">${d.date}</h2></div>
       ${SESSIONS.filter((s) => s.day === i).map((s, j) => {
         const brk = (i < 2 && j === 1) || (i === 2 && j === 0) ? `<div class="arow brk"><span class="at">${d.brk.replace(" CT, break", "")}</span><span class="atitle">Break</span></div>` : "";
-        return `<a class="arow" href="#session-${s.n}"><span class="at">${s.time} to ${s.end}</span><span><span class="atitle">Session ${s.n}: ${shortTitle(s)}</span><span class="adesc">${DESC[s.n]}</span></span></a>${brk}`;
+        return `<a class="arow" href="#session-${s.n}"><span class="at">${s.time} to ${s.end}</span><span><span class="sk">Session ${s.n}</span><span class="atitle">${s.title}</span></span></a>${brk}`;
       }).join("")}</section>`).join("")}</div></main>`;
 }
 function libSection(n) {
-  const items = LIB.filter((x) => x.s === n && x.go !== "session-" + n);
+  const items = LIB.filter((x) => x.s === n && !x.go);
   if (!items.length) return "";
-  return `<section class="part" id="inlib"><h2 class="sec-h">More for this session</h2><ul class="trows">${items.map((it) => `<li><a href="${libHref(it)}"><span>${fmtLabel(it.type)}${esc(it.title)}</span><span class="muted">${it.size}</span></a></li>`).join("")}</ul></section>`;
-}
-// The session page as a companion: agenda during the hour, archive after it.
-const HOUR3 = [["Welcome and goals", 5], ["Demo: case note summary", 10, "start"], ["Walkthrough: follow-up text", 10, "steps"], ["Worked example in breakouts", 10, "practice"], ["Caseload dashboard walkthrough", 10, "inlib"], ["Read and discuss", 10, "read"], ["Check it", 5, "checkit"]];
-function hourView(s) {
-  const mode = ui.sview || "live", [h0, m0] = s.time.split(":").map(Number);
-  let t = 0;
-  const rows = HOUR3.map(([label, mins, to], i) => {
-    const at = mode === "after" ? `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}` : `${h0}:${String(m0 + t).padStart(2, "0")}`;
-    t += mins;
-    const now = mode === "live" && i === 1;
-    const lab = to ? `<button class="hlink" data-act="jump" data-to="${to}">${label}</button>` : `<span>${label}</span>`;
-    return `<li class="${now ? "now" : ""}"><span class="ht">${at}</span>${lab}<span class="hm">${now ? '<span class="livedot">Now</span>' : mins + " min"}</span></li>`;
-  }).join("");
-  const top = mode === "live" ? `<div class="hr-live"><span class="livedot">Live now</span><button class="btn small primary" data-act="zoom" data-n="${s.n}">${ic("video", 16)} Join on Zoom</button></div>`
-    : mode === "after" ? `<button class="rec" data-act="sample" data-k="recording">${ic("play", 18, 2, "currentColor")}<span><b>Recording</b><span class="muted">58 min · captions and transcript</span></span></button>`
-    : "";
-  return `<section class="part hour" id="hour" aria-labelledby="hour-h"><div class="part-row"><h2 class="sec-h" id="hour-h">${mode === "after" ? "Recording and chapters" : "This hour"}</h2>
-    <div class="seg" role="group" aria-label="Preview this page"><span class="muted">Preview</span>${[["before", "Before"], ["live", "Live"], ["after", "After"]].map(([k, l]) => `<button data-act="sview" data-v="${k}" aria-pressed="${mode === k}">${l}</button>`).join("")}</div></div>
-    ${top}<ol class="hlist">${rows}</ol></section>`;
-}
-function sharedView(n) {
-  const ch = "s" + n, count = chatFor(ch).filter((m) => m.who).length;
-  return `<section class="part shared" id="shared" aria-labelledby="sh-h"><div class="part-row"><h2 class="sec-h" id="sh-h">Shared in this session <span class="muted">${count}</span></h2><button class="linkbtn" data-act="openChat" data-ch="${ch}">${ic("expand", 15)} Open beside the page</button></div>
-    <div class="msgs plain">${chatRows(ch, "p")}</div>${shareForm(ch, "p")}</section>`;
+  return `<section class="part" id="inlib"><h2 class="sec-h">Resources</h2><ul class="trows">${items.map((it) => `<li><a href="${libHref(it)}"><span>${fmtLabel(it.type)}${esc(it.title)}</span><span class="muted">${it.size}</span></a></li>`).join("")}</ul></section>`;
 }
 function sessionView(n) {
   const s = SESSIONS.find((x) => x.n === n);
@@ -1716,28 +1734,159 @@ function sessionView(n) {
   const d = DAYS[s.day], past = n < NEXT;
   const head = `<div class="crumbs"><a href="#sessions">Sessions</a> / Session ${s.n}</div>
     <h1 class="s-title">${s.title}</h1>
-    <div class="s-when">${tile(s.day)}<div><div class="when">${d.date} · ${s.time} to ${s.end} CT</div><div class="muted">${FACS}</div></div></div>
+    <div class="s-when">${tile(s.day)}<div><div class="when">${d.date} · ${s.time} to ${s.end} CT${n === NEXT ? ' <span class="livedot">Live now</span>' : ""}</div><div class="muted">${FACS}</div></div></div>
     <div class="acts-row">${past ? `<button class="btn primary" data-act="sample" data-k="recording">${ic("play", 16, 2, "currentColor")} Watch the recording</button>` : `<button class="btn primary" data-act="zoom" data-n="${s.n}">${ic("video", 18)} Join on Zoom</button><button class="btn" data-act="cal" data-n="${s.n}">${ic("calendar", 18)} Add to calendar</button>`}</div>
-    <p class="lede">${s.summary}</p>
-    <details class="reveal"><summary>Learning objectives</summary><ul class="obj">${s.objectives.map((o) => `<li>${o}</li>`).join("")}</ul></details>`;
-  if (!s.full) {
-    return `<main class="narrow">${head}<p class="sample-note">This sample includes full pages for <a href="#session-3">Session 3</a> and <a href="#session-6">Session 6</a>.</p></main>`;
-  }
-  const C = n === 3 ? S3 : S6;
-  const parts = (n === 3 ? [["hour", "This hour"]] : []).concat([["start", "Start here"], ["steps", "Step by step"], ["practice", n === 3 ? "Worked example" : "Lab board"], ["read", "Read and discuss"], ["take", "Take it with you"], ["checkit", "Check it"]], n === 6 ? [["agents", "Agents"]] : [], [["shared", "Shared"]]);
+    <p class="s-sum">${s.summary}</p>
+    <section class="part" id="obj"><h2 class="sec-h">Learning objectives</h2><p class="muted" style="margin:0">Participants will be able to:</p><ul class="obj">${s.objectives.map((o) => `<li>${o}</li>`).join("")}</ul></section>`;
+  if (!s.full) return `<main class="narrow">${head}${libSection(n)}</main>`;
+  const parts = [["explore", "Explore the dashboard"], ["build", "Build one"], ["read", "Read"], ["reflect", "Reflect"]];
   return `<main class="narrow">${head}
-    <nav class="onpage" aria-label="On this page">${parts.map(([id, l]) => `<button data-act="jump" data-to="${id}">${l}</button>`).join("")}</nav>
-    ${n === 3 ? hourView(s) : ""}
-    ${n === 3 ? demo3() : demo6()}
-    ${walkView(n, C.walk)}
-    ${n === 3 ? practice3() : practice6()}
-    ${readView(n, C)}
-    ${takeView(n, C.resources)}
-    ${checkView(n, C.checks, s.check)}
-    ${n === 6 ? agentsView() : ""}
-    ${sharedView(n)}
-    ${libSection(n)}
+    <nav class="onpage" id="s3nav" aria-label="Session resources"><span class="onpage-k">Session resources</span>${parts.map(([id, l], i) => `<button data-act="jump" data-to="${id}"><span class="onum">${i + 1}</span>${l}</button>`).join("")}</nav>
+    ${exploreView()}
+    ${buildView()}
+    ${dashReadView()}
+    ${reflectView()}
   </main>`;
+}
+
+// ---------- Session 3, step 1: explore a working dashboard ----------
+const DASH_TODAY = Date.UTC(2027, 1, 23);
+const DASH_CMS = ["Dana Reyes", "Tom Becker", "Sam Ortiz"];
+const DASH_STAGES = ["Referred", "Intake", "Enrolled", "In training", "Placed"];
+const DASH_FIRST = ["Alicia", "Malik", "Jade", "Omar", "Priya", "Victor", "Hannah", "Lucas", "Keisha", "Tran", "Bianca", "Andre", "Mei", "Carlos", "Fatima", "Derek", "Nora", "Isaac", "Lena", "Rashad", "Sofia", "Kofi", "Elena", "Jamal", "Rina", "Ben", "Amara", "Diego", "Wen", "Grace", "Tariq", "Maya", "Hector", "Ivy", "Samuel", "Leila"];
+const DASH_STAGE_OF = [0, 1, 2, 3, 2, 4, 1, 3, 2, 0, 3, 2, 4, 1, 2, 3, 0, 2, 3, 4, 1, 2, 3, 0, 2, 4, 1, 3, 2, 3, 1, 4, 2, 0, 3, 1];
+let DASH = null;
+function dashRows() {
+  if (DASH) return DASH;
+  let a = 7;
+  const rnd = () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const day = 86400000, L = "ABCDEFGHJKLMNPRSTW";
+  DASH = DASH_FIRST.map((f, i) => {
+    const stage = DASH_STAGES[DASH_STAGE_OF[i]];
+    const intake = DASH_TODAY - Math.round(12 + rnd() * 100) * day;
+    const last = DASH_TODAY - Math.round(1 + rnd() * 26) * day;
+    const next = last + (stage === "Placed" ? 30 : 14) * day;
+    return { name: f + " " + L[Math.floor(rnd() * L.length)] + ".", cm: DASH_CMS[i % 3], office: rnd() < 0.5 ? "North" : "South", program: ["Adult", "Dislocated Worker", "Youth"][Math.floor(rnd() * 3)], stage, intake, last, next };
+  });
+  return DASH;
+}
+const dShort = (t) => { const x = new Date(t); return MONTHS[x.getUTCMonth()] + " " + x.getUTCDate(); };
+const dSheet = (t) => { const x = new Date(t); return `${x.getUTCMonth() + 1}/${x.getUTCDate()}/${x.getUTCFullYear()}`; };
+function dashPane() {
+  const all = dashRows(), rows = all.filter((r) => !ui.dashCm || r.cm === ui.dashCm);
+  const count = (st) => rows.filter((r) => r.stage === st).length, max = Math.max(1, ...DASH_STAGES.map(count));
+  const over = rows.filter((r) => r.next < DASH_TODAY).map((r) => Object.assign({ days: Math.round((DASH_TODAY - r.last) / 86400000) }, r)).sort((x, y) => y.days - x.days);
+  const list = over.filter((r) => !ui.dashStage || r.stage === ui.dashStage), shown = list.slice(0, 6);
+  return `<div class="gwin"><div class="gwin-bar"><i></i><i></i><i></i><span>script.google.com/macros/s/AKfycb…/exec</span></div><div class="dash">
+    <div class="dash-top"><h3>Caseload dashboard</h3><div class="dash-f"><label for="dashcm">Case manager</label><select id="dashcm" class="field">${[["", "Everyone"]].concat(DASH_CMS.map((c) => [c, c])).map(([v, l]) => `<option value="${v}" ${ui.dashCm === v ? "selected" : ""}>${l}</option>`).join("")}</select></div></div>
+    <div class="kpis"><div class="kpi"><b>${rows.filter((r) => r.stage !== "Placed").length}</b><span>Active participants</span></div><div class="kpi o"><b>${over.length}</b><span>Follow-ups overdue</span></div><div class="kpi p"><b>${count("Placed")}</b><span>Placed in a job</span></div></div>
+    <div class="dash-grid">
+      <div><h4>Pipeline</h4><p class="hint" style="margin:2px 0 8px">Select a stage to see who needs a follow-up.</p><div class="pipe">${DASH_STAGES.map((st) => `<button class="pstage ${st === "Placed" ? "placed" : ""}" data-act="dashStage" data-v="${st}" aria-pressed="${ui.dashStage === st}"><span>${st}</span><span class="ptrack"><span class="pbar" style="width:${Math.round((count(st) / max) * 100)}%"></span></span><span class="pcount">${count(st)}</span></button>`).join("")}</div></div>
+      <div><h4>Needs a follow-up${ui.dashStage ? `: ${ui.dashStage}` : ""}</h4>
+        ${shown.length ? `<table class="data dtbl"><thead><tr><th scope="col">Participant</th><th scope="col">Stage</th><th scope="col">Last contact</th></tr></thead><tbody>${shown.map((r) => `<tr><td>${r.name}</td><td>${r.stage}</td><td><span class="ago">${r.days} days ago</span></td></tr>`).join("")}</tbody></table>${list.length > shown.length ? `<p class="hint" style="margin-top:6px">And ${list.length - shown.length} more</p>` : ""}` : `<p class="muted" style="margin-top:8px">No overdue follow-ups at this stage.</p>`}
+      </div>
+    </div></div></div>`;
+}
+function sheetPane() {
+  const cols = ["Participant", "Case manager", "Office", "Program", "Stage", "Intake date", "Last contact", "Next follow-up"];
+  return `<div class="gwin"><div class="gsheet-top"><span class="gs-ic" aria-hidden="true"></span><div><b>Caseload tracker (sample)</b><div class="gs-menu">File Edit View Insert Format Data Extensions Help</div></div></div>
+    <div class="gsheet" tabindex="0" role="region" aria-label="Sample Google Sheet"><table class="sheet"><thead><tr><th class="rn"></th>${cols.map((_, i) => `<th scope="col">${"ABCDEFGH"[i]}</th>`).join("")}</tr></thead><tbody>
+      <tr class="hd"><td class="rn">1</td>${cols.map((c) => `<td>${c}</td>`).join("")}</tr>
+      ${dashRows().map((r, i) => `<tr><td class="rn">${i + 2}</td><td>${r.name}</td><td>${r.cm}</td><td>${r.office}</td><td>${r.program}</td><td>${r.stage}</td><td>${dSheet(r.intake)}</td><td>${dSheet(r.last)}</td><td>${dSheet(r.next)}</td></tr>`).join("")}
+    </tbody></table></div></div>`;
+}
+function dashHTML() {
+  const t = ui.dashTab || 0;
+  return `<div class="tabs" role="tablist" aria-label="Dashboard and sheet" style="margin-top:10px">${["Dashboard", "Google Sheet"].map((l, i) => `<button role="tab" id="dvt${i}" aria-selected="${t === i}" aria-controls="dvp" tabindex="${t === i ? 0 : -1}" data-act="dashTab" data-i="${i}">${l}</button>`).join("")}</div>
+    <div id="dvp" role="tabpanel" aria-labelledby="dvt${t}">${t === 0 ? dashPane() : sheetPane()}</div>
+    <p class="hint" style="margin-top:10px">${t === 0 ? "The dashboard reads the Google Sheet where it lives. AI never sees the records." : "36 fictional participants. Every name and date is made up."}</p>`;
+}
+function openDash() { ui.dashStage = null; dialog("Caseload dashboard", `<div id="dashbody">${dashHTML()}</div>`, "wide"); }
+function refreshDash() {
+  const b = document.getElementById("dashbody"); if (!b) return;
+  const k = focusKey(document.activeElement);
+  b.innerHTML = dashHTML();
+  if (k) { const n = document.querySelector(k); if (n) n.focus({ preventScroll: true }); }
+}
+function exploreView() {
+  const bars = [[38, ""], [52, ""], [70, ""], [58, ""], [34, "g"]];
+  return `<section class="part" id="explore">${partHead(1, "Explore the dashboard", `<span class="fmt Demo">${ic("play", 14)}Demo</span>`)}
+    <div class="xcard"><button class="xthumb" data-act="dashOpen" aria-label="Open the caseload dashboard"><span class="xt-h">Caseload dashboard</span>${bars.map(([w, c]) => `<span class="xt-row"><span class="xt-bar ${c}" style="width:${w}%"></span></span>`).join("")}<span class="xt-play">${ic("expand", 16)}</span></button>
+      <div><p style="margin:0">A caseload dashboard built with Google Apps Script, and the sample Google Sheet it reads. Filter by case manager and select a stage to see who needs a follow-up.</p>
+      <button class="btn primary" data-act="dashOpen" style="margin-top:14px">${ic("chart", 17)} Explore the dashboard</button></div></div>
+  </section>`;
+}
+
+// ---------- Session 3, step 2: walkthrough with GIFs from the AI Leadership Academy ----------
+const BUILD = [
+  { t: "Ask AI for the two dashboard files", short: "Ask AI",
+    d: ["Open a new chat with your AI assistant. Describe the dashboard: who uses it, what it shows, and which sheet it reads. Select the microphone and say it out loud; speaking lets you give the context AI needs.", "Ask for two files: Code.gs, the code that reads your sheet, and Index.html, the page people see. Use the copy button next to each file when the next steps ask for it."],
+    img: "/aiforum/demo/walk/w1.gif", alt: "An AI chat where the dashboard is described, and Code.gs and Index.html come back with copy buttons.",
+    result: "AI gives you the two files, ready to copy.", watch: "Include only the column headings from your sheet, not any student records." },
+  { t: "Open Apps Script from your Google Sheet", short: "Open Apps Script",
+    d: ["Open the Google Sheet that holds your data. Select Extensions, then Apps Script. Apps Script, Google's place for small programs attached to a sheet, opens in a new tab.", "Select Untitled project at the top and give the project a name, such as Attendance dashboard."],
+    img: "/aiforum/demo/walk/w2.gif", alt: "A Google Sheet of sample data, with Extensions, then Apps Script, selected from the menu.",
+    result: "An Apps Script project connected to your sheet is open." },
+  { t: "Add the two files to Apps Script", short: "Add the files",
+    parts: [
+      { t: "Paste Code.gs over the starter code", d: "Select Code.gs in the Files list. Select all of the starter code (Ctrl+A, or Cmd+A on a Mac), then paste the Code.gs file from AI over it.", img: "/aiforum/demo/walk/w3a.gif", alt: "Apps Script with Code.gs selected and the code from AI pasted over the starter code." },
+      { t: "Add an HTML file named Index", d: "Next to Files, select +, then HTML. Type Index as the name; Apps Script adds .html for you.", img: "/aiforum/demo/walk/w3b.gif", alt: "A new HTML file being added and named Index in the Apps Script Files list." },
+      { t: "Paste Index.html and save", d: "Select all of the starter text in the new file and paste the Index.html file from AI over it. Then select Save project, the disk icon at the top.", img: "/aiforum/demo/walk/w3c.png", alt: "Index.html pasted into Apps Script, with the project saved." },
+    ],
+    result: "The project has two saved files, Code.gs and Index.html." },
+  { t: "Deploy it as a web app and copy the link", short: "Deploy",
+    parts: [
+      { t: "Set up a new deployment", d: "Select Deploy, then New deployment. Under Select type, choose Web app. Set Who has access. For this sample sheet, choose Anyone. With real student data, choose Anyone within your organization instead.", img: "/aiforum/demo/walk/w4a.gif", alt: "The New deployment window with Web app selected and Who has access set to Anyone." },
+      { t: "Deploy and copy the link", d: "Select Deploy. The first time, Google asks you to authorize the script: choose your account, review the requested permissions, and approve them only if they match the dashboard's purpose. Copy the Web app URL; that link opens the dashboard.", img: "/aiforum/demo/walk/w4b.png", alt: "The finished deployment, with the web app URL copied." },
+    ],
+    result: "Your dashboard opens at its own link.", watch: "With real student data, limit access to people in your organization." },
+  { t: "Improve it and publish a new version", short: "Improve it",
+    parts: [
+      { t: "Ask for the change in the same chat", d: "Go back to the same chat and ask for what you want next, by voice. When the updated Code.gs arrives, copy it.", img: "/aiforum/demo/walk/w5a.png", alt: "The same AI chat asked for a custom export, returning an updated Code.gs." },
+      { t: "Paste the new code and save", d: "In Apps Script, select Code.gs. Select all of the old code, paste the updated Code.gs over it, and select Save project." },
+      { t: "Publish a new version", d: "Select Deploy, then Manage deployments. Select Edit, the pencil, set Version to New version, and select Deploy.", img: "/aiforum/demo/walk/w5c.png", alt: "Manage deployments with Version set to New version, ready to deploy." },
+      { t: "Try the change", d: "Open or refresh the dashboard link and try the change. In this example, the export lets you pick fields and select Download .csv.", img: "/aiforum/demo/walk/w5d.png", alt: "The updated dashboard with a custom export panel and a downloaded .csv file." },
+    ],
+    result: "Your change is live at the same link." },
+];
+const shot = (src, alt) => `<figure class="shot"><img src="${src}" alt="${esc(alt)}" width="960" height="600" loading="lazy" decoding="async"></figure>`;
+function buildView() {
+  const i = Math.min(S.walk.build || 0, BUILD.length - 1), st = BUILD[i];
+  return `<section class="part" id="build">${partHead(2, "Build one in Google Apps Script", `<span class="fmt Walkthrough">${ic("pointer", 14)}Walkthrough · 5 steps</span>`)}
+    <p class="credit">Steps and GIFs from the AI Leadership Academy, built with COABE.</p>
+    <ol class="bsteps">${BUILD.map((b, j) => `<li><button data-act="bstep" data-i="${j}" ${j === i ? 'aria-current="step"' : ""} class="${j < i ? "done" : ""}"><b>Step ${j + 1}</b><span class="bt">${b.short}</span></button></li>`).join("")}</ol>
+    <div class="bpanel" id="bpanel">
+      <h3>Step ${i + 1}: ${st.t}</h3>
+      ${(st.d || []).map((p) => `<p>${p}</p>`).join("")}
+      ${st.img ? shot(st.img, st.alt) : ""}
+      ${(st.parts || []).map((p, j) => `<div class="bpart"><h4><span class="pl">${i + 1}${"abcd"[j]}</span>${p.t}</h4><p>${p.d}</p>${p.img ? shot(p.img, p.alt) : ""}</div>`).join("")}
+      <p class="bres">${ic("check", 17, 3)}<span>${st.result}</span></p>
+      ${st.watch ? `<div class="flagline">${ic("alert", 17)}<span><b>Watch out:</b> ${st.watch}</span></div>` : ""}
+      <div class="bnav-row"><button class="btn small" data-act="bstep" data-i="${i - 1}" data-scroll="1" ${i === 0 ? "disabled" : ""}>Back</button>${i < BUILD.length - 1 ? `<button class="btn small primary" data-act="bstep" data-i="${i + 1}" data-scroll="1">Next: ${BUILD[i + 1].short}</button>` : `<button class="btn small primary" data-act="jump" data-to="read">Next: Read</button>`}</div>
+    </div>
+  </section>`;
+}
+
+// ---------- Session 3, step 3: a link to the article page ----------
+function dashReadView() {
+  const A = DASH_ART;
+  return `<section class="part" id="read">${partHead(3, "Read", `<span class="fmt Article">${ic("file", 14)}Article · ${A.mins} min read</span>`)}
+    <a class="readcard" href="#lib-dashboard"><img src="/aiforum/demo/art/a5-dataflow.png" width="1200" height="514" alt="" loading="lazy"><div class="rc-body"><h3>${esc(A.title)}</h3><p>${esc(A.dek)}</p>
+      <div class="rc-foot"><span class="row" style="gap:8px">${avatar(A.by, "sm")}<span class="muted" style="font-size:14px;font-weight:600">${PEOPLE[A.by].name}</span></span><span class="btn small primary">Read the article ${ic("arrow", 15)}</span></div></div></a></section>`;
+}
+
+// ---------- Session 3, step 4: reflect, answered in the session's one comment thread ----------
+const REFLECT_Q = "What features would make a dashboard like this useful in your work, and where would it fit in your week?";
+const REFLECT_COMMENTS = [
+  { id: "rq1", who: "rosa", when: "Tue 10:20 AM", text: "Sort by days since last contact, and a Monday email to each case manager with their own list. I'd check it before our weekly staffing meeting.", r: { heart: 3, bulb: 2 } },
+  { id: "rq2", who: "luis", when: "Tue 11:05 AM", text: "A count of who is waiting for a training seat, so I can see the backlog before the next cohort starts.", r: { thumbs: 2 } },
+  { id: "rq3", who: "aisha", when: "Tue 1:40 PM", text: "Referrals from each community partner by month. Our board asks for it every quarter, and right now someone builds it by hand.", r: { bulb: 3 } },
+];
+function reflectView() {
+  return `<section class="part" id="reflect">${partHead(4, "Reflect")}
+    <p class="reflect-q">${REFLECT_Q}</p>
+    ${commentsHTML("s3", REFLECT_COMMENTS, "Share your answer")}
+  </section>`;
 }
 
 // ---------- library ----------
@@ -1757,7 +1906,7 @@ function libraryView() {
 }
 function shareDemoForm() {
   return `<form data-form="sharedemo" class="sdform">
-    <label for="sd-t">Title</label><input id="sd-t" class="field" required maxlength="80" placeholder="For example: weekly job leads list">
+    <label for="sd-t">Title</label><input id="sd-t" class="field" required maxlength="80" placeholder="For example: Weekly job leads list">
     <label for="sd-b">What it does</label><input id="sd-b" class="field" required maxlength="140">
     <fieldset><legend>AI tools</legend><div class="row" style="flex-wrap:wrap;gap:6px 14px">${["ChatGPT", "Claude", "Gemini", "Copilot", "Other"].map((t) => `<label class="cbx"><input type="checkbox" name="tool" value="${t}"> ${t}</label>`).join("")}</div></fieldset>
     <label for="sd-p">Prompt</label><textarea id="sd-p" class="field" required style="min-height:96px"></textarea>
@@ -1767,13 +1916,13 @@ function shareDemoForm() {
 }
 
 // ---------- comments ----------
-function commentsHTML(key, seed = []) {
+function commentsHTML(key, seed = [], ph = "Write a comment") {
   const tops = [];
   seed.forEach((c, i) => { const x = Object.assign({ id: key + "-" + i }, c, { kids: [] }); if (c.reply && tops.length) tops[tops.length - 1].kids.push(x); else tops.push(x); });
   (S.comments[key] || []).forEach((c) => { const p = c.parent && tops.find((t) => t.id === c.parent); if (p) p.kids.push(c); else tops.push(Object.assign({}, c, { kids: [] })); });
   const n = tops.reduce((a, t) => a + 1 + t.kids.length, 0), fid = "cm-" + safeId(key);
   return `<section class="cmts" aria-labelledby="${fid}-h"><h2 class="cmts-h" id="${fid}-h">Comments${n ? ` <span class="muted">${n}</span>` : ""}</h2>
-    <form class="cform" data-form="comment" data-key="${key}">${avatar("dana", "sm")}<label class="sr" for="${fid}">Write a comment</label><textarea id="${fid}" class="cbox" placeholder="Write a comment"></textarea><button class="btn small primary">Post</button></form>
+    <form class="cform" data-form="comment" data-key="${key}">${avatar("dana", "sm")}<label class="sr" for="${fid}">${ph}</label><textarea id="${fid}" class="cbox" placeholder="${ph}"></textarea><button class="btn small primary">Post</button></form>
     <ol class="clist">${tops.map((t) => cmtHTML(key, t)).join("")}</ol></section>`;
 }
 function cmtHTML(key, c) {
@@ -1792,23 +1941,15 @@ function readerView(id) {
   const s = it.s ? SESSIONS.find((x) => x.n === it.s) : null;
   const by = it.by ? `<div class="byline">${avatar(it.by, "sm")}${PEOPLE[it.by].name}</div>` : "";
   const head = `<div class="crumbs"><a href="#library">Library</a> / ${it.type}s</div>
-    <div class="r-head">${fmtLabel(it.type, it.type + " · " + it.size)}<h1>${esc(it.title)}</h1>${by}${it.type !== "Article" ? `<p class="lede">${esc(it.blurb)}</p>` : ""}${toolBadges(it)}${s ? `<p class="goes">Goes with <a href="#session-${s.n}">Session ${s.n}: ${shortTitle(s)}</a></p>` : ""}</div>`;
+    <div class="r-head">${fmtLabel(it.type, it.type + " · " + it.size)}<h1>${esc(it.title)}</h1>${by}${it.type !== "Article" ? `<p class="lede">${esc(it.blurb)}</p>` : id === "dashboard" ? `<p class="lede">${esc(DASH_ART.dek)}</p>` : ""}${toolBadges(it)}${s ? `<p class="goes">Goes with <a href="#session-${s.n}">Session ${s.n}: ${shortTitle(s)}</a></p>` : ""}</div>`;
   let main;
   if (it.mine) main = `<section class="part"><h2 class="sec-h">Prompt</h2><div class="prompt plain" id="mp-${it.id}">${esc(it.prompt)}</div><div class="tools"><button class="btn small" data-act="copy" data-src="mp-${it.id}">${ic("copy", 16)} Copy prompt</button></div>${it.check ? `<h2 class="sec-h" style="margin-top:22px">What to check</h2><p>${esc(it.check)}</p>` : ""}</section>`;
+  else if (id === "dashboard") main = dashArticleHTML();
   else if (it.type === "Article") main = `<div class="article">${articleHTML(ARTICLES[id].body)}</div>`;
   else if (it.type === "Walkthrough") main = walkPlayer(id);
   else main = `<div id="gifwrap">${gifHTML(id)}</div>`;
   return `<main class="narrow">${head}${main}${commentsHTML("lib-" + id, LIB_COMMENTS[id] || [])}</main>`;
 }
-function readView(n, C) {
-  const A = C.article;
-  return `<section class="part" id="read">${partHead(4, "Read and discuss", `<span class="muted">${A.mins} min read</span>`)}
-    <h3 class="display" style="font-size:24px;font-weight:600">${A.title}</h3>
-    <div class="row" style="margin:10px 0 16px">${avatar(A.by, "sm")}<span class="muted" style="font-size:14px;font-weight:600">${PEOPLE[A.by].name}</span></div>
-    <div class="article">${articleHTML(A.body)}</div>
-    ${commentsHTML("s" + n, C.comments)}</section>`;
-}
-
 // ---------- people ----------
 function peopleView() {
   const list = Object.entries(PEOPLE).filter(([id, p]) => id !== "dana" && !p.fac);
@@ -1891,92 +2032,6 @@ function gifRender() {
   gifSchedule();
 }
 
-function demo3() {
-  const D = S3.demo, done = S.spotDone;
-  const bad = D.lines.map((l, i) => (l.bad ? i : -1)).filter((i) => i >= 0);
-  const picked = Object.keys(S.spot).filter((k) => S.spot[k]).map(Number);
-  const hits = bad.filter((i) => S.spot[i]).length, wrong = picked.filter((i) => !D.lines[i].bad).length;
-  const lines = D.lines.map((l, i) => {
-    if (l.h) return `<div class="sh">${l.h}</div>`;
-    const on = !!S.spot[i];
-    let cls = "", why = "";
-    if (done) {
-      if (l.bad && on) { cls = "hit"; why = `<span class="why">You caught it. ${l.bad}</span>`; }
-      else if (l.bad) { cls = "miss"; why = `<span class="why">Missed. ${l.bad}</span>`; }
-      else if (on) { cls = "ok-wrong"; why = `<span class="why">This one matches the note.</span>`; }
-    }
-    return `<button class="ln ${cls}" data-act="spot" data-i="${i}" aria-pressed="${on}" ${done ? "disabled" : ""}><span class="mk">${on || cls === "hit" ? ic("check", 11, 3.4) : ""}</span><span>${esc(l.t)}${why}</span></button>`;
-  }).join("");
-  const verdict = done ? `<div class="verdict" role="status">${hits === 2 ? "You found both." : hits === 1 ? "You found one of two." : "Both slipped through."} ${wrong ? `You also flagged ${wrong} line${wrong > 1 ? "s" : ""} that ${wrong > 1 ? "match" : "matches"} the note. ` : ""}This is what the breakout groups look for: what the summary added or got wrong, as well as what it left out.</div>` : "";
-  return `<section class="part" id="start" style="margin-top:8px"><div class="start">
-    <div class="row" style="justify-content:space-between;flex-wrap:wrap"><span class="start-tag">START HERE</span><span class="tag">${ic("sparkles", 13)} Demo · 10 min</span></div>
-    <h2>${D.title}</h2>
-    <p class="muted" style="margin:6px 0 14px">Copy the prompt and try it on one of your own notes, with names, ID numbers and addresses taken out. Then practice the part that matters most: catching what the tool got wrong.</p>
-    <div class="k" style="margin-bottom:8px">The prompt</div>
-    <div class="prompt" id="p3">${esc(D.prompt)}</div>
-    <div class="tools"><button class="btn primary small" data-act="copy" data-src="p3">${ic("copy", 16)} Copy prompt</button>${tryIn}</div>
-    <div id="spot" style="margin-top:20px">
-      <div class="k" style="margin-bottom:8px">Spot the mistakes</div>
-      <p style="margin-bottom:12px;font-size:15px">This AI summary has two lines that don't match the note. Tap the lines you would fix, then check your picks.</p>
-      <div class="compare"><div class="box pre"><h4>Sample case note</h4>${esc(D.input)}</div><div class="box"><h4>One AI result</h4><div class="spot">${lines}</div></div></div>
-      <div class="spot-f"><button class="btn primary small" data-act="spotCheck" ${done ? "disabled" : ""}>Check my picks</button><button class="btn small" data-act="spotReset">${ic("undo", 15)} Start over</button><span class="hint">${done ? "" : picked.length ? `${picked.length} flagged` : "None flagged yet"}</span></div>
-      ${verdict}
-    </div>
-  </div></section>`;
-}
-
-function demo6() {
-  const t = S.tab.d6 || 0;
-  const tabs = ["This week's list", "First result", "Hand check"];
-  let body;
-  if (t === 0) body = leadsTable(LEADS.map((_, i) => i), "Requirements") + `<p class="hint" style="margin-top:8px">Eight listings, copied from a weekly leads email. Sample data.</p>`;
-  else if (t === 1) body = `<h4 class="tbl-h">No diploma or GED needed</h4>` + leadsTable([0, 2, 5], "From the listing", true) + `<h4 class="tbl-h">Check with employer</h4>` + leadsTable([3, 4], "From the listing", true);
-  else body = `<div class="verdict" style="margin:0 0 12px;border-left-color:var(--brown);background:var(--brown-soft)">A coach checked the same eight listings by hand and found one more. The tool skipped BrightPath because the listing never uses the word "required." The prompt now names this kind of wording.</div>` + leadsTable([0, 2, 5, 7], "From the listing", true, 7);
-  return `<section class="part" id="start" style="margin-top:8px"><div class="start">
-    <div class="row" style="justify-content:space-between;flex-wrap:wrap"><span class="start-tag">START HERE</span><span class="tag">${ic("wrench", 13)} Worked example · 10 min</span></div>
-    <h2>${S6.demo.title}</h2>
-    <p class="muted" style="margin:6px 0 14px">A weekly list of local job leads goes in. A short list of jobs that don't require a diploma or GED comes out, with the listing's own words as proof. Then a person checks it.</p>
-    <div class="k" style="margin-bottom:8px">The prompt</div>
-    <div class="prompt" id="p6">${esc(S6.demo.prompt)}</div>
-    <div class="tools"><button class="btn primary small" data-act="copy" data-src="p6">${ic("copy", 16)} Copy prompt</button>${tryIn}</div>
-    <div class="tabs" role="tablist" aria-label="Worked example stages" style="margin-top:18px">${tabs.map((x, i) => `<button role="tab" id="d6t${i}" aria-selected="${t === i}" aria-controls="d6p" tabindex="${t === i ? 0 : -1}" data-act="tab" data-key="d6" data-i="${i}">${i + 1}. ${x}</button>`).join("")}</div>
-    <div class="tabpanel scroll" id="d6p" role="tabpanel" aria-labelledby="d6t${t}">${body}</div>
-  </div></section>`;
-}
-function leadsTable(idx, last, quote, missed) {
-  return `<table class="data"><thead><tr><th scope="col">Employer</th><th scope="col">Job</th><th scope="col">Pay</th><th scope="col">Schedule</th><th scope="col">${last}</th></tr></thead><tbody>${idx.map((i) => { const r = LEADS[i]; return `<tr class="${i === missed ? "missed" : ""}"><td>${r[0]}${i === missed ? `<div class="hint c-brown" style="font-weight:700">Tool missed this</div>` : ""}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${quote ? `"${r[4]}"` : r[4]}</td></tr>`; }).join("")}</tbody></table>`;
-}
-
-function walkView(n, W) {
-  const i = S.walk[n] || 0, st = W.steps[i];
-  return `<section class="part" id="steps">${partHead(2, "Step by step", `<span class="tag">${ic("steps", 13)} Walkthrough</span>`)}
-    <div class="panel" style="padding:18px">
-      <h3 style="font-size:18px;margin-bottom:14px">${W.title}</h3>
-      <div class="walk"><ol class="steps">${W.steps.map((x, j) => `<li><button class="${j < i ? "done" : j === i ? "on" : ""}" data-act="step" data-n="${n}" data-i="${j}" ${j === i ? 'aria-current="step"' : ""}><span class="n">${j < i ? ic("check", 14, 3) : j + 1}</span>${x.t}</button></li>`).join("")}</ol>
-      <div><div class="screen"><div class="bar"><i></i><i></i><i></i><span class="hint" style="margin-left:8px">Your AI tool</span></div><div class="body">${st.screen.map(([t, me, hl]) => `<div class="mock ${me ? "me" : ""} ${hl === 1 ? "hl" : hl === 2 ? "flag" : ""}">${esc(t)}</div>`).join("")}</div></div>
-      <p class="step-copy">${st.d}</p>
-      <div class="step-nav"><button class="btn small" data-act="step" data-n="${n}" data-i="${Math.max(0, i - 1)}" ${i === 0 ? "disabled" : ""}>Back</button><span class="hint">Step ${i + 1} of ${W.steps.length}</span><button class="btn small primary" data-act="step" data-n="${n}" data-i="${Math.min(W.steps.length - 1, i + 1)}" ${i === W.steps.length - 1 ? "disabled" : ""}>Next step</button></div></div></div>
-    </div></section>`;
-}
-
-function practice3() {
-  const P = S3.practice, t = S.tab.p3 || 0;
-  return `<section class="part" id="practice">${partHead(3, "Worked example", `<span class="tag">${ic("building", 13)} One job seeker, five stages</span>`)}
-    <div class="panel" style="padding:18px"><h3 style="font-size:18px">${P.title}</h3><p class="hint" style="margin-top:4px">${P.note}</p>
-    <div class="tabs" role="tablist" aria-label="Stages" style="margin-top:12px">${P.stages.map((x, i) => `<button role="tab" id="p3t${i}" aria-selected="${t === i}" aria-controls="p3p" tabindex="${t === i ? 0 : -1}" data-act="tab" data-key="p3" data-i="${i}">${i + 1}. ${x.t}</button>`).join("")}</div>
-    <div class="tabpanel scroll" id="p3p" role="tabpanel" aria-labelledby="p3t${t}">${P.stages[t].body()}</div>
-    <div class="step-nav"><button class="btn small" data-act="tab" data-key="p3" data-i="${Math.max(0, t - 1)}" ${t === 0 ? "disabled" : ""}>Back</button><span class="hint">Stage ${t + 1} of ${P.stages.length}</span><button class="btn small primary" data-act="tab" data-key="p3" data-i="${Math.min(P.stages.length - 1, t + 1)}" ${t === P.stages.length - 1 ? "disabled" : ""}>Next stage</button></div></div></section>`;
-}
-
-function practice6() {
-  const all = S.posts.concat(S6.posts);
-  return `<section class="part" id="practice">${partHead(3, "Lab board", `<span class="tag">${ic("users", 13)} ${all.length} posts</span>`)}
-    <p class="muted" style="margin:-4px 0 14px">Participants post what they tried on their own tasks, including what didn't work. The board opens before the lab, so anyone can post early and find a partner.</p>
-    <div class="lab" id="lab">${all.map((p, i) => { const P = PEOPLE[p.who]; return `<div class="post ${p.fresh ? "new" : ""}"><div class="row">${avatar(p.who, "sm")}<div><b style="font-size:14.5px">${P.first}</b> <span class="muted" style="font-size:13.5px">· ${P.role}</span></div></div>
-      <h4>${esc(p.task)}</h4><dl><dt class="w">What worked</dt><dd>${esc(p.worked)}</dd><dt class="d">What didn't</dt><dd>${esc(p.didnt)}</dd></dl>${reactBtns("post" + (p.id || i), p.r || {})}</div>`; }).join("")}</div>
-    <button class="btn soft" style="margin-top:14px" data-act="postForm">${ic("plus", 18)} Post what you tried</button></section>`;
-}
-
 function articleHTML(body) {
   return body.map((p) => {
     const ids = [];
@@ -1994,49 +2049,12 @@ function noteHTML(id) {
   return `<div class="mnote" id="note-${id}"><div class="mnote-h">Notes from peers</div><ul>${all.map((x) => `<li>${avatar(x.who, "sm")}<div><b>${PEOPLE[x.who].first}</b> <span class="muted">· ${PEOPLE[x.who].role}</span><div>${esc(x.text)}</div></div></li>`).join("")}</ul>
     <form data-form="note" data-id="${id}"><label class="sr" for="ni-${id}">Add your note</label><input id="ni-${id}" placeholder="Add your note" autocomplete="off"><button class="btn small primary">Add</button></form></div>`;
 }
-function takeView(n, R) {
-  return `<section class="part" id="take">${partHead(5, "Take it with you", `<a class="lk" style="font-size:14px" href="#library">All materials</a>`)}
-    <div class="panel" style="padding:6px 20px"><ul class="res">${R.map((r, i) => `<li><span class="ib">${ic(r.icon, 20)}</span><div class="grow"><div style="font-weight:600">${r.title}</div><div class="hint">${r.type}</div></div>
-      ${r.copy ? `<span id="r${n}_${i}" hidden>${esc(r.copy)}</span><button class="btn small primary" data-act="copy" data-src="r${n}_${i}">${ic("copy", 15)} Copy</button>` : `<button class="btn small" data-act="preview" data-n="${n}" data-i="${i}">Open</button>`}</li>`).join("")}</ul></div></section>`;
-}
-
-function checkView(n, items, line) {
-  const done = items.filter((_, i) => S.checks[n + ":" + i]).length;
-  return `<section class="part" id="checkit">${partHead(6, "Check it", `<span class="hint" aria-live="polite">${done} of ${items.length} checked</span>`)}
-    <div class="panel" style="padding:16px 20px"><div class="checkline" style="margin-top:0"><b>Where the tool fell short in our testing</b>${line}</div>
-    <p class="muted" style="margin:14px 0 4px;font-size:15px">Run through this before you save or send anything. The same tool can give a different answer tomorrow.</p>
-    <ul class="check">${items.map((t, i) => `<li><input type="checkbox" id="ck${n}_${i}" data-act="check" data-key="${n}:${i}" ${S.checks[n + ":" + i] ? "checked" : ""}><label for="ck${n}_${i}">${t}</label></li>`).join("")}</ul>
-    ${done === items.length ? `<div class="verdict" role="status">All checked. Ready to save or send.</div>` : ""}</div></section>`;
-}
-
-
-// ---------- Session 6 closing: agents and connectors ----------
-const AGENT_Q = `Questions for our IT and leadership teams about AI connectors and agents:
-1. Which systems may an AI tool connect to (email, shared files, our case management system), and with what level of access?
-2. What participant information could the tool read, and where is that information stored or sent?
-3. Which steps need a person's review before anything is sent, saved or changed?
-4. Who can turn a connector off, and how do staff report a problem?`;
-function agentsView() {
-  const ex = [["mail", "Email", "Reads a thread and drafts a reply that a person reviews before sending."], ["folder", "Files", "Finds the newest labor market report in a shared drive and pulls three figures."], ["building", "Case management", "Reads open case records and lists follow-ups that are past due."]];
-  const settle = ["Which systems a tool may connect to, and with what access", "What participant information it can read, and where that information goes", "Which steps need a person's review before anything is sent or saved", "Who turns a connector off when something goes wrong"];
-  return `<section class="part" id="agents"><div class="part-h"><h2><span class="c-acc">${ic("plug", 20)}</span>To close: agents and connectors</h2></div>
-    <div class="panel" style="padding:20px">
-      <p style="margin:0">Connectors link an AI tool to email, files or a case management system. Agents use those links to carry out a task with several steps. Many agencies don't allow them yet. We show them so staff can weigh the risks and benefits.</p>
-      <div class="ag-grid">${ex.map(([i, t, d]) => `<div class="panel ag"><span class="ib">${ic(i, 18)}</span><b>${t}</b><p>${d}</p></div>`).join("")}</div>
-      <h3 style="font-size:16px;margin:0 0 10px">What to settle before staff use them</h3>
-      <ul class="settle">${settle.map((x) => `<li><span class="c-green">${ic("check", 16, 3)}</span>${x}</li>`).join("")}</ul>
-      <div class="k" style="margin:20px 0 8px">${ic("copy", 15)} Questions to bring to IT and leadership</div>
-      <div class="prompt plain" id="agq">${esc(AGENT_Q)}</div>
-      <div class="tools"><button class="btn small" data-act="copy" data-src="agq">${ic("copy", 16)} Copy questions</button></div>
-    </div></section>`;
-}
-
 // ---------- dialogs and toast ----------
 const layer = document.getElementById("layer");
 let opener = null;
-function dialog(title, html) {
+function dialog(title, html, cls = "") {
   opener = document.activeElement;
-  layer.innerHTML = `<div class="scrim" data-act="scrim"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-t"><div class="row" style="justify-content:space-between;align-items:flex-start"><h2 id="dlg-t">${title}</h2><button class="ibtn" data-act="close" aria-label="Close">${ic("x", 18)}</button></div>${html}</div></div>`;
+  layer.innerHTML = `<div class="scrim" data-act="scrim"><div class="dialog ${cls}" role="dialog" aria-modal="true" aria-labelledby="dlg-t"><div class="row" style="justify-content:space-between;align-items:flex-start"><h2 id="dlg-t">${title}</h2><button class="ibtn" data-act="close" aria-label="Close">${ic("x", 18)}</button></div>${html}</div></div>`;
   const f = layer.querySelector("textarea, input, select, .acts .btn.primary") || layer.querySelector(".ibtn"); if (f) f.focus();
 }
 function closeDialog() { layer.innerHTML = ""; if (opener && document.body.contains(opener)) opener.focus(); opener = null; }
@@ -2123,31 +2141,22 @@ window.addEventListener("hashchange", () => {
 
 // ---------- tour ----------
 const TOUR = [
-  {"view": "home", "sel": "#sched", "t": "Schedule", "d": "All eight sessions are on the home page, with a tab for each day. Past sessions link to their recordings, the live session has a Join on Zoom button and upcoming sessions can be added to a calendar.", "why": "Workforce staff carry full caseloads. Seeing the whole day, and the days ahead, in one place may make it easier to plan around the sessions and to find a recording later."},
-  {"view": "home", "sel": "#forum", "t": "From the community", "d": "Short notes from participants about what they tried and how it went, gathered from comments and posts across the platform.", "why": "Adults bring years of work experience with them, and colleagues doing similar work are often the most useful teachers. These notes include what didn't work as well as what did, which can make it feel ordinary to share something unfinished."},
-  {"view": "home", "sel": "#columns", "t": "Walkthroughs, demos and articles", "d": "The newest walkthroughs, demos and articles. Anyone in the academy can share a demo of their own.", "why": "Some people want to watch a whole task first, some want to follow along step by step and some want to read about the choices involved. Offering all three leaves the choice with each person, and participant demos let the collection grow from the group's own work."},
-  {"view": "sessions", "sel": "#days", "t": "Eight sessions over three days", "d": "Three days of live sessions on Zoom. Each row opens a page with that session's materials.", "why": "Day 1 covers prompt basics, coaching job seekers and case management. Day 2 moves to labor market research, outreach and an open lab. Day 3 closes with responsible use and each participant's plan for their own team. Each session builds on the one before and starts from work people already do."},
-  {"view": "session-3", "sel": "#hour", "t": "One page before, during and after a session", "d": "Each session has its own page. Before the session it shows the agenda, during the hour it marks which part is live and afterward it holds the recording. The Preview buttons switch between before, live and after.", "why": "Learning tends to last when people can look ahead, take part and come back later. Keeping everything on one page also lets anyone who missed the live hour watch the recording and work through the materials at their own pace."},
-  {"view": "session-3", "sel": "#start", "t": "Start here", "d": "A short demo and a prompt that participants can copy into an AI tool and try on one of their own case notes, with personal details removed.", "why": "Adults tend to learn most from problems in their own work. Trying the prompt before the live hour means people arrive with their own results and questions to discuss."},
-  {"view": "session-3", "sel": "#spot", "t": "Practice catching the tool's mistakes", "d": "The AI summary has two lines that don't match the case note. Participants tap the lines they would fix and check their picks.", "why": "Catching an AI tool's mistakes takes practice, and a fictional case note with known errors lets people try it without real participant data."},
-  {"view": "session-3", "sel": "#steps", "t": "Step-by-step walkthrough", "d": "Each step shows the screen and what to do on it. The facilitators tested the walkthroughs, and where an AI tool made mistakes, the step notes what to look for.", "why": "Watching each step done first can make a new tool feel less intimidating. The notes mark the places where a person's judgment matters most."},
-  {"view": "session-3", "sel": "#practice", "t": "Worked example", "d": "A fictional job seeker's case, shown in five stages: intake form, prompt, AI draft, human review and follow-up text message.", "why": "A complete example lets people see how the stages connect before working on their own cases. Working through it in breakout groups with fictional data means people can practice without risk to anyone's privacy."},
-  {"view": "session-3", "sel": "#read", "t": "Read and discuss", "d": "A short article from a facilitator, followed by comments from participants.", "why": "Time to reflect can help people decide for themselves where AI fits in their work. This article asks which messages to job seekers should be written by a person, and participants answer from their own programs."},
-  {"view": "session-3", "sel": "#take", "t": "Take it with you", "d": "Prompts, checklists and guides from the session, ready to copy or open.", "why": "People are more likely to keep using a new skill when they can find the materials quickly at work. Participants can adapt these for their own programs and share them with their teams."},
-  {"view": "session-3", "sel": "#checkit", "t": "Check it", "d": "A short checklist for reviewing AI drafts, along with the places where an AI tool made mistakes during the facilitators' testing.", "why": "AI tools can produce wrong details that read as smoothly as correct ones. Running the same checklist each time can help people review each draft before it goes to a job seeker or into a case file."},
-  {"view": "session-3", "sel": "#shared", "t": "Shared in this session", "d": "The session's conversation, with questions, links and a poll. It can stay open beside the page.", "why": "Participants often have answers for each other. Keeping the conversation beside the session materials means each question stays next to the material it's about. In this sample, Rosa and Nia each adapted the same case note prompt in a different way, and a facilitator invited them to compare versions in a breakout group."},
-  {"view": "session-6", "sel": "#lab", "t": "Lab board", "d": "Participants post a task they tried, what worked and what didn't. Others react, and some pair up to try a task together.", "why": "People often come to know a tool by using it on something real. The board asks for what didn't work as well as what did, so others can learn from both. On the sample board, Kim noticed an AI tool rounding wage figures in a monthly labor market brief and changed the instructions so the tool keeps the numbers as written."},
-  {"view": "session-6", "sel": "#agents", "t": "Agents and connectors", "d": "The AI Tools Lab closes with a look at AI agents, which can be set up to carry out tasks with several steps, and connectors, which link AI tools to email and files.", "why": "People join with different levels of experience, so the lab offers more advanced options for those who want them. The closing conversation covers the decisions an organization may want to make together before staff use agents and connectors."},
-  {"view": "lib-job-demo", "sel": "#gif", "t": "AI tools for job seekers", "d": "A demo from Session 2. A job seeker pastes a job posting into an AI tool, tailors a resume for applicant tracking systems, then practices answering interview questions out loud.", "why": "Staff who have tried the process themselves can coach job seekers through it. Each of the three parts shows its prompt and what to check, so staff and job seekers can review the AI tool's answers together. In this sample, Dana noted that comparing keywords in the resume and the posting helped a job seeker see why their applications weren't getting responses."},
-  {"view": "library", "sel": "#libfilters", "t": "The library", "d": "Every walkthrough, demo and article from the academy, with search and filters by format and role.", "why": "Frontline staff, business services staff and managers come with different questions, and the filters let each person follow their own. After the academy ends, the platform, library included, can stay open free of charge."},
+  {"view": "home", "sel": "#sched", "t": "Schedule", "d": "Each day's sessions and times at a glance. Select a session to open its page, or join the live one on Zoom.", "why": "Workforce staff carry full caseloads. Seeing the day in one place makes it easier to plan around client appointments."},
+  {"view": "home", "sel": "#forum", "t": "From the community", "d": "Short notes from participants about what they tried and how it went.", "why": "Colleagues doing similar work are often the most useful teachers, including when something didn't work."},
+  {"view": "sessions", "sel": "#days", "t": "Eight sessions over three days", "d": "Select any session to see its description and learning objectives."},
+  {"view": "session-3", "sel": "#s3nav", "t": "Every session comes with resources", "d": "Each session page will hold resources participants can use before, during and after the live hour: demos, walkthroughs, articles and a question to reflect on. Session 3 shows a full example.", "why": "People learn a tool best by trying it on their own work, and they come back to it when a real task comes up."},
+  {"view": "session-3", "sel": "#explore", "t": "Demo: explore a working dashboard", "d": "A caseload dashboard that follows participants from referral to placement, and the sample Google Sheet behind it. Filter by case manager and select a stage to see who needs a follow-up.", "why": "Trying a finished tool first makes the steps that follow easier to picture."},
+  {"view": "session-3", "sel": "#build", "t": "Walkthrough with GIFs", "d": "Five steps for building the same kind of dashboard with an AI assistant and Google Apps Script. Each step has a short GIF from the AI Leadership Academy.", "why": "Seeing each screen before trying it can make a new tool feel less intimidating."},
+  {"view": "session-3", "sel": "#read", "t": "Article", "d": "A link to the full article on building a dashboard with AI without giving AI your data. It opens on its own page, with every diagram and illustration and a sample dashboard to try.", "why": "Time to read helps people decide for themselves where a tool fits in their work."},
+  {"view": "session-3", "sel": "#reflect", "t": "Reflect", "d": "One question that connects the session to each person's own caseload. People answer in the comments right below it and can reply to each other.", "why": "Naming one feature that would help is often the first step toward building it."},
+  {"view": "library", "sel": "#libfilters", "t": "The library", "d": "Every walkthrough, demo and article from the academy, with search and filters by format and role.", "why": "Career coaches, business services staff and managers come with different questions, and the filters let each person follow their own. After the academy ends, the site stays online as a read-only library for the workforce field."},
   {"view": "library", "sel": ".chat-fab|.bchat|.chatwrap", "t": "Academy conversation", "d": "The Chat button opens the academy's shared conversation, with a channel for each session and one for general questions.", "why": "Questions often come up days after a session, back at work. The channels give people a place to ask them and to hear from colleagues in other programs. Facilitators read and answer there every day of the academy."},
-  {"view": "people", "sel": "#dir", "t": "People", "d": "Each person lists their role, organization and current project, such as Nia's flyers for teens.", "why": "A list of current projects makes it easier to find someone facing a similar problem in another program."},
-  {"view": "people", "sel": "#dir [data-act=\"connect\"]|#dir .dact", "t": "Request to connect", "d": "Participants send a short note with a connection request. If the other person accepts, both see each other's email.", "why": "Email addresses stay private until both people agree. The connections people choose to make can carry on after the academy ends."},
+  {"view": "people", "sel": "#dir", "t": "People", "d": "Each person lists their role, organization and current project, such as Nia's flyers for teens.", "why": "Seeing what others are working on makes it easier to find someone facing a similar problem in another program."},
 ];
 const tourEl = (s) => { const els = s.sel.split("|").map((q) => document.querySelector(q)).filter(Boolean); return els.find((e) => e.getClientRects().length) || els[0]; };
 let tour = null;
 const tourRoot = document.getElementById("tour-root");
-const SEEN = "aiva-sample-tour-seen";
+const SEEN = "aiva-sample-tour-seen-v3";
 function markSeen() { try { localStorage.setItem(SEEN, "1"); } catch (e) {} }
 function applyRing() {
   document.querySelectorAll(".tour-ring").forEach((n) => n.classList.remove("tour-ring"));
@@ -2228,14 +2237,15 @@ document.addEventListener("click", async (e) => {
   if (a === "step") { S.walk[el.dataset.n] = +el.dataset.i; save(); rerender(); return; }
   if (a === "tab") { S.tab[el.dataset.key] = +el.dataset.i; save(); rerender(); return; }
   if (a === "react") { const k = reactKey(el.dataset.id, el.dataset.k); S.reacts[k] = !S.reacts[k]; save(); rerender(); return; }
-  if (a === "spot") { const i = el.dataset.i; S.spot[i] = !S.spot[i]; save(); rerender(); return; }
-  if (a === "spotCheck") { S.spotDone = true; save(); rerender(); const v = document.querySelector(".verdict"); if (v) v.scrollIntoView({ behavior: "smooth", block: "nearest" }); return; }
-  if (a === "spotReset") { S.spot = {}; S.spotDone = false; save(); rerender(); return; }
   if (a === "note") { ui.openNote = ui.openNote === el.dataset.id ? null : el.dataset.id; rerender(); return; }
   if (a === "vote") { S.vote = +el.dataset.i; save(); rerender(); return; }
-  if (a === "preview") { const C = +el.dataset.n === 3 ? S3 : S6; const r = C.resources[+el.dataset.i]; dialog(r.title, `<div class="hint" style="margin-top:4px">${r.type}</div><div class="prompt plain" style="margin-top:14px">${esc(r.preview)}</div><div class="acts"><span id="pv" hidden>${esc(r.preview)}</span><button class="btn primary" data-act="copy" data-src="pv">${ic("copy", 16)} Copy text</button><button class="btn" data-act="close">Close</button></div>`); return; }
   if (a === "connect") { const p = PEOPLE[el.dataset.id]; dialog(`Request to connect with ${p.first}`, `<p class="muted" style="margin-top:8px">If ${p.first} says yes, you both see each other's email.</p><form data-form="connect" data-id="${el.dataset.id}" style="margin-top:14px"><label for="note" style="font-weight:600">Add a note</label><textarea id="note" class="field" style="min-height:110px;margin-top:8px" maxlength="400" required placeholder="What you're working on and why you'd like to talk"></textarea><div class="acts"><button class="btn primary">${ic("send", 16, 2.6)} Send request</button><button type="button" class="btn" data-act="close">Cancel</button></div></form>`); return; }
-  if (a === "postForm") { dialog("Post what you tried", `<form data-form="post" style="margin-top:12px"><label for="pt" style="font-weight:600">The task</label><input id="pt" class="field" required style="margin:6px 0 12px" placeholder="For example: weekly job leads list"><label for="pw" style="font-weight:600">What worked</label><textarea id="pw" class="field" style="margin:6px 0 12px;min-height:70px"></textarea><label for="pd" style="font-weight:600">What didn't</label><textarea id="pd" class="field" style="margin-top:6px;min-height:70px"></textarea><div class="acts"><button class="btn primary">Post to the lab board</button><button type="button" class="btn" data-act="close">Cancel</button></div></form>`); return; }
+  if (a === "dashOpen") { openDash(); return; }
+  if (a === "dashTab") { ui.dashTab = +el.dataset.i; refreshDash(); return; }
+  if (a === "dashStage") { ui.dashStage = ui.dashStage === el.dataset.v ? null : el.dataset.v; refreshDash(); return; }
+  if (a === "bstep") { S.walk.build = +el.dataset.i; save(); rerender(); if (el.dataset.scroll) scrollToEl(document.getElementById("build"), true); return; }
+  if (a === "afView") { ui.afView = el.dataset.v; rerender(); return; }
+  if (a === "afSite") { const s = ui.afSites || (ui.afSites = new Set(["A", "B", "C"])); s.has(el.dataset.v) ? s.delete(el.dataset.v) : s.add(el.dataset.v); rerender(); return; }
   if (a === "shareDemo") { dialog("Share a demo", shareDemoForm()); return; }
   // quick tip
   if (a === "tip") { ui.tip = !ui.tip; rerender(); return; }
@@ -2273,6 +2283,7 @@ document.addEventListener("click", async (e) => {
 document.addEventListener("change", (e) => {
   const el = e.target;
   if (el.dataset && el.dataset.act === "check") { S.checks[el.dataset.key] = el.checked; save(); rerender(); }
+  if (el.id === "dashcm") { ui.dashCm = el.value; refreshDash(); const s = document.getElementById("dashcm"); if (s) s.focus(); }
   if (el.id === "chansel") { ui.chan = el.value; ui.chatBottom = true; rerender(); const s = document.getElementById("chansel"); if (s) s.focus(); }
 });
 document.addEventListener("input", (e) => { const el = e.target; if (el.dataset && el.dataset.act === "libq") { ui.libQ = el.value; const pos = el.selectionStart; rerender(); const n = document.getElementById("libq"); n.focus(); n.setSelectionRange(pos, pos); } });
@@ -2311,7 +2322,6 @@ document.addEventListener("submit", (e) => {
   if (kind === "comment") { const ta = f.querySelector("textarea"); const t = ta.value.trim(); if (!t) return; const key = f.dataset.key; const c = { id: "u" + Date.now(), who: "dana", when: "Just now", text: t }; if (f.dataset.parent) c.parent = f.dataset.parent; (S.comments[key] = S.comments[key] || []).push(c); ui.replyTo = null; save(); c.fresh = true; rerender(); delete c.fresh; return; }
   if (kind === "note") { const inp = f.querySelector("input"); const t = inp.value.trim(); if (!t) return; const id = f.dataset.id; (S.notes[id] = S.notes[id] || []).push({ who: "dana", text: t }); save(); rerender(); const n = document.getElementById("ni-" + id); if (n) n.focus({ preventScroll: true }); return; }
   if (kind === "connect") { const id = f.dataset.id; S.connects[id] = "sent"; save(); closeDialog(); rerender(); toast(`${ic("check", 17, 3)} Request sent to ${PEOPLE[id].first}`); if (id === "marcus") setTimeout(() => { S.connects.marcus = "connected"; save(); rerender(); toast(`${ic("mail", 17)} Marcus accepted. You can now see each other's email.`); }, 3500); return; }
-  if (kind === "post") { const p = { id: "u" + Date.now(), who: "dana", task: f.querySelector("#pt").value.trim(), worked: f.querySelector("#pw").value.trim() || "Not yet", didnt: f.querySelector("#pd").value.trim() || "Not yet", r: {} }; S.posts.unshift(p); save(); closeDialog(); p.fresh = true; rerender(); delete p.fresh; toast(`${ic("check", 17, 3)} Posted to the lab board`); return; }
   if (kind === "sharedemo") {
     const v = (id) => f.querySelector(id).value.trim(), sn = v("#sd-s");
     const d = { id: "my" + Date.now(), mine: true, type: "Demo", by: "dana", title: v("#sd-t"), blurb: v("#sd-b"), prompt: v("#sd-p"), check: v("#sd-c"), s: sn ? +sn : null, size: "Prompt", roles: [], tools: [...f.querySelectorAll('[name="tool"]:checked')].map((x) => x.value) };
@@ -2326,3 +2336,5 @@ if (!seen) tourStart();
 </script>
 </body>
 </html>
+
+</body></html>
